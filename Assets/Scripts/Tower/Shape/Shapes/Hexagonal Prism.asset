@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b1a2f86884b4440b60bb4f41db9019, type: 3}
+  m_Name: Hexagonal Prism
+  m_EditorClassIdentifier: 
+  mesh: {fileID: -6698475155572713381, guid: 8113ac3fa47372e4c9d69c2caafef1d9, type: 3}
+  meshPosition: {x: -0.75, y: 0.5, z: -1.75}
+  meshRotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
+  meshScale: {x: 5, y: 5, z: 5}
+  xXFactor: 1
+  xYFactor: 0.5
+  yXFactor: 0
+  yYFactor: 0.76
+  xYFactorMod: 2
+  yXFactorMod: 1
+  checkName: hexagon
+  dotPositions:
+  - {x: 0, y: 0.8, z: 0}
+  - {x: 0, y: 0.65, z: -0.3}
+  - {x: -0.25, y: 0.65, z: -0.15}
+  - {x: -0.25, y: 0.65, z: 0.15}
+  - {x: 0, y: 0.65, z: 0.3}
+  - {x: 0.25, y: 0.65, z: 0.15}
+  - {x: 0.25, y: 0.65, z: -0.15}
