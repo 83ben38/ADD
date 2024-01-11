@@ -74,3 +74,4 @@ crashlytics-build.properties
 # Custom Ignores
 /[Aa]ssets/[Gg]raphics/*
 /[Aa]ssets/Graphics.meta
+/[Aa]ssets/[Ss]ettings/*
