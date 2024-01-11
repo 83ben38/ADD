@@ -33,6 +33,6 @@ public class MapCreator : MonoBehaviour
                 t.y = j;
             }
         }
-       
+        Destroy(cloneObject);
     }
 }
