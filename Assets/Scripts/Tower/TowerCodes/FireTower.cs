@@ -21,7 +21,7 @@ public class FireTower : TowerCode
 
     public override ProjectileCode create()
     {
-        return null;
+        return new FireProjectile();
     }
 
     public override Color getColor()

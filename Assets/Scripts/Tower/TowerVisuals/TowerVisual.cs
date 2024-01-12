@@ -72,16 +72,20 @@ public class TowerVisual : MonoBehaviour
         
         GameObject d = children[nums[shootNum]];
         shootNum++;
-        StartCoroutine(recharge(d));
+        if (shootNum >= c.tower.lvl)
+        {
+            shootNum = 0;
+        }
+
+        StartCoroutine(recharge(d,c.tower.attackSpeed-1));
         return d.transform.position;
     }
 
-    public IEnumerator recharge(GameObject d)
+    public IEnumerator recharge(GameObject d, int rechargeTime)
     {
-        d.transform.localScale = new Vector3(0,0,0);
-        for (int i = 0; i < 25; i++)
+        for (int i = 1; i <= rechargeTime; i++)
         {
-            d.transform.localScale = new Vector3(i * .01f, i * .01f, i * .01f);
+            d.transform.localScale = new Vector3(i * .25f /  rechargeTime, i * .125f / rechargeTime, i * .25f / rechargeTime);
             yield return null;
         }
     }

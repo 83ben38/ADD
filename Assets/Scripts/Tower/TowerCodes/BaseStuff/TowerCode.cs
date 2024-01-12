@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class TowerCode : TowerState
 {
     public static GameObject projectile;
     [Header("Stats")]
-    public int attackSpeed;
-    public float range;
+    public int attackSpeed = 64;
+    public float range = 1;
     public int lvl;
     [Header("Vars")] 
     public int ticksLeft;
@@ -53,16 +54,14 @@ public abstract class TowerCode : TowerState
 
     public bool shoot()
     {
-        RaycastHit hit;
-        if (Physics.SphereCast(self.position,range,Vector3.one,out hit, .01f, 3))
+        Collider[] sphere = Physics.OverlapSphere(self.position, range+1,LayerMask.GetMask("Enemy"));
+        if (sphere.Length > 0)
         {
-            GameObject enemy = hit.collider.gameObject;
             GameObject projectile = Object.Instantiate(TowerCode.projectile);
             ProjectileController pc = projectile.GetComponent<ProjectileController>();
             pc.code = create();
-            Debug.Log(enemy + " targeted");
             pc.code.lvl = lvl;
-            pc.code.target = enemy.transform;
+            pc.code.target = sphere[0].GameObject().GetComponent<FruitCode>();
             projectile.transform.position = controller.towerVisual.shoot();
             pc.material.color = getColor();
             return true;

@@ -7,7 +7,7 @@ public class EarthTower : TowerCode
 
     public EarthTower()
     {
-        range = 1;
+        
     }
 
     public override void MouseClick(TowerController controller)
@@ -22,7 +22,7 @@ public class EarthTower : TowerCode
 
     public override ProjectileCode create()
     {
-        return null;
+        return new EarthProjectile();
     }
 
     public override Color getColor()

@@ -19,6 +19,15 @@ public class FruitCode : MonoBehaviour
       transform.position = new Vector3(v.x, v.y + 1, v.z);
    }
 
+   public void Damage(int amount)
+   {
+      hp -= amount;
+      if (hp < 1)
+      {
+         Destroy(gameObject);
+      }
+   }
+
    void FixedUpdate()
    {
       Vector3 goal = goalPos - transform.position;

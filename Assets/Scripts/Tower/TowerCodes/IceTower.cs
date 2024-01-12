@@ -21,7 +21,7 @@ public class IceTower : TowerCode
 
     public override ProjectileCode create()
     {
-        return null;
+        return new IceProjectile();
     }
 
     public override Color getColor()

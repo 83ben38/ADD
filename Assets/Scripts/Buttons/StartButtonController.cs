@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO.IsolatedStorage;
@@ -60,13 +61,28 @@ public class StartButtonController : Selectable
     public IEnumerator spawnWave(int wave)
     {
         waveGoing = true;
+        List<GameObject> objects = new List<GameObject>();
         for (int i = 0; i < waveNums[wave]; i++)
         {
-            Instantiate(waves[wave]);
+            objects.Add(Instantiate(waves[wave]));
             for (int j = 0; j < waveSpacings[wave]; j++)
             {
                 yield return null;
             }   
+        }
+        
+        while (objects.Count > 0)
+        {
+            for (int i = 0; i < objects.Count; i++)
+            {
+                if (objects[i] == null)
+                {
+                    objects.RemoveAt(i);
+                    i--;
+                }
+            }
+
+            yield return null;
         }
         foreach (var tower in PathfinderManager.manager.tiles)
         {

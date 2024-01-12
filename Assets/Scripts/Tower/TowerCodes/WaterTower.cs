@@ -21,7 +21,7 @@ public class WaterTower : TowerCode
 
     public override ProjectileCode create()
     {
-        return null;
+        return new WaterProjectile();
     }
 
     public override Color getColor()

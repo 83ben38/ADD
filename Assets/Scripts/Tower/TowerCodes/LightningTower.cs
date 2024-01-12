@@ -22,7 +22,7 @@ public class LightningTower : TowerCode
 
     public override ProjectileCode create()
     {
-        return null;
+        return new LightningProjectile();
     }
 
     public override Color getColor()

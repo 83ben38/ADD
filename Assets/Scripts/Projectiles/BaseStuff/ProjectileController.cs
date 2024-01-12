@@ -15,6 +15,6 @@ public class ProjectileController : MonoBehaviour
 
      public void FixedUpdate()
      {
-          code.tick();
+          code.tick(this);
      }
 }
