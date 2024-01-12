@@ -12,23 +12,23 @@ public abstract class ProjectileCode
     public FruitCode target;
     public int pierceLeft;
     public Vector3 move;
-    private List<FruitCode> pierced = new List<FruitCode>();
+    public List<FruitCode> pierced = new List<FruitCode>();
 
     public ProjectileCode()
     {
         pierceLeft = getPierce();
     }
 
-    public int getDamage()
+    public virtual int getDamage()
     {
         return lvl * damage;
     }
-    public int getPierce()
+    public virtual int getPierce()
     {
         return pierce;
     }
 
-    public void tick(ProjectileController controller)
+    public virtual void tick(ProjectileController controller)
     {
         //do projectile stuff
         if (target != null)
@@ -43,7 +43,7 @@ public abstract class ProjectileCode
         }
     }
 
-    public void hit(FruitCode fruit, ProjectileController controller)
+    public virtual void hit(FruitCode fruit, ProjectileController controller)
     {
         if (pierced.Contains(fruit))
         {
@@ -55,7 +55,7 @@ public abstract class ProjectileCode
             target = null;
         }
 
-        fruit.Damage(damage);
+        fruit.Damage(getDamage());
         pierceLeft--;
         if (pierceLeft < 1)
         {
