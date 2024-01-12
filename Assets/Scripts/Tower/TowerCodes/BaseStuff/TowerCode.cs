@@ -13,11 +13,11 @@ public abstract class TowerCode : TowerState
     [Header("Vars")] 
     public int ticksLeft;
 
-    public Transform self;
+    public Vector3 self;
     public TowerController controller;
     public override void Run(TowerController c)
     {
-        self = c.transform;
+        self = c.transform.position + new Vector3(0,0.5f,0);
         controller = c;
         tick();
     }
@@ -54,7 +54,7 @@ public abstract class TowerCode : TowerState
 
     public bool shoot()
     {
-        Collider[] sphere = Physics.OverlapSphere(self.position, range+1,LayerMask.GetMask("Enemy"));
+        Collider[] sphere = Physics.OverlapSphere(self, range+1,LayerMask.GetMask("Enemy"));
         if (sphere.Length > 0)
         {
             GameObject projectile = Object.Instantiate(TowerCode.projectile);
