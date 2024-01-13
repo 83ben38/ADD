@@ -7,7 +7,7 @@ public abstract class ProjectileCode
 {
     public int damage = 1;
     public int pierce = 3;
-    public float speed = .05f;
+    public float speed = 2f;
     public int lvl;
     public FruitCode target;
     public int pierceLeft;
@@ -33,9 +33,9 @@ public abstract class ProjectileCode
         //do projectile stuff
         if (target != null)
         {
-            move = Time.deltaTime * 64 * speed * (target.transform.position - controller.transform.position).normalized;
+            move = lvl * speed * (target.transform.position - controller.transform.position).normalized;
         }
-        controller.transform.Translate(move);
+        controller.transform.Translate(Time.deltaTime*move);
         Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f, LayerMask.GetMask("Enemy"));
         for (int i = 0; i < hit.Length; i++)
         {

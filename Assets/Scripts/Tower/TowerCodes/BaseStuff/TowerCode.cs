@@ -24,18 +24,22 @@ public abstract class TowerCode : TowerState
 
     public TowerCode()
     {
-        ticksLeft = attackSpeed;
+        ticksLeft = getAttackSpeed();
     }
 
+    public virtual int getAttackSpeed()
+    {
+        return attackSpeed;
+    }
 
-    public int getRange()
+    public virtual int getRange()
     {
         return range + lvl > 4 ? 1 : 0;
     }
 
     
 
-    public void tick()
+    public virtual void tick()
     {
         if (ticksLeft > 0)
         {
@@ -52,7 +56,7 @@ public abstract class TowerCode : TowerState
         }
     }
 
-    public bool shoot()
+    public virtual bool shoot()
     {
         Collider[] sphere = Physics.OverlapSphere(self, range+1,LayerMask.GetMask("Enemy"));
         if (sphere.Length > 0)
