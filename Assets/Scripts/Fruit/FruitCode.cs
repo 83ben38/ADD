@@ -14,6 +14,7 @@ public class FruitCode : MonoBehaviour
    private Vector3 goalPos;
    public float maxScale;
    public float minScale;
+   public float frozenTime = 0f;
    void Start()
    {
       maxHp = hp;
@@ -39,9 +40,16 @@ public class FruitCode : MonoBehaviour
    {
       if (speed <= 0)
       {
+         frozenTime += Time.deltaTime;
+         if (frozenTime >= 10)
+         {
+            Destroy(gameObject);
+         }
+
          return;
       }
 
+      frozenTime = 0f;
       Vector3 goal = goalPos - transform.position;
       Vector2 diff = new Vector2(goal.x, goal.z);
       Vector2 unit = diff.normalized;
