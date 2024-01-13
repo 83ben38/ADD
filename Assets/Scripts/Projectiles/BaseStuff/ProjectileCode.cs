@@ -33,7 +33,7 @@ public abstract class ProjectileCode
         //do projectile stuff
         if (target != null)
         {
-            move = speed * (target.transform.position - controller.transform.position).normalized;
+            move = Time.deltaTime * 64 * speed * (target.transform.position - controller.transform.position).normalized;
         }
         controller.transform.Translate(move);
         Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f, LayerMask.GetMask("Enemy"));

@@ -11,7 +11,7 @@ public abstract class TowerCode : TowerState
     public float range = 1;
     public int lvl;
     [Header("Vars")] 
-    public int ticksLeft;
+    public float ticksLeft;
 
     public Vector3 self;
     public TowerController controller;
@@ -39,7 +39,7 @@ public abstract class TowerCode : TowerState
     {
         if (ticksLeft > 0)
         {
-            ticksLeft -= lvl;
+            ticksLeft -= lvl*Time.deltaTime*64f;
         }
 
         if (ticksLeft < 1)
@@ -64,6 +64,7 @@ public abstract class TowerCode : TowerState
             pc.code.target = sphere[0].GameObject().GetComponent<FruitCode>();
             projectile.transform.position = controller.towerVisual.shoot();
             pc.material.color = getColor();
+            pc.code.Start();
             return true;
         }
         return false;

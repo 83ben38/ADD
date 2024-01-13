@@ -12,9 +12,9 @@ public class StartButtonController : Selectable
     private bool started = false;
     public GameObject[] waves;
     public int[] waveNums;
-    public int[] waveSpacings;
+    public float[] waveSpacings;
     private int wave = 0;
-    private bool waveGoing = false;
+    public static bool waveGoing = false;
     void Start()
     {
         _material = GetComponent<Renderer>().material;
@@ -65,7 +65,7 @@ public class StartButtonController : Selectable
         for (int i = 0; i < waveNums[wave]; i++)
         {
             objects.Add(Instantiate(waves[wave]));
-            for (int j = 0; j < waveSpacings[wave]; j++)
+            for (float j = 0; j < waveSpacings[wave]; j+=Time.deltaTime)
             {
                 yield return null;
             }   
