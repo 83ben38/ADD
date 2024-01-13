@@ -37,6 +37,11 @@ public class FruitCode : MonoBehaviour
 
    void FixedUpdate()
    {
+      if (speed <= 0)
+      {
+         return;
+      }
+
       Vector3 goal = goalPos - transform.position;
       Vector2 diff = new Vector2(goal.x, goal.z);
       Vector2 unit = diff.normalized;
