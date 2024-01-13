@@ -8,6 +8,7 @@ public class LightningTower : TowerCode
     public LightningTower()
     {
         range = 3;
+        attackSpeed = 128;
     }
 
     public override void MouseClick(TowerController controller)
