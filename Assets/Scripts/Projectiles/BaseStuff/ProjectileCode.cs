@@ -14,7 +14,7 @@ public abstract class ProjectileCode
     public Vector3 move;
     public List<FruitCode> pierced = new List<FruitCode>();
 
-    public ProjectileCode()
+    public virtual void Start()
     {
         pierceLeft = getPierce();
     }

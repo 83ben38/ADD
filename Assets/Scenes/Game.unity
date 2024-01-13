@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1560,8 +1560,9 @@ MonoBehaviour:
   text: {fileID: 267880956}
   waves:
   - {fileID: 8267130134565377638, guid: 8461deba704492e45a16e4e04d639d8f, type: 3}
-  waveNums: 0a000000
-  waveSpacings: 2c010000
+  waveNums: 02000000
+  waveSpacings:
+  - 1
 --- !u!65 &1578687418
 BoxCollider:
   m_ObjectHideFlags: 0

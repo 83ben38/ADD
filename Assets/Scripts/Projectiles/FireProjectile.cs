@@ -22,7 +22,7 @@ public class FireProjectile : ProjectileCode
             target = null;
         }
 
-        controller.StartCoroutine(hitEnemy(fruit));
+        ColorManager.manager.StartCoroutine(hitEnemy(fruit));
         pierceLeft--;
         if (pierceLeft < 1)
         {
@@ -34,15 +34,15 @@ public class FireProjectile : ProjectileCode
     {
         for (int i = 0; i < lvl; i++)
         {
-            for (int j = 0; j < 32; j++)
+            for (float j = 0; j < 0.5f; j+=Time.deltaTime)
             {
                 yield return null;
             }
-            fruit.Damage(lvl);
             if (fruit == null)
             {
                 break;
             }
+            fruit.Damage(getDamage());
         }
     }
 }
