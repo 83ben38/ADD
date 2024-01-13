@@ -1560,6 +1560,9 @@ MonoBehaviour:
   text: {fileID: 267880956}
   waves:
   - {fileID: 11400000, guid: 163695a2cd4b14021ada52bf1f8d24a7, type: 2}
+  - {fileID: 11400000, guid: 163695a2cd4b14021ada52bf1f8d24a7, type: 2}
+  - {fileID: 11400000, guid: 163695a2cd4b14021ada52bf1f8d24a7, type: 2}
+  - {fileID: 11400000, guid: 163695a2cd4b14021ada52bf1f8d24a7, type: 2}
 --- !u!65 &1578687418
 BoxCollider:
   m_ObjectHideFlags: 0
