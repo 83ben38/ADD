@@ -72,7 +72,7 @@ public class LightningProjectile : ProjectileCode
                 }
                 i++;
             }
-            lineRenderer.SetPosition(getPierce()-pierceLeft,hit[i].transform.position);
+            lineRenderer.SetPosition(getPierce()-pierceLeft,hit[i].gameObject.transform.position);
             this.hit(hit[i].gameObject.GetComponent<FruitCode>(),controller);
         }
         
