@@ -10,11 +10,10 @@ public class StartButtonController : Selectable
     private Material _material;
     public TextMeshPro text;
     private bool started = false;
-    public GameObject[] waves;
-    public int[] waveNums;
-    public float[] waveSpacings;
+    public WaveScriptableObject[] waves;
     private int wave = 0;
     public static bool waveGoing = false;
+    public static bool waveFinished = true;
     void Start()
     {
         _material = GetComponent<Renderer>().material;
@@ -48,29 +47,27 @@ public class StartButtonController : Selectable
 
     public void start()
     {
-        if (!waveGoing)
+        if (waveFinished)
         {
             foreach (var tower in PathfinderManager.manager.tiles)
             {
                 tower.state = tower.tower;
             }
-            StartCoroutine(spawnWave(wave));
+            StartCoroutine(spawnWave());
         }
     }
 
-    public IEnumerator spawnWave(int wave)
+    public IEnumerator spawnWave()
     {
         waveGoing = true;
+        waveFinished = false;
         List<GameObject> objects = new List<GameObject>();
-        for (int i = 0; i < waveNums[wave]; i++)
+        StartCoroutine(waves[wave].spawnWaves(objects,this));
+        while (waveGoing)
         {
-            objects.Add(Instantiate(waves[wave]));
-            for (float j = 0; j < waveSpacings[wave]; j+=Time.deltaTime)
-            {
-                yield return null;
-            }   
+            yield return null;
         }
-        
+
         while (objects.Count > 0)
         {
             for (int i = 0; i < objects.Count; i++)
@@ -90,7 +87,7 @@ public class StartButtonController : Selectable
         }
         wave++;
         InGameState.generateNewTowerCode(wave+1);
-        waveGoing = false;
+        waveFinished = true;
     }
 
     public void go()

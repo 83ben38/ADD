@@ -15,7 +15,7 @@ public class ProjectileController : MonoBehaviour
 
      public void FixedUpdate()
      {
-          if (!StartButtonController.waveGoing)
+          if (StartButtonController.waveFinished)
           {
                Destroy(gameObject);
           }
