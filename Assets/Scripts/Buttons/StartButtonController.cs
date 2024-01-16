@@ -10,7 +10,7 @@ public class StartButtonController : Selectable
     private Material _material;
     public TextMeshPro text;
     private bool started = false;
-    public WaveScriptableObject[] waves;
+    public DifficultyScriptableObject waves;
     private int wave = 0;
     public static bool waveGoing = false;
     public static bool waveFinished = true;
@@ -62,7 +62,7 @@ public class StartButtonController : Selectable
         waveGoing = true;
         waveFinished = false;
         List<GameObject> objects = new List<GameObject>();
-        StartCoroutine(waves[wave].spawnWaves(objects,this));
+        StartCoroutine(waves.waves[wave].spawnWaves(objects,this));
         while (waveGoing)
         {
             yield return null;
