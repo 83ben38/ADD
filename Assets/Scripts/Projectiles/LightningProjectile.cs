@@ -8,7 +8,7 @@ using Object = UnityEngine.Object;
 
 public class LightningProjectile : ProjectileCode
 {
-    public float ticksLeft = 16f;
+    public float ticksLeft = 32f;
     public LineRenderer lineRenderer;
     public override int getDamage()
     {
@@ -42,7 +42,6 @@ public class LightningProjectile : ProjectileCode
             if (ticksLeft <= 0)
             {
                 Object.Destroy(controller.gameObject);
-                Object.Destroy(lineRenderer.gameObject);
             }
         }
         else
@@ -57,6 +56,7 @@ public class LightningProjectile : ProjectileCode
                 lineRenderer.SetPosition(0,controller.transform.position);
                 lineRenderer.useWorldSpace = true;
                 lineRenderer.generateLightingData = true;
+                lineRenderer.transform.SetParent(controller.transform);
             }
             Collider[] hit = Physics.OverlapSphere(lineRenderer.GetPosition(getPierce()-pierceLeft-1), 10f, LayerMask.GetMask("Enemy"));
             
@@ -66,8 +66,7 @@ public class LightningProjectile : ProjectileCode
             {
                 if (hit.Length == i)
                 {
-                    Object.Destroy(controller.gameObject);
-                    Object.Destroy(lineRenderer.gameObject);
+                    pierceLeft = 1;
                     return;
                 }
                 i++;

@@ -38,7 +38,7 @@ public class IceProjectile : ProjectileCode
     {
         float z = .03f * lvl / (float)(Math.Log(fruit.hp, 2) + 1);
         fruit.speed -= z;
-        for (float i = 0; i < 16f; i+=Time.deltaTime*64f)
+        for (float i = 0; i < (lvl > 4 ? 24f : 16f); i+=Time.deltaTime*64f)
         {
             yield return null;
         }
