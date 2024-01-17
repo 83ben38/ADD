@@ -15,9 +15,9 @@ public class EarthTower : TowerCode
         return lvl  > 4  ? 128 : 96;
     }
 
-    public override int getRange()
+    public override float getRange()
     {
-        return 0;
+        return -1;
     }
 
     public override bool shoot()

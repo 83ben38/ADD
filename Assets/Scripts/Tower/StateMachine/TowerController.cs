@@ -27,7 +27,7 @@ public class TowerController : Selectable
     [Header("Tower")] 
     public TowerVisual towerVisual;
 
-    public TowerRangeControler TRC;
+    public TowerRangeController TRC;
     [SerializeReference]
     public TowerCode tower;
     private void Start()
@@ -37,7 +37,7 @@ public class TowerController : Selectable
         _material = GetComponentInChildren<Renderer>().material;
         setBaseColor(ColorManager.manager.tile,ColorManager.manager.tileHighlighted);
         
-        TRC = GetComponentInChildren<TowerRangeControler>();
+        TRC = GetComponentInChildren<TowerRangeController>();
         TRC.tower = tower;
     }
 

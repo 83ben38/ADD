@@ -32,9 +32,9 @@ public abstract class TowerCode : TowerState
         return attackSpeed;
     }
 
-    public virtual int getRange()
+    public virtual float getRange()
     {
-        return range + lvl > 4 ? 1 : 0;
+        return range + (lvl > 4 ? 1.0f : 0.0f);
     }
 
     
@@ -58,7 +58,7 @@ public abstract class TowerCode : TowerState
 
     public virtual bool shoot()
     {
-        Collider[] sphere = Physics.OverlapSphere(self, range+1,LayerMask.GetMask("Enemy"));
+        Collider[] sphere = Physics.OverlapSphere(self, getRange()+0.5f,LayerMask.GetMask("Enemy"));
         if (sphere.Length > 0)
         {
             GameObject projectile = Object.Instantiate(TowerCode.projectile);

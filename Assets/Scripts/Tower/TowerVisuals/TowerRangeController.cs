@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 
-public class TowerRangeControler : MonoBehaviour
+public class TowerRangeController : MonoBehaviour
 {
 
     
@@ -27,7 +27,7 @@ public class TowerRangeControler : MonoBehaviour
         {
             gameObject.transform.localPosition = new Vector3(0, 0.5f, 0);
 
-            gameObject.transform.localScale = new Vector3(tower.range + 1, (tower.range + 1) / 2 , tower.range + 1);
+            gameObject.transform.localScale = new Vector3(tower.getRange() + 1.5f, (tower.getRange() + 1.5f) / 2 , tower.getRange() + 1.5f);
         }
         else
         {
