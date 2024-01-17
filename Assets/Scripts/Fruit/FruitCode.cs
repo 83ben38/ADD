@@ -8,14 +8,14 @@ using UnityEngine;
 public class FruitCode : MonoBehaviour
 {
    public int hp;
-   private int maxHp;
+   public int maxHp;
    public float speed;
-   private int pathNum = 1;
-   private Vector3 goalPos;
+   public int pathNum = 1;
+   public Vector3 goalPos;
    public float maxScale;
    public float minScale;
    public float frozenTime = 0f;
-   void Start()
+   public virtual void Start()
    {
       maxHp = hp;
       Vector3 v = PathfinderManager.manager.path[0].transform.position;
@@ -24,7 +24,7 @@ public class FruitCode : MonoBehaviour
       transform.localScale = new Vector3(maxScale, maxScale, maxScale);
    }
 
-   public void Damage(int amount)
+   public virtual void Damage(int amount)
    {
       hp -= amount;
       if (hp < 1)
@@ -36,7 +36,7 @@ public class FruitCode : MonoBehaviour
       transform.localScale = new Vector3(z, z, z);
    }
 
-   void FixedUpdate()
+   public virtual void FixedUpdate()
    {
       if (speed <= 0)
       {
