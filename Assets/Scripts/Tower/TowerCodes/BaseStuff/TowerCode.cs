@@ -58,7 +58,7 @@ public abstract class TowerCode : TowerState
 
     public virtual bool shoot()
     {
-        Collider[] sphere = Physics.OverlapSphere(self, getRange()+0.5f,LayerMask.GetMask("Enemy"));
+        Collider[] sphere = Physics.OverlapSphere(self, getRange(),LayerMask.GetMask("Enemy"));
         if (sphere.Length > 0)
         {
             GameObject projectile = Object.Instantiate(TowerCode.projectile);

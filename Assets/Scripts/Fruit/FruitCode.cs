@@ -70,6 +70,7 @@ public class FruitCode : MonoBehaviour
          pathNum++;
          if (pathNum >= PathfinderManager.manager.path.Count)
          {
+            LivesController.controller.damage((int)Math.Log(hp,2));
             Destroy(gameObject);
             return;
          }

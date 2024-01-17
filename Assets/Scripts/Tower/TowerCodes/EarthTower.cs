@@ -17,7 +17,7 @@ public class EarthTower : TowerCode
 
     public override float getRange()
     {
-        return -1;
+        return -1.5f;
     }
 
     public override bool shoot()
