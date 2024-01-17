@@ -26,13 +26,19 @@ public class TowerController : Selectable
     public List<TowerController> nextTo = new List<TowerController>();
     [Header("Tower")] 
     public TowerVisual towerVisual;
+
+    public TowerRangeControler TRC;
     [SerializeReference]
     public TowerCode tower;
     private void Start()
     {
+        
         state = new BeforeGameState();
         _material = GetComponentInChildren<Renderer>().material;
         setBaseColor(ColorManager.manager.tile,ColorManager.manager.tileHighlighted);
+        
+        TRC = GetComponentInChildren<TowerRangeControler>();
+        TRC.tower = tower;
     }
 
     private void FixedUpdate()
@@ -41,6 +47,7 @@ public class TowerController : Selectable
         {
             state.Run(this);
         }
+        TRC.tower = tower;
     }
     
 
@@ -73,12 +80,15 @@ public class TowerController : Selectable
     {
         setColor(_highlightColor);
         selected = true;
+        TRC.isVisibal = true;
+        
     }
 
     public override void MouseExit()
     {
         setColor(_baseColor);
         selected = false;
+        TRC.isVisibal = false;
     }
 
     public override void MouseClick()
