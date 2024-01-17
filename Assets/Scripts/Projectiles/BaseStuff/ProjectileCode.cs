@@ -7,35 +7,35 @@ public abstract class ProjectileCode
 {
     public int damage = 1;
     public int pierce = 3;
-    public float speed = .05f;
+    public float speed = 2f;
     public int lvl;
     public FruitCode target;
     public int pierceLeft;
     public Vector3 move;
-    private List<FruitCode> pierced = new List<FruitCode>();
+    public List<FruitCode> pierced = new List<FruitCode>();
 
-    public ProjectileCode()
+    public virtual void Start()
     {
         pierceLeft = getPierce();
     }
 
-    public int getDamage()
+    public virtual int getDamage()
     {
         return lvl * damage;
     }
-    public int getPierce()
+    public virtual int getPierce()
     {
         return pierce;
     }
 
-    public void tick(ProjectileController controller)
+    public virtual void tick(ProjectileController controller)
     {
         //do projectile stuff
         if (target != null)
         {
-            move = speed * (target.transform.position - controller.transform.position).normalized;
+            move = lvl * speed * (target.transform.position - controller.transform.position).normalized;
         }
-        controller.transform.Translate(move);
+        controller.transform.Translate(Time.deltaTime*move);
         Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f, LayerMask.GetMask("Enemy"));
         for (int i = 0; i < hit.Length; i++)
         {
@@ -43,7 +43,7 @@ public abstract class ProjectileCode
         }
     }
 
-    public void hit(FruitCode fruit, ProjectileController controller)
+    public virtual void hit(FruitCode fruit, ProjectileController controller)
     {
         if (pierced.Contains(fruit))
         {
@@ -55,7 +55,7 @@ public abstract class ProjectileCode
             target = null;
         }
 
-        fruit.Damage(damage);
+        fruit.Damage(getDamage());
         pierceLeft--;
         if (pierceLeft < 1)
         {

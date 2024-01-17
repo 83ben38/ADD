@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO.IsolatedStorage;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class BeforeGameState : TowerState
 {
@@ -40,11 +41,13 @@ public class BeforeGameState : TowerState
 
     public static IEnumerator changeTower(TowerController c, bool grow)
     {
-        for (int i = 0; i < 50; i++)
+        for (float i = 0; i < 0.25f; i+=Time.deltaTime)
         {
             Vector3 scale = c.transform.localScale;
-            c.transform.localScale = new Vector3(scale.x,scale.y + (grow ? .02f : -.02f), scale.z);
+            c.transform.localScale = new Vector3(scale.x,1 + (grow ? i*4 : (0.25f-i)*4), scale.z);
             yield return null;
-        }
+        } 
+        
+        c.transform.localScale = new Vector3(1, grow ? 2 : 1, 1);
     }
 }

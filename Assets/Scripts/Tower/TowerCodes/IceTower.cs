@@ -7,6 +7,7 @@ public class IceTower : TowerCode
     public IceTower()
     {
         range = 1;
+        
     }
 
     public override void MouseClick(TowerController controller)

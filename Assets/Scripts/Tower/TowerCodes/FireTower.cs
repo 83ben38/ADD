@@ -23,6 +23,7 @@ public class FireTower : TowerCode
     {
         return new FireProjectile();
     }
+    
 
     public override Color getColor()
     {

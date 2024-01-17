@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1280423757253061221}
   - component: {fileID: 7669383704476128136}
   m_Layer: 3
-  m_Name: Sphere
+  m_Name: Apple 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,5 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f5e2a1903afc241b2c2508441edf3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 2
+  hp: 4
   speed: 0.02
+  maxScale: 0.5
+  minScale: 0.25

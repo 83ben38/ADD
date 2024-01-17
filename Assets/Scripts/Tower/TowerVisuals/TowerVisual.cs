@@ -83,7 +83,7 @@ public class TowerVisual : MonoBehaviour
 
     public IEnumerator recharge(GameObject d, int rechargeTime)
     {
-        for (int i = 1; i <= rechargeTime; i++)
+        for (float i = 1; i <= rechargeTime; i+=Time.deltaTime*64f)
         {
             d.transform.localScale = new Vector3(i * .25f /  rechargeTime, i * .125f / rechargeTime, i * .25f / rechargeTime);
             yield return null;

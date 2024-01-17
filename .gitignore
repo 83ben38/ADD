@@ -75,3 +75,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Gg]raphics/*
 /[Aa]ssets/Graphics.meta
 /[Aa]ssets/[Ss]ettings/*
+.vsconfig

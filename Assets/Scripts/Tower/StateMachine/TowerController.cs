@@ -93,7 +93,10 @@ public class TowerController : Selectable
 
     public override void MouseClick()
     {
-        state.MouseClick(this);
+        if (state != null)
+        {
+            state.MouseClick(this);
+        }
     }
 
     #endregion
