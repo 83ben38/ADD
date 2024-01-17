@@ -12,7 +12,7 @@ public class EarthTower : TowerCode
 
     public override int getAttackSpeed()
     {
-        return lvl  > 4  ? 64 : 48;
+        return lvl  > 4  ? 128 : 96;
     }
 
     public override int getRange()

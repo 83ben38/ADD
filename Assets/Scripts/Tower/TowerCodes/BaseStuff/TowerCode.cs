@@ -51,7 +51,7 @@ public abstract class TowerCode : TowerState
             
             if (shoot())
             {
-                ticksLeft = attackSpeed + ticksLeft;
+                ticksLeft = getAttackSpeed() + ticksLeft;
             }
         }
     }
