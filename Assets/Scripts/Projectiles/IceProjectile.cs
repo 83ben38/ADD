@@ -36,7 +36,7 @@ public class IceProjectile : ProjectileCode
     }
     IEnumerator hitEnemy(FruitCode fruit)
     {
-        float z = .03f * lvl / (float)(Math.Log(fruit.hp, 2) + 1);
+        float z = .03f * lvl / (float)(Math.Log(fruit.hp, 3) + 1);
         fruit.speed -= z;
         for (float i = 0; i < (lvl > 4 ? 24f : 16f); i+=Time.deltaTime*64f)
         {
