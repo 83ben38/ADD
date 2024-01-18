@@ -22,7 +22,7 @@ public class InGameState : TowerState
 
     public override void MouseClick(TowerController controller)
     {
-        if (controller.wall || coroutine)
+        if (controller.wall || coroutine || !controller.editable)
         {
             return;
         }

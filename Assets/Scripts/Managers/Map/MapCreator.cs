@@ -13,6 +13,7 @@ public class MapCreator : MonoBehaviour
     private int xDimensions;
     private int yDimensions;
     private Vector3 startPos;
+    private int[] types;
     
     void Start()
     {
@@ -23,6 +24,7 @@ public class MapCreator : MonoBehaviour
         yDimensions = map.yDimensions;
         startPos = map.startPos;
         scale = map.scaleAmt;
+        types = map.map;
         CreateMap();
         PathfinderManager.manager.shapeCode = shape.code;
         PathfinderManager.manager.Run();
@@ -43,6 +45,7 @@ public class MapCreator : MonoBehaviour
                 PathfinderManager.manager.tiles.Add(t);
                 t.x = i;
                 t.y = j;
+                t.setTileType(types[i+(j*xDimensions)]);
             }
         }
         Destroy(cloneObject);
