@@ -14,8 +14,9 @@ public class FruitCode : MonoBehaviour
    public Vector3 goalPos;
    public float maxScale;
    public float minScale;
+   [DoNotSerialize]
    public float frozenTime = 0f;
-   public virtual void Start()
+   public virtual void Awake()
    {
       maxHp = hp;
       Vector3 v = PathfinderManager.manager.path[0].transform.position;
@@ -29,6 +30,7 @@ public class FruitCode : MonoBehaviour
       hp -= amount;
       if (hp < 1)
       {
+         StartButtonController.startButton.objects.Remove(gameObject);
          Destroy(gameObject);
       }
 
@@ -71,6 +73,7 @@ public class FruitCode : MonoBehaviour
          if (pathNum >= PathfinderManager.manager.path.Count)
          {
             LivesController.controller.damage((int)Math.Log(hp,2));
+            StartButtonController.startButton.objects.Remove(gameObject);
             Destroy(gameObject);
             return;
          }

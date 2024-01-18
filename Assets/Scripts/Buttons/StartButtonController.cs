@@ -15,7 +15,8 @@ public class StartButtonController : Selectable
     private int wave = 0;
     public static bool waveGoing = false;
     public static bool waveFinished = true;
-    void Start()
+    public List<GameObject> objects;
+    void Awake()
     {
         _material = GetComponent<Renderer>().material;
         _material.color = ColorManager.manager.tile;
@@ -63,7 +64,7 @@ public class StartButtonController : Selectable
     {
         waveGoing = true;
         waveFinished = false;
-        List<GameObject> objects = new List<GameObject>();
+        objects = new List<GameObject>();
         StartCoroutine(waves.waves[wave].spawnWaves(objects,this));
         while (waveGoing)
         {
@@ -72,15 +73,6 @@ public class StartButtonController : Selectable
 
         while (objects.Count > 0)
         {
-            for (int i = 0; i < objects.Count; i++)
-            {
-                if (objects[i] == null)
-                {
-                    objects.RemoveAt(i);
-                    i--;
-                }
-            }
-
             yield return null;
         }
         foreach (var tower in PathfinderManager.manager.tiles)
