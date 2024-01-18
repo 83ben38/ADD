@@ -20,6 +20,7 @@ public class TowerController : Selectable
     public bool block = false;
     public bool wall = false;
     public bool selected = false;
+    public bool editable = true;
     public int x, y;
     [Header("Pathfinder Data")] 
     public int minDist;
@@ -30,6 +31,24 @@ public class TowerController : Selectable
     public TowerRangeController TRC;
     [SerializeReference]
     public TowerCode tower;
+
+    public void setTileType(int num)
+    {
+        if (num > 0)
+        {
+            editable = false;
+        }
+
+        if (num == 1)
+        {
+            wall = true;
+            block = true;
+            setBaseColor(ColorManager.manager.wallPerm, ColorManager.manager.wallPermHighlighted);
+            Vector3 scale = transform.localScale;
+            transform.localScale = new Vector3(scale.x, scale.y*2, scale.z);
+        }
+    }
+
     private void Start()
     {
         

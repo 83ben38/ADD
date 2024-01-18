@@ -14,7 +14,7 @@ public class BeforeGameState : TowerState
 
     public override void MouseClick(TowerController c)
     {
-        if (coroutine)
+        if (coroutine || !c.editable)
         {
             return;
         }

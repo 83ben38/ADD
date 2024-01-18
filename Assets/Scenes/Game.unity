@@ -132,9 +132,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 148357817}
+  - component: {fileID: 148357820}
   - component: {fileID: 148357818}
   - component: {fileID: 148357819}
-  - component: {fileID: 148357820}
   - component: {fileID: 148357821}
   m_Layer: 0
   m_Name: Manager
@@ -170,10 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb38ee36634ebca48af867db8406646d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  map: {fileID: 0}
   cloneObject: {fileID: 533464969}
-  xDimensions: 10
-  yDimensions: 10
 --- !u!114 &148357819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,6 +197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d74272f939b12844e837c0459c41dac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wallPerm: {r: 1, g: 0.49019608, b: 0, a: 1}
+  wallPermHighlighted: {r: 1, g: 0.78431374, b: 0.39215687, a: 1}
   tile: {r: 0, g: 0.49019608, b: 0, a: 1}
   tileHighlighted: {r: 0.49019608, g: 1, b: 0.49019608, a: 1}
   wall: {r: 0, g: 0, b: 0.49019608, a: 1}
@@ -1134,6 +1133,7 @@ MonoBehaviour:
   block: 0
   wall: 0
   selected: 0
+  editable: 1
   x: 0
   y: 0
   minDist: 0
