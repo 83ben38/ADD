@@ -50,11 +50,27 @@ public class PathfinderManager : MonoBehaviour
             tower.minDist = 999;
         }
 
+        List<TowerController> stack = new List<TowerController>();
         foreach (var tower in starts)
         {
             if (!tower.block)
             {
-                pathFind(tower, 0);
+                stack.Add(tower);
+                tower.minDist = 0;
+            }
+        }
+
+        while (stack.Count > 0)
+        {
+            TowerController c = stack[0];
+            stack.RemoveAt(0);
+            foreach (var next in c.nextTo)
+            {
+                if (!next.block && next.minDist == 999 && !stack.Contains(next))
+                {
+                    next.minDist = c.minDist + 1;
+                    stack.Add(next);
+                }
             }
         }
 
@@ -87,17 +103,7 @@ public class PathfinderManager : MonoBehaviour
         return false;
     }
 
-    private void pathFind(TowerController t, int n)
-    {
-        t.minDist = n;
-        foreach (var tower in t.nextTo)
-        {
-            if (tower.minDist > n && !tower.block)
-            {
-                pathFind(tower, n + 1);
-            }
-        }
-    }
+    
 
     private void reversePathFind(TowerController t)
     {
