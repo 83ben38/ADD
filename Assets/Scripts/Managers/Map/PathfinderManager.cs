@@ -19,13 +19,14 @@ public class PathfinderManager : MonoBehaviour
 
     public void Run()
     {
+        int max = SelectionData.data.map.xDimensions - 1;
         foreach (var tower in tiles)
         {
             if (tower.x == 0)
             {
                 starts.Add(tower);
             }
-            if (tower.x == 9)
+            if (tower.x == max)
             {
                 ends.Add(tower);
             }

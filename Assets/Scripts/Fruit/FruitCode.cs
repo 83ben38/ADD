@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class FruitCode : MonoBehaviour
 {
+   
    public int hp;
    public int maxHp;
    public float speed;
@@ -16,12 +18,15 @@ public class FruitCode : MonoBehaviour
    public float minScale;
    [DoNotSerialize]
    public float frozenTime = 0f;
-   public virtual void Awake()
+   public virtual void Start()
    {
+      speed *= MapCreator.scale;
+      minScale *= MapCreator.scale;
+      maxScale *= MapCreator.scale;
       maxHp = hp;
       Vector3 v = PathfinderManager.manager.path[0].transform.position;
       goalPos = PathfinderManager.manager.path[1].transform.position;
-      transform.position = new Vector3(v.x, v.y + 1, v.z);
+      transform.position = new Vector3(v.x, v.y + MapCreator.scale, v.z);
       transform.localScale = new Vector3(maxScale, maxScale, maxScale);
    }
 

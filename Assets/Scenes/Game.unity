@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb38ee36634ebca48af867db8406646d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  map: {fileID: 0}
   cloneObject: {fileID: 533464969}
   xDimensions: 10
   yDimensions: 10
@@ -1974,6 +1975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 267880956}
   waves: {fileID: 11400000, guid: b96bccabab5d1a74d9cc8cdb6497fccf, type: 2}
+  objects: []
 --- !u!65 &1578687418
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2376,6 +2378,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f9822812991d854eae1db1383445336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  map: {fileID: 11400000, guid: e11e93e1d4f30754f830be9924c8a2b6, type: 2}
+  difficulty: {fileID: 11400000, guid: b96bccabab5d1a74d9cc8cdb6497fccf, type: 2}
   towerCodes: 06000000
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
