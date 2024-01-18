@@ -5,4 +5,5 @@ using UnityEngine;
 public class DifficultyScriptableObject : ScriptableObject
 {
     public WaveScriptableObject[] waves;
+    public int maxLives;
 }

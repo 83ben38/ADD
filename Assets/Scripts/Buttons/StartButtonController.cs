@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class StartButtonController : Selectable
 {
+    public static StartButtonController startButton;
     private Material _material;
     public TextMeshPro text;
     private bool started = false;
@@ -18,6 +19,7 @@ public class StartButtonController : Selectable
     {
         _material = GetComponent<Renderer>().material;
         _material.color = ColorManager.manager.tile;
+        startButton = this;
     }
 
     
