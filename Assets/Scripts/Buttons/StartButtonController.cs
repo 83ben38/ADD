@@ -16,8 +16,9 @@ public class StartButtonController : Selectable
     public static bool waveGoing = false;
     public static bool waveFinished = true;
     public List<GameObject> objects;
-    void Awake()
+    void Start()
     {
+        waves = SelectionData.data.difficulty;
         _material = GetComponent<Renderer>().material;
         _material.color = ColorManager.manager.tile;
         startButton = this;

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public abstract class TowerCode : TowerState
 {
+    
     public static GameObject projectile;
     [Header("Stats")]
     public int attackSpeed = 64;
@@ -58,7 +59,7 @@ public abstract class TowerCode : TowerState
 
     public virtual bool shoot()
     {
-        Collider[] sphere = Physics.OverlapSphere(self, getRange(),LayerMask.GetMask("Enemy"));
+        Collider[] sphere = Physics.OverlapSphere(self, getRange() * MapCreator.scale,LayerMask.GetMask("Enemy"));
         if (sphere.Length > 0)
         {
             GameObject projectile = Object.Instantiate(TowerCode.projectile);
@@ -68,7 +69,7 @@ public abstract class TowerCode : TowerState
             pc.code.target = sphere[0].GameObject().GetComponent<FruitCode>();
             projectile.transform.position = controller.towerVisual.shoot();
             pc.material.color = getColor();
-            pc.code.Start();
+            pc.code.Start(pc);
             return true;
         }
         return false;

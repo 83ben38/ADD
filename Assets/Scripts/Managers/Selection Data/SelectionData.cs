@@ -5,10 +5,12 @@ using UnityEngine;
 public class SelectionData : MonoBehaviour
 {
     public static SelectionData data;
+    public MapScriptableObject map;
+    public DifficultyScriptableObject difficulty;
 
     public int[] towerCodes = {0,1,2,3,4};
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         if (data != null)
         {

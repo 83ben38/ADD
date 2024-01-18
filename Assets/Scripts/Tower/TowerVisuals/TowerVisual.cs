@@ -77,7 +77,7 @@ public class TowerVisual : MonoBehaviour
             shootNum = 0;
         }
 
-        StartCoroutine(recharge(d,c.tower.attackSpeed-1));
+        StartCoroutine(recharge(d,c.tower.getAttackSpeed()-1));
         return d.transform.position;
     }
 
