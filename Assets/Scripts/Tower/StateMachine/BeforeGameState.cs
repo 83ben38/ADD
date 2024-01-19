@@ -38,7 +38,7 @@ public class BeforeGameState : TowerState
 
             return;
         }
-        c.setBaseColor(ColorManager.manager.tile,ColorManager.manager.tileHighlighted);
+        c.setBaseColor(false);
         c.wall = false;
         c.block = false;
         PathfinderManager.manager.pathFind();

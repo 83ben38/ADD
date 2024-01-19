@@ -8,6 +8,10 @@ public class ColorManager : MonoBehaviour
     public static ColorManager manager;
     public Color wallPerm;
     public Color wallPermHighlighted;
+    public Color tilePerm;
+    public Color tilePermHighlighted;
+    public Color pathPerm;
+    public Color pathPermHighlighted;
 
     public Color tile;
 
