@@ -37,6 +37,11 @@ public class PathfinderManager : MonoBehaviour
                 {
                     tower.nextTo.Add(tower2);
                 }
+
+                if (tower2.tileType > 2 && tower2.tileType == tower.tileType)
+                {
+                    tower.nextTo.Add(tower2);
+                }
             }
         }
         pathFind();

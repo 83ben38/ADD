@@ -6,6 +6,8 @@ using UnityEngine.Serialization;
 public class ColorManager : MonoBehaviour
 {
     public static ColorManager manager;
+    public Color portal1;
+    public Color portal1Highlighted;
     public Color wallPerm;
     public Color wallPermHighlighted;
     public Color tilePerm;
