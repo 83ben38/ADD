@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using UnityEditor;
 using UnityEngine;
@@ -33,7 +34,7 @@ public class TowerController : Selectable
     [SerializeReference]
     public TowerCode tower;
 
-    private int tileType;
+    public int tileType;
 
     public void setTileType(int num)
     {
@@ -96,6 +97,17 @@ public class TowerController : Selectable
             baseColors[1] = ColorManager.manager.tilePermHighlighted;
             baseColors[2] = ColorManager.manager.pathPerm;
             baseColors[3] = ColorManager.manager.pathPermHighlighted;
+            setBaseColor(false);
+        }
+
+        if (tileType > 2)
+        {
+            Color c = ColorManager.manager.portal1;
+            Color c1 = ColorManager.manager.portal1Highlighted;
+            baseColors[0] = c;
+            baseColors[1] = c1;
+            baseColors[2] = c;
+            baseColors[3] = c1;
             setBaseColor(false);
         }
     }

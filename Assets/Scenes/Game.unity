@@ -200,6 +200,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d74272f939b12844e837c0459c41dac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  portal1: {r: 1, g: 0, b: 0.39215687, a: 1}
+  portal1Highlighted: {r: 1, g: 0.29411766, b: 0.6862745, a: 1}
   wallPerm: {r: 1, g: 0.49019608, b: 0, a: 1}
   wallPermHighlighted: {r: 1, g: 0.78431374, b: 0.39215687, a: 1}
   tilePerm: {r: 0.88235295, g: 0, b: 0.78431374, a: 1}
