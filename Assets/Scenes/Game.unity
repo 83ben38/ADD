@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -132,10 +132,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 148357817}
-  - component: {fileID: 148357820}
-  - component: {fileID: 148357818}
   - component: {fileID: 148357819}
   - component: {fileID: 148357821}
+  - component: {fileID: 148357822}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -158,19 +157,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &148357818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 148357816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb38ee36634ebca48af867db8406646d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cloneObject: {fileID: 533464969}
 --- !u!114 &148357819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,7 +171,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseOn: {fileID: 0}
   cameraTransform: {fileID: 330585545}
---- !u!114 &148357820
+--- !u!114 &148357821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148357816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82755fcd1bf244c4b8c697ed7590dc0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiles: []
+  path: []
+  starts: []
+  ends: []
+  shapeCode: 
+--- !u!114 &148357822
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -216,23 +219,6 @@ MonoBehaviour:
   atomicTower: {r: 0, g: 0.8679245, b: 0.08336231, a: 1}
   projectile: {fileID: 6165706959806861308, guid: 0f7785055af1ec14585430c61af7807c,
     type: 3}
---- !u!114 &148357821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 148357816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82755fcd1bf244c4b8c697ed7590dc0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tiles: []
-  path: []
-  starts: []
-  ends: []
-  shapeCode: 
 --- !u!1 &155803336
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,6 +1427,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687066738}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &754725377
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 754725379}
+  - component: {fileID: 754725378}
+  m_Layer: 0
+  m_Name: Map Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &754725378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754725377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb38ee36634ebca48af867db8406646d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloneObject: {fileID: 533464969}
+--- !u!4 &754725379
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754725377}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.094236, y: -3.7498581, z: -6.4948015}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2394,3 +2425,4 @@ SceneRoots:
   - {fileID: 2043010582}
   - {fileID: 1578687421}
   - {fileID: 1125592402}
+  - {fileID: 754725379}

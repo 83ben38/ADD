@@ -15,7 +15,7 @@ public class MapCreator : MonoBehaviour
     private Vector3 startPos;
     private int[] types;
     
-    void Start()
+    private void Start()
     {
         map = SelectionData.data.map;
         shape = cloneObject.GetComponentInChildren<Shape>();

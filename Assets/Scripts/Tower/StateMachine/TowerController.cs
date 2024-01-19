@@ -32,21 +32,12 @@ public class TowerController : Selectable
     [SerializeReference]
     public TowerCode tower;
 
+    private int tileType;
+
     public void setTileType(int num)
     {
-        if (num > 0)
-        {
-            editable = false;
-        }
-
-        if (num == 1)
-        {
-            wall = true;
-            block = true;
-            setBaseColor(ColorManager.manager.wallPerm, ColorManager.manager.wallPermHighlighted);
-            Vector3 scale = transform.localScale;
-            transform.localScale = new Vector3(scale.x, scale.y*2, scale.z);
-        }
+        tileType = num;
+        
     }
 
     private void Start()
@@ -58,7 +49,26 @@ public class TowerController : Selectable
         
         TRC = GetComponentInChildren<TowerRangeController>();
         TRC.tower = tower;
+        doTileTypeStuff();
     }
+
+    public void doTileTypeStuff()
+    {
+        if (tileType > 0)
+        {
+            editable = false;
+        }
+
+        if (tileType == 1)
+        {
+            wall = true;
+            block = true;
+            setBaseColor(ColorManager.manager.wallPerm, ColorManager.manager.wallPermHighlighted);
+            Vector3 scale = transform.localScale;
+            transform.localScale = new Vector3(scale.x, scale.y*2, scale.z);
+        }
+    }
+    
 
     private void FixedUpdate()
     {
