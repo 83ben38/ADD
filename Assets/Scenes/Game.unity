@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -202,6 +202,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallPerm: {r: 1, g: 0.49019608, b: 0, a: 1}
   wallPermHighlighted: {r: 1, g: 0.78431374, b: 0.39215687, a: 1}
+  tilePerm: {r: 0.88235295, g: 0, b: 0.78431374, a: 1}
+  tilePermHighlighted: {r: 1, g: 0.39215687, b: 1, a: 1}
+  pathPerm: {r: 0.49019608, g: 0, b: 0.78431374, a: 1}
+  pathPermHighlighted: {r: 0.78431374, g: 0.39215687, b: 1, a: 1}
   tile: {r: 0, g: 0.49019608, b: 0, a: 1}
   tileHighlighted: {r: 0.49019608, g: 1, b: 0.49019608, a: 1}
   wall: {r: 0, g: 0, b: 0.49019608, a: 1}
@@ -1114,6 +1118,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _baseColor: {r: 0, g: 0.49019608, b: 0, a: 1}
   _highlightColor: {r: 0.49019608, g: 1, b: 0.49019608, a: 1}
+  baseColors:
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
   state:
     rid: -2
   block: 0

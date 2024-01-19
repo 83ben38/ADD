@@ -13,6 +13,7 @@ public class TowerController : Selectable
     private Material _material;
     public Color _baseColor;
     public Color _highlightColor;
+    public Color[] baseColors = new Color[4];
     [Header("State")]
     [SerializeReference]
     public TowerState state;
@@ -52,8 +53,29 @@ public class TowerController : Selectable
         doTileTypeStuff();
     }
 
+    public void setBaseColor(bool path)
+    {
+        if (path)
+        {
+            setBaseColor(baseColors[2],baseColors[3]);
+        }
+        else
+        {
+            setBaseColor(baseColors[0],baseColors[1]);
+        }
+        
+    }
+
     public void doTileTypeStuff()
     {
+        if (tileType == 0)
+        {
+            baseColors[0] = ColorManager.manager.tile;
+            baseColors[1] = ColorManager.manager.tileHighlighted;
+            baseColors[2] = ColorManager.manager.path;
+            baseColors[3] = ColorManager.manager.pathHighlighted;
+        }
+
         if (tileType > 0)
         {
             editable = false;
@@ -66,6 +88,15 @@ public class TowerController : Selectable
             setBaseColor(ColorManager.manager.wallPerm, ColorManager.manager.wallPermHighlighted);
             Vector3 scale = transform.localScale;
             transform.localScale = new Vector3(scale.x, scale.y*2, scale.z);
+        }
+
+        if (tileType == 2)
+        {
+            baseColors[0] = ColorManager.manager.tilePerm;
+            baseColors[1] = ColorManager.manager.tilePermHighlighted;
+            baseColors[2] = ColorManager.manager.pathPerm;
+            baseColors[3] = ColorManager.manager.pathPermHighlighted;
+            setBaseColor(false);
         }
     }
     

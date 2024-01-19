@@ -60,7 +60,7 @@ public class InGameState : TowerState
             held = controller.tower;
             controller.tower = null;
             controller.towerVisual.updateTower();
-            controller.setBaseColor(ColorManager.manager.tile,ColorManager.manager.tileHighlighted);
+            controller.setBaseColor(false);
             controller.block = false;
             PathfinderManager.manager.pathFind();
             controller.StartCoroutine(changeTower(controller ,false));

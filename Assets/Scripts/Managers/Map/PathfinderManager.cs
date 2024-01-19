@@ -91,7 +91,7 @@ public class PathfinderManager : MonoBehaviour
             {
                 if (!tower.block)
                 {
-                    tower.setBaseColor(ColorManager.manager.tile, ColorManager.manager.tileHighlighted);
+                    tower.setBaseColor(false);
                 }
             }
 
@@ -108,7 +108,7 @@ public class PathfinderManager : MonoBehaviour
     private void reversePathFind(TowerController t)
     {
         path.Insert(0,t);
-        t.setBaseColor(ColorManager.manager.path,ColorManager.manager.pathHighlighted);
+        t.setBaseColor(true);
         if (t.minDist == 0)
         {
             return;
