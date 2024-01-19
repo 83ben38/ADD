@@ -18,7 +18,7 @@ public class FruitCode : MonoBehaviour
    public float minScale;
    [DoNotSerialize]
    public float frozenTime = 0f;
-   public virtual void Start()
+   public virtual void OnEnable()
    {
       speed *= MapCreator.scale;
       minScale *= MapCreator.scale;
