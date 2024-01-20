@@ -27,6 +27,8 @@ public class MapCreator : MonoBehaviour
         types = map.map;
         CreateMap();
         PathfinderManager.manager.shapeCode = shape.code;
+        PathfinderManager.manager.numPaths = map.paths;
+        PathfinderManager.manager.numCheckpoints = map.checkpointsRequired;
         PathfinderManager.manager.Run();
         
     }

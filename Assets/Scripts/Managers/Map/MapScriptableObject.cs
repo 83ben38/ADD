@@ -11,4 +11,6 @@ public class MapScriptableObject : ScriptableObject
     public ShapeScriptableObject shape;
     public Vector3 startPos;
     public float scaleAmt;
+    public int paths;
+    public int checkpointsRequired;
 }

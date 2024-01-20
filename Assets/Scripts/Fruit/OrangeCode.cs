@@ -23,6 +23,7 @@ public class OrangeCode : FruitCode
                 FruitCode f = o.GetComponent<FruitCode>();
                 f.pathNum = pathNum;
                 f.goalPos = goalPos;
+                f.path = path;
                 StartButtonController.startButton.objects.Add(o);
             }
             StartButtonController.startButton.objects.Remove(gameObject);
