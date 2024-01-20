@@ -145,6 +145,15 @@ public class TowerController : Selectable
             baseColors[3] = ColorManager.manager.endHighlighted;
             setBaseColor(false);
         }
+        if (tileType == -3)
+        { 
+            PathfinderManager.manager.checkpoints.Add(this);
+            baseColors[0] = ColorManager.manager.checkpoint;
+            baseColors[1] = ColorManager.manager.checkpointHighlighted;
+            baseColors[2] = ColorManager.manager.checkpoint;
+            baseColors[3] = ColorManager.manager.checkpointHighlighted;
+            setBaseColor(false);
+        }
     }
     
 
