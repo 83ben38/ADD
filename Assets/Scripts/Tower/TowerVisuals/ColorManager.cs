@@ -18,7 +18,10 @@ public class ColorManager : MonoBehaviour
     public Color tilePermHighlighted;
     public Color pathPerm;
     public Color pathPermHighlighted;
-
+    public Color start;
+    public Color startHighlighted;
+    public Color end;
+    public Color endHighlighted;
     public Color tile;
 
     public Color tileHighlighted;

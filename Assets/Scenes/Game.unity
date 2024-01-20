@@ -212,6 +212,10 @@ MonoBehaviour:
   tilePermHighlighted: {r: 1, g: 0.39215687, b: 1, a: 1}
   pathPerm: {r: 0.49019608, g: 0, b: 0.78431374, a: 1}
   pathPermHighlighted: {r: 0.78431374, g: 0.39215687, b: 1, a: 1}
+  start: {r: 0, g: 1, b: 0.0056221485, a: 1}
+  startHighlighted: {r: 0.5613208, g: 1, b: 0.5613208, a: 1}
+  end: {r: 1, g: 0, b: 0, a: 1}
+  endHighlighted: {r: 1, g: 0.6650944, b: 0.6650944, a: 1}
   tile: {r: 0, g: 0.49019608, b: 0, a: 1}
   tileHighlighted: {r: 0.49019608, g: 1, b: 0.49019608, a: 1}
   wall: {r: 0, g: 0, b: 0.49019608, a: 1}

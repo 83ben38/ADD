@@ -126,6 +126,25 @@ public class TowerController : Selectable
             baseColors[3] = c1;
             setBaseColor(false);
         }
+        
+        if (tileType == -1)
+        { 
+            PathfinderManager.manager.starts.Add(this); 
+            baseColors[0] = ColorManager.manager.start;
+            baseColors[1] = ColorManager.manager.startHighlighted;
+            baseColors[2] = ColorManager.manager.start;
+            baseColors[3] = ColorManager.manager.startHighlighted;
+            setBaseColor(false);
+        }
+        if (tileType == -2)
+        { 
+            PathfinderManager.manager.ends.Add(this);
+            baseColors[0] = ColorManager.manager.end;
+            baseColors[1] = ColorManager.manager.endHighlighted;
+            baseColors[2] = ColorManager.manager.end;
+            baseColors[3] = ColorManager.manager.endHighlighted;
+            setBaseColor(false);
+        }
     }
     
 
