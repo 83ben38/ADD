@@ -286,6 +286,7 @@ public class PathfinderManager : MonoBehaviour
             path.Add(nextPath);
             TowerController start = realStarts[i];
             Node current = (Node)nodes[start];
+            current.getMinDist(new List<Node>(), numCheckpoints);
             Node next = current.nextNode;
             while (next != null)
             {
