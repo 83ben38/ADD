@@ -22,6 +22,8 @@ public class ColorManager : MonoBehaviour
     public Color startHighlighted;
     public Color end;
     public Color endHighlighted;
+    public Color checkpoint;
+    public Color checkpointHighlighted;
     public Color tile;
 
     public Color tileHighlighted;

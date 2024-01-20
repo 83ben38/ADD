@@ -11,6 +11,7 @@ public class PathfinderManager : MonoBehaviour
     public List<TowerController> path = new List<TowerController>();
     public List<TowerController> starts = new List<TowerController>();
     public List<TowerController> ends = new List<TowerController>();
+    public List<TowerController> checkpoints = new List<TowerController>();
     public string shapeCode;
     private void Awake()
     {
