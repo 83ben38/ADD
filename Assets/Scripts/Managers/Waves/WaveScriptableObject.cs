@@ -31,13 +31,28 @@ public class WaveScriptableObject : ScriptableObject
 
     public IEnumerator spawnWave(int waveNum, List<GameObject> objects)
     {
+        int numPaths = PathfinderManager.manager.numPaths;
+        int currrentPath = 0;
         for (float i = 0; i < waveDelays[waveNum]; i+=Time.deltaTime)
         {
             yield return null;
         }
         for (int i = 0; i < waveNums[waveNum]; i++)
         {
-            objects.Add(Instantiate(waves[waveNum]));
+
+            GameObject go = Instantiate(waves[waveNum]);
+            FruitCode fc =go.GetComponent<FruitCode>();
+            fc.path = currrentPath;
+            Vector3 v = PathfinderManager.manager.path[currrentPath][0].transform.position;
+            fc.goalPos = PathfinderManager.manager.path[currrentPath][1].transform.position;
+            fc.transform.position = new Vector3(v.x, v.y + MapCreator.scale, v.z);
+            currrentPath++;
+            if (currrentPath >= numPaths)
+            {
+                currrentPath = 0;
+            }
+
+            objects.Add(go);
             for (float j = 0; j < waveSpacings[waveNum]; j+=Time.deltaTime)
             {
                 yield return null;
