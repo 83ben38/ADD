@@ -82,6 +82,21 @@ public class FruitCode : MonoBehaviour
             Destroy(gameObject);
             return;
          }
+
+         if (PathfinderManager.manager.path[pathNum].tileType > 2 && PathfinderManager.manager.path[pathNum].tileType == PathfinderManager.manager.path[pathNum - 1].tileType)
+         {
+            Vector3 v = PathfinderManager.manager.path[pathNum].transform.position;
+            transform.position = new Vector3(v.x, transform.position.y, v.z);
+            pathNum++;
+            if (pathNum >= PathfinderManager.manager.path.Count)
+            {
+               LivesController.controller.damage((int)Math.Log(hp,2));
+               StartButtonController.startButton.objects.Remove(gameObject);
+               Destroy(gameObject);
+               return;
+            }
+         }
+
          goalPos = PathfinderManager.manager.path[pathNum].transform.position;
          goal = goalPos - transform.position;
          diff = new Vector2(goal.x, goal.z);
