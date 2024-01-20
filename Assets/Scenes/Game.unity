@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -200,10 +200,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d74272f939b12844e837c0459c41dac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portal1: {r: 1, g: 0, b: 0.39215687, a: 1}
-  portal1Highlighted: {r: 1, g: 0.29411766, b: 0.6862745, a: 1}
+  portal1: {r: 0, g: 0.42557764, b: 1, a: 1}
+  portal1Highlighted: {r: 0.29411766, g: 0.6862745, b: 1, a: 1}
+  portal2: {r: 0, g: 0, b: 0, a: 1}
+  portal2Highlighted: {r: 0.29411766, g: 0.29411766, b: 0.29411766, a: 1}
+  portal3: {r: 1, g: 0.69457716, b: 0, a: 1}
+  portal3Highlighted: {r: 1, g: 0.790788, b: 0.3160377, a: 1}
   wallPerm: {r: 1, g: 0.49019608, b: 0, a: 1}
-  wallPermHighlighted: {r: 1, g: 0.78431374, b: 0.39215687, a: 1}
+  wallPermHighlighted: {r: 0.9811321, g: 0.613991, b: 0.26379493, a: 1}
   tilePerm: {r: 0.88235295, g: 0, b: 0.78431374, a: 1}
   tilePermHighlighted: {r: 1, g: 0.39215687, b: 1, a: 1}
   pathPerm: {r: 0.49019608, g: 0, b: 0.78431374, a: 1}
@@ -1141,6 +1145,7 @@ MonoBehaviour:
   TRC: {fileID: 0}
   tower:
     rid: -2
+  tileType: 0
   references:
     version: 2
     RefIds:

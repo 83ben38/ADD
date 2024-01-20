@@ -102,8 +102,24 @@ public class TowerController : Selectable
 
         if (tileType > 2)
         {
-            Color c = ColorManager.manager.portal1;
-            Color c1 = ColorManager.manager.portal1Highlighted;
+            Color c;
+            Color c1;
+            if (tileType == 3)
+            { 
+                c = ColorManager.manager.portal1;
+                c1 = ColorManager.manager.portal1Highlighted;
+            }
+            else if (tileType == 4)
+            {
+                c = ColorManager.manager.portal2;
+                c1 = ColorManager.manager.portal2Highlighted;
+            }
+            else
+            {
+                c = ColorManager.manager.portal3;
+                c1 = ColorManager.manager.portal3Highlighted;
+            }
+
             baseColors[0] = c;
             baseColors[1] = c1;
             baseColors[2] = c;

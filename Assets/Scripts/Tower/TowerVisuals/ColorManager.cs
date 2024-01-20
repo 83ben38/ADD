@@ -8,6 +8,10 @@ public class ColorManager : MonoBehaviour
     public static ColorManager manager;
     public Color portal1;
     public Color portal1Highlighted;
+    public Color portal2;
+    public Color portal2Highlighted;
+    public Color portal3;
+    public Color portal3Highlighted;
     public Color wallPerm;
     public Color wallPermHighlighted;
     public Color tilePerm;
