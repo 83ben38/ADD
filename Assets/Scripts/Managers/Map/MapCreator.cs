@@ -26,7 +26,7 @@ public class MapCreator : MonoBehaviour
         scale = map.scaleAmt;
         types = map.map;
         CreateMap();
-        PathfinderManager.manager.shapeCode = shape.code;
+        PathfinderManager.manager.shapeCode = shape.scriptableObject.checkName;
         PathfinderManager.manager.numPaths = map.paths;
         PathfinderManager.manager.numCheckpoints = map.checkpointsRequired;
         PathfinderManager.manager.Run();
