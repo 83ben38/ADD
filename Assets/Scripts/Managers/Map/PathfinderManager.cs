@@ -244,6 +244,14 @@ public class PathfinderManager : MonoBehaviour
             n.distToEnd = minDistToEnd;
         }
 
+        for (int i = 0; i < 2; i++)
+        {
+            foreach (Node node in nodes.Values)
+            {
+                node.collapse();
+            }
+        }
+        
         List<TowerController> realStarts = new List<TowerController>();
         foreach (var start in availableStarts)
         {
@@ -352,10 +360,32 @@ public class PathfinderManager : MonoBehaviour
                     }
                 }
             }
-            nextNode.getMinDist(visited, numCpsLeft - 1);
+
+            if (minDist < 999)
+            {
+                nextNode.getMinDist(visited, numCpsLeft - 1);
+            }
+
             visited.Remove(this);
            
             return minDist;
+        }
+
+        public void collapse()
+        {
+            foreach (Node node in connecetions.Keys)
+            {
+                foreach (Node node2 in node.connecetions.Keys)
+                {
+                    if (connecetions.Contains(node2) && (int)connecetions[node] + (int)node.connecetions[node2] <= (int)connecetions[node2])
+                    {
+                        connecetions.Remove(node2);
+                        collapse();
+                        return;
+                    }
+
+                }
+            }
         }
     }
 
