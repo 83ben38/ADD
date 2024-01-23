@@ -212,6 +212,7 @@ MonoBehaviour:
   fireTower: {r: 1, g: 0, b: 0, a: 1}
   lightningTower: {r: 1, g: 0.868332, b: 0, a: 1}
   waterTower: {r: 0, g: 0.12823725, b: 1, a: 1}
+  newTower: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 1}
   projectile: {fileID: 6165706959806861308, guid: 0f7785055af1ec14585430c61af7807c,
     type: 3}
 --- !u!114 &148357821
@@ -749,7 +750,6 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.65, z: -2.193}
-  m_LocalPosition: {x: 0, y: 0.8, z: 0}
   m_LocalScale: {x: 0.25, y: 0.125, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2082,7 +2082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f9822812991d854eae1db1383445336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerCodes: 0000000001000000020000000300000004000000
+  towerCodes: 05000000
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
