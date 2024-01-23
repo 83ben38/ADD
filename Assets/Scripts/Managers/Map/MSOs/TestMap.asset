@@ -20,4 +20,4 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   scaleAmt: 0.25
   paths: 5
-  checkpointsRequired: 6
+  checkpointsRequired: 7
