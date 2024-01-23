@@ -403,8 +403,14 @@ public class PathfinderManager : MonoBehaviour
         {
             if (t.minDist == tower.minDist && t.tileType > 2 && t.tileType == tower.tileType && !path.Contains(tower))
             {
-                reversePathFind(tower,path);
-                return;
+                foreach (var tower2 in tower.nextTo)
+                {
+                    if (tower2.minDist + 1 == tower.minDist)
+                    {
+                        reversePathFind(tower,path);
+                        return;
+                    }
+                }
             }
 
             if (t.minDist == tower.minDist + 1)
