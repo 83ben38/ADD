@@ -54,6 +54,6 @@ public class IronTower : TowerCode
 
     public override Color getColor()
     {
-        return ColorManager.manager.newTower;
+        return ColorManager.manager.ironTower;
     }
 }
