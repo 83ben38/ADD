@@ -24,7 +24,7 @@ public class AtomicTower : TowerCode
                 pc.code.lvl = lvl;
                 projectile.transform.position = controller.towerVisual.shoot();
                 pc.material.color = getColor();
-                pc.code.Start();
+                pc.code.Start(pc);
             }
         }
     }

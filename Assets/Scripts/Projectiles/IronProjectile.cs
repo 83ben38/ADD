@@ -7,10 +7,10 @@ public class IronProjectile : ProjectileCode
     public TowerController targetPath;
     private Vector3 targetPosition;
     
-    public override void Start()
+    public override void Start(ProjectileController controller)
     {
         damage = 1;
-        base.Start();
+        base.Start(controller);
         targetPosition = targetPath.transform.position;
         targetPosition.y += 0.5f;
         Vector2 circle = Random.insideUnitCircle * 0.4f;
@@ -31,7 +31,7 @@ public class IronProjectile : ProjectileCode
         {
             move = lvl * speed * (target.transform.position - controller.transform.position).normalized;
             controller.transform.Translate(Time.deltaTime * move);
-            Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f, LayerMask.GetMask("Enemy"));
+            Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f*MapCreator.scale, LayerMask.GetMask("Enemy"));
             for (int i = 0; i < hit.Length; i++)
             {
                 this.hit(hit[i].gameObject.GetComponent<FruitCode>(), controller);
@@ -47,7 +47,7 @@ public class IronProjectile : ProjectileCode
                     targetPosition = Vector3.zero;
                 }
             }
-            Collider[] hit = Physics.OverlapSphere(controller.transform.position, .5f, LayerMask.GetMask("Enemy"));
+            Collider[] hit = Physics.OverlapSphere(controller.transform.position, .5f*MapCreator.scale, LayerMask.GetMask("Enemy"));
             if (hit.Length > 0)
             {
                 target = hit[0].gameObject.GetComponent<FruitCode>();

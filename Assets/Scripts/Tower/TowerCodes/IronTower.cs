@@ -29,14 +29,19 @@ public class IronTower : TowerCode
 
     public override bool shoot()
     {
-        List<TowerController> path = PathfinderManager.manager.path;
+        List< List<TowerController>> path = PathfinderManager.manager.path;
         List<TowerController> availableTargets = new List<TowerController>();
         for (int i = 0; i < path.Count; i++)
         {
-            TowerController possibleTarget = path[i];
-            if ((possibleTarget.transform.position - controller.transform.position).magnitude <= getRange() + 0.5f)
+            for (int j = 0; j < path [i].Count ; j++)
             {
-                availableTargets.Add(possibleTarget);
+
+
+                TowerController possibleTarget = path[i][j];
+                if ((possibleTarget.transform.position - controller.transform.position).magnitude <= (getRange() + 0.5f)*MapCreator.scale)
+                {
+                    availableTargets.Add(possibleTarget);
+                }
             }
         }
 
@@ -48,7 +53,7 @@ public class IronTower : TowerCode
         ((IronProjectile)pc.code).targetPath = target;
         projectile.transform.position = controller.towerVisual.shoot();
         pc.material.color = getColor();
-        pc.code.Start();
+        pc.code.Start(pc);
         return true;
     }
 

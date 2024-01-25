@@ -11,12 +11,12 @@ public class AtomicProjectile : ProjectileCode
     private Vector3 startPos;
     private Vector3 centerPos;
     private float time = 0f;
-    private static float aboveAmount = 0.5f;
+    private static float aboveAmount = 1f;
     public AtomicProjectile(int num, Vector3 startPos)
     {
         pathNum = num;
         centerPos = startPos;
-        centerPos.y += aboveAmount;
+        centerPos.y += aboveAmount*MapCreator.scale;
         this.startPos = startPos + new Vector3[]
         {
             new Vector3(-1,aboveAmount,0),
@@ -26,6 +26,7 @@ public class AtomicProjectile : ProjectileCode
             new Vector3(-2,aboveAmount,0),
             new Vector3(2,aboveAmount,0)
         }[num];
+        this.startPos *= MapCreator.scale;
     }
 
     public override void tick(ProjectileController controller)
@@ -40,9 +41,25 @@ public class AtomicProjectile : ProjectileCode
         }
         else
         {
-            float degrees = (time - 1f) * (float)Math.PI / 2.0f;
+            int offset = new int[]
+            {
+                2,
+                0,
+                3,
+                1,
+                2,
+                0
+            }[pathNum];
+            float degrees = (time - (1f+offset)) * (float)Math.PI / 2.0f;
             double xPosition = Math.Cos(degrees);
             double zPosition = Math.Sin(degrees);
+            if (pathNum > 3)
+            {
+                xPosition *= 2;
+                zPosition *= 2;
+            }
+            
+            controller.transform.position = new Vector3((float)xPosition, 0, (float)zPosition) + centerPos;
         }
 
         Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f, LayerMask.GetMask("Enemy"));
@@ -54,8 +71,8 @@ public class AtomicProjectile : ProjectileCode
                 {
                     pierced.RemoveAt(i);
                     i--;
+                    break;
                 }
-
                 if (hit[j].gameObject.GetComponent<FruitCode>()==pierced[i])
                 {
                     break;
