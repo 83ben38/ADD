@@ -228,7 +228,7 @@ MonoBehaviour:
   pathHighlighted: {r: 1, g: 0.49019608, b: 0.49019608, a: 1}
   tower: {r: 0.49019608, g: 0.49019608, b: 0, a: 1}
   towerHighlighted: {r: 1, g: 1, b: 0.49019608, a: 1}
-  earthTower: {r: 0.17978883, g: 1, b: 0, a: 1}
+  earthTower: {r: 0.745283, g: 0.45438078, b: 0, a: 1}
   iceTower: {r: 0, g: 0.9620137, b: 1, a: 1}
   fireTower: {r: 1, g: 0, b: 0, a: 1}
   lightningTower: {r: 1, g: 0.868332, b: 0, a: 1}
@@ -2433,9 +2433,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f9822812991d854eae1db1383445336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  map: {fileID: 11400000, guid: cb7322e7a4cd44f4a8f5b2c4be90a2f8, type: 2}
+  map: {fileID: 11400000, guid: 02f5bbeab5cf04c2cbb7de574f55f8fd, type: 2}
   difficulty: {fileID: 11400000, guid: b96bccabab5d1a74d9cc8cdb6497fccf, type: 2}
-  towerCodes: 0600000006000000060000000600000006000000
+  towerCodes: 00000000010000000200000003000000040000000500000006000000
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

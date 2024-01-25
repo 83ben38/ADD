@@ -17,7 +17,7 @@ public class OrangeCode : FruitCode
             for (int i = 0; i < splitAmount; i++)
             {
                 GameObject o = Instantiate(splitObject);
-                Vector2 r = Random.insideUnitCircle*1;
+                Vector2 r = Random.insideUnitCircle*0.75f*MapCreator.scale;
                 Vector3 currentPos = transform.position;
                 o.transform.position = new Vector3(currentPos.x + r.x, currentPos.y, currentPos.z + r.y);
                 FruitCode f = o.GetComponent<FruitCode>();
