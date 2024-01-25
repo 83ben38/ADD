@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 public class Shape : MonoBehaviour
 { 
     [SerializeField]
-    private ShapeScriptableObject scriptableObject;
+    public ShapeScriptableObject scriptableObject;
 
     public string code;
     // Start is called before the first frame update

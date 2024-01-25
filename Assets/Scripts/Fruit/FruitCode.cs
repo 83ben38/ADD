@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class FruitCode : MonoBehaviour
 {
+   public int path;
    public int hp;
    public int maxHp;
    public float speed;
@@ -16,12 +18,12 @@ public class FruitCode : MonoBehaviour
    public float minScale;
    [DoNotSerialize]
    public float frozenTime = 0f;
-   public virtual void Awake()
+   public virtual void OnEnable()
    {
+      speed *= MapCreator.scale;
+      minScale *= MapCreator.scale;
+      maxScale *= MapCreator.scale;
       maxHp = hp;
-      Vector3 v = PathfinderManager.manager.path[0].transform.position;
-      goalPos = PathfinderManager.manager.path[1].transform.position;
-      transform.position = new Vector3(v.x, v.y + 1, v.z);
       transform.localScale = new Vector3(maxScale, maxScale, maxScale);
    }
 
@@ -70,14 +72,29 @@ public class FruitCode : MonoBehaviour
          newSpeed -= div.magnitude;
          transform.Translate(unit.x*div.magnitude,0,unit.y*div.magnitude);
          pathNum++;
-         if (pathNum >= PathfinderManager.manager.path.Count)
+         if (pathNum >= PathfinderManager.manager.path[path].Count)
          {
             LivesController.controller.damage((int)Math.Log(hp,2));
             StartButtonController.startButton.objects.Remove(gameObject);
             Destroy(gameObject);
             return;
          }
-         goalPos = PathfinderManager.manager.path[pathNum].transform.position;
+
+         if (PathfinderManager.manager.path[path][pathNum].tileType > 2 && PathfinderManager.manager.path[path][pathNum].tileType == PathfinderManager.manager.path[path][pathNum - 1].tileType)
+         {
+            Vector3 v = PathfinderManager.manager.path[path][pathNum].transform.position;
+            transform.position = new Vector3(v.x, transform.position.y, v.z);
+            pathNum++;
+            if (pathNum >= PathfinderManager.manager.path[path].Count)
+            {
+               LivesController.controller.damage((int)Math.Log(hp,2));
+               StartButtonController.startButton.objects.Remove(gameObject);
+               Destroy(gameObject);
+               return;
+            }
+         }
+
+         goalPos = PathfinderManager.manager.path[path][pathNum].transform.position;
          goal = goalPos - transform.position;
          diff = new Vector2(goal.x, goal.z);
          unit = diff.normalized;

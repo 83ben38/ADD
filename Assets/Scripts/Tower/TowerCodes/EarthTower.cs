@@ -30,10 +30,10 @@ public class EarthTower : TowerCode
             ProjectileController pc = projectile.GetComponent<ProjectileController>();
             pc.code = create();
             pc.code.lvl = lvl;
-            pc.code.move = 2*vector3;
-            projectile.transform.position = controller.transform.position+new Vector3(0,0.65f,0);
+            pc.code.move = MapCreator.scale*2*vector3;
+            projectile.transform.position = controller.transform.position+new Vector3(0,0.65f*MapCreator.scale,0);
             pc.material.color = getColor();
-            pc.code.Start();
+            pc.code.Start(pc);
         }
         return true;
     }

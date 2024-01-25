@@ -21,7 +21,7 @@ public class LivesController : MonoBehaviour
         initialScale = transform.localScale;
         maxLives = lives;
         text = GetComponentInChildren<TextMeshPro>();
-        lives = StartButtonController.startButton.waves.maxLives;
+        lives = SelectionData.data.difficulty.maxLives;
     }
 
     public void damage(int amount)

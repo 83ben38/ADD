@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 public class InGameState : TowerState
 {
     public static TowerCode held;
-
+    private bool coroutine = false;
     public override void Run(TowerController controller)
     {
         
@@ -22,7 +22,7 @@ public class InGameState : TowerState
 
     public override void MouseClick(TowerController controller)
     {
-        if (controller.wall)
+        if (controller.wall || coroutine || !controller.editable)
         {
             return;
         }
@@ -44,7 +44,7 @@ public class InGameState : TowerState
             controller.block = true;
             if (PathfinderManager.manager.pathFind())
             {
-                controller.StartCoroutine(BeforeGameState.changeTower(controller ,true));
+                controller.StartCoroutine(changeTower(controller ,true));
                 controller.setBaseColor(ColorManager.manager.tower,ColorManager.manager.towerHighlighted);
                 controller.tower = held;
                 controller.towerVisual.updateTower();
@@ -60,12 +60,30 @@ public class InGameState : TowerState
             held = controller.tower;
             controller.tower = null;
             controller.towerVisual.updateTower();
-            controller.setBaseColor(ColorManager.manager.tile,ColorManager.manager.tileHighlighted);
+            controller.setBaseColor(false);
             controller.block = false;
             PathfinderManager.manager.pathFind();
-            controller.StartCoroutine(BeforeGameState.changeTower(controller ,false));
+            controller.StartCoroutine(changeTower(controller ,false));
         }
     }
 
-    
+    public IEnumerator changeTower(TowerController c, bool grow)
+    {
+        coroutine = true;
+        Vector3 scale = c.transform.localScale;
+        if (!grow)
+        {
+            scale.y /= 2;
+        }
+
+        for (float i = 0; i < 0.25f; i+=Time.deltaTime)
+        {
+            
+            c.transform.localScale = new Vector3(scale.x,scale.y*(1 + (grow ? i*4 : (0.25f-i)*4)), scale.z);
+            yield return null;
+        } 
+        
+        c.transform.localScale = new Vector3(scale.x, scale.y*(grow ? 2 : 1), scale.z);
+        coroutine = false;
+    }
 }

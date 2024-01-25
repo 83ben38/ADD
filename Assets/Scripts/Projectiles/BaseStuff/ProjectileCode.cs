@@ -5,6 +5,7 @@ using UnityEngine;
 
 public abstract class ProjectileCode
 {
+    
     public int damage = 1;
     public int pierce = 3;
     public float speed = 2f;
@@ -13,10 +14,12 @@ public abstract class ProjectileCode
     public int pierceLeft;
     public Vector3 move;
     public List<FruitCode> pierced = new List<FruitCode>();
-
-    public virtual void Start()
+    
+    public virtual void Start(ProjectileController controller)
     {
+        controller.transform.localScale *= MapCreator.scale;
         pierceLeft = getPierce();
+        speed *= MapCreator.scale;
     }
 
     public virtual int getDamage()
@@ -36,7 +39,7 @@ public abstract class ProjectileCode
             move = lvl * speed * (target.transform.position - controller.transform.position).normalized;
         }
         controller.transform.Translate(Time.deltaTime*move);
-        Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f, LayerMask.GetMask("Enemy"));
+        Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f*MapCreator.scale, LayerMask.GetMask("Enemy"));
         for (int i = 0; i < hit.Length; i++)
         {
             this.hit(hit[i].gameObject.GetComponent<FruitCode>(), controller);
