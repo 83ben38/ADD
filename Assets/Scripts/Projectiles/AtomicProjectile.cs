@@ -19,14 +19,14 @@ public class AtomicProjectile : ProjectileCode
         centerPos.y += aboveAmount*MapCreator.scale;
         this.startPos = startPos + new Vector3[]
         {
-            new Vector3(-1,aboveAmount,0),
-            new Vector3(1,aboveAmount,0),
-            new Vector3(0,aboveAmount,1),
-            new Vector3(0, aboveAmount,-1),
-            new Vector3(-2,aboveAmount,0),
-            new Vector3(2,aboveAmount,0)
-        }[num];
-        this.startPos *= MapCreator.scale;
+            new Vector3(-1,0,0),
+            new Vector3(1,0,0),
+            new Vector3(0,0,1),
+            new Vector3(0, 0,-1),
+            new Vector3(-2,0,0),
+            new Vector3(2,0,0)
+        }[num]*MapCreator.scale;
+        this.startPos.y += aboveAmount;
     }
 
     public override void tick(ProjectileController controller)
@@ -59,10 +59,10 @@ public class AtomicProjectile : ProjectileCode
                 zPosition *= 2;
             }
             
-            controller.transform.position = new Vector3((float)xPosition, 0, (float)zPosition) + centerPos;
+            controller.transform.position = new Vector3((float)xPosition, 0, (float)zPosition)*MapCreator.scale + centerPos;
         }
 
-        Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f, LayerMask.GetMask("Enemy"));
+        Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f*MapCreator.scale, LayerMask.GetMask("Enemy"));
         for (int i = 0; i < pierced.Count; i++)
         {
             for (int j = 0; j <= hit.Length; j++)

@@ -12,8 +12,8 @@ public class IronProjectile : ProjectileCode
         damage = 1;
         base.Start(controller);
         targetPosition = targetPath.transform.position;
-        targetPosition.y += 0.5f;
-        Vector2 circle = Random.insideUnitCircle * 0.4f;
+        targetPosition.y += 0.5f * MapCreator.scale;
+        Vector2 circle = Random.insideUnitCircle * 0.4f * MapCreator.scale;
         targetPosition.x += circle.x;
         targetPosition.z += circle.y;
         
@@ -29,7 +29,7 @@ public class IronProjectile : ProjectileCode
         //do projectile stuff
         if (target != null)
         {
-            move = lvl * speed * (target.transform.position - controller.transform.position).normalized;
+            move = lvl * MapCreator.scale * speed * (target.transform.position - controller.transform.position).normalized;
             controller.transform.Translate(Time.deltaTime * move);
             Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f*MapCreator.scale, LayerMask.GetMask("Enemy"));
             for (int i = 0; i < hit.Length; i++)
@@ -40,9 +40,9 @@ public class IronProjectile : ProjectileCode
         else { 
             if (targetPosition != Vector3.zero)
             {
-                move = lvl * speed * (targetPosition - controller.transform.position).normalized;
+                move = lvl * MapCreator.scale * speed * (targetPosition - controller.transform.position).normalized;
                 controller.transform.Translate(Time.deltaTime * move);
-                if ((targetPosition - controller.transform.position).magnitude < 0.05f*lvl)
+                if ((targetPosition - controller.transform.position).magnitude < 0.05f*lvl*MapCreator.scale)
                 {
                     targetPosition = Vector3.zero;
                 }
