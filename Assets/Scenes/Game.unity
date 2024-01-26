@@ -2433,9 +2433,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f9822812991d854eae1db1383445336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  map: {fileID: 11400000, guid: 2422f0fb642e84cccbec3d41241694bd, type: 2}
+  map: {fileID: 11400000, guid: b9c5a439495214c2ba310bb37cd17c1a, type: 2}
   difficulty: {fileID: 11400000, guid: b96bccabab5d1a74d9cc8cdb6497fccf, type: 2}
-  towerCodes: 0500000006000000
+  towerCodes: 00000000
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
