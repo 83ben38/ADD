@@ -8,7 +8,6 @@ public class PressGo : MonoBehaviour
     // Start is called before the first frame update
     public void ButtonPressed()
     {
-        Debug.Log("SHOULD SWITCH SCENE");
         SceneManager.LoadScene("Game");
 
     }

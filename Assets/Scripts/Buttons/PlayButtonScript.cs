@@ -22,7 +22,6 @@ public class PlayButtonScript : MonoBehaviour
     
     public void ButtonPressed()
     {
-        Debug.Log("IT SHOULD WORK");
         GoButton.SetActive(true);
         SettingsButton.SetActive(true);
         ExitButton.SetActive(true);
