@@ -80,6 +80,59 @@ public class PathfinderManager : MonoBehaviour
         }
 
     }
+    public void pathFindPear(TowerController start)
+    {
+        foreach (var tower in tiles)
+        {
+            tower.minDist = 999;
+        }
+
+        List<TowerController> stack = new List<TowerController>();
+        stack.Add(start);
+        start.minDist = 0;
+
+        while (stack.Count > 0)
+        {
+            TowerController c = stack[0];
+            stack.RemoveAt(0);
+            foreach (var next in c.nextTo)
+            {
+                
+                if ((!(next.block&&c.block)) && next.tower == null && next.minDist == 999)
+                {
+                    
+                    if (next.tileType > 2 && next.tileType == c.tileType)
+                    {
+                        next.minDist = c.minDist;
+                    }
+                    else if (next.block)
+                    {
+                        next.minDist = c.minDist + 3;
+                    }
+                    else
+                    {
+                        next.minDist = c.minDist + 1;
+                    }
+
+                    for (int i = 0; i <= stack.Count; i++)
+                    {
+                        if (i == stack.Count)
+                        {
+                            stack.Add(next);
+                            break;
+                        }
+
+                        if (stack[i].minDist > next.minDist)
+                        {
+                            stack.Insert(i,next);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
 
     /*public bool pathFind()
     {
@@ -141,6 +194,117 @@ public class PathfinderManager : MonoBehaviour
         
         return false;
     }*/
+
+    public List<TowerController> requestPearPath(TowerController start)
+    {
+        Hashtable nodes = new Hashtable();
+            pathFind(start);
+            nodes.Add(start,new Node());
+            Node n = (Node)nodes[start];
+            n.tower = start;
+            foreach (var check in checkpoints)
+            {
+                
+                if (check.minDist < 999)
+                {
+                    if (!nodes.Contains(check))
+                    {
+                        nodes.Add(check,new Node());
+                    }
+                    Node c = (Node)nodes[check];
+                    c.tower = check;
+                    n.connecetions.Add(c,check.minDist);
+                }
+            }
+
+            int minDistToEnd = 999;
+            foreach (var end in ends)
+            {
+                
+                if (end.minDist < minDistToEnd)
+                {
+                    minDistToEnd = end.minDist;
+                }
+            }
+
+            n.distToEnd = minDistToEnd;
+        foreach (var begin in checkpoints)
+        {
+            pathFindPear(begin);
+            if (!nodes.Contains(begin))
+            {
+                nodes.Add(begin,new Node());
+            }
+            n = (Node)nodes[begin];
+            n.tower = begin;
+            foreach (var check in checkpoints)
+            {
+                
+                if (check != begin &&check.minDist < 999)
+                {
+                    if (!nodes.Contains(check))
+                    {
+                        nodes.Add(check,new Node());
+                    }
+
+                    Node c = (Node)nodes[check];
+                    c.tower = check;
+                    n.connecetions.Add(c,check.minDist);
+                }
+            }
+
+            minDistToEnd = 999;
+            foreach (var end in ends)
+            {
+                
+                if (end.minDist < minDistToEnd)
+                {
+                    minDistToEnd = end.minDist;
+                }
+            }
+
+            n.distToEnd = minDistToEnd;
+        }
+
+        for (int i = 0; i < 2; i++)
+        {
+            foreach (Node node in nodes.Values)
+            {
+                node.collapse();
+            }
+        }
+        List<TowerController> path = new List<TowerController>(); 
+        Node current = (Node)nodes[start]; 
+        current.getMinDist(new List<Node>(), numCheckpoints); 
+        Node next = current.nextNode; 
+        while (next != null) 
+        { 
+            List<TowerController> pathSection = new List<TowerController>(); 
+            pathFindPear(current.tower); 
+            reversePathFind(next.tower,pathSection,false); 
+            path.AddRange(pathSection); 
+            current = next; 
+            next = current.nextNode;
+            
+        }
+        
+        List<TowerController> pathSection1 = new List<TowerController>(); 
+        pathFindPear(current.tower); 
+        int minDist = 999; 
+        TowerController minTower = null; 
+        foreach (var tower in ends) 
+        { 
+            if (tower.minDist < minDist) 
+            {
+                minDist = tower.minDist; 
+                minTower = tower;
+            }
+        }
+        reversePathFind(minTower,pathSection1,false); 
+        path.AddRange(pathSection1);
+        return path;
+    }
+
     public bool pathFind()
     {
         List<TowerController> availableStarts = new List<TowerController>();
@@ -300,7 +464,7 @@ public class PathfinderManager : MonoBehaviour
             {
                 List<TowerController> pathSection = new List<TowerController>();
                 pathFind(current.tower);
-                reversePathFind(next.tower,pathSection);
+                reversePathFind(next.tower,pathSection,true);
                 nextPath.AddRange(pathSection);
                 current = next;
                 next = current.nextNode;
@@ -317,7 +481,7 @@ public class PathfinderManager : MonoBehaviour
                     minTower = tower;
                 }
             }
-            reversePathFind(minTower,pathSection1);
+            reversePathFind(minTower,pathSection1,true);
             nextPath.AddRange(pathSection1);
         }
         
@@ -390,10 +554,14 @@ public class PathfinderManager : MonoBehaviour
     }
 
 
-    private void reversePathFind(TowerController t, List<TowerController> path)
+    private void reversePathFind(TowerController t, List<TowerController> path, bool change)
     {
         path.Insert(0,t);
-        t.setBaseColor(true);
+        if (change)
+        {
+            t.setBaseColor(true);
+        }
+
         if (t.minDist == 0)
         {
             return;
@@ -407,15 +575,21 @@ public class PathfinderManager : MonoBehaviour
                 {
                     if (tower2.minDist + 1 == tower.minDist)
                     {
-                        reversePathFind(tower,path);
+                        reversePathFind(tower, path,change);
                         return;
                     }
                 }
             }
 
-            if (t.minDist == tower.minDist + 1)
+            if (t.minDist == tower.minDist + 1 && !t.block)
             {
-                reversePathFind(tower,path);
+                reversePathFind(tower,path,change);
+                return;
+            }
+
+            if (t.minDist == tower.minDist + 3 && t.block)
+            {
+                reversePathFind(tower,path,change);
                 return;
             }
         }
