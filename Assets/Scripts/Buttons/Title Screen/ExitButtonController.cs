@@ -1,10 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class HomeButton : Selectable
+public class ExitButtonController : Selectable
 {
     private Material _material;
     private void Start()
@@ -14,16 +12,16 @@ public class HomeButton : Selectable
 
     public override void MouseEnter()
     {
-        _material.color = ColorManager.manager.tileHighlighted;
+        _material.color = ColorManager.manager.pathHighlighted;
     }
 
     public override void MouseExit()
     {
-        _material.color = ColorManager.manager.tile;
+        _material.color = ColorManager.manager.path;
     }
 
     public override void MouseClick()
     {
-        SceneManager.LoadScene("Title Screen");
+        Application.Quit();
     }
 }
