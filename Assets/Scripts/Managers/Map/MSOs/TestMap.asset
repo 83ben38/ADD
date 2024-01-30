@@ -21,3 +21,4 @@ MonoBehaviour:
   scaleAmt: 0.25
   paths: 5
   checkpointsRequired: 7
+  mapName: Test Map

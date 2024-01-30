@@ -5,6 +5,7 @@ using UnityEngine;
 public class GoButtonController : Selectable
 {
     private Material _material;
+    public List<GameObject> disable;
     private void Start()
     {
         _material = GetComponent<Renderer>().material;
@@ -21,6 +22,10 @@ public class GoButtonController : Selectable
 
     public override void MouseClick()
     {
-        
+        MapSelectionManager.manager.startMapSelection();
+        foreach (var gameObject in disable)
+        {
+            gameObject.SetActive(false);   
+        }
     }
 }

@@ -21,3 +21,4 @@ MonoBehaviour:
   scaleAmt: 0.95
   paths: 1
   checkpointsRequired: 2
+  mapName: Cool Map

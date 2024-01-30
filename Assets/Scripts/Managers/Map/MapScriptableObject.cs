@@ -13,4 +13,5 @@ public class MapScriptableObject : ScriptableObject
     public float scaleAmt;
     public int paths;
     public int checkpointsRequired;
+    public string mapName;
 }

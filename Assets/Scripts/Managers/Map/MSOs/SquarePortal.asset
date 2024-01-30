@@ -21,3 +21,4 @@ MonoBehaviour:
   scaleAmt: 0.6
   paths: 4
   checkpointsRequired: 4
+  mapName: Portals
