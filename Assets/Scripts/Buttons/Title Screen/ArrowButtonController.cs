@@ -2,17 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class ArrowButtonController : Selectable
 {
-    // Start is called before the first frame update
-    void Start()
+    public bool right;
+    private Material _material;
+    private void Start()
     {
-        
+        _material = GetComponent<Renderer>().material;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void MouseEnter()
     {
-        
+        _material.color = ColorManager.manager.tileHighlighted;
+    }
+
+    public override void MouseExit()
+    {
+        _material.color = ColorManager.manager.tile;
+    }
+
+    public override void MouseClick()
+    {
+        if (right)
+        {
+            MapSelectionManager.manager.screenNum++;
+            if (MapSelectionManager.manager.screenNum >= MapSelectionManager.manager.maps.Length)
+            {
+                MapSelectionManager.manager.screenNum--;
+            }
+        }
+        else
+        {
+            MapSelectionManager.manager.screenNum--;
+            if (MapSelectionManager.manager.screenNum < 0)
+            {
+                MapSelectionManager.manager.screenNum++;
+            }
+        }
+        MapSelectionManager.manager.setEnabled();
     }
 }

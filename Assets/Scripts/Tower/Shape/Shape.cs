@@ -8,11 +8,10 @@ public class Shape : MonoBehaviour
     [SerializeField]
     public ShapeScriptableObject scriptableObject;
 
-    public string code;
+    
     // Start is called before the first frame update
     void Awake()
     {
-        code = scriptableObject.checkName;
         transform.localPosition = scriptableObject.meshPosition;
         transform.rotation = scriptableObject.meshRotation;
         transform.localScale = scriptableObject.meshScale;
