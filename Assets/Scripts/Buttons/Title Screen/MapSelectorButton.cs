@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MapSelectorButton : Selectable
 {
     private TextMeshPro tmp;
-    public string text;
+    public MapScriptableObject map;
     private Material _material;
 
     public override void MouseEnter()
@@ -22,14 +23,15 @@ public class MapSelectorButton : Selectable
 
     public override void MouseClick()
     {
-        
+        SelectionData.data.map = map;
+        SceneManager.LoadScene("Game");
     }
 
     private void Start()
     {
         _material = GetComponent<Renderer>().material;
         tmp = GetComponentInChildren<TextMeshPro>();
-        tmp.text = text;
+        tmp.text = map.mapName;
     }
 
     

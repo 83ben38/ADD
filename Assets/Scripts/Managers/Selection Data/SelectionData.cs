@@ -14,7 +14,8 @@ public class SelectionData : MonoBehaviour
     {
         if (data != null)
         {
-            Destroy(this);
+            DestroyImmediate(this);
+            return;
         }
         data = this;
         DontDestroyOnLoad(gameObject);
