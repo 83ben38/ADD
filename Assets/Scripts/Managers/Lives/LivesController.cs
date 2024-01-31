@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using Vector2 = System.Numerics.Vector2;
 
 public class LivesController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class LivesController : MonoBehaviour
     [SerializeField]
     private int lives;
 
+    public Vector3 minScale;
     private Vector3 initialScale;
     private int maxLives;
     private TextMeshPro text;
@@ -27,7 +29,11 @@ public class LivesController : MonoBehaviour
     public void damage(int amount)
     {
         lives -= amount;
-        transform.localScale = initialScale * lives / (float) maxLives;
+        transform.localScale = ((initialScale-minScale) * lives / (float) maxLives)+minScale;
         text.SetText("Lives:\n" + lives);
+        if (lives < 1)
+        {
+            WinController.controller.go(false);
+        }
     }
 }

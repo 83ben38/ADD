@@ -21,3 +21,4 @@ MonoBehaviour:
   scaleAmt: 1
   paths: 1
   checkpointsRequired: 0
+  mapName: Basic (Hexagon)

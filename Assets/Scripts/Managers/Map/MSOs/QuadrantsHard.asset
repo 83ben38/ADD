@@ -21,3 +21,4 @@ MonoBehaviour:
   scaleAmt: 0.95
   paths: 4
   checkpointsRequired: 0
+  mapName: Quadrants (Hard)

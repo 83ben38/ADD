@@ -7,7 +7,7 @@ using UnityEngine.Rendering;
 public class MapCreator : MonoBehaviour
 {
     public static float scale;
-    private MapScriptableObject map;
+    public MapScriptableObject map;
     public GameObject cloneObject;
     public static Shape shape;
     private int xDimensions;
