@@ -24,7 +24,8 @@ public class MapSelectorButton : Selectable
     public override void MouseClick()
     {
         SelectionData.data.map = map;
-        SceneManager.LoadScene("Game");
+        MapSelectionManager.manager.end();
+        DifficultySelectionManager.manager.startDifficultySelection();
     }
 
     private void Start()

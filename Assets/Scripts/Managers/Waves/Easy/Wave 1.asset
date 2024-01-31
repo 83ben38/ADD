@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59df5b7ad47e1f944a64ae76720ee300, type: 3}
-  m_Name: TestDifficulty
+  m_Script: {fileID: 11500000, guid: 2237115e707a74cbd8037e926025c8f5, type: 3}
+  m_Name: Wave 1
   m_EditorClassIdentifier: 
   waves:
-  - {fileID: 11400000, guid: 163695a2cd4b14021ada52bf1f8d24a7, type: 2}
-  maxLives: 100
-  awardMultiplier: 0
+  - {fileID: 8267130134565377638, guid: 8461deba704492e45a16e4e04d639d8f, type: 3}
+  waveNums: 01000000
+  waveSpacings:
+  - 2
+  waveDelays:
+  - 3

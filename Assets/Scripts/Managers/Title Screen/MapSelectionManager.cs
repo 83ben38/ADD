@@ -45,6 +45,37 @@ public class MapSelectionManager : MonoBehaviour
         }
     }
 
+    public void end()
+    {
+        for (int i = 0; i < maps.Length; i++)
+        {
+            foreach (var two in maps[i])
+            {
+                foreach (var one in two)
+                {
+                    if (one != null)
+                    {
+                        one.SetActive(false);
+                    }
+                }
+            }
+            foreach (var two in buttons[i])
+            {
+                foreach (var one in two)
+                {
+                    if (one != null)
+                    {
+                        one.SetActive(false);
+                    }
+                }
+            }
+        }
+        foreach (var button in arrowButtons)
+        {
+            button.SetActive(false);
+        }
+    }
+
     public void startMapSelection()
     {
         foreach (var button in arrowButtons)
