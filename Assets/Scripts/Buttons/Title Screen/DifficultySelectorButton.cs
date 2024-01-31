@@ -23,7 +23,7 @@ public class DifficultySelectorButton : Selectable
     public override void MouseClick()
     {
         SelectionData.data.difficulty = difficulty;
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Tower Selection");
     }
 
     private void Start()

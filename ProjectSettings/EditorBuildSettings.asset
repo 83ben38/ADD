@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Title Screen.unity
     guid: 4a12a1cddb58d48438e0c62091af0e25
+  - enabled: 1
+    path: Assets/Scenes/Tower Selection.unity
+    guid: 428bfc1037213b04f88d6e46d10d253b
   m_configObjects: {}
