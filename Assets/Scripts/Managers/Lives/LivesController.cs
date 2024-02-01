@@ -21,9 +21,10 @@ public class LivesController : MonoBehaviour
     {
         controller = this;
         initialScale = transform.localScale;
+        lives = SelectionData.data.difficulty.maxLives;
         maxLives = lives;
         text = GetComponentInChildren<TextMeshPro>();
-        lives = SelectionData.data.difficulty.maxLives;
+        
     }
 
     public void damage(int amount)
