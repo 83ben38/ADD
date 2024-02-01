@@ -45,7 +45,7 @@ public class TowerController : Selectable
     private void Start()
     {
         
-        state = new BeforeGameState();
+        state ??= new BeforeGameState();
         _material = GetComponentInChildren<Renderer>().material;
         setBaseColor(ColorManager.manager.tile,ColorManager.manager.tileHighlighted);
         
@@ -69,6 +69,11 @@ public class TowerController : Selectable
 
     public void doTileTypeStuff()
     {
+        if (tower != null)
+        {
+            setBaseColor(ColorManager.manager.tower,ColorManager.manager.towerHighlighted);
+        }
+
         if (tileType == 0)
         {
             baseColors[0] = ColorManager.manager.tile;
