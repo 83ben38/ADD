@@ -95,6 +95,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1234347296725938323}
   - component: {fileID: 2524876219397561525}
+  - component: {fileID: 3217486226008386059}
   m_Layer: 3
   m_Name: Apple 1
   m_TagString: Untagged
@@ -139,3 +140,25 @@ MonoBehaviour:
   maxScale: 0.5
   minScale: 0.25
   frozenTime: 0
+--- !u!64 &3217486226008386059
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8267130134565377638}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 07b22a6217c99d4438d5af8d62376462, type: 3}
