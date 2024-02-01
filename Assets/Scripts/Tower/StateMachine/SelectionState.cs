@@ -8,6 +8,7 @@ public class SelectionState : TowerState
 {
     public static TowerCode held;
     private bool coroutine = false;
+    private static int x;
 
     public override void Run(TowerController controller)
     {
@@ -15,7 +16,7 @@ public class SelectionState : TowerState
 
     public override void MouseClick(TowerController controller)
     {
-        if (coroutine)
+        if (coroutine || (held!=null&&controller.tower!=null))
         {
             return;
         }
@@ -25,6 +26,7 @@ public class SelectionState : TowerState
             controller.setBaseColor(ColorManager.manager.tower,ColorManager.manager.towerHighlighted);
             controller.tower = held; 
             controller.towerVisual.updateTower();
+            controller.x = x;
             held = null;
             return;
         }
@@ -32,6 +34,7 @@ public class SelectionState : TowerState
         if (controller.tower != null)
         {
             held = controller.tower;
+            x = controller.x;
             controller.tower = null;
             controller.towerVisual.updateTower();
             controller.setBaseColor(false);
