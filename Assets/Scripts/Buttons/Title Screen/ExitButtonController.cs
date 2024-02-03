@@ -8,6 +8,7 @@ public class ExitButtonController : Selectable
     private void Start()
     {
         _material = GetComponent<Renderer>().material;
+        _material.color = ColorManager.manager.path;
     }
 
     public override void MouseEnter()
