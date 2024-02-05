@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class HomeButtonController : Selectable
 {
+        public string scene;
         private Material _material;
     
         public override void MouseEnter()
@@ -19,7 +20,7 @@ public class HomeButtonController : Selectable
 
         public override void MouseClick()
         {
-            SceneManager.LoadScene("Title Screen");
+            SceneManager.LoadScene(scene);
         }
 
         private void Start()
