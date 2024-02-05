@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TitleButtonController : Selectable
 {
-    public GameObject title;
-    public List<GameObject> enable;
     private Material _material;
     private void Start()
     {
@@ -23,11 +22,6 @@ public class TitleButtonController : Selectable
 
     public override void MouseClick()
     {
-        foreach (GameObject obj in enable)
-        {
-            obj.SetActive(true);
-        }
-        title.SetActive(false);
-        gameObject.SetActive(false);
+        SceneManager.LoadScene("Title Screen");
     }
 }
