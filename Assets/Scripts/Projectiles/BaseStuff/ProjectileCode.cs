@@ -38,6 +38,11 @@ public abstract class ProjectileCode
         {
             move = lvl * speed * (target.transform.position - controller.transform.position).normalized;
         }
+        else
+        {
+            move.y = 0;
+        }
+
         controller.transform.Translate(Time.deltaTime*move);
         Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f*MapCreator.scale, LayerMask.GetMask("Enemy"));
         for (int i = 0; i < hit.Length; i++)
