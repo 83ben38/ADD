@@ -8,9 +8,10 @@ public class EnabledButton : Selectable
     public Material _material;
     public Color c1, c2;
 
-    private void Start()
+
+    private void Awake()
     {
-        gameObject.SetActive(true);
+        _material = GetComponent<Renderer>().material;
     }
 
     public override void MouseEnter()
@@ -25,6 +26,6 @@ public class EnabledButton : Selectable
 
     public override void MouseClick()
     {
-        
+        TowerDescriptionManager.manager.setEnabled();
     }
 }
