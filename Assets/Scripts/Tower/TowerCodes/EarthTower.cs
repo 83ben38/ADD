@@ -5,7 +5,7 @@ using UnityEngine;
 public class EarthTower : TowerCode
 {
     private static Vector3[] directions = new[] {new Vector3(1,0,0),new Vector3(-1,0,0),new Vector3(0.5f,0,0.76f).normalized,new Vector3(0.5f,0,-0.76f).normalized,new Vector3(-0.5f,0,0.76f).normalized,new Vector3(-0.5f,0,-0.76f).normalized };
-    public EarthTower()
+    public EarthTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
         
     }
@@ -50,7 +50,7 @@ public class EarthTower : TowerCode
 
     public override ProjectileCode create()
     {
-        return new EarthProjectile();
+        return new EarthProjectile(upgrade1,upgrade2,upgrade3);
     }
 
     public override Color getColor()

@@ -8,7 +8,7 @@ public class WaterProjectile : ProjectileCode
     private bool hitEnemy = false;
     private float explosionAmount = 1f;
     private Vector3 baseTransform;
-    public WaterProjectile()
+    public WaterProjectile(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1,upgrade2, upgrade3)
     {
         damage = 2;
     }
@@ -21,7 +21,10 @@ public class WaterProjectile : ProjectileCode
             {
                 move = lvl * speed * (target.transform.position - controller.transform.position).normalized;
             }
-
+            else
+            {
+                move.y = 0;
+            }
             controller.transform.Translate(Time.deltaTime * move);
             Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f, LayerMask.GetMask("Enemy"));
             for (int i = 0; i < hit.Length; i++)

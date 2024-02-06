@@ -1,14 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
 public class IronTower : TowerCode
 {
-    public IronTower()
+    public IronTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
+        
         range = 2;
     }
 
@@ -24,7 +26,7 @@ public class IronTower : TowerCode
 
     public override ProjectileCode create()
     {
-        return new IronProjectile();
+        return new IronProjectile(upgrade1,upgrade2,upgrade3);
     }
 
     public override bool shoot()

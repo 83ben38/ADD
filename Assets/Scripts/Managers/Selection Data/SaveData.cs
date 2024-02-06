@@ -20,6 +20,21 @@ public class SaveData : MonoBehaviour
         }
     }
 
+    public bool isUpgradeAvailable(int tower, int upgrade)
+    {
+        return true;
+    }
+
+    public bool isUpgradeEnabled(int tower, int upgrade)
+    {
+        return true;
+    }
+
+    public void setUpgradeEnabled(int tower, int upgrade, bool enabled)
+    {
+        
+    }
+
     public int[] getAvailableTowers()
     {
         return new int[] {0,1,2,3,4,5,6 };

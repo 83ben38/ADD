@@ -5,6 +5,7 @@ using UnityEngine;
 public class SelectionData : MonoBehaviour
 {
     public static SelectionData data;
+    public int towerSelected;
     public MapScriptableObject map;
     public DifficultyScriptableObject difficulty;
 

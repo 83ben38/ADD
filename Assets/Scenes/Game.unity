@@ -3020,7 +3020,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   map: {fileID: 11400000, guid: b9c5a439495214c2ba310bb37cd17c1a, type: 2}
   difficulty: {fileID: 11400000, guid: b96bccabab5d1a74d9cc8cdb6497fccf, type: 2}
-  towerCodes: 00000000
+  towerCodes: 
 --- !u!114 &2043010584
 MonoBehaviour:
   m_ObjectHideFlags: 0

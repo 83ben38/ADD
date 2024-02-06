@@ -12,7 +12,7 @@ public class AtomicProjectile : ProjectileCode
     private Vector3 centerPos;
     private float time = 0f;
     private static float aboveAmount = 1f;
-    public AtomicProjectile(int num, Vector3 startPos)
+    public AtomicProjectile(int num, Vector3 startPos,bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1,upgrade2, upgrade3)
     {
         pathNum = num;
         centerPos = startPos;

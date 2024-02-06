@@ -5,7 +5,7 @@ using UnityEngine;
 public class LightningTower : TowerCode
 {
 
-    public LightningTower()
+    public LightningTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
         range = 3;
         attackSpeed = 128;
@@ -23,7 +23,7 @@ public class LightningTower : TowerCode
 
     public override ProjectileCode create()
     {
-        return new LightningProjectile();
+        return new LightningProjectile(upgrade1,upgrade2,upgrade3);
     }
 
     public override Color getColor()

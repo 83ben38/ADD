@@ -7,4 +7,5 @@ public class DifficultyScriptableObject : ScriptableObject
     public WaveScriptableObject[] waves;
     public int maxLives;
     public int awardMultiplier;
+    public string difficultyName;
 }

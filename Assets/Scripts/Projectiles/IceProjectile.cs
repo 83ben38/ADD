@@ -6,7 +6,7 @@ using Object = UnityEngine.Object;
 
 public class IceProjectile : ProjectileCode
 {
-    public IceProjectile()
+    public IceProjectile(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1,upgrade2, upgrade3)
     {
         damage = 0;
     }

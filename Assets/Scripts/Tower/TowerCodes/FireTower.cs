@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FireTower : TowerCode
 {
-    public FireTower()
+    public FireTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
         range = 2;
     }
@@ -21,7 +21,7 @@ public class FireTower : TowerCode
 
     public override ProjectileCode create()
     {
-        return new FireProjectile();
+        return new FireProjectile(upgrade1,upgrade2,upgrade3);
     }
     
 
