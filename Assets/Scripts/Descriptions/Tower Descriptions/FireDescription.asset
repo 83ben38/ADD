@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Fire
   description: Does fire DOT
+  upgrade1Description: upgrade 1
+  upgrade2Description: upgrade 2
+  upgrade3Description: upgrade 3

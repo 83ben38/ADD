@@ -6,4 +6,5 @@ public class TowerDescriptionScriptableObject : ScriptableObject
 {
     public string title;
     public string description;
+    public string upgrade1Description, upgrade2Description,upgrade3Description;
 }

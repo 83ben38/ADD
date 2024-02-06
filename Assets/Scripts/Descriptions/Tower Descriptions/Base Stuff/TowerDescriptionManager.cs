@@ -10,6 +10,8 @@ public class TowerDescriptionManager : MonoBehaviour
     public GameObject tower;
     public TextMeshPro title;
     public TextMeshPro description;
+    public TextMeshPro towerText;
+    public int upgrade = 3;
 
     private void Start()
     {
@@ -22,5 +24,6 @@ public class TowerDescriptionManager : MonoBehaviour
         tc.towerVisual.updateTower();
         title.text = description.title;
         this.description.text = description.description;
+        towerText.text = "Tower";
     }
 }
