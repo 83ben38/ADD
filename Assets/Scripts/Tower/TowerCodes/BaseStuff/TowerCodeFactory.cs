@@ -18,7 +18,7 @@ public class TowerCodeFactory : MonoBehaviour
             case 4 : return new EarthTower(b1,b2,b3);
             case 5 : return new IronTower(b1,b2,b3);
             case 6 : return new AtomicTower(b1,b2,b3);
-            case 7 : return new SpaceTower();
+            case 7 : return new SpaceTower(b1,b2,b3);
         }
 
         return null;

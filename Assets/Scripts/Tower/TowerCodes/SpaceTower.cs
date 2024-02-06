@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SpaceTower : TowerCode
 {
-    public SpaceTower()
+    public SpaceTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
         attackSpeed = 192;
         
@@ -44,7 +44,7 @@ public class SpaceTower : TowerCode
 
     public override ProjectileCode create()
     {
-        return new SpaceProjectile();
+        return new SpaceProjectile(upgrade1,upgrade2,upgrade3);
     }
 
     public override Color getColor()

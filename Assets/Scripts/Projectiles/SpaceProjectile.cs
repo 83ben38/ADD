@@ -45,4 +45,8 @@ public class SpaceProjectile : ProjectileCode
         }
 
     }
+
+    public SpaceProjectile(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
+    {
+    }
 }
