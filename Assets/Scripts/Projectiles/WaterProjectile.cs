@@ -8,7 +8,7 @@ public class WaterProjectile : ProjectileCode
     private bool hitEnemy = false;
     private float explosionAmount = 1f;
     private Vector3 baseTransform;
-    public WaterProjectile()
+    public WaterProjectile(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1,upgrade2, upgrade3)
     {
         damage = 2;
     }

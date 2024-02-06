@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EarthProjectile : ProjectileCode
 {
-    public EarthProjectile()
+    public EarthProjectile(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1,upgrade2, upgrade3)
     {
         damage = 3;
         pierce = 10;

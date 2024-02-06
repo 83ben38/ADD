@@ -6,15 +6,18 @@ public class TowerCodeFactory : MonoBehaviour
 {
     public static TowerCode getTowerCode(int i)
     {
+        bool b1 = SaveData.save.isUpgradeEnabled(i, 0);
+        bool b2 = SaveData.save.isUpgradeEnabled(i, 1);
+        bool b3 = SaveData.save.isUpgradeEnabled(i, 2);
         switch (i)
         {
-            case 0 : return new FireTower();
-            case 1 : return new WaterTower();
-            case 2 : return new IceTower();
-            case 3 : return new LightningTower();
-            case 4 : return new EarthTower();
-            case 5 : return new IronTower();
-            case 6 : return new AtomicTower();
+            case 0 : return new FireTower(b1,b2,b3);
+            case 1 : return new WaterTower(b1,b2,b3);
+            case 2 : return new IceTower(b1,b2,b3);
+            case 3 : return new LightningTower(b1,b2,b3);
+            case 4 : return new EarthTower(b1,b2,b3);
+            case 5 : return new IronTower(b1,b2,b3);
+            case 6 : return new AtomicTower(b1,b2,b3);
         }
 
         return null;

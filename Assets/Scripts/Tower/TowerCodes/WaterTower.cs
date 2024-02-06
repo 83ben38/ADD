@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WaterTower : TowerCode
 {
-    public WaterTower()
+    public WaterTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
         range = 2;
     }
@@ -21,7 +21,7 @@ public class WaterTower : TowerCode
 
     public override ProjectileCode create()
     {
-        return new WaterProjectile();
+        return new WaterProjectile(upgrade1,upgrade2,upgrade3);
     }
 
     public override Color getColor()

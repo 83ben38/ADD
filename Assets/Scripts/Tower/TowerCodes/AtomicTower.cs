@@ -6,6 +6,10 @@ public class AtomicTower : TowerCode
 {
     private new GameObject projectile;
 
+    public AtomicTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
+    {
+    }
+
     public override void MouseClick(TowerController controller)
     {
         
@@ -20,7 +24,7 @@ public class AtomicTower : TowerCode
             {
                 projectile = Object.Instantiate(TowerCode.projectile);
                 ProjectileController pc = projectile.GetComponent<ProjectileController>();
-                pc.code = new AtomicProjectile(i,controller.transform.position);
+                pc.code = new AtomicProjectile(i,controller.transform.position,upgrade1,upgrade2,upgrade3);
                 pc.code.lvl = lvl;
                 projectile.transform.position = controller.towerVisual.shoot();
                 pc.material.color = getColor();
@@ -36,7 +40,7 @@ public class AtomicTower : TowerCode
 
     public override ProjectileCode create()
     {
-        return new AtomicProjectile(0,Vector3.zero);
+        return new AtomicProjectile(0,Vector3.zero,upgrade1,upgrade2,upgrade3);
     }
 
     public override Color getColor()

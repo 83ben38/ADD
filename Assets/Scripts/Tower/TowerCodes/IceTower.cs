@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IceTower : TowerCode
 {
-    public IceTower()
+    public IceTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
         range = 1;
         
@@ -22,7 +22,7 @@ public class IceTower : TowerCode
 
     public override ProjectileCode create()
     {
-        return new IceProjectile();
+        return new IceProjectile(upgrade1,upgrade2,upgrade3);
     }
 
     public override Color getColor()

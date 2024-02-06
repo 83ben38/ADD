@@ -14,12 +14,19 @@ public abstract class ProjectileCode
     public int pierceLeft;
     public Vector3 move;
     public List<FruitCode> pierced = new List<FruitCode>();
-    
+    public bool upgrade1, upgrade2, upgrade3;
     public virtual void Start(ProjectileController controller)
     {
         controller.transform.localScale *= MapCreator.scale;
         pierceLeft = getPierce();
         speed *= MapCreator.scale;
+    }
+
+    public ProjectileCode(bool upgrade1, bool upgrade2, bool upgrade3)
+    {
+        this.upgrade1 = upgrade1;
+        this.upgrade2 = upgrade2;
+        this.upgrade3 = upgrade3;
     }
 
     public virtual int getDamage()

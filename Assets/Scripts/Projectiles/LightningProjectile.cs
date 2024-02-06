@@ -80,5 +80,9 @@ public class LightningProjectile : ProjectileCode
         }
         
     }
+
+    public LightningProjectile(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
+    {
+    }
 }
 

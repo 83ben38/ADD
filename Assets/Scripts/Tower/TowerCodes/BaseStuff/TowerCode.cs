@@ -14,6 +14,7 @@ public abstract class TowerCode : TowerState
     [Header("Vars")] 
     public float ticksLeft;
 
+    public bool upgrade1, upgrade2, upgrade3;
     public Vector3 self;
     public TowerController controller;
     public override void Run(TowerController c)
@@ -23,8 +24,11 @@ public abstract class TowerCode : TowerState
         tick();
     }
 
-    public TowerCode()
+    public TowerCode(bool upgrade1, bool upgrade2, bool upgrade3)
     {
+        this.upgrade1 = upgrade1;
+        this.upgrade2 = upgrade2;
+        this.upgrade3 = upgrade3;
         ticksLeft = getAttackSpeed();
     }
 
