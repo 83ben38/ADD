@@ -623,6 +623,8 @@ MonoBehaviour:
   - {fileID: 2072616220}
   - {fileID: 1476854241}
   - {fileID: 542116464}
+  - {fileID: 847850031}
+  - {fileID: 1344264169}
 --- !u!65 &80579193
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -745,11 +747,62 @@ MonoBehaviour:
     money: 99999
     towersUnlocked: 0000000001000000020000000300000004000000050000000600000007000000
     towerUpgradesAvailable:
-      m_Keys: 0000000001000000020000000300000004000000050000000600000007000000
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - b1: 1
+        b2: 1
+        b3: 1
+      - b1: 1
+        b2: 1
+        b3: 1
+      - b1: 1
+        b2: 1
+        b3: 1
+      - b1: 1
+        b2: 1
+        b3: 1
+      - b1: 1
+        b2: 1
+        b3: 1
+      - b1: 1
+        b2: 1
+        b3: 1
+      - b1: 1
+        b2: 1
+        b3: 1
+      - b1: 1
+        b2: 1
+        b3: 1
     towerUpgradesEnabled:
-      m_Keys: 0000000001000000020000000300000004000000050000000600000007000000
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - b1: 0
+        b2: 0
+        b3: 0
+      - b1: 0
+        b2: 0
+        b3: 0
+      - b1: 0
+        b2: 0
+        b3: 0
+      - b1: 0
+        b2: 0
+        b3: 0
+      - b1: 0
+        b2: 0
+        b3: 0
+      - b1: 0
+        b2: 0
+        b3: 0
+      - b1: 0
+        b2: 0
+        b3: 0
+      - b1: 0
+        b2: 0
+        b3: 0
     loadoutsUnlocked: 0000000001000000020000000300000004000000
     loadoutSelected: 0
+  path: 
 --- !u!114 &86080132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -794,6 +847,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadouts:
+  - {fileID: 11400000, guid: 054cd6fbb36c55e4c87560f7c0988c25, type: 2}
+  - {fileID: 11400000, guid: 054cd6fbb36c55e4c87560f7c0988c25, type: 2}
+  - {fileID: 11400000, guid: 75b3b587eeac77f4b9be9a525047bbde, type: 2}
+  - {fileID: 11400000, guid: 054cd6fbb36c55e4c87560f7c0988c25, type: 2}
+  - {fileID: 11400000, guid: 75b3b587eeac77f4b9be9a525047bbde, type: 2}
   - {fileID: 11400000, guid: 054cd6fbb36c55e4c87560f7c0988c25, type: 2}
 --- !u!1 &384589026
 GameObject:
@@ -4016,6 +4074,7 @@ MonoBehaviour:
   - {fileID: 1476854241}
   - {fileID: 542116464}
   - {fileID: 847850031}
+  - {fileID: 1344264169}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
