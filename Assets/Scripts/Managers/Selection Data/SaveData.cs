@@ -6,6 +6,8 @@ using UnityEngine;
 public class SaveData : MonoBehaviour
 {
     public static SaveData save;
+    public SaveState state;
+    private FileSaver saver;
 
     private void Start()
     {
@@ -18,35 +20,44 @@ public class SaveData : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        saver = new FileSaver(Application.persistentDataPath, "Save");
+        state = saver.Load();
+        if (state == null)
+        {
+            state = new SaveState();
+            saver.Save(state);
+        }
     }
 
     public bool isUpgradeAvailable(int tower, int upgrade)
     {
-        return true;
+        return state.towerUpgradesAvailable[tower][upgrade];
     }
 
     public bool isUpgradeEnabled(int tower, int upgrade)
     {
-        return true;
+        return state.towerUpgradesEnabled[tower][upgrade];
     }
 
     public void setUpgradeEnabled(int tower, int upgrade, bool enabled)
     {
-        
+        saver.Save(state);
     }
 
     public int[] getAvailableTowers()
     {
-        return new int[] {0,1,2,3,4,5,6,7 };
+        return state.towersUnlocked;
     }
 
     public int getMoney()
     {
-        return 0;
+        return state.money;
     }
 
     public void addMoney(int money)
     {
-        
+        state.money += money;
+        saver.Save(state);
     }
 }
