@@ -27,7 +27,7 @@ public class LoadoutSelectionManager : MonoBehaviour
             {
                 int x = i;
                 int y = 8-(j * 2);
-                if (y < 0)
+                while (y < 0)
                 {
                     y += 8;
                     x += 7;
