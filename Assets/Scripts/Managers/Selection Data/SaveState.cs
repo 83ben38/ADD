@@ -9,6 +9,8 @@ public class SaveState
     public SerializedDictionary<int, bool[]> towerUpgradesEnabled;
 
     public int[] loadoutsUnlocked;
+
+    public int loadoutSelected;
     /*public SaveState()
     {
         money = 0;
@@ -16,6 +18,7 @@ public class SaveState
         towerUpgradesAvailable = new SerializedDictionary<int, bool[]>();
         towerUpgradesEnabled = new SerializedDictionary<int, bool[]>();
         loadoutsUnlocked = new int[]{0};
+        loadoutSelected = 0;
         for (int i = 0; i < 5; i++)
         {
             towerUpgradesAvailable[i] = new[] { false, false, false };
@@ -29,6 +32,7 @@ public class SaveState
         towerUpgradesAvailable = new SerializedDictionary<int, bool[]>();
         towerUpgradesEnabled = new SerializedDictionary<int, bool[]>();
         loadoutsUnlocked = new int[] { 0, 1, 2, 3, 4 };
+        loadoutSelected = 0;
         for (int i = 0; i < 8; i++)
         {
             towerUpgradesAvailable[i] = new[] { true, true, true };

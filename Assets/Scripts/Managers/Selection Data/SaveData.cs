@@ -75,6 +75,11 @@ public class SaveData : MonoBehaviour
         saver.Save(state);
     }
 
+    public int getLoadoutSelected()
+    {
+        return state.loadoutSelected;
+    }
+
     public int[] getAvailableTowers()
     {
         return state.towersUnlocked;
