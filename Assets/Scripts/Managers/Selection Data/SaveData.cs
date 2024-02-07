@@ -42,6 +42,21 @@ public class SaveData : MonoBehaviour
 
     public void setUpgradeEnabled(int tower, int upgrade, bool enabled)
     {
+        state.towerUpgradesEnabled[tower][upgrade] = enabled;
+        saver.Save(state);
+    }
+    public void setUpgradeAvailable(int tower, int upgrade, bool enabled)
+    {
+        state.towerUpgradesAvailable[tower][upgrade] = enabled;
+        saver.Save(state);
+    }
+
+    public void setAvailableTower(int tower)
+    {
+        int[] towers = new int[state.towersUnlocked.Length + 1];
+        state.towersUnlocked.CopyTo(towers,0);
+        towers[^1] = tower;
+        state.towersUnlocked = towers;
         saver.Save(state);
     }
 

@@ -8,6 +8,7 @@ public class FileSaver
 {
     private string dataDirPath;
     private string dataFileName;
+    private string encryptionString = "Extravagance";
 
     public FileSaver(string dataDirPath, string dataFileName)
     {
@@ -27,7 +28,7 @@ public class FileSaver
                 {
                     using (StreamReader reader = new StreamReader(stream))
                     {
-                        save = JsonUtility.FromJson<SaveState>(reader.ReadToEnd());
+                        save = JsonUtility.FromJson<SaveState>(decrypt(reader.ReadToEnd()));
                     }
                 }
             }
@@ -43,7 +44,6 @@ public class FileSaver
     public void Save(SaveState save)
     {
         string fullPath = Path.Combine(dataDirPath, dataFileName);
-        Debug.Log(fullPath);
         try
         {
             Directory.CreateDirectory(dataDirPath);
@@ -52,7 +52,7 @@ public class FileSaver
             {
                 using (StreamWriter writer = new StreamWriter(stream))
                 {
-                    writer.Write(data);
+                    writer.Write(encrypt(data));
                 }   
             }
         }
@@ -60,5 +60,37 @@ public class FileSaver
         {
             Debug.LogError("Error occured while saving data");
         }
+    }
+
+    private string encrypt(string s)
+    {
+        for (int j = 0; j < encryptionString.Length; j++)
+        {
+            string d = "";
+            for (int i = 0; i < s.Length; i++)
+            {
+                d += (char)(s[i] ^ encryptionString[j]);
+            }
+
+            s = d;
+        }
+
+        return s;
+    }
+
+    private string decrypt(string s)
+    {
+        for (int j = encryptionString.Length-1; j >= 0; j--)
+        {
+            string d = "";
+            for (int i = 0; i < s.Length; i++)
+            {
+                d += (char)(s[i] ^ encryptionString[j]);
+            }
+
+            s = d;
+        }
+
+        return s;
     }
 }
