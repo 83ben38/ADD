@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class TowersButtonController : Selectable
 {
     private Material _material;
+    public string scene;
     
     private void Start()
     {
@@ -23,6 +24,6 @@ public class TowersButtonController : Selectable
 
     public override void MouseClick()
     {
-        SceneManager.LoadScene("Towers");
+        SceneManager.LoadScene(scene);
     }
 }
