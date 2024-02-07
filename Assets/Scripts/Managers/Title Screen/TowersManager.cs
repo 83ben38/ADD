@@ -7,7 +7,6 @@ public class TowersManager : MonoBehaviour
     public GameObject cloneObject;
     public Shape shape;
     public ShapeScriptableObject SSO;
-    public static TowerController[] selected;
 
     private void Start()
     {

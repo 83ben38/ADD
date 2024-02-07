@@ -7,7 +7,8 @@ using UnityEngine;
 public class SaveData : MonoBehaviour
 {
     public static SaveData save;
-    public SaveState state;
+    [SerializeField]
+    private SaveState state;
     private FileSaver saver;
     [SerializeField]
     private string path;
@@ -80,6 +81,11 @@ public class SaveData : MonoBehaviour
     public int getLoadoutSelected()
     {
         return state.loadoutSelected;
+    }
+    public void setLoadoutSelected(int loadout)
+    {
+        state.loadoutSelected = loadout;
+        saver.Save(state);
     }
 
     public int[] getAvailableTowers()
