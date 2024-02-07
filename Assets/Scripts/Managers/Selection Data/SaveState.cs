@@ -5,8 +5,8 @@ public class SaveState
 {
     public int money;
     public int[] towersUnlocked;
-    public SerializedDictionary<int, bool[]> towerUpgradesAvailable;
-    public SerializedDictionary<int, bool[]> towerUpgradesEnabled;
+    public SerializableDictionary<int> towerUpgradesAvailable;
+    public SerializableDictionary<int> towerUpgradesEnabled;
 
     public int[] loadoutsUnlocked;
 
@@ -15,8 +15,8 @@ public class SaveState
     {
         money = 0;
         towersUnlocked = new int[]{0,1,2,3,4};
-        towerUpgradesAvailable = new SerializedDictionary<int, bool[]>();
-        towerUpgradesEnabled = new SerializedDictionary<int, bool[]>();
+        towerUpgradesAvailable = new SerializableDictionary<int, bool[]>();
+        towerUpgradesEnabled = new SerializableDictionary<int, bool[]>();
         loadoutsUnlocked = new int[]{0};
         loadoutSelected = 0;
         for (int i = 0; i < 5; i++)
@@ -29,14 +29,14 @@ public class SaveState
     {
         money = 99999;
         towersUnlocked = new int[]{0,1,2,3,4,5,6,7};
-        towerUpgradesAvailable = new SerializedDictionary<int, bool[]>();
-        towerUpgradesEnabled = new SerializedDictionary<int, bool[]>();
+        towerUpgradesAvailable = new SerializableDictionary<int>();
+        towerUpgradesEnabled = new SerializableDictionary<int>();
         loadoutsUnlocked = new int[] { 0, 1, 2, 3, 4 };
         loadoutSelected = 0;
         for (int i = 0; i < 8; i++)
         {
-            towerUpgradesAvailable[i] = new[] { true, true, true };
-            towerUpgradesEnabled[i] = new[] { false, false, false };
+            towerUpgradesAvailable[i] = new TripleBool( true, true, true);
+            towerUpgradesEnabled[i] = new TripleBool(false, false, false);
         }
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class SaveData : MonoBehaviour
@@ -8,7 +9,8 @@ public class SaveData : MonoBehaviour
     public static SaveData save;
     public SaveState state;
     private FileSaver saver;
-
+    [SerializeField]
+    private string path;
     private void Start()
     {
         if (save == null)
@@ -20,7 +22,7 @@ public class SaveData : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        path = Path.Combine(Application.persistentDataPath, "Save");
         saver = new FileSaver(Application.persistentDataPath, "Save");
         state = saver.Load();
         if (state == null)

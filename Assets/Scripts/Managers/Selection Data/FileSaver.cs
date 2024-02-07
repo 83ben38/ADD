@@ -32,7 +32,7 @@ public class FileSaver
                     }
                 }
             }
-            catch (Exception e)
+            catch (Exception ignoredException)
             {
                 Debug.LogError("Error occured while loading data");
             }
@@ -56,7 +56,7 @@ public class FileSaver
                 }   
             }
         }
-        catch (Exception e)
+        catch (Exception ignoredException)
         {
             Debug.LogError("Error occured while saving data");
         }
