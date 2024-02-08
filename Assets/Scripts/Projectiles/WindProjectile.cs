@@ -18,5 +18,7 @@ public class WindProjectile : ProjectileCode
     }
 
 
-   
+    public WindProjectile(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
+    {
+    }
 }
