@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c314855411e8449a01d6e4fc5db465, type: 3}
   m_Name: FireDescription
   m_EditorClassIdentifier: 
-  title: Fire
-  description: Does fire DOT
+  title: Fire Tower
+  description: This tower chanals the esence of the elimental plain of fire to rapidly
+    form fire balls
   upgrade1Description: upgrade 1
   upgrade2Description: upgrade 2
   upgrade3Description: upgrade 3

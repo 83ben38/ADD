@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90c314855411e8449a01d6e4fc5db465, type: 3}
-  m_Name: IceDescription
+  m_Name: waterDescription
   m_EditorClassIdentifier: 
-  title: 'Ice Tower '
-  description: 'this tower harneses the power of Ice and snow to incapacitate and
-    slow enemys  '
+  title: 'water tower '
+  description: 'this tower forms spheres of pure elemental water that detonate on
+    impact causing area damage '
   upgrade1Description: 
   upgrade2Description: 
   upgrade3Description: 
