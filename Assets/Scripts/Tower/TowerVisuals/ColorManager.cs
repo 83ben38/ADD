@@ -45,6 +45,7 @@ public class ColorManager : MonoBehaviour
     public Color ironTower;
     public Color atomicTower;
     public Color spaceTower;
+    public Color WindTower; 
     
     public GameObject projectile;
     

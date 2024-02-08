@@ -818,7 +818,7 @@ MonoBehaviour:
   towerSelected: 0
   map: {fileID: 11400000, guid: b9c5a439495214c2ba310bb37cd17c1a, type: 2}
   difficulty: {fileID: 11400000, guid: b96bccabab5d1a74d9cc8cdb6497fccf, type: 2}
-  towerCodes: 00000000
+  towerCodes: 0800000000000000
 --- !u!4 &86080133
 Transform:
   m_ObjectHideFlags: 0
@@ -1383,6 +1383,7 @@ MonoBehaviour:
   ironTower: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
   atomicTower: {r: 0.15739894, g: 1, b: 0, a: 1}
   spaceTower: {r: 0, g: 0, b: 0, a: 0}
+  WindTower: {r: 0.5, g: 0.48820755, b: 0.48820755, a: 0.5019608}
   projectile: {fileID: 6165706959806861308, guid: 0f7785055af1ec14585430c61af7807c,
     type: 3}
 --- !u!114 &499034135
