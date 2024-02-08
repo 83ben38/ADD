@@ -61,6 +61,8 @@ public class SaveData : MonoBehaviour
         state.towersUnlocked.CopyTo(towers, 0);
         towers[^1] = tower;
         state.towersUnlocked = towers;
+        state.towerUpgradesEnabled[tower] = new TripleBool(false, false, false);
+        state.towerUpgradesAvailable[tower] = new TripleBool(false, false, false);
         saver.Save(state);
     }
 
