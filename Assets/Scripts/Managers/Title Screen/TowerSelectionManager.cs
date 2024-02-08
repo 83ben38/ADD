@@ -21,8 +21,9 @@ public class TowerSelectionManager : MonoBehaviour
 
     void CreateMap()
     {
-        selected = new TowerController[5];
-        for (int i = 0; i < 5; i++)
+        int z = LoadoutManager.manager.loadouts[SaveData.save.getLoadoutSelected()].loadout.Length;
+        selected = new TowerController[z];
+        for (int i = 0; i < z; i++)
         {
             Vector2 pos = shape.getPosition(new Vector2(i, 8));
             cloneObject.transform.position = new Vector3(pos.x,0,pos.y);
@@ -34,7 +35,7 @@ public class TowerSelectionManager : MonoBehaviour
         int[] towers = SaveData.save.getAvailableTowers();
         for (int j = 0; j < towers.Length; j++)
         {
-            Vector2 pos = shape.getPosition(new Vector2(j%5, 8-((j/5)+3)));
+            Vector2 pos = shape.getPosition(new Vector2(j%z, 8-((j/z)+3)));
             cloneObject.transform.position = new Vector3(pos.x,0,pos.y);
             TowerController t = Instantiate(cloneObject).GetComponent<TowerController>();
             t.state = new SelectionState();

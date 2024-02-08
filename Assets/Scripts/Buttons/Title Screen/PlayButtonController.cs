@@ -19,7 +19,14 @@ public class PlayButtonController : Selectable
 
     public override void MouseClick()
     {
-        SelectionData.data.towerCodes = new int[TowerSelectionManager.selected.Length];
+        int d = 0;
+        int[] loadout = LoadoutManager.manager.loadouts[SaveData.save.getLoadoutSelected()].loadout;
+        for (int i = 0; i < loadout.Length; i++)
+        {
+            d += loadout[i];
+        }
+        SelectionData.data.towerCodes = new int[d];
+        int z = 0;
         for (int i = 0; i < TowerSelectionManager.selected.Length; i++)
         {
             TowerController c = TowerSelectionManager.selected[i];
@@ -27,7 +34,12 @@ public class PlayButtonController : Selectable
             {
                 return;
             }
-            SelectionData.data.towerCodes[i] = c.x;
+
+            for (int j = 0; j < loadout[i]; j++)
+            {
+                SelectionData.data.towerCodes[z] = c.x;
+                z++;
+            }
         }
 
         SceneManager.LoadScene("Game");

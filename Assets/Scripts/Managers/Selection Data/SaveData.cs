@@ -1,14 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class SaveData : MonoBehaviour
 {
     public static SaveData save;
-    public SaveState state;
+    [SerializeField]
+    private SaveState state;
     private FileSaver saver;
-
+    [SerializeField]
+    private string path;
     private void Start()
     {
         if (save == null)
@@ -20,7 +23,7 @@ public class SaveData : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        path = Path.Combine(Application.persistentDataPath, "Save");
         saver = new FileSaver(Application.persistentDataPath, "Save");
         state = saver.Load();
         if (state == null)
@@ -45,6 +48,7 @@ public class SaveData : MonoBehaviour
         state.towerUpgradesEnabled[tower][upgrade] = enabled;
         saver.Save(state);
     }
+
     public void setUpgradeAvailable(int tower, int upgrade, bool enabled)
     {
         state.towerUpgradesAvailable[tower][upgrade] = enabled;
@@ -54,9 +58,33 @@ public class SaveData : MonoBehaviour
     public void setAvailableTower(int tower)
     {
         int[] towers = new int[state.towersUnlocked.Length + 1];
-        state.towersUnlocked.CopyTo(towers,0);
+        state.towersUnlocked.CopyTo(towers, 0);
         towers[^1] = tower;
         state.towersUnlocked = towers;
+        saver.Save(state);
+    }
+
+    public int[] getAvailableLoadouts()
+    {
+        return state.loadoutsUnlocked;
+    }
+
+    public void setAvailableLoadout(int loadout)
+    {
+        int[] loadouts = new int[state.loadoutsUnlocked.Length + 1];
+        state.loadoutsUnlocked.CopyTo(loadouts, 0);
+        loadouts[^1] = loadout;
+        state.loadoutsUnlocked = loadouts;
+        saver.Save(state);
+    }
+
+    public int getLoadoutSelected()
+    {
+        return state.loadoutSelected;
+    }
+    public void setLoadoutSelected(int loadout)
+    {
+        state.loadoutSelected = loadout;
         saver.Save(state);
     }
 

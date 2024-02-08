@@ -29,11 +29,11 @@ public class MouseManager : MonoBehaviour
             Selectable newOn = hit.collider.GetComponentInParent<Selectable>();
             if (newOn != mouseOn)
             {
+                if (mouseOn != null) mouseOn.MouseExit();
                 if (newOn != null)
                 {
                     newOn.MouseEnter();
                 }
-                if (mouseOn != null) mouseOn.MouseExit();
                 mouseOn = newOn;
             }
         }
