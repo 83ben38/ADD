@@ -35,7 +35,14 @@ public class TowerSelectionManager : MonoBehaviour
         int[] towers = SaveData.save.getAvailableTowers();
         for (int j = 0; j < towers.Length; j++)
         {
-            Vector2 pos = shape.getPosition(new Vector2(j%z, 8-((j/z)+3)));
+            int x = j%z;
+            int y = 8-((j/z)+3);
+            while (y < 0)
+            {
+                y += 6;
+                x += z + 1;
+            }
+            Vector2 pos = shape.getPosition(new Vector2(x, y));
             cloneObject.transform.position = new Vector3(pos.x,0,pos.y);
             TowerController t = Instantiate(cloneObject).GetComponent<TowerController>();
             t.state = new SelectionState();
