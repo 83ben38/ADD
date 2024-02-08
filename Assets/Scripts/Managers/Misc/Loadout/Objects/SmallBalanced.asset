@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdca74eed94a53a4782074d2fc446fb4, type: 3}
   m_Name: SmallBalanced
   m_EditorClassIdentifier: 
-  loadout: 02000000020000000200000002000000
+  loadout: 0200000002000000

@@ -16,6 +16,11 @@ public class WindTower : TowerCode
         
     }
 
+    public override int getAttackSpeed()
+    {
+        return 32 * lvl;
+    }
+
     public override bool canMerge(TowerCode c)
     {
         return c.GetType() == typeof(WindTower) && c.lvl == lvl;
@@ -23,7 +28,7 @@ public class WindTower : TowerCode
 
     public override ProjectileCode create()
     {
-        return new WindProjectile(upgrade1,upgrade2,upgrade3) ;
+        return new WindProjectile(upgrade1,upgrade2,upgrade3,controller) ;
     }
 
     public override Color getColor()
@@ -33,6 +38,38 @@ public class WindTower : TowerCode
 
     public override bool shoot()
     {
+        List<TowerController> nextTo = controller.nextTo;
+        if (getRange() > 1)
+        {
+            for (int i = 0; i < nextTo.Count; i++)
+            {
+
+                List<TowerController> nextToNextTo = nextTo[i].nextTo;
+
+                for (int j = 0; j < nextToNextTo.Count; j++)
+                {
+                    if (! nextTo.Contains(nextToNextTo[j]) )
+                    {
+                            
+                        nextTo.Add(nextToNextTo[j]);
+                            
+                    } 
+                }
+            }
+        }
+        for (int i = 0; i < nextTo.Count; i++)
+        {
+            if (nextTo[i].tower != null && !(nextTo[i].tower is WindTower))
+            {
+                GameObject projectile = Object.Instantiate(TowerCode.projectile);
+                ProjectileController pc = projectile.GetComponent<ProjectileController>();
+                pc.code = new WindProjectile(upgrade1,upgrade2,upgrade3,nextTo[i]);
+                pc.code.lvl = lvl;
+                projectile.transform.position = controller.towerVisual.shoot();
+                pc.material.color = getColor();
+                pc.code.Start(pc);
+            }
+        }
         return true;
     }
 
@@ -63,7 +100,7 @@ public class WindTower : TowerCode
 
         for (int i = 0; i < nextTo.Count; i++)
         {
-            if (nextTo[i].tower != null)
+            if (nextTo[i].tower != null && !(nextTo[i].tower is WindTower))
             {
                 nextTo[i].tower.ticksLeft -= Time.deltaTime * nextTo[i].tower.lvl * lvl * 11f;
             }
