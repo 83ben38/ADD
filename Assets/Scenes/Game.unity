@@ -235,8 +235,8 @@ MonoBehaviour:
   waterTower: {r: 0, g: 0.12823725, b: 1, a: 1}
   ironTower: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
   atomicTower: {r: 0.15739894, g: 1, b: 0, a: 1}
-  spaceTower: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 1}
-  WindTower: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 0.70980394}
+  spaceTower: {r: 0, g: 0, b: 0, a: 0}
+  WindTower: {r: 0.5, g: 0.48820755, b: 0.48820755, a: 0.3882353}
   projectile: {fileID: 6165706959806861308, guid: 0f7785055af1ec14585430c61af7807c,
     type: 3}
 --- !u!1 &155803336
@@ -3019,6 +3019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f9822812991d854eae1db1383445336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerSelected: 0
   map: {fileID: 11400000, guid: b9c5a439495214c2ba310bb37cd17c1a, type: 2}
   difficulty: {fileID: 11400000, guid: b96bccabab5d1a74d9cc8cdb6497fccf, type: 2}
   towerCodes: 
@@ -3034,6 +3035,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c502659b8aaf4c70b789b763307a8de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state:
+    money: 99999
+    towersUnlocked: 000000000100000002000000030000000400000005000000060000000700000008000000
+    towerUpgradesAvailable:
+      keys: 000000000100000002000000030000000400000005000000060000000700000008000000
+      values:
+      - b1: 1
+        b2: 1
+        b3: 1
+      - b1: 1
+        b2: 1
+        b3: 1
+      - b1: 1
+        b2: 1
+        b3: 1
+      - b1: 1
+        b2: 1
+        b3: 1
+      - b1: 1
+        b2: 1
+        b3: 1
+      - b1: 1
+        b2: 1
+        b3: 1
+      - b1: 1
+        b2: 1
+        b3: 1
+      - b1: 1
+        b2: 1
+        b3: 1
+      - b1: 1
+        b2: 1
+        b3: 1
+    towerUpgradesEnabled:
+      keys: 000000000100000002000000030000000400000005000000060000000700000008000000
+      values:
+      - b1: 0
+        b2: 0
+        b3: 0
+      - b1: 0
+        b2: 0
+        b3: 0
+      - b1: 0
+        b2: 0
+        b3: 0
+      - b1: 0
+        b2: 0
+        b3: 0
+      - b1: 0
+        b2: 0
+        b3: 0
+      - b1: 0
+        b2: 0
+        b3: 0
+      - b1: 0
+        b2: 0
+        b3: 0
+      - b1: 0
+        b2: 0
+        b3: 0
+      - b1: 0
+        b2: 0
+        b3: 0
+    loadoutsUnlocked: 0000000001000000020000000300000004000000
+    loadoutSelected: 0
+  path: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

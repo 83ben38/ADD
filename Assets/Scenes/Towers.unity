@@ -502,6 +502,8 @@ MonoBehaviour:
   waterTower: {r: 0, g: 0.12823725, b: 1, a: 1}
   ironTower: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
   atomicTower: {r: 0.15739894, g: 1, b: 0, a: 1}
+  spaceTower: {r: 0, g: 0, b: 0, a: 0}
+  WindTower: {r: 0.5, g: 0.48820755, b: 0.48820755, a: 0.3882353}
   projectile: {fileID: 6165706959806861308, guid: 0f7785055af1ec14585430c61af7807c,
     type: 3}
 --- !u!114 &360194441

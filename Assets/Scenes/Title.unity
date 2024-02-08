@@ -771,6 +771,8 @@ MonoBehaviour:
   waterTower: {r: 0, g: 0.12823725, b: 1, a: 1}
   ironTower: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
   atomicTower: {r: 0.15739894, g: 1, b: 0, a: 1}
+  spaceTower: {r: 0, g: 0, b: 0, a: 0}
+  WindTower: {r: 0.5, g: 0.48820755, b: 0.48820755, a: 0.3882353}
   projectile: {fileID: 6165706959806861308, guid: 0f7785055af1ec14585430c61af7807c,
     type: 3}
 --- !u!114 &1718600831
@@ -1145,11 +1147,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54cc4d01d9c344f478bef509d1b046fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: {fileID: 1938752475}
-  enable:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

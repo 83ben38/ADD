@@ -28,12 +28,12 @@ public class SaveState
     public SaveState()
     {
         money = 99999;
-        towersUnlocked = new int[]{0,1,2,3,4,5,6,7};
+        towersUnlocked = new int[]{0,1,2,3,4,5,6,7,8};
         towerUpgradesAvailable = new SerializableDictionary<int>();
         towerUpgradesEnabled = new SerializableDictionary<int>();
         loadoutsUnlocked = new int[] { 0, 1, 2, 3, 4 };
         loadoutSelected = 0;
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 9; i++)
         {
             towerUpgradesAvailable[i] = new TripleBool( true, true, true);
             towerUpgradesEnabled[i] = new TripleBool(false, false, false);
