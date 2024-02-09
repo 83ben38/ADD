@@ -29,6 +29,7 @@ public class TowerVisual : MonoBehaviour
         foreach (var child in children)
         { 
             child.SetActive(false);
+            
         }
         if (c.tower == null)
         {
@@ -95,6 +96,7 @@ public class TowerVisual : MonoBehaviour
         foreach (var child in children)
         {
             child.GetComponent<Renderer>().material.color = co;
+            child.GetComponent<Renderer>().material.s
         }
     }
 }
