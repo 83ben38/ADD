@@ -41,7 +41,8 @@ public class WindTower : TowerCode
         List<TowerController> nextTo = controller.nextTo;
         if (getRange() > 1)
         {
-            for (int i = 0; i < nextTo.Count; i++)
+            int z = nextTo.Count;
+            for (int i = 0; i < z; i++)
             {
 
                 List<TowerController> nextToNextTo = nextTo[i].nextTo;
@@ -80,7 +81,8 @@ public class WindTower : TowerCode
         List<TowerController> nextTo = controller.nextTo;
             if (getRange() > 1)
             {
-                for (int i = 0; i < nextTo.Count; i++)
+                int z = nextTo.Count;
+                for (int i = 0; i < z; i++)
                 {
 
                     List<TowerController> nextToNextTo = nextTo[i].nextTo;

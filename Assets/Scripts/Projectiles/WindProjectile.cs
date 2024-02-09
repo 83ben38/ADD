@@ -19,12 +19,13 @@ public class WindProjectile : ProjectileCode
         
         move = target.transform.position - controller.transform.position;
         move.y = 0;
-        move = move.normalized;
-        move *= lvl * speed;
-        controller.transform.Translate(Time.deltaTime*move);
         if (move.magnitude < 0.03f * lvl)
         {
             Object.Destroy(controller.gameObject);
         }
+        move = move.normalized;
+        move *= lvl * speed;
+        controller.transform.Translate(Time.deltaTime*move);
+        
     }
 }
