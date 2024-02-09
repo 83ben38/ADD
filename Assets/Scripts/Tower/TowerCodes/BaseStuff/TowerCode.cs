@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -81,7 +82,10 @@ public abstract class TowerCode : TowerState
         return false;
     }
 
-    public abstract bool canMerge(TowerCode c);
+    public virtual bool canMerge(TowerCode c)
+    {
+        return c.lvl == lvl && c.GetType() == GetType();
+    }
 
     public abstract ProjectileCode create();
     public abstract Color getColor();

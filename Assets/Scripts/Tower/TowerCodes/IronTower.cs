@@ -19,10 +19,7 @@ public class IronTower : TowerCode
         
     }
 
-    public override bool canMerge(TowerCode c)
-    {
-        return c.GetType() == typeof(IronTower) && c.lvl == lvl;
-    }
+   
 
     public override ProjectileCode create()
     {

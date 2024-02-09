@@ -37,10 +37,7 @@ public class SpaceTower : TowerCode
         }
         return false;
     }
-    public override bool canMerge(TowerCode c)
-    {
-        return c.GetType() == GetType() && c.lvl == lvl;
-    }
+    
 
     public override ProjectileCode create()
     {

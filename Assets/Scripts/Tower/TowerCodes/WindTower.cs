@@ -20,10 +20,7 @@ public class WindTower : TowerCode
         return 32 * lvl;
     }
 
-    public override bool canMerge(TowerCode c)
-    {
-        return c.GetType() == typeof(WindTower) && c.lvl == lvl;
-    }
+    
 
     public override ProjectileCode create()
     {
