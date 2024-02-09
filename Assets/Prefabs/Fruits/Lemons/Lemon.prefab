@@ -129,4 +129,4 @@ MonoBehaviour:
   frozenTime: 0
   time: 32
   radius: 2
-  speedAmount: 0.02
+  speedAmount: 0.005
