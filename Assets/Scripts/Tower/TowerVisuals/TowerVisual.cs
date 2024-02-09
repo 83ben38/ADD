@@ -58,7 +58,7 @@ public class TowerVisual : MonoBehaviour
         }
     }
 
-    public Vector3 shoot()
+    public Vector3 shoot(float rechargeTime)
     {
         int[] nums;
         if (c.tower.lvl % 2 == 1)
@@ -77,11 +77,11 @@ public class TowerVisual : MonoBehaviour
             shootNum = 0;
         }
 
-        StartCoroutine(recharge(d,c.tower.getAttackSpeed()-1));
+        StartCoroutine(recharge(d,rechargeTime));
         return d.transform.position;
     }
 
-    public IEnumerator recharge(GameObject d, int rechargeTime)
+    public IEnumerator recharge(GameObject d, float rechargeTime)
     {
         for (float i = 1; i <= rechargeTime; i+=Time.deltaTime*64f)
         {

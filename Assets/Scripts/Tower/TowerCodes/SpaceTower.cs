@@ -30,7 +30,7 @@ public class SpaceTower : TowerCode
             pc.code = create();
             pc.code.lvl = lvl;
             pc.code.target = sphere[0].GameObject().GetComponent<FruitCode>();
-            projectile.transform.position = controller.towerVisual.shoot();
+            projectile.transform.position = controller.towerVisual.shoot(rechargeTime);
             pc.material.color = getColor();
             pc.code.Start(pc);
             return true;

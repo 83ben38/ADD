@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class WindTower : TowerCode
 {
-
-
+    private List<TowerController> buffed = new List<TowerController>();
     public WindTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1,upgrade2, upgrade3) {
         range = 1;
         attackSpeed = 32;
@@ -38,39 +37,22 @@ public class WindTower : TowerCode
 
     public override bool shoot()
     {
-        List<TowerController> nextTo = controller.nextTo;
-        if (getRange() > 1)
+        
+        for (int i = 0; i < buffed.Count; i++)
         {
-            int z = nextTo.Count;
-            for (int i = 0; i < z; i++)
-            {
-
-                List<TowerController> nextToNextTo = nextTo[i].nextTo;
-
-                for (int j = 0; j < nextToNextTo.Count; j++)
-                {
-                    if (! nextTo.Contains(nextToNextTo[j]) )
-                    {
-                            
-                        nextTo.Add(nextToNextTo[j]);
-                            
-                    } 
-                }
-            }
-        }
-        for (int i = 0; i < nextTo.Count; i++)
-        {
-            if (nextTo[i].tower != null && !(nextTo[i].tower is WindTower))
+            if (buffed[i].tower != null && !(buffed[i].tower is WindTower))
             {
                 GameObject projectile = Object.Instantiate(TowerCode.projectile);
                 ProjectileController pc = projectile.GetComponent<ProjectileController>();
-                pc.code = new WindProjectile(upgrade1,upgrade2,upgrade3,nextTo[i]);
+                pc.code = new WindProjectile(upgrade1,upgrade2,upgrade3,buffed[i]);
                 pc.code.lvl = lvl;
-                projectile.transform.position = controller.towerVisual.shoot();
+                projectile.transform.position = controller.towerVisual.shoot(getAttackSpeed()-1);
                 pc.material.color = getColor();
                 pc.code.Start(pc);
             }
         }
+
+        buffed = new List<TowerController>();
         return true;
     }
 
@@ -78,7 +60,7 @@ public class WindTower : TowerCode
     {
         base.tick();
 
-        List<TowerController> nextTo = controller.nextTo;
+        List<TowerController> nextTo = new List<TowerController>(controller.nextTo);
             if (getRange() > 1)
             {
                 int z = nextTo.Count;
@@ -102,9 +84,14 @@ public class WindTower : TowerCode
 
         for (int i = 0; i < nextTo.Count; i++)
         {
-            if (nextTo[i].tower != null && !(nextTo[i].tower is WindTower))
+            if (nextTo[i].tower != null && !(nextTo[i].tower is WindTower) && nextTo[i].tower.ticksLeft > 0)
             {
                 nextTo[i].tower.ticksLeft -= Time.deltaTime * nextTo[i].tower.lvl * lvl * 11f;
+                nextTo[i].tower.rechargeTime -= Time.deltaTime * nextTo[i].tower.lvl * lvl * 11f;
+                if (!buffed.Contains(nextTo[i]))
+                {
+                    buffed.Add(nextTo[i]);
+                }
             }
         }
 

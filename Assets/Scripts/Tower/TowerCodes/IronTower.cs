@@ -53,7 +53,7 @@ public class IronTower : TowerCode
         pc.code = create();
         pc.code.lvl = lvl;
         ((IronProjectile)pc.code).targetPath = target;
-        projectile.transform.position = controller.towerVisual.shoot();
+        projectile.transform.position = controller.towerVisual.shoot(rechargeTime);
         pc.material.color = getColor();
         pc.code.Start(pc);
         return true;

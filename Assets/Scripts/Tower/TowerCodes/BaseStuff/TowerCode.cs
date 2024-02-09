@@ -14,6 +14,7 @@ public abstract class TowerCode : TowerState
     [Header("Vars")] 
     public float ticksLeft;
 
+    public float rechargeTime;
     public bool upgrade1, upgrade2, upgrade3;
     public Vector3 self;
     public TowerController controller;
@@ -57,6 +58,7 @@ public abstract class TowerCode : TowerState
             if (shoot())
             {
                 ticksLeft = getAttackSpeed() + ticksLeft;
+                rechargeTime = getAttackSpeed() - 1;
             }
         }
     }
@@ -71,7 +73,7 @@ public abstract class TowerCode : TowerState
             pc.code = create();
             pc.code.lvl = lvl;
             pc.code.target = sphere[0].GameObject().GetComponent<FruitCode>();
-            projectile.transform.position = controller.towerVisual.shoot();
+            projectile.transform.position = controller.towerVisual.shoot(rechargeTime);
             pc.material.color = getColor();
             pc.code.Start(pc);
             return true;

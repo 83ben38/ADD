@@ -26,7 +26,7 @@ public class AtomicTower : TowerCode
                 ProjectileController pc = projectile.GetComponent<ProjectileController>();
                 pc.code = new AtomicProjectile(i,controller.transform.position,upgrade1,upgrade2,upgrade3);
                 pc.code.lvl = lvl;
-                projectile.transform.position = controller.towerVisual.shoot();
+                projectile.transform.position = controller.towerVisual.shoot(rechargeTime);
                 pc.material.color = getColor();
                 pc.code.Start(pc);
             }

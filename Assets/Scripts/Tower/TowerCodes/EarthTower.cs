@@ -22,7 +22,7 @@ public class EarthTower : TowerCode
 
     public override bool shoot()
     {
-        controller.towerVisual.shoot();
+        controller.towerVisual.shoot(rechargeTime);
 
         foreach (var vector3 in directions)
         {
