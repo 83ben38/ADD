@@ -19,6 +19,15 @@ public class Shape : MonoBehaviour
         GetComponent<MeshFilter>().sharedMesh = scriptableObject.mesh;
     }
 
+    public void Reset()
+    {
+        transform.localPosition = scriptableObject.meshPosition;
+        transform.rotation = scriptableObject.meshRotation;
+        transform.localScale = scriptableObject.meshScale;
+        GetComponent<MeshCollider>().sharedMesh = scriptableObject.mesh;
+        GetComponent<MeshFilter>().sharedMesh = scriptableObject.mesh;
+    }
+
     public Vector3 getDotPos(int i)
     {
         return scriptableObject.dotPositions[i];

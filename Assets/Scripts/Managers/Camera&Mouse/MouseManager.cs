@@ -8,6 +8,7 @@ public class MouseManager : MonoBehaviour
     public Selectable mouseOn;
     public Camera cameraTransform;
     public Input input;
+    public static MouseManager manager;
 
     private void Start()
     {
@@ -17,6 +18,7 @@ public class MouseManager : MonoBehaviour
         {
             if (mouseOn != null) mouseOn.MouseClick();
         };
+        manager = this;
     }
 
 

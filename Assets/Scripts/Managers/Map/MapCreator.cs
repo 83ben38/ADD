@@ -14,10 +14,15 @@ public class MapCreator : MonoBehaviour
     private int yDimensions;
     private Vector3 startPos;
     private int[] types;
+    public TowerGhostController controller;
     
     private void Start()
     {
         map = SelectionData.data.map;
+        controller.shape.scriptableObject = map.shape;
+        Instantiate(controller.gameObject);
+        Destroy(controller.gameObject);
+        
         shape = cloneObject.GetComponentInChildren<Shape>();
         shape.scriptableObject = map.shape;
         xDimensions = map.xDimensions;
