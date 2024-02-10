@@ -42,7 +42,7 @@ public class Shape : MonoBehaviour
 
     public Quaternion getRotation(Vector2 coords)
     {
-        return Quaternion.Euler(new Vector3(coords.x*scriptableObject.xRotationFactor+coords.y*scriptableObject.yRotationFactor,0,0)+scriptableObject.meshRotation.eulerAngles);
+        return Quaternion.Euler(new Vector3(0,coords.x*scriptableObject.xRotationFactor+coords.y*scriptableObject.yRotationFactor,0)+scriptableObject.meshRotation.eulerAngles);
     }
 }
 

@@ -46,6 +46,7 @@ public class TowerGhostController : MonoBehaviour
                 }
                 current = t;
                 transform.position = t.transform.position;
+                transform.rotation = t.transform.rotation;
                 if (!t.block)
                 {
                     updateTower(InGameState.held);
