@@ -44,6 +44,11 @@ public class IronTower : TowerCode
             }
         }
 
+        if (availableTargets.Count == 0)
+        {
+            return true;
+        }
+
         TowerController target = availableTargets[Random.Range(0,availableTargets.Count-1)];
         GameObject projectile = Object.Instantiate(TowerCode.projectile);
         ProjectileController pc = projectile.GetComponent<ProjectileController>();

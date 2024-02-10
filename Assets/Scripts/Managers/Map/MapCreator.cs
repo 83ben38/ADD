@@ -19,6 +19,7 @@ public class MapCreator : MonoBehaviour
     private void Start()
     {
         map = SelectionData.data.map;
+        scale = map.scaleAmt;
         controller.shape.scriptableObject = map.shape;
         Instantiate(controller.gameObject);
         Destroy(controller.gameObject);
@@ -28,7 +29,7 @@ public class MapCreator : MonoBehaviour
         xDimensions = map.xDimensions;
         yDimensions = map.yDimensions;
         startPos = map.startPos;
-        scale = map.scaleAmt;
+        
         types = map.map;
         CreateMap();
         PathfinderManager.manager.shapeCode = shape.scriptableObject.checkName;
