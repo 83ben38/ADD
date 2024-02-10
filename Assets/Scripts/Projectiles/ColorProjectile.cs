@@ -7,10 +7,11 @@ public class ColorProjectile : ProjectileCode
 {
     private float time;
 
-    public ColorProjectile(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
+    public ColorProjectile(bool upgrade1, bool upgrade2, bool upgrade3, float time) : base(upgrade1, upgrade2, upgrade3)
     {
         pierce = 1;
         damage = 1;
+        this.time = time;
     }
 
     public override void tick(ProjectileController controller)
