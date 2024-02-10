@@ -21,9 +21,8 @@ public class MapCreator : MonoBehaviour
         map = SelectionData.data.map;
         scale = map.scaleAmt;
         controller.shape.scriptableObject = map.shape;
-        Instantiate(controller.gameObject);
+        Instantiate(controller.gameObject).transform.localScale *= scale;
         Destroy(controller.gameObject);
-        
         shape = cloneObject.GetComponentInChildren<Shape>();
         shape.scriptableObject = map.shape;
         xDimensions = map.xDimensions;

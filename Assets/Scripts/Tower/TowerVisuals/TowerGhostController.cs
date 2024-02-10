@@ -23,7 +23,7 @@ public class TowerGhostController : MonoBehaviour
         disable.SetActive(false);
         Color co = ColorManager.manager.tower;
         disable.GetComponentInChildren<Renderer>().material.color = new Color(co.r,co.g,co.b,0.4f);
-        transform.localScale = new Vector3(transform.localScale.x, (float)(transform.localScale.y * Math.Sqrt(2)), transform.localScale.z) * MapCreator.scale;
+        transform.localScale = new Vector3(transform.localScale.x, (float)(transform.localScale.y * Math.Sqrt(2)), transform.localScale.z);
     }
 
     private void Update()
