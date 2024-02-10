@@ -46,6 +46,8 @@ public class MapCreator : MonoBehaviour
             for (int j = 0; j < yDimensions; j++)
             {
                 Vector2 pos = shape.getPosition(new Vector2(i, j))*scale;
+                Quaternion rot = shape.getRotation(new Vector2(i, j));
+                cloneObject.transform.rotation = rot;
                 cloneObject.transform.position = new Vector3(pos.x,0,pos.y) + startPos;
                 TowerController t = Instantiate(cloneObject).GetComponent<TowerController>();
                 t.name = "Tile " + i + ", " + j;

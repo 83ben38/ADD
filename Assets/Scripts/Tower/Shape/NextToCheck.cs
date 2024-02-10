@@ -16,6 +16,12 @@ public class NextToCheck
         {
             return isNextToSquare(x1, y1, x2, y2);
         }
+
+        if (name == "triangle")
+        {
+            return isNextToTriangle(x1, y1, x2, y2);
+        }
+
         return false;
     }
 
@@ -64,6 +70,16 @@ public class NextToCheck
         if (Mathf.Abs(x1 - x2) > 1) return false;
         if (Mathf.Abs(y1 - y2) > 1) return false;
         if (x1 == x2 && y1 == y2) return false;
+        return true;
+    }
+    private static bool isNextToTriangle(int x1, int y1, int x2, int y2)
+    {
+        if (x1 != x2 && y1 != y2) return false;
+        if (Mathf.Abs(x1 - x2) > 1) return false;
+        if (Mathf.Abs(y1 - y2) > 1) return false;
+        if (x1 == x2 && y1 == y2) return false;
+        if (y1 - y2 == 1 && (y1 + x1) % 2 == 1) return false;
+        if (y1 - y2 == -1 && (y1 + x1) % 2 == 0) return false;
         return true;
     }
 }

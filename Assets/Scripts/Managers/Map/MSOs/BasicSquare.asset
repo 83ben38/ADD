@@ -16,9 +16,9 @@ MonoBehaviour:
   baseAward: 0
   xDimensions: 10
   yDimensions: 10
-  shape: {fileID: 11400000, guid: 7e9158ab34feaf84083bc0ac5842f93b, type: 2}
+  shape: {fileID: 11400000, guid: 371eae48f2c4a458d9dcf2f73c7a973f, type: 2}
   startPos: {x: 0, y: 0, z: 0}
   scaleAmt: 1
   paths: 1
   checkpointsRequired: 0
-  mapName: Basic  (Square)
+  mapName: Basic  (Triangle)

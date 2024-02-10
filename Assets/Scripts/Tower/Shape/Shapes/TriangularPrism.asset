@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b1a2f86884b4440b60bb4f41db9019, type: 3}
+  m_Name: TriangularPrism
+  m_EditorClassIdentifier: 
+  mesh: {fileID: -1588145790350102290, guid: 55c804462809d4647921c251b21965d2, type: 3}
+  meshPosition: {x: 0, y: 0, z: 0}
+  meshRotation: {x: 0, y: 0, z: 0, w: 0}
+  meshScale: {x: 0.1, y: 0.1, z: 0.1}
+  xXFactor: 1
+  xYFactor: 0
+  yXFactor: 0
+  yYFactor: 1
+  xYFactorMod: 1
+  yXFactorMod: 1
+  checkName: triangle
+  dotPositions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}

@@ -16,7 +16,9 @@ public class MiniMap : MonoBehaviour
             for (int j = 0; j < map.yDimensions; j++)
             {
                 Vector2 pos = shape.getPosition(new Vector2(i, j))*map.scaleAmt * 0.1f;
+                Quaternion rot = shape.getRotation(new Vector2(i, j));
                 GameObject clone = Instantiate(cloneObject, gameObject.transform, false);
+                clone.transform.rotation = rot;
                 clone.transform.localPosition = new Vector3(pos.x,0,pos.y) + map.startPos * map.scaleAmt * 0.1f;
                 clone.transform.localScale *= map.scaleAmt * 0.1f;
                 switch (map.map[i+(j*map.xDimensions)])
