@@ -57,9 +57,9 @@ public class TowerGhostController : MonoBehaviour
                     {
                         if (t.tower.canMerge(InGameState.held))
                         {
-                            InGameState.held.lvl++;
-                            updateTower(InGameState.held);
-                            InGameState.held.lvl--;
+                            TowerCode merge = InGameState.held.merge(t.tower);
+                            updateTower(merge);
+                            merge.lvl--;
                         }
                     }
                 }

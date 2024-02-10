@@ -87,6 +87,13 @@ public abstract class TowerCode : TowerState
         return c.lvl == lvl && c.GetType() == GetType();
     }
 
+    public TowerCode merge(TowerCode c)
+    {
+        lvl++;
+        return this;
+    }
+    
+
     public abstract ProjectileCode create();
     public abstract Color getColor();
 }
