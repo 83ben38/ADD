@@ -13,21 +13,27 @@ MonoBehaviour:
   m_Name: TriangularPrism
   m_EditorClassIdentifier: 
   mesh: {fileID: -1588145790350102290, guid: 55c804462809d4647921c251b21965d2, type: 3}
-  meshPosition: {x: 0, y: 0, z: 0}
+  meshPosition: {x: 0, y: 0, z: -0.375}
   meshRotation: {x: 0, y: 0, z: 0, w: 0}
-  meshScale: {x: 0.1, y: 0.1, z: 0.1}
-  xXFactor: 1
+  meshScale: {x: 0.1, y: 0.08, z: 0.1}
+  xXFactor: 0.6
   xYFactor: 0
   yXFactor: 0
-  yYFactor: 1
+  yYFactor: 0.85
   xYFactorMod: 1
   yXFactorMod: 1
+  xyXFactor: 0
+  xyYFactor: 0
+  xyXFactorMod: 1
+  xyYFactorMod: 2
+  xRotationFactor: 180
+  yRotationFactor: 180
   checkName: triangle
   dotPositions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0.8, z: 0}
+  - {x: 0, y: 0.65, z: -0.2}
+  - {x: -0.1, y: 0.65, z: 0}
+  - {x: -0.25, y: 0.65, z: -0.2}
+  - {x: 0, y: 0.65, z: 0.2}
+  - {x: 0.25, y: 0.65, z: -0.2}
+  - {x: 0.1, y: 0.65, z: 0}

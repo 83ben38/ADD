@@ -22,6 +22,12 @@ MonoBehaviour:
   yYFactor: 0.76
   xYFactorMod: 2
   yXFactorMod: 1
+  xyXFactor: 0
+  xyYFactor: 0
+  xyXFactorMod: 1
+  xyYFactorMod: 1
+  xRotationFactor: 0
+  yRotationFactor: 0
   checkName: hexagon
   dotPositions:
   - {x: 0, y: 0.8, z: 0}
