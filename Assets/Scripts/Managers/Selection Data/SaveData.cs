@@ -12,7 +12,7 @@ public class SaveData : MonoBehaviour
     private FileSaver saver;
     [SerializeField]
     private string path;
-    private void Start()
+    private void OnEnable()
     {
         if (save == null)
         {

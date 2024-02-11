@@ -8,4 +8,6 @@ public class DifficultyScriptableObject : ScriptableObject
     public int maxLives;
     public int awardMultiplier;
     public string difficultyName;
+    public Color difficultyColor;
+    public Color difficultyColorHighlighted;
 }

@@ -12,12 +12,12 @@ public class DifficultySelectorButton : Selectable
 
     public override void MouseEnter()
     {
-        _material.color = ColorManager.manager.tileHighlighted;
+        _material.color = difficulty.difficultyColorHighlighted;
     }
 
     public override void MouseExit()
     {
-        _material.color = ColorManager.manager.tile;
+        _material.color = difficulty.difficultyColor;
     }
 
     public override void MouseClick()
@@ -31,5 +31,6 @@ public class DifficultySelectorButton : Selectable
         _material = GetComponent<Renderer>().material;
         tmp = GetComponentInChildren<TextMeshPro>();
         tmp.text = difficulty.difficultyName;
+        _material.color = difficulty.difficultyColor;
     }
 }
