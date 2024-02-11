@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class DifficultySelectionManager : MonoBehaviour
@@ -60,40 +61,47 @@ public class DifficultySelectionManager : MonoBehaviour
             }
 
             {
-                int i = 0;
-                for (int j = 0; j < availableDifficulties.Length; j++)
+                
+                for (int i = 0; i < availableDifficulties.Length; i++)
                 {
                     bool cont = false;
-                    for (int k = 0; k < availableDifficulties[j].preRequisites.Length; k++)
+                    for (int k = 0; k < availableDifficulties[i].preRequisites.Length; k++)
                     {
-                        if (!SaveData.save.isDifficultyCompleted(SelectionData.data.selectedMap, availableDifficulties[j].preRequisites[k]))
+                        if (!SaveData.save.isDifficultyCompleted(SelectionData.data.selectedMap, availableDifficulties[i].preRequisites[k]))
                         {
                             cont = true;
                             break;
                         }
                     }
 
-                    if (cont)
-                    {
-                        continue;   
-                    }
-
                     stars[i / yDimensions][i % yDimensions] = Instantiate(starObject);
                     stars[i / yDimensions][i % yDimensions].transform.position = new Vector3(
-                        ((i / yDimensions) * 1.5f) - 2,
-                        3.5f + ((i % yDimensions) * 1.5f), (i % yDimensions) - 4);
-                    stars[i / yDimensions][i % yDimensions].transform.rotation =
-                        Quaternion.Euler(((i % yDimensions) * -5) - 55, 0, 0);
+                        ((i / yDimensions) * 1.5f) - 1,
+                        4.5f + ((i % yDimensions) * 1.5f), (i % yDimensions) - 4);
                     buttons[i / yDimensions][i % yDimensions] = Instantiate(buttonObject);
                     buttons[i / yDimensions][i % yDimensions].transform.position =
-                        stars[i / yDimensions][i % yDimensions].transform.position - new Vector3(-0.5f, 0.25f, 0);
+                        stars[i / yDimensions][i % yDimensions].transform.position - new Vector3(0, 0.7f, 0);
                     buttons[i / yDimensions][i % yDimensions].GetComponent<DifficultySelectorButton>().difficulty =
-                        availableDifficulties[j];
+                        availableDifficulties[i];
                     buttons[i / yDimensions][i % yDimensions].GetComponent<DifficultySelectorButton>().diffNum =
-                        j;
+                        i;
                     stars[i / yDimensions][i % yDimensions].SetActive(true);
                     buttons[i / yDimensions][i % yDimensions].SetActive(true);
-                    i++;
+                    TextMeshPro tmp = stars[i / yDimensions][i % yDimensions].GetComponentInChildren<TextMeshPro>();
+                    if (cont)
+                    {
+                        tmp.text = "Locked";
+                    }
+                    else
+                    {
+                        int money = SelectionData.data.map.baseAward * availableDifficulties[i].awardMultiplier;
+                        if (!SaveData.save.isDifficultyCompleted(SelectionData.data.selectedMap, i))
+                        {
+                            money *= 3;
+                        }
+
+                        tmp.text = money + " \u20b5\u00a2";
+                    }
                 }
             }
         }
