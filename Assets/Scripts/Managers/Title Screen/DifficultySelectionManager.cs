@@ -59,20 +59,42 @@ public class DifficultySelectionManager : MonoBehaviour
                 buttons[i] = new GameObject[yDimensions];
             }
 
-            for (int i = 0; i < availableDifficulties.Length; i++)
             {
-                stars[i / yDimensions][i % yDimensions] = Instantiate(starObject);
-                stars[i / yDimensions][i % yDimensions].transform.position = new Vector3(((i / yDimensions) * 1.5f) - 2,
-                    3.5f + ((i % yDimensions) * 1.5f), (i % yDimensions) - 4);
-                stars[i / yDimensions][i % yDimensions].transform.rotation =
-                    Quaternion.Euler(((i % yDimensions) * -5) - 55, 0, 0);
-                buttons[i / yDimensions][i % yDimensions] = Instantiate(buttonObject);
-                buttons[i / yDimensions][i % yDimensions].transform.position =
-                    stars[i / yDimensions][i % yDimensions].transform.position - new Vector3(-0.5f, 0.25f, 0);
-                buttons[i / yDimensions][i % yDimensions].GetComponent<DifficultySelectorButton>().difficulty =
-                    availableDifficulties[i];
-                stars[i / yDimensions][i % yDimensions].SetActive(true);
-                buttons[i / yDimensions][i % yDimensions].SetActive(true);
+                int i = 0;
+                for (int j = 0; j < availableDifficulties.Length; j++)
+                {
+                    bool cont = false;
+                    for (int k = 0; k < availableDifficulties[j].preRequisites.Length; k++)
+                    {
+                        if (!SaveData.save.isDifficultyCompleted(SelectionData.data.selectedMap, availableDifficulties[j].preRequisites[k]))
+                        {
+                            cont = true;
+                            break;
+                        }
+                    }
+
+                    if (cont)
+                    {
+                        continue;   
+                    }
+
+                    stars[i / yDimensions][i % yDimensions] = Instantiate(starObject);
+                    stars[i / yDimensions][i % yDimensions].transform.position = new Vector3(
+                        ((i / yDimensions) * 1.5f) - 2,
+                        3.5f + ((i % yDimensions) * 1.5f), (i % yDimensions) - 4);
+                    stars[i / yDimensions][i % yDimensions].transform.rotation =
+                        Quaternion.Euler(((i % yDimensions) * -5) - 55, 0, 0);
+                    buttons[i / yDimensions][i % yDimensions] = Instantiate(buttonObject);
+                    buttons[i / yDimensions][i % yDimensions].transform.position =
+                        stars[i / yDimensions][i % yDimensions].transform.position - new Vector3(-0.5f, 0.25f, 0);
+                    buttons[i / yDimensions][i % yDimensions].GetComponent<DifficultySelectorButton>().difficulty =
+                        availableDifficulties[j];
+                    buttons[i / yDimensions][i % yDimensions].GetComponent<DifficultySelectorButton>().diffNum =
+                        j;
+                    stars[i / yDimensions][i % yDimensions].SetActive(true);
+                    buttons[i / yDimensions][i % yDimensions].SetActive(true);
+                    i++;
+                }
             }
         }
         else

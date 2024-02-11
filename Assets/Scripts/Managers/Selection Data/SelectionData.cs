@@ -7,7 +7,9 @@ public class SelectionData : MonoBehaviour
     public static SelectionData data;
     public int towerSelected;
     public MapScriptableObject map;
+    public int selectedMap;
     public DifficultyScriptableObject difficulty;
+    public int selectedDifficulty;
 
     public int[] towerCodes = {5};
     // Start is called before the first frame update

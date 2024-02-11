@@ -10,4 +10,5 @@ public class DifficultyScriptableObject : ScriptableObject
     public string difficultyName;
     public Color difficultyColor;
     public Color difficultyColorHighlighted;
+    public int[] preRequisites;
 }

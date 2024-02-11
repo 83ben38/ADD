@@ -10,6 +10,7 @@ public class MapSelectorButton : Selectable
     private TextMeshPro tmp;
     public MapScriptableObject map;
     private Material _material;
+    public int mapNum;
 
     public override void MouseEnter()
     {
@@ -24,6 +25,7 @@ public class MapSelectorButton : Selectable
     public override void MouseClick()
     {
         SelectionData.data.map = map;
+        SelectionData.data.selectedMap = mapNum;
         MapSelectionManager.manager.end();
         DifficultySelectionManager.manager.startDifficultySelection();
     }

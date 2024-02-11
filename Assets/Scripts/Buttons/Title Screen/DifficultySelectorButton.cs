@@ -9,6 +9,7 @@ public class DifficultySelectorButton : Selectable
     public DifficultyScriptableObject difficulty;
     private TextMeshPro tmp;
     private Material _material;
+    public int diffNum;
 
     public override void MouseEnter()
     {
@@ -23,6 +24,7 @@ public class DifficultySelectorButton : Selectable
     public override void MouseClick()
     {
         SelectionData.data.difficulty = difficulty;
+        SelectionData.data.selectedDifficulty = diffNum;
         SceneManager.LoadScene("Tower Selection");
     }
 

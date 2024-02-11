@@ -118,6 +118,7 @@ public class MapSelectionManager : MonoBehaviour
                 buttons[i / 6][i % 2][(i % 6) / 2].transform.position =
                     maps[i / 6][i % 2][(i % 6) / 2].transform.position - new Vector3(-0.5f, 0.3f, 0);
                 buttons[i / 6][i % 2][(i % 6) / 2].GetComponent<MapSelectorButton>().map = availableMaps[i];
+                buttons[i / 6][i % 2][(i % 6) / 2].GetComponent<MapSelectorButton>().mapNum = i;
             }
         }
 
