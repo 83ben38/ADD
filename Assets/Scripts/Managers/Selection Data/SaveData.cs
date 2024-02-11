@@ -79,6 +79,7 @@ public class SaveData : MonoBehaviour
         if (!state.difficultiesCompleted.ContainsKey(map))
             state.difficultiesCompleted[map] = new SerializableDictionary<int, bool>();
         state.difficultiesCompleted[map][difficulty] = true;
+        saver.Save(state);
     }
 
     public int[] getAvailableLoadouts()

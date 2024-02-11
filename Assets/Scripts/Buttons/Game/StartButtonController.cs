@@ -66,7 +66,14 @@ public class StartButtonController : Selectable
        
         if (waves.waves.Length == wave)
         {
-            SaveData.save.addMoney(waves.awardMultiplier * SelectionData.data.map.baseAward);
+            int money = waves.awardMultiplier * SelectionData.data.map.baseAward;
+            if (!SaveData.save.isDifficultyCompleted(SelectionData.data.selectedMap, SelectionData.data.selectedDifficulty))
+            {
+                SaveData.save.completeDifficulty(SelectionData.data.selectedMap, SelectionData.data.selectedDifficulty);
+                money *= 3;
+            }
+
+            SaveData.save.addMoney(money);
             WinController.controller.go(true);
         }
         else
