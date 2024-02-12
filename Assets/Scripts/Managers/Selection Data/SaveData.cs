@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 
 public class SaveData : MonoBehaviour
@@ -12,7 +13,7 @@ public class SaveData : MonoBehaviour
     private FileSaver saver;
     [SerializeField]
     private string path;
-    private void Start()
+    private void OnEnable()
     {
         if (save == null)
         {
@@ -63,6 +64,21 @@ public class SaveData : MonoBehaviour
         state.towersUnlocked = towers;
         state.towerUpgradesEnabled[tower] = new TripleBool(false, false, false);
         state.towerUpgradesAvailable[tower] = new TripleBool(false, false, false);
+        saver.Save(state);
+    }
+
+    public bool isDifficultyCompleted(int map, int difficulty)
+    {
+        if (!state.difficultiesCompleted.ContainsKey(map)) return false;
+        if (!state.difficultiesCompleted[map].ContainsKey(difficulty)) return false; 
+        return state.difficultiesCompleted[map][difficulty];
+    }
+
+    public void completeDifficulty(int map, int difficulty)
+    {
+        if (!state.difficultiesCompleted.ContainsKey(map))
+            state.difficultiesCompleted[map] = new SerializableDictionary<int, bool>();
+        state.difficultiesCompleted[map][difficulty] = true;
         saver.Save(state);
     }
 

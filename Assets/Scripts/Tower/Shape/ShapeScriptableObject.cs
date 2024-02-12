@@ -20,6 +20,13 @@ public class ShapeScriptableObject : ScriptableObject
     public float yYFactor;
     public int xYFactorMod;
     public int yXFactorMod;
+    public float xyXFactor;
+    public float xyYFactor;
+    public int xyXFactorMod;
+    public int xyYFactorMod;
+    [Header("Rotation")] 
+    public float xRotationFactor;
+    public float yRotationFactor;
     [Header("Next To Check")] 
     public string checkName;
 

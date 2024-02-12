@@ -24,6 +24,8 @@ public class TowersManager : MonoBehaviour
         for (int j = 0; j < towers.Length; j++)
         {
             Vector2 pos = shape.getPosition(new Vector2(j%5, 10-((j/5)+3)));
+            Quaternion rot = shape.getRotation(new Vector2(j%5, 10-((j/5)+3)));
+            cloneObject.transform.rotation = rot;
             cloneObject.transform.position = new Vector3(pos.x,0,pos.y);
             TowerController t = Instantiate(cloneObject).GetComponent<TowerController>();
             t.state = new DescriptionState();

@@ -19,10 +19,7 @@ public class IronTower : TowerCode
         
     }
 
-    public override bool canMerge(TowerCode c)
-    {
-        return c.GetType() == typeof(IronTower) && c.lvl == lvl;
-    }
+   
 
     public override ProjectileCode create()
     {
@@ -47,13 +44,18 @@ public class IronTower : TowerCode
             }
         }
 
+        if (availableTargets.Count == 0)
+        {
+            return true;
+        }
+
         TowerController target = availableTargets[Random.Range(0,availableTargets.Count-1)];
         GameObject projectile = Object.Instantiate(TowerCode.projectile);
         ProjectileController pc = projectile.GetComponent<ProjectileController>();
         pc.code = create();
         pc.code.lvl = lvl;
         ((IronProjectile)pc.code).targetPath = target;
-        projectile.transform.position = controller.towerVisual.shoot();
+        projectile.transform.position = controller.towerVisual.shoot(rechargeTime);
         pc.material.color = getColor();
         pc.code.Start(pc);
         return true;

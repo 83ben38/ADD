@@ -51,6 +51,11 @@ public class ColorManager : MonoBehaviour
     
     void Awake()
     {
+        if (manager != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
         manager = this;
         TowerCode.projectile = projectile;
     }

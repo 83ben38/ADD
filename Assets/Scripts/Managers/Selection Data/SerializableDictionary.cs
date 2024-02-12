@@ -5,17 +5,17 @@ using System.Runtime.Serialization;
 using UnityEngine;
 
 [Serializable]
-public class SerializableDictionary<TK> : Dictionary<TK, TripleBool>, ISerializationCallbackReceiver
+public class SerializableDictionary<TK,TB> : Dictionary<TK, TB>, ISerializationCallbackReceiver
 {
    [SerializeField]
    private TK[] keys;
    [SerializeField]
-   private TripleBool[] values;
+   private TB[] values;
 
    public void OnBeforeSerialize()
    {
       keys = new TK[Count];
-      values = new TripleBool[Count];
+      values = new TB[Count];
       int i = 0;
       foreach (var key in Keys)
       {

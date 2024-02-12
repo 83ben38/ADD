@@ -26,17 +26,14 @@ public class AtomicTower : TowerCode
                 ProjectileController pc = projectile.GetComponent<ProjectileController>();
                 pc.code = new AtomicProjectile(i,controller.transform.position,upgrade1,upgrade2,upgrade3);
                 pc.code.lvl = lvl;
-                projectile.transform.position = controller.towerVisual.shoot();
+                projectile.transform.position = controller.towerVisual.shoot(rechargeTime);
                 pc.material.color = getColor();
                 pc.code.Start(pc);
             }
         }
     }
 
-    public override bool canMerge(TowerCode c)
-    {
-        return c.GetType() == typeof(AtomicTower) && c.lvl == lvl;
-    }
+    
 
     public override ProjectileCode create()
     {

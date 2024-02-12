@@ -15,7 +15,7 @@ public class ProjectileController : MonoBehaviour
 
      public void FixedUpdate()
      {
-          if (StartButtonController.waveFinished)
+          if (StartButtonController.waveFinished || transform.position.magnitude > 20f)
           {
                Destroy(gameObject);
           }

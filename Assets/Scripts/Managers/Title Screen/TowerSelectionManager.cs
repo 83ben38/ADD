@@ -26,6 +26,8 @@ public class TowerSelectionManager : MonoBehaviour
         for (int i = 0; i < z; i++)
         {
             Vector2 pos = shape.getPosition(new Vector2(i, 8));
+            Quaternion rot = shape.getRotation(new Vector2(i, 8));
+            cloneObject.transform.rotation = rot;
             cloneObject.transform.position = new Vector3(pos.x,0,pos.y);
             TowerController t = Instantiate(cloneObject).GetComponent<TowerController>();
             t.state = new SelectionState();
@@ -43,6 +45,8 @@ public class TowerSelectionManager : MonoBehaviour
                 x += z + 1;
             }
             Vector2 pos = shape.getPosition(new Vector2(x, y));
+            Quaternion rot = shape.getRotation(new Vector2(x, y));
+            cloneObject.transform.rotation = rot;
             cloneObject.transform.position = new Vector3(pos.x,0,pos.y);
             TowerController t = Instantiate(cloneObject).GetComponent<TowerController>();
             t.state = new SelectionState();

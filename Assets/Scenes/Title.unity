@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -294,6 +294,203 @@ RectTransform:
   m_AnchoredPosition: {x: -0.05, y: 1.02}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &86080130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 86080133}
+  - component: {fileID: 86080132}
+  - component: {fileID: 86080131}
+  - component: {fileID: 86080134}
+  - component: {fileID: 86080135}
+  m_Layer: 0
+  m_Name: SelectionData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &86080131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86080130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c502659b8aaf4c70b789b763307a8de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state:
+    money: 99999
+    towersUnlocked: 0000000001000000020000000300000004000000050000000600000007000000
+    towerUpgradesAvailable:
+      keys: 000000000100000002000000030000000400000005000000060000000700000008000000
+      values:
+      - b1: 1
+        b2: 1
+        b3: 1
+      - b1: 1
+        b2: 1
+        b3: 1
+      - b1: 1
+        b2: 1
+        b3: 1
+      - b1: 1
+        b2: 1
+        b3: 1
+      - b1: 1
+        b2: 1
+        b3: 1
+      - b1: 1
+        b2: 1
+        b3: 1
+      - b1: 1
+        b2: 1
+        b3: 1
+      - b1: 1
+        b2: 1
+        b3: 1
+      - b1: 1
+        b2: 1
+        b3: 1
+    towerUpgradesEnabled:
+      keys: 000000000100000002000000030000000400000005000000060000000700000008000000
+      values:
+      - b1: 0
+        b2: 0
+        b3: 0
+      - b1: 0
+        b2: 0
+        b3: 0
+      - b1: 0
+        b2: 0
+        b3: 0
+      - b1: 0
+        b2: 0
+        b3: 0
+      - b1: 0
+        b2: 0
+        b3: 0
+      - b1: 0
+        b2: 0
+        b3: 0
+      - b1: 0
+        b2: 0
+        b3: 0
+      - b1: 0
+        b2: 0
+        b3: 0
+      - b1: 0
+        b2: 0
+        b3: 0
+    loadoutsUnlocked: 0000000001000000020000000300000004000000
+    loadoutSelected: 0
+  path: 
+--- !u!114 &86080132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86080130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f9822812991d854eae1db1383445336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerSelected: 0
+  map: {fileID: 11400000, guid: b9c5a439495214c2ba310bb37cd17c1a, type: 2}
+  difficulty: {fileID: 11400000, guid: b96bccabab5d1a74d9cc8cdb6497fccf, type: 2}
+  towerCodes: 0800000000000000
+--- !u!4 &86080133
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86080130}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &86080134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86080130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fcdf1dc43b662146b7d2d17112fe2a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadouts:
+  - {fileID: 11400000, guid: 054cd6fbb36c55e4c87560f7c0988c25, type: 2}
+  - {fileID: 11400000, guid: 827b607eb55d59c4e9563fc219ff78f5, type: 2}
+  - {fileID: 11400000, guid: a73233b181a8127418aa114a7d956c7a, type: 2}
+  - {fileID: 11400000, guid: 7384311aad52aba4db9b0178bd3221e6, type: 2}
+  - {fileID: 11400000, guid: 07d4758c80dbb3c4aa3066ddc38396a4, type: 2}
+  - {fileID: 11400000, guid: 75b3b587eeac77f4b9be9a525047bbde, type: 2}
+--- !u!114 &86080135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86080130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74272f939b12844e837c0459c41dac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portal1: {r: 0, g: 0.42557764, b: 1, a: 1}
+  portal1Highlighted: {r: 0.29411766, g: 0.6862745, b: 1, a: 1}
+  portal2: {r: 0, g: 0, b: 0, a: 1}
+  portal2Highlighted: {r: 0.29411766, g: 0.29411766, b: 0.29411766, a: 1}
+  portal3: {r: 1, g: 0.69457716, b: 0, a: 1}
+  portal3Highlighted: {r: 1, g: 0.790788, b: 0.3160377, a: 1}
+  wallPerm: {r: 1, g: 0.49019608, b: 0, a: 1}
+  wallPermHighlighted: {r: 0.9811321, g: 0.613991, b: 0.26379493, a: 1}
+  tilePerm: {r: 0.88235295, g: 0, b: 0.78431374, a: 1}
+  tilePermHighlighted: {r: 1, g: 0.39215687, b: 1, a: 1}
+  pathPerm: {r: 0.49019608, g: 0, b: 0.78431374, a: 1}
+  pathPermHighlighted: {r: 0.78431374, g: 0.39215687, b: 1, a: 1}
+  start: {r: 0, g: 1, b: 0.0056221485, a: 1}
+  startHighlighted: {r: 0.5613208, g: 1, b: 0.5613208, a: 1}
+  end: {r: 1, g: 0, b: 0, a: 1}
+  endHighlighted: {r: 1, g: 0.6650944, b: 0.6650944, a: 1}
+  checkpoint: {r: 0, g: 1, b: 0.5030501, a: 1}
+  checkpointHighlighted: {r: 0.504717, g: 1, b: 0.7493987, a: 1}
+  tile: {r: 0, g: 0.49019608, b: 0, a: 1}
+  tileHighlighted: {r: 0.49019608, g: 1, b: 0.49019608, a: 1}
+  wall: {r: 0, g: 0, b: 0.49019608, a: 1}
+  wallHighlighted: {r: 0.49019608, g: 0.49019608, b: 1, a: 1}
+  path: {r: 0.49019608, g: 0, b: 0, a: 1}
+  pathHighlighted: {r: 1, g: 0.49019608, b: 0.49019608, a: 1}
+  tower: {r: 0.49019608, g: 0.49019608, b: 0, a: 1}
+  towerHighlighted: {r: 1, g: 1, b: 0.49019608, a: 1}
+  earthTower: {r: 0.745283, g: 0.45438078, b: 0, a: 1}
+  iceTower: {r: 0, g: 0.9620137, b: 1, a: 1}
+  fireTower: {r: 1, g: 0, b: 0, a: 1}
+  lightningTower: {r: 1, g: 0.868332, b: 0, a: 1}
+  waterTower: {r: 0, g: 0.12823725, b: 1, a: 1}
+  ironTower: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
+  atomicTower: {r: 0.15739894, g: 1, b: 0, a: 1}
+  spaceTower: {r: 0, g: 0, b: 0, a: 1}
+  WindTower: {r: 0.8773585, g: 0.87322, b: 0.87322, a: 0.6509804}
+  projectile: {fileID: 6165706959806861308, guid: 0f7785055af1ec14585430c61af7807c,
+    type: 3}
 --- !u!1 &613646301
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,7 +915,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1718600832}
   - component: {fileID: 1718600831}
-  - component: {fileID: 1718600830}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -726,55 +922,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1718600830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1718600829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d74272f939b12844e837c0459c41dac7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  portal1: {r: 0, g: 0.42557764, b: 1, a: 1}
-  portal1Highlighted: {r: 0.29411766, g: 0.6862745, b: 1, a: 1}
-  portal2: {r: 0, g: 0, b: 0, a: 1}
-  portal2Highlighted: {r: 0.29411766, g: 0.29411766, b: 0.29411766, a: 1}
-  portal3: {r: 1, g: 0.69457716, b: 0, a: 1}
-  portal3Highlighted: {r: 1, g: 0.790788, b: 0.3160377, a: 1}
-  wallPerm: {r: 1, g: 0.49019608, b: 0, a: 1}
-  wallPermHighlighted: {r: 0.9811321, g: 0.613991, b: 0.26379493, a: 1}
-  tilePerm: {r: 0.88235295, g: 0, b: 0.78431374, a: 1}
-  tilePermHighlighted: {r: 1, g: 0.39215687, b: 1, a: 1}
-  pathPerm: {r: 0.49019608, g: 0, b: 0.78431374, a: 1}
-  pathPermHighlighted: {r: 0.78431374, g: 0.39215687, b: 1, a: 1}
-  start: {r: 0, g: 1, b: 0.0056221485, a: 1}
-  startHighlighted: {r: 0.5613208, g: 1, b: 0.5613208, a: 1}
-  end: {r: 1, g: 0, b: 0, a: 1}
-  endHighlighted: {r: 1, g: 0.6650944, b: 0.6650944, a: 1}
-  checkpoint: {r: 0, g: 1, b: 0.5030501, a: 1}
-  checkpointHighlighted: {r: 0.504717, g: 1, b: 0.7493987, a: 1}
-  tile: {r: 0, g: 0.49019608, b: 0, a: 1}
-  tileHighlighted: {r: 0.49019608, g: 1, b: 0.49019608, a: 1}
-  wall: {r: 0, g: 0, b: 0.49019608, a: 1}
-  wallHighlighted: {r: 0.49019608, g: 0.49019608, b: 1, a: 1}
-  path: {r: 0.49019608, g: 0, b: 0, a: 1}
-  pathHighlighted: {r: 1, g: 0.49019608, b: 0.49019608, a: 1}
-  tower: {r: 0.49019608, g: 0.49019608, b: 0, a: 1}
-  towerHighlighted: {r: 1, g: 1, b: 0.49019608, a: 1}
-  earthTower: {r: 0.745283, g: 0.45438078, b: 0, a: 1}
-  iceTower: {r: 0, g: 0.9620137, b: 1, a: 1}
-  fireTower: {r: 1, g: 0, b: 0, a: 1}
-  lightningTower: {r: 1, g: 0.868332, b: 0, a: 1}
-  waterTower: {r: 0, g: 0.12823725, b: 1, a: 1}
-  ironTower: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
-  atomicTower: {r: 0.15739894, g: 1, b: 0, a: 1}
-  spaceTower: {r: 0, g: 0, b: 0, a: 0}
-  WindTower: {r: 0.5, g: 0.48820755, b: 0.48820755, a: 0.3882353}
-  projectile: {fileID: 6165706959806861308, guid: 0f7785055af1ec14585430c61af7807c,
-    type: 3}
 --- !u!114 &1718600831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1157,3 +1304,4 @@ SceneRoots:
   - {fileID: 1718600832}
   - {fileID: 2128670452}
   - {fileID: 1938752479}
+  - {fileID: 86080133}

@@ -9,20 +9,22 @@ public class DifficultySelectorButton : Selectable
     public DifficultyScriptableObject difficulty;
     private TextMeshPro tmp;
     private Material _material;
+    public int diffNum;
 
     public override void MouseEnter()
     {
-        _material.color = ColorManager.manager.tileHighlighted;
+        _material.color = difficulty.difficultyColorHighlighted;
     }
 
     public override void MouseExit()
     {
-        _material.color = ColorManager.manager.tile;
+        _material.color = difficulty.difficultyColor;
     }
 
     public override void MouseClick()
     {
         SelectionData.data.difficulty = difficulty;
+        SelectionData.data.selectedDifficulty = diffNum;
         SceneManager.LoadScene("Tower Selection");
     }
 
@@ -31,5 +33,6 @@ public class DifficultySelectorButton : Selectable
         _material = GetComponent<Renderer>().material;
         tmp = GetComponentInChildren<TextMeshPro>();
         tmp.text = difficulty.difficultyName;
+        _material.color = difficulty.difficultyColor;
     }
 }

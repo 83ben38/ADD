@@ -16,10 +16,7 @@ public class LightningTower : TowerCode
         
     }
 
-    public override bool canMerge(TowerCode c)
-    {
-        return c.GetType() == typeof(LightningTower) && c.lvl == lvl;
-    }
+    
 
     public override ProjectileCode create()
     {

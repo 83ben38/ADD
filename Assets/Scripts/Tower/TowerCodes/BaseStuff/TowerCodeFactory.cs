@@ -20,6 +20,7 @@ public class TowerCodeFactory : MonoBehaviour
             case 6 : return new AtomicTower(b1,b2,b3);
             case 7 : return new SpaceTower(b1,b2,b3);
             case 8 : return new WindTower(b1,b2,b3);
+            case 9 : return new ColorTower(b1, b2, b3);
         }
 
         return null;
