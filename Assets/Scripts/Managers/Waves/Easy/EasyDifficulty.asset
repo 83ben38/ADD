@@ -20,3 +20,4 @@ MonoBehaviour:
   difficultyName: Easy
   difficultyColor: {r: 0.05724919, g: 1, b: 0, a: 1}
   difficultyColorHighlighted: {r: 0.53568196, g: 1, b: 0.514151, a: 1}
+  preRequisites: 

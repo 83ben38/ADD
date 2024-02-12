@@ -5,7 +5,7 @@ using UnityEngine;
 public class CoconutCode : FruitCode
 {
     [SerializeField]
-    private int reductionMod;
+    public int reductionMod;
     
     public override void Damage(int amount)
     {

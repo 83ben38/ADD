@@ -19,3 +19,8 @@ MonoBehaviour:
   - 2
   waveDelays:
   - 1
+  configs:
+  - hp: 5
+    speed: 15
+    maxSize: 600
+    minSize: 400

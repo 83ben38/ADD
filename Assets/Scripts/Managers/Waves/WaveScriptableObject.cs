@@ -12,6 +12,7 @@ public class WaveScriptableObject : ScriptableObject
     public float[] waveDelays;
 
     private bool[] wavesFinished;
+    public EnemyConfiguration[] configs;
     
     public IEnumerator spawnWaves(List<GameObject> objects, StartButtonController c)
     {
@@ -42,6 +43,11 @@ public class WaveScriptableObject : ScriptableObject
 
             GameObject go = Instantiate(waves[waveNum]);
             FruitCode fc =go.GetComponent<FruitCode>();
+            fc.hp = configs[waveNum].hp;
+            fc.speed = configs[waveNum].speed/1000f;
+            fc.minScale = configs[waveNum].minSize/1000f;
+            fc.maxScale = configs[waveNum].maxSize/1000f;
+            configs[waveNum].runOptions(fc);
             fc.path = currrentPath;
             Vector3 v = PathfinderManager.manager.path[currrentPath][0].transform.position;
             fc.goalPos = PathfinderManager.manager.path[currrentPath][1].transform.position;

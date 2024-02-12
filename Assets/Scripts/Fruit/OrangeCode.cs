@@ -8,6 +8,7 @@ public class OrangeCode : FruitCode
 {
     public int splitAmount;
     public GameObject splitObject;
+    public EnemyConfiguration splitConfig;
     public override void Damage(int amount)
     {
         hp -= amount;
@@ -24,6 +25,11 @@ public class OrangeCode : FruitCode
                 f.pathNum = pathNum;
                 f.goalPos = goalPos;
                 f.path = path;
+                f.hp = splitConfig.hp;
+                f.speed = splitConfig.speed/1000f;
+                f.minScale = splitConfig.minSize/1000f;
+                f.maxScale = splitConfig.maxSize/1000f;
+                splitConfig.runOptions(f);
                 StartButtonController.startButton.objects.Add(o);
             }
             StartButtonController.startButton.objects.Remove(gameObject);

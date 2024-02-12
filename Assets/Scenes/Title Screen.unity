@@ -788,7 +788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1baf06720eb924437989857edead48b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapDisable: {fileID: 0}
+  mapDisable: {fileID: 499034137}
   difficultyDisable: {fileID: 0}
   enable:
   - {fileID: 2072616220}
