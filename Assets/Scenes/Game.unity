@@ -2780,11 +2780,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1125592398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79ecba5f48d618a4a815141f8d5ab23c, type: 3}
+  m_Script: {fileID: 11500000, guid: a239522e227e81b44aacd1e6b79cc01a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 100
-  minScale: {x: 1, y: 1, z: 1}
+  lives: 0
+  minScale: {x: 3, y: 3, z: 3}
 --- !u!1 &1135393578
 GameObject:
   m_ObjectHideFlags: 0
@@ -4250,7 +4250,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerSelected: 0
   map: {fileID: 11400000, guid: b9c5a439495214c2ba310bb37cd17c1a, type: 2}
+  selectedMap: 0
   difficulty: {fileID: 11400000, guid: b96bccabab5d1a74d9cc8cdb6497fccf, type: 2}
+  selectedDifficulty: 0
   towerCodes: 
 --- !u!114 &2043010584
 MonoBehaviour:
@@ -4268,8 +4270,11 @@ MonoBehaviour:
     money: 99999
     towersUnlocked: 000000000100000002000000030000000400000005000000060000000700000008000000
     towerUpgradesAvailable:
-      keys: 000000000100000002000000030000000400000005000000060000000700000008000000
+      keys: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
       values:
+      - b1: 1
+        b2: 1
+        b3: 1
       - b1: 1
         b2: 1
         b3: 1
@@ -4298,8 +4303,11 @@ MonoBehaviour:
         b2: 1
         b3: 1
     towerUpgradesEnabled:
-      keys: 000000000100000002000000030000000400000005000000060000000700000008000000
+      keys: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
       values:
+      - b1: 0
+        b2: 0
+        b3: 0
       - b1: 0
         b2: 0
         b3: 0
@@ -4329,6 +4337,9 @@ MonoBehaviour:
         b3: 0
     loadoutsUnlocked: 0000000001000000020000000300000004000000
     loadoutSelected: 0
+    difficultiesCompleted:
+      keys: 
+      values: []
   path: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
