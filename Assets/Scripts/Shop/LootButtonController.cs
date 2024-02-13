@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -46,15 +47,48 @@ public class LootButtonController : Selectable
     {
         running = true;
         GameObject[] otherButtons = ShopController.manager.otherButtons;
+        for (int i = 0; i < crate.chances.Count; i++)
+        {
+            for (int j = 0; j < crate.chances[i].items.Count; j++)
+            {
+                if (crate.loadouts)
+                {
+                    if (SaveData.save.getAvailableLoadouts().Contains(crate.chances[i].items[j]))
+                    {
+                        crate.chances[i].items.RemoveAt(j);
+                        j--;
+                    }
+                }
+                else
+                {
+                    if (SaveData.save.isUpgradeAvailable(crate.chances[i].items[j],3))
+                    {
+                        crate.chances[i].items.RemoveAt(j);
+                        j--;
+                    }
+                }
+            }
+
+            if (crate.chances[i].items.Count == 0)
+            {
+                if (i == 0)
+                {
+                    yield break;
+                }
+                crate.chances[0].chance += crate.chances[i].chance; 
+                crate.chances.RemoveAt(i);
+                i--;
+            }
+        }
         float f = Random.value;
         float total = 1;
         int item = -1;
-        for (int i = 0; i < crate.chances.Length; i++)
+        for (int i = 0; i < crate.chances.Count; i++)
         {
             total -= crate.chances[i].chance;
             if (total <= 0)
             {
-                item = crate.chances[i].items[(int)(Random.value * crate.chances[i].items.Length)];
+                item = crate.chances[i].items[(int)(Random.value * crate.chances[i].items.Count)];
                 break;
             }
         }
@@ -65,7 +99,19 @@ public class LootButtonController : Selectable
         }
         else
         {
-            SaveData.save.setAvailableTower(item);
+            if (!SaveData.save.getAvailableTowers().Contains(item))
+            {
+                SaveData.save.setAvailableTower(item);
+            }
+
+            for (int i = 0; i < 3; i++)
+            {
+                if (!SaveData.save.isUpgradeAvailable(item, i))
+                {
+                    SaveData.save.setUpgradeAvailable(item,i,true);
+                    break;
+                }
+            }
         }
 
         for (int i = 0; i < otherButtons.Length; i++)

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chances:
   - chance: 0.8
-    items: 01000000020000000300000004000000
+    items: 0000000001000000020000000300000004000000
   - chance: 0.15
     items: 05000000060000000700000008000000
   - chance: 0.05

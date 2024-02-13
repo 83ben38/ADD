@@ -8,5 +8,11 @@ public class LootOptions
     [SerializeField]
     public float chance;
     [SerializeField] 
-    public int[] items;
+    public List<int> items;
+
+    public LootOptions(LootOptions lo)
+    {
+        items = new List<int>(lo.items);
+        chance = lo.chance;
+    }
 }

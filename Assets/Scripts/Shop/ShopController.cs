@@ -22,7 +22,7 @@ public class ShopController : MonoBehaviour
             buttons[i] = Instantiate(buttonObject);
             buttons[i].transform.position = crateObjects[i].transform.position - new Vector3(0, 1, .5f);
             LootButtonController l =buttons[i].GetComponent<LootButtonController>();
-            l.crate = availableCrates[i];
+            l.crate = new LootCrateScriptableObject(availableCrates[i]);
             l.crateObject = crateObjects[i];
             l.SetUp();
         }
