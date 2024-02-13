@@ -14,6 +14,7 @@ public class LootButtonController : Selectable
     private Material _material;
     public GameObject crateObject;
     private bool running = false;
+    private bool available;
     public void SetUp()
     {
         text.text = crate.cost + " \u20b5\u00a2";
@@ -22,31 +23,31 @@ public class LootButtonController : Selectable
             text.text = (crate.cost/1000) + ((crate.cost%1000)/100) + " \u20b5\u00a2";
         }
         _material = GetComponent<Renderer>().material;
+        available = SaveData.save.getMoney() >= crate.cost;
+        checkAvailable();
         MouseExit();
     }
 
     public override void MouseEnter()
     {
-        _material.color = SaveData.save.getMoney() >= crate.cost ? ColorManager.manager.tileHighlighted :  ColorManager.manager.pathHighlighted;
+        _material.color = available ? ColorManager.manager.tileHighlighted :  ColorManager.manager.pathHighlighted;
     }
 
     public override void MouseExit()
     {
-        _material.color = SaveData.save.getMoney() >= crate.cost ? ColorManager.manager.tile :  ColorManager.manager.path;
+        _material.color = available ? ColorManager.manager.tile :  ColorManager.manager.path;
     }
 
     public override void MouseClick()
     {
-        if (SaveData.save.getMoney() >= crate.cost && !running)
+        if (available && !running)
         {
             StartCoroutine(Animate());
         }
     }
 
-    public IEnumerator Animate()
+    public void checkAvailable()
     {
-        running = true;
-        GameObject[] otherButtons = ShopController.manager.otherButtons;
         for (int i = 0; i < crate.chances.Count; i++)
         {
             for (int j = 0; j < crate.chances[i].items.Count; j++)
@@ -73,20 +74,28 @@ public class LootButtonController : Selectable
             {
                 if (i == 0)
                 {
-                    yield break;
+                    available = false;
+                    return;
                 }
                 crate.chances[0].chance += crate.chances[i].chance; 
                 crate.chances.RemoveAt(i);
                 i--;
             }
         }
+    }
+
+    public IEnumerator Animate()
+    {
+    
+        running = true;
+        GameObject[] otherButtons = ShopController.manager.otherButtons;
         float f = Random.value;
-        float total = 1;
+        
         int item = -1;
         for (int i = 0; i < crate.chances.Count; i++)
         {
-            total -= crate.chances[i].chance;
-            if (total <= 0)
+            f -= crate.chances[i].chance;
+            if (f <= 0)
             {
                 item = crate.chances[i].items[(int)(Random.value * crate.chances[i].items.Count)];
                 break;
