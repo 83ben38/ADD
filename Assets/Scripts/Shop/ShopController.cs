@@ -35,6 +35,10 @@ public class ShopController : MonoBehaviour
         {
             crateObjects[i].SetActive(screenNum == i);
             buttons[i].SetActive(screenNum == i);
+            if (screenNum == i)
+            {
+                buttons[i].GetComponent<LootButtonController>().SetUp();
+            }
         }
     }
 }

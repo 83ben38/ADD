@@ -651,7 +651,9 @@ MonoBehaviour:
   - {fileID: 540043276}
   availableCrates:
   - {fileID: 11400000, guid: ce93e493ff9254ba8b53b209dff900a5, type: 2}
+  - {fileID: 11400000, guid: e19d3b71b0fdf45828dea5e5789bb4cc, type: 2}
   crateObjects:
+  - {fileID: 511949330}
   - {fileID: 511949330}
   buttons: []
   buttonObject: {fileID: 1658129000}
@@ -1618,6 +1620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1224666162}
   crate: {fileID: 0}
+  crateObject: {fileID: 0}
 --- !u!65 &1658129002
 BoxCollider:
   m_ObjectHideFlags: 0
