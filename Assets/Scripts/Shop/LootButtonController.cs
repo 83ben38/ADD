@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
 
 public class LootButtonController : Selectable
 {
@@ -44,6 +46,28 @@ public class LootButtonController : Selectable
     {
         running = true;
         GameObject[] otherButtons = ShopController.manager.otherButtons;
+        float f = Random.value;
+        float total = 1;
+        int item = -1;
+        for (int i = 0; i < crate.chances.Length; i++)
+        {
+            total -= crate.chances[i].chance;
+            if (total <= 0)
+            {
+                item = crate.chances[i].items[(int)(Random.value * crate.chances[i].items.Length)];
+                break;
+            }
+        }
+
+        if (crate.loadouts)
+        {
+            SaveData.save.setAvailableLoadout(item);
+        }
+        else
+        {
+            SaveData.save.setAvailableTower(item);
+        }
+
         for (int i = 0; i < otherButtons.Length; i++)
         {
             otherButtons[i].SetActive(false);
