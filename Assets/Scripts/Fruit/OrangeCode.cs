@@ -26,9 +26,11 @@ public class OrangeCode : FruitCode
                 f.goalPos = goalPos;
                 f.path = path;
                 f.hp = splitConfig.hp;
+                f.maxHp = splitConfig.hp;
                 f.speed = splitConfig.speed/1000f;
                 f.minScale = splitConfig.minSize/1000f;
                 f.maxScale = splitConfig.maxSize/1000f;
+                f.transform.localScale = new Vector3(f.maxScale, f.maxScale, f.maxScale)*MapCreator.scale;
                 splitConfig.runOptions(f);
                 StartButtonController.startButton.objects.Add(o);
             }
