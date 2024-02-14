@@ -18,6 +18,10 @@ public class InGameState : TowerState
         int[] towerCodes = SelectionData.data.towerCodes;
         held = TowerCodeFactory.getTowerCode(towerCodes[Random.Range(0, towerCodes.Length)]);
         held.lvl = (int)Math.Sqrt(Random.Range(1, round));
+        if (held.lvl > 6)
+        {
+            held.lvl = 6;
+        }
     }
 
     public override void MouseClick(TowerController controller)
