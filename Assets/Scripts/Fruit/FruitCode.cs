@@ -47,6 +47,7 @@ public class FruitCode : MonoBehaviour
          frozenTime += Time.deltaTime;
          if (frozenTime >= 10)
          {
+            StartButtonController.startButton.objects.Remove(gameObject);
             Destroy(gameObject);
          }
 
