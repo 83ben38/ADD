@@ -44,9 +44,11 @@ public class WaveScriptableObject : ScriptableObject
             GameObject go = Instantiate(waves[waveNum]);
             FruitCode fc =go.GetComponent<FruitCode>();
             fc.hp = configs[waveNum].hp;
+            fc.maxHp = configs[waveNum].hp;
             fc.speed = configs[waveNum].speed/1000f;
             fc.minScale = configs[waveNum].minSize/1000f;
             fc.maxScale = configs[waveNum].maxSize/1000f;
+            fc.transform.localScale = new Vector3(fc.maxScale, fc.maxScale, fc.maxScale)*MapCreator.scale;
             configs[waveNum].runOptions(fc);
             fc.path = currrentPath;
             Vector3 v = PathfinderManager.manager.path[currrentPath][0].transform.position;

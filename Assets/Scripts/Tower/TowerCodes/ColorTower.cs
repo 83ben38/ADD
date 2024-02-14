@@ -19,7 +19,7 @@ public class ColorTower : TowerCode
 
     public override bool canMerge(TowerCode c)
     {
-        return c.lvl == lvl;
+        return c.lvl == lvl && lvl < 7;
     }
 
     public override TowerCode merge(TowerCode c)

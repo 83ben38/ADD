@@ -63,9 +63,34 @@ public class StartButtonController : Selectable
 
     public IEnumerator spawnWave()
     {
-       
-        if (waves.waves.Length == wave)
+        if (waves.waves.Length < wave)
         {
+            waveGoing = true;
+            waveFinished = false;
+            objects = new List<GameObject>();
+            StartCoroutine(waves.freeplayWaves[wave%waves.freeplayWaves.Length].spawnWaves(objects, this,wave));
+            while (waveGoing)
+            {
+                yield return null;
+            }
+
+            while (objects.Count > 0)
+            {
+                yield return null;
+            }
+
+            foreach (var tower in PathfinderManager.manager.tiles)
+            {
+                tower.state = new InGameState();
+            }
+
+            wave++;
+            InGameState.generateNewTowerCode(wave + 1);
+            waveFinished = true;
+        }
+        else if (waves.waves.Length == wave)
+        {
+            wave++;
             int money = waves.awardMultiplier * SelectionData.data.map.baseAward;
             if (!SaveData.save.isDifficultyCompleted(SelectionData.data.selectedMap, SelectionData.data.selectedDifficulty))
             {

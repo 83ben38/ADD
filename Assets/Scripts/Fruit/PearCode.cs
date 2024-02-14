@@ -28,6 +28,7 @@ public class PearCode : FruitCode
          frozenTime += Time.deltaTime;
          if (frozenTime >= 10)
          {
+            StartButtonController.startButton.objects.Remove(gameObject);
             Destroy(gameObject);
          }
 

@@ -9,25 +9,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2237115e707a74cbd8037e926025c8f5, type: 3}
-  m_Name: TestWave
+  m_Script: {fileID: 11500000, guid: 661760117b4dbdc42813eabb9d865034, type: 3}
+  m_Name: TestFreePlayWave
   m_EditorClassIdentifier: 
   waves:
   - {fileID: 8267130134565377638, guid: 8461deba704492e45a16e4e04d639d8f, type: 3}
   - {fileID: 8267130134565377638, guid: a513c56fc7019834e95d9626b5945075, type: 3}
   - {fileID: 8267130134565377638, guid: 51f97fa94ec68b54492318ca3440fd42, type: 3}
-  waveNums: 010000000100000003000000
-  waveSpacings:
+  defaultWaveNums:
   - 1
+  - 1
+  - 1
+  scalingWaveNums:
+  - 1
+  - 0.5
   - 0
-  - 1
+  totalWaveSpacings:
+  - 3
+  - 3
+  - 0
   waveDelays:
   - 0
   - 3
   - 0.5
   configs:
-  - hp: 10
-    speed: 10
+  - defaultHp: 1
+    hpScaling: 1
+    defaultSpeed: 10
+    speedScaling: 1
     maxSize: 400
     minSize: 200
     blueberryOptions:
@@ -105,12 +114,14 @@ MonoBehaviour:
               splitAmount: 0
           splitAmount: 0
       splitAmount: 0
-  - hp: 15
-    speed: 7
+  - defaultHp: 5
+    hpScaling: 2
+    defaultSpeed: 7
+    speedScaling: 1
     maxSize: 600
     minSize: 200
     blueberryOptions:
-      speedIncrease: 3
+      speedIncrease: 5
     coconutOptions:
       reductionMod: 0
     lemonOptions:
@@ -184,16 +195,18 @@ MonoBehaviour:
               splitAmount: 0
           splitAmount: 0
       splitAmount: 0
-  - hp: 5
-    speed: 6
-    maxSize: 300
+  - defaultHp: 10
+    hpScaling: 5
+    defaultSpeed: 12
+    speedScaling: 0
+    maxSize: 500
     minSize: 200
     blueberryOptions:
       speedIncrease: 0
     coconutOptions:
       reductionMod: 0
     lemonOptions:
-      radius: 3
+      radius: 2
       speedIncrease: 4
     orangeOptions:
       childObject: {fileID: 0}

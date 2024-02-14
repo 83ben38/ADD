@@ -84,7 +84,7 @@ public abstract class TowerCode : TowerState
 
     public virtual bool canMerge(TowerCode c)
     {
-        return c.lvl == lvl && (c.GetType() == GetType() || c is ColorTower);
+        return (c.lvl == lvl && c.GetType() == GetType() && lvl < 6) || (c.lvl==lvl && c is ColorTower && lvl < 7);
     }
 
     public virtual TowerCode merge(TowerCode c)
