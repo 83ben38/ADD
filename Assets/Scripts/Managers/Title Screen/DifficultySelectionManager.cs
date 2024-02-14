@@ -27,21 +27,14 @@ public class DifficultySelectionManager : MonoBehaviour
         {
             foreach (var star in someStars)
             {
-                star.SetActive(false);
-            }
-        }
-        foreach (var someStars in stars)
-        {
-            foreach (var star in someStars)
-            {
-                star.SetActive(false);
+                Destroy(star.gameObject);
             }
         }
         foreach (var someButtons in buttons)
         {
             foreach (var button in someButtons)
             {
-                button.SetActive(false);
+                Destroy(button.gameObject);
             }
         }
     }
@@ -50,9 +43,7 @@ public class DifficultySelectionManager : MonoBehaviour
     {
         backButton.gameObject.SetActive(true);
         backButton.difficultyDisable = this;
-        if (stars == null)
-        {
-            stars = new GameObject[xDimensions][];
+        stars = new GameObject[xDimensions][];
             buttons = new GameObject[xDimensions][];
             for (int i = 0; i < xDimensions; i++)
             {
@@ -104,14 +95,12 @@ public class DifficultySelectionManager : MonoBehaviour
                     }
                 }
             }
-        }
-        else
-        {
+       
             for (int i = 0; i < availableDifficulties.Length; i++)
             {
                 stars[i / yDimensions][i % yDimensions].SetActive(true);
                 buttons[i / yDimensions][i % yDimensions].SetActive(true);
             }
-        }
+        
     }
 }
