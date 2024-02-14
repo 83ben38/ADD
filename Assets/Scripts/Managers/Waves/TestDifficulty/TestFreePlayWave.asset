@@ -1,0 +1,278 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 661760117b4dbdc42813eabb9d865034, type: 3}
+  m_Name: TestFreePlayWave
+  m_EditorClassIdentifier: 
+  waves:
+  - {fileID: 8267130134565377638, guid: 8461deba704492e45a16e4e04d639d8f, type: 3}
+  - {fileID: 8267130134565377638, guid: a513c56fc7019834e95d9626b5945075, type: 3}
+  - {fileID: 8267130134565377638, guid: 51f97fa94ec68b54492318ca3440fd42, type: 3}
+  defaultWaveNums:
+  - 1
+  - 1
+  - 1
+  scalingWaveNums:
+  - 1
+  - 0.5
+  - 0
+  totalWaveSpacings:
+  - 3
+  - 0
+  - 3
+  waveDelays:
+  - 0
+  - 3
+  - 0.5
+  configs:
+  - defaultHp: 1
+    hpScaling: 0.1
+    defaultSpeed: 10
+    speedScaling: 1
+    maxSize: 400
+    minSize: 200
+    blueberryOptions:
+      speedIncrease: 0
+    coconutOptions:
+      reductionMod: 0
+    lemonOptions:
+      radius: 0
+      speedIncrease: 0
+    orangeOptions:
+      childObject: {fileID: 0}
+      childConfig:
+        hp: 0
+        speed: 0
+        maxSize: 0
+        minSize: 0
+        blueberryOptions:
+          speedIncrease: 0
+        coconutOptions:
+          reductionMod: 0
+        lemonOptions:
+          radius: 0
+          speedIncrease: 0
+        orangeOptions:
+          childObject: {fileID: 0}
+          childConfig:
+            hp: 0
+            speed: 0
+            maxSize: 0
+            minSize: 0
+            blueberryOptions:
+              speedIncrease: 0
+            coconutOptions:
+              reductionMod: 0
+            lemonOptions:
+              radius: 0
+              speedIncrease: 0
+            orangeOptions:
+              childObject: {fileID: 0}
+              childConfig:
+                hp: 0
+                speed: 0
+                maxSize: 0
+                minSize: 0
+                blueberryOptions:
+                  speedIncrease: 0
+                coconutOptions:
+                  reductionMod: 0
+                lemonOptions:
+                  radius: 0
+                  speedIncrease: 0
+                orangeOptions:
+                  childObject: {fileID: 0}
+                  childConfig:
+                    hp: 0
+                    speed: 0
+                    maxSize: 0
+                    minSize: 0
+                    blueberryOptions:
+                      speedIncrease: 0
+                    coconutOptions:
+                      reductionMod: 0
+                    lemonOptions:
+                      radius: 0
+                      speedIncrease: 0
+                    orangeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      splitAmount: 0
+                  splitAmount: 0
+              splitAmount: 0
+          splitAmount: 0
+      splitAmount: 0
+  - defaultHp: 5
+    hpScaling: 2
+    defaultSpeed: 7
+    speedScaling: 1
+    maxSize: 600
+    minSize: 200
+    blueberryOptions:
+      speedIncrease: 5
+    coconutOptions:
+      reductionMod: 0
+    lemonOptions:
+      radius: 0
+      speedIncrease: 0
+    orangeOptions:
+      childObject: {fileID: 0}
+      childConfig:
+        hp: 0
+        speed: 0
+        maxSize: 0
+        minSize: 0
+        blueberryOptions:
+          speedIncrease: 0
+        coconutOptions:
+          reductionMod: 0
+        lemonOptions:
+          radius: 0
+          speedIncrease: 0
+        orangeOptions:
+          childObject: {fileID: 0}
+          childConfig:
+            hp: 0
+            speed: 0
+            maxSize: 0
+            minSize: 0
+            blueberryOptions:
+              speedIncrease: 0
+            coconutOptions:
+              reductionMod: 0
+            lemonOptions:
+              radius: 0
+              speedIncrease: 0
+            orangeOptions:
+              childObject: {fileID: 0}
+              childConfig:
+                hp: 0
+                speed: 0
+                maxSize: 0
+                minSize: 0
+                blueberryOptions:
+                  speedIncrease: 0
+                coconutOptions:
+                  reductionMod: 0
+                lemonOptions:
+                  radius: 0
+                  speedIncrease: 0
+                orangeOptions:
+                  childObject: {fileID: 0}
+                  childConfig:
+                    hp: 0
+                    speed: 0
+                    maxSize: 0
+                    minSize: 0
+                    blueberryOptions:
+                      speedIncrease: 0
+                    coconutOptions:
+                      reductionMod: 0
+                    lemonOptions:
+                      radius: 0
+                      speedIncrease: 0
+                    orangeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      splitAmount: 0
+                  splitAmount: 0
+              splitAmount: 0
+          splitAmount: 0
+      splitAmount: 0
+  - defaultHp: 10
+    hpScaling: 5
+    defaultSpeed: 12
+    speedScaling: 0
+    maxSize: 500
+    minSize: 200
+    blueberryOptions:
+      speedIncrease: 0
+    coconutOptions:
+      reductionMod: 0
+    lemonOptions:
+      radius: 2
+      speedIncrease: 4
+    orangeOptions:
+      childObject: {fileID: 0}
+      childConfig:
+        hp: 0
+        speed: 0
+        maxSize: 0
+        minSize: 0
+        blueberryOptions:
+          speedIncrease: 0
+        coconutOptions:
+          reductionMod: 0
+        lemonOptions:
+          radius: 0
+          speedIncrease: 0
+        orangeOptions:
+          childObject: {fileID: 0}
+          childConfig:
+            hp: 0
+            speed: 0
+            maxSize: 0
+            minSize: 0
+            blueberryOptions:
+              speedIncrease: 0
+            coconutOptions:
+              reductionMod: 0
+            lemonOptions:
+              radius: 0
+              speedIncrease: 0
+            orangeOptions:
+              childObject: {fileID: 0}
+              childConfig:
+                hp: 0
+                speed: 0
+                maxSize: 0
+                minSize: 0
+                blueberryOptions:
+                  speedIncrease: 0
+                coconutOptions:
+                  reductionMod: 0
+                lemonOptions:
+                  radius: 0
+                  speedIncrease: 0
+                orangeOptions:
+                  childObject: {fileID: 0}
+                  childConfig:
+                    hp: 0
+                    speed: 0
+                    maxSize: 0
+                    minSize: 0
+                    blueberryOptions:
+                      speedIncrease: 0
+                    coconutOptions:
+                      reductionMod: 0
+                    lemonOptions:
+                      radius: 0
+                      speedIncrease: 0
+                    orangeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      splitAmount: 0
+                  splitAmount: 0
+              splitAmount: 0
+          splitAmount: 0
+      splitAmount: 0

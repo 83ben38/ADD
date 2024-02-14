@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/FreeplayWaveScriptableObject", order = 8)]
-public class FreeplayWaveScriptableObject : MonoBehaviour
+public class FreeplayWaveScriptableObject : ScriptableObject
 {
      public GameObject[] waves;
     public float[] defaultWaveNums;
     public float[] scalingWaveNums;
-    public float[] waveSpacings;
+    public float[] totalWaveSpacings;
     public float[] waveDelays;
     private bool[] wavesFinished;
     public FreeplayEnemyConfiguration[] configs;
@@ -56,7 +57,7 @@ public class FreeplayWaveScriptableObject : MonoBehaviour
             }
 
             objects.Add(go);
-            for (float j = 0; j < waveSpacings[waveNum]; j+=Time.deltaTime)
+            for (float j = 0; j < totalWaveSpacings[waveNum]/(defaultWaveNums[waveNum]+(scalingWaveNums[waveNum]*increase)); j+=Time.deltaTime)
             {
                 yield return null;
             }   

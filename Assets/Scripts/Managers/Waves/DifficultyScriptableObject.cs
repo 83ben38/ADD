@@ -5,6 +5,7 @@ using UnityEngine;
 public class DifficultyScriptableObject : ScriptableObject
 {
     public WaveScriptableObject[] waves;
+    public FreeplayWaveScriptableObject[] freeplayWaves;
     public int maxLives;
     public int awardMultiplier;
     public string difficultyName;
