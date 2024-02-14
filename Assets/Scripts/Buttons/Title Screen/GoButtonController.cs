@@ -9,6 +9,7 @@ public class GoButtonController : Selectable
     private void Start()
     {
         _material = GetComponent<Renderer>().material;
+        Time.timeScale = 1;
     }
     public override void MouseEnter()
     {

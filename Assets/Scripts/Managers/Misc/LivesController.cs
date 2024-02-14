@@ -24,7 +24,7 @@ public class LivesController : MonoBehaviour
         lives = SelectionData.data.difficulty.maxLives;
         maxLives = lives;
         text = GetComponentInChildren<TextMeshPro>();
-        
+        InGameState.held = null;
     }
 
     public void damage(int amount)

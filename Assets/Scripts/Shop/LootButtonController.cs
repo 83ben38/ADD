@@ -169,6 +169,11 @@ public class LootButtonController : Selectable
         {
             otherButtons[i].SetActive(true);
         }
+        otherButtons[0].GetComponent<MoneyController>().text.text = crate.cost + " \u20b5\u00a2";
+        if (crate.cost >= 10000)
+        {
+            otherButtons[0].GetComponent<MoneyController>().text.text = (crate.cost/1000) + ((crate.cost%1000)/100) + " \u20b5\u00a2";
+        }
         crateObject.transform.SetPositionAndRotation(pos,rot);
         SaveData.save.addMoney(-crate.cost);
         SetUp();
