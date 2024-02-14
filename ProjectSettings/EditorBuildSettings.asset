@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Loadout Selector.unity
     guid: 75d2e0aac7a54ae4aab8fb8261cb633d
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: c148b6a2bd49c4bc1bfd09cb04778f77
   m_configObjects: {}
