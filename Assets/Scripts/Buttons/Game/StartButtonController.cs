@@ -53,6 +53,11 @@ public class StartButtonController : Selectable
     {
         if (waveFinished)
         {
+            if (PathfinderManager.manager.path.Count == 0)
+            {
+                PathfinderManager.manager.pathFind();
+            }
+
             foreach (var tower in PathfinderManager.manager.tiles)
             {
                 tower.state = tower.tower;
