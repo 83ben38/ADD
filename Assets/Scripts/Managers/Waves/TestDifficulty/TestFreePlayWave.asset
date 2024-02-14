@@ -26,15 +26,15 @@ MonoBehaviour:
   - 0
   totalWaveSpacings:
   - 3
-  - 0
   - 3
+  - 0
   waveDelays:
   - 0
   - 3
   - 0.5
   configs:
   - defaultHp: 1
-    hpScaling: 0.1
+    hpScaling: 1
     defaultSpeed: 10
     speedScaling: 1
     maxSize: 400
