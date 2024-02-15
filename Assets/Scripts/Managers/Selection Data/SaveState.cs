@@ -13,21 +13,22 @@ public class SaveState
     public int loadoutSelected;
 
     public SerializableDictionary<int, SerializableDictionary<int, bool>> difficultiesCompleted;
-    /*public SaveState()
+    public SaveState()
     {
-        money = 0;
+        money = 999999;
+        //money = 0;
         towersUnlocked = new int[]{0,1,2,3,4};
-        towerUpgradesAvailable = new SerializableDictionary<int, bool[]>();
-        towerUpgradesEnabled = new SerializableDictionary<int, bool[]>();
+        towerUpgradesAvailable = new SerializableDictionary<int, TripleBool>();
+        towerUpgradesEnabled = new SerializableDictionary<int, TripleBool>();
         loadoutsUnlocked = new int[]{0};
         loadoutSelected = 0;
         for (int i = 0; i < 5; i++)
         {
-            towerUpgradesAvailable[i] = new[] { false, false, false };
-            towerUpgradesEnabled[i] = new[] { false, false, false };
+            towerUpgradesAvailable[i] = new TripleBool(false,false,false);
+            towerUpgradesEnabled[i] = new TripleBool(false,false,false);
         }
-    }*/
-    public SaveState()
+    }
+    /*public SaveState()
     {
         money = 99999;
         towersUnlocked = new int[]{0,1,2,3,4,5,6,7,8,9};
@@ -42,5 +43,5 @@ public class SaveState
         }
 
         difficultiesCompleted = new SerializableDictionary<int, SerializableDictionary<int, bool>>();
-    }
+    }*/
 }

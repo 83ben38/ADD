@@ -36,12 +36,12 @@ public class SaveData : MonoBehaviour
 
     public bool isUpgradeAvailable(int tower, int upgrade)
     {
-        return state.towerUpgradesAvailable[tower][upgrade];
+        return state.towerUpgradesAvailable.ContainsKey(tower) && state.towerUpgradesAvailable[tower][upgrade];
     }
 
     public bool isUpgradeEnabled(int tower, int upgrade)
     {
-        return state.towerUpgradesEnabled[tower][upgrade];
+        return state.towerUpgradesAvailable.ContainsKey(tower) &&state.towerUpgradesEnabled[tower][upgrade];
     }
 
     public void setUpgradeEnabled(int tower, int upgrade, bool enabled)

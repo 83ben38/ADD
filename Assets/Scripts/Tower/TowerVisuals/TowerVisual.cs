@@ -13,7 +13,7 @@ public class TowerVisual : MonoBehaviour
     private int shootNum = 0;
     private void Start()
     {
-        shape = MapCreator.shape;
+        shape = MapCreator.shape ?? ShopController.shopShape;
         for (int i = 0; i < children.Length; i++)
         {
             children[i].transform.localPosition = shape.getDotPos(i);

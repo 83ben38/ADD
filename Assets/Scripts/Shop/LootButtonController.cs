@@ -123,6 +123,28 @@ public class LootButtonController : Selectable
             }
         }
 
+        if (!crate.loadouts)
+        {
+            GameObject towerObject = ShopController.manager.towerObject;
+            towerObject.SetActive(true);
+            towerObject.transform.position = crateObject.transform.position;
+            TowerController t = towerObject.GetComponent<TowerController>();
+            t.tower = TowerCodeFactory.getTowerCode(item);
+            t.tower.lvl = 1;
+            for (int i = 0; i < 3; i++)
+            {
+                if (SaveData.save.isUpgradeAvailable(item, i))
+                {
+                    t.tower.lvl = i + 2;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            t.towerVisual.updateTower();
+        }
+
         for (int i = 0; i < otherButtons.Length; i++)
         {
             otherButtons[i].SetActive(false);

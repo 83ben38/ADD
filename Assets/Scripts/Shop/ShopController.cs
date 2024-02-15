@@ -5,6 +5,9 @@ using UnityEngine;
 public class ShopController : MonoBehaviour
 {
     public static ShopController manager;
+    public ShapeScriptableObject sobject;
+    public static Shape shopShape;
+    public GameObject towerObject;
     public GameObject[] otherButtons;
     public LootCrateScriptableObject[] availableCrates;
     public GameObject[] crateObjects;
@@ -13,6 +16,10 @@ public class ShopController : MonoBehaviour
     public int screenNum = 0;
     private void Start()
     {
+        shopShape = towerObject.GetComponentInChildren<Shape>();
+        shopShape.scriptableObject = sobject;
+        towerObject.GetComponent<TowerController>().state = new DescriptionState();
+        towerObject.transform.localScale *= 0.5f;
         manager = this;
         buttons = new GameObject[availableCrates.Length];
             
