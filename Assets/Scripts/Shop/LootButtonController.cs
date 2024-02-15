@@ -122,10 +122,9 @@ public class LootButtonController : Selectable
                 }
             }
         }
-
+        GameObject towerObject = ShopController.manager.towerObject;
         if (!crate.loadouts)
         {
-            GameObject towerObject = ShopController.manager.towerObject;
             towerObject.SetActive(true);
             towerObject.transform.position = crateObject.transform.position;
             TowerController t = towerObject.GetComponent<TowerController>();
@@ -198,6 +197,7 @@ public class LootButtonController : Selectable
         }
         crateObject.transform.SetPositionAndRotation(pos,rot);
         SaveData.save.addMoney(-crate.cost);
+        towerObject.SetActive(false);
         SetUp();
         running = false;
     }
