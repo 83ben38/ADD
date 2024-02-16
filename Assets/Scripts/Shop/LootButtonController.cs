@@ -112,8 +112,7 @@ public class LootButtonController : Selectable
             {
                 SaveData.save.setAvailableTower(item);
             }
-
-            for (int i = 0; i < 3; i++)
+            else for (int i = 0; i < 3; i++)
             {
                 if (!SaveData.save.isUpgradeAvailable(item, i))
                 {
