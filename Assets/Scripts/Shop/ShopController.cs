@@ -7,6 +7,7 @@ public class ShopController : MonoBehaviour
     public static ShopController manager;
     public ShapeScriptableObject sobject;
     public static Shape shopShape;
+    public GameObject loadoutObject;
     public GameObject towerObject;
     public GameObject[] otherButtons;
     public LootCrateScriptableObject[] availableCrates;
@@ -16,6 +17,7 @@ public class ShopController : MonoBehaviour
     public int screenNum = 0;
     private void Start()
     {
+        loadoutObject.transform.localScale *= 0.25f;
         shopShape = towerObject.GetComponentInChildren<Shape>();
         shopShape.scriptableObject = sobject;
         towerObject.GetComponent<TowerController>().state = new DescriptionState();

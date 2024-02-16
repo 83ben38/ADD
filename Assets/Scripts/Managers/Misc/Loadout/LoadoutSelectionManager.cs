@@ -21,7 +21,7 @@ public class LoadoutSelectionManager : MonoBehaviour
         int[] loadouts = SaveData.save.getAvailableLoadouts();
         for (int j = 0; j < loadouts.Length; j++)
         {
-            int[] loadout = LoadoutManager.manager.loadouts[j].loadout;
+            int[] loadout = LoadoutManager.manager.loadouts[loadouts[j]].loadout;
             LoadoutButtonController[] buttons = new LoadoutButtonController[loadout.Length];
             for (int i = 0; i < loadout.Length; i++)
             {

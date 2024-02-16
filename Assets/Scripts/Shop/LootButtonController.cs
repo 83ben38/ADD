@@ -122,7 +122,7 @@ public class LootButtonController : Selectable
                 }
             }
         }
-        GameObject towerObject = ShopController.manager.towerObject;
+        GameObject towerObject = crate.loadouts ? ShopController.manager.loadoutObject : ShopController.manager.towerObject;
         if (!crate.loadouts)
         {
             towerObject.SetActive(true);
@@ -142,6 +142,23 @@ public class LootButtonController : Selectable
                 }
             }
             t.towerVisual.updateTower();
+        }
+        else
+        {
+            GameObject cloneObject = towerObject;
+            towerObject = new GameObject();
+            LoadoutScriptableObject loadout = LoadoutManager.manager.loadouts[item];
+            for (int i = 0; i < loadout.loadout.Length; i++)
+            {
+                GameObject go = Instantiate(cloneObject,towerObject.transform);
+                go.GetComponentInChildren<TextMeshPro>().text = loadout.loadout[i] + "";
+                go.transform.localPosition =
+                    new Vector3((i - (loadout.loadout.Length / 2.0f)) * go.transform.localScale.x, 0, 0);
+                go.SetActive(true);
+            }
+            towerObject.SetActive(true);
+            towerObject.transform.position = crateObject.transform.position;
+            
         }
 
         for (int i = 0; i < otherButtons.Length; i++)
@@ -190,14 +207,20 @@ public class LootButtonController : Selectable
         {
             otherButtons[i].SetActive(true);
         }
-        otherButtons[0].GetComponent<MoneyController>().text.text = crate.cost + " \u20b5\u00a2";
+        SaveData.save.addMoney(-crate.cost);
+        int money = SaveData.save.getMoney();
+        otherButtons[0].GetComponent<MoneyController>().text.text = money + " \u20b5\u00a2";
         if (crate.cost >= 10000)
         {
-            otherButtons[0].GetComponent<MoneyController>().text.text = (crate.cost/1000) + ((crate.cost%1000)/100) + " \u20b5\u00a2";
+            otherButtons[0].GetComponent<MoneyController>().text.text = (money/1000) + ((money%1000)/100) + " \u20b5\u00a2";
         }
         crateObject.transform.SetPositionAndRotation(pos,rot);
-        SaveData.save.addMoney(-crate.cost);
         towerObject.SetActive(false);
+        if (crate.loadouts)
+        {
+            Destroy(towerObject);
+        }
+
         SetUp();
         running = false;
     }
