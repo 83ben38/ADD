@@ -24,7 +24,7 @@ public class SaveState
         loadoutsUnlocked = new int[]{0};
         loadoutSelected = 0;
         //game, towers, shop, loadouts, maps/difficulties
-        tutorials = new bool[] { false, false, false, false, false };
+        tutorials = new bool[] { false, false, false, false, false, false };
         for (int i = 0; i < 5; i++)
         {
             towerUpgradesAvailable[i] = new TripleBool(false,false,false);

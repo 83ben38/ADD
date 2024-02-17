@@ -13,8 +13,15 @@ public class TutorialManager : MonoBehaviour
 
     private void Start()
     {
-        manager = this;
-        runNext();
+        if (!SaveData.save.isTutorialCompleted(tutorialNum))
+        {
+            manager = this;
+            runNext();
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     public void runNext()
