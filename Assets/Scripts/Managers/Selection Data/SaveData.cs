@@ -87,6 +87,22 @@ public class SaveData : MonoBehaviour
         return state.loadoutsUnlocked;
     }
 
+    public bool isTutorialOver()
+    {
+        return state.tutorialStep == 5;
+    }
+
+    public int getTutorialPhase()
+    {
+        return state.tutorialStep;
+    }
+
+    public void finishNextTutorialSection()
+    {
+        state.tutorialStep++;
+        saver.Save(state);
+    }
+
     public void setAvailableLoadout(int loadout)
     {
         int[] loadouts = new int[state.loadoutsUnlocked.Length + 1];
