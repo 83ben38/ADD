@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: IceDescription
   m_EditorClassIdentifier: 
   title: 'Ice Tower '
-  description: 'this tower harneses the power of Ice and snow to incapacitate and
-    slow enemys  '
+  description: This tower harneses the power of Ice and Snow to incapacitate and
+    slow enemies.
   upgrade1Description: 
   upgrade2Description: 
   upgrade3Description: 

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: IronTower
   m_EditorClassIdentifier: 
   title: Iron Tower
-  description: 'Born of mans industrealisum this tower manufacturs and deploys trapes
-    in the enameys path  '
-  upgrade1Description: '**** '
+  description: Born of man's industrialism this tower manufactures and deploys traps
+    in the enemies path.
+  upgrade1Description: 
   upgrade2Description: 
   upgrade3Description: 

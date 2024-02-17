@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LightingTower
   m_EditorClassIdentifier: 
   title: Lighting Tower
-  description: 'this tower throwes thundering bolts of electrical energey that strike
-    multipul targets in a chain '
+  description: This tower shoots thundering bolts of electrical energy that strike
+    multiple targets in a chain.
   upgrade1Description: 
   upgrade2Description: 
   upgrade3Description: 

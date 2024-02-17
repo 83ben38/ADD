@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: FireDescription
   m_EditorClassIdentifier: 
   title: Fire Tower
-  description: This tower chanals the esence of the elimental plain of fire to rapidly
-    form fire balls
-  upgrade1Description: upgrade 1
-  upgrade2Description: upgrade 2
-  upgrade3Description: upgrade 3
+  description: This tower channels the essence of the elemental plain of fire to
+    rapidly form fire balls.
+  upgrade1Description: 
+  upgrade2Description: 
+  upgrade3Description: 

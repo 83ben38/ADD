@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: AtomicTower
   m_EditorClassIdentifier: 
   title: 'Atomic Tower '
-  description: powered by Uraneum-234 this tower manifests orbs of condensed Atomic
-    energy wich orpit the tower causing damag to eney in their path
+  description: Powered by Uranium-234 this tower manifests orbs of condensed Atomic
+    energy which orbit the tower causing damage to enemies in their path.
   upgrade1Description: cancer
   upgrade2Description: 
   upgrade3Description: 

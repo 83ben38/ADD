@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EarthTower
   m_EditorClassIdentifier: 
   title: Earth Tower
-  description: this tower summons bolders and throwes them  out in all directions
+  description: This tower summons boulders and throws them out in all directions.
   upgrade1Description: 
   upgrade2Description: 
   upgrade3Description: 
