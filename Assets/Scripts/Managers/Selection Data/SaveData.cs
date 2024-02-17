@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SaveData : MonoBehaviour
@@ -87,19 +88,14 @@ public class SaveData : MonoBehaviour
         return state.loadoutsUnlocked;
     }
 
-    public bool isTutorialOver()
+    public bool isTutorialCompleted(int tutorialNum)
     {
-        return state.tutorialStep == 5;
+        return state.tutorials[tutorialNum];
     }
 
-    public int getTutorialPhase()
+    public void completeTutorialPhase(int tutorialNum)
     {
-        return state.tutorialStep;
-    }
-
-    public void finishNextTutorialSection()
-    {
-        state.tutorialStep++;
+        state.tutorials[tutorialNum] = true;
         saver.Save(state);
     }
 

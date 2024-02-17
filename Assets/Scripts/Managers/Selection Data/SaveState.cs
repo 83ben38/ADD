@@ -13,7 +13,7 @@ public class SaveState
     public int loadoutSelected;
 
     public SerializableDictionary<int, SerializableDictionary<int, bool>> difficultiesCompleted;
-    public int tutorialStep;
+    public bool[] tutorials;
     public SaveState()
     {
         money = 999999;
@@ -24,7 +24,7 @@ public class SaveState
         loadoutsUnlocked = new int[]{0};
         loadoutSelected = 0;
         //game, towers, shop, loadouts, maps/difficulties
-        tutorialStep = 0;
+        tutorials = new bool[] { false, false, false, false, false };
         for (int i = 0; i < 5; i++)
         {
             towerUpgradesAvailable[i] = new TripleBool(false,false,false);

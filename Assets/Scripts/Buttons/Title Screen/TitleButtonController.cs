@@ -25,7 +25,7 @@ public class TitleButtonController : Selectable
 
     public override void MouseClick()
     {
-        if (SaveData.save.getTutorialPhase() == 0)
+        if (!SaveData.save.isTutorialCompleted(0))
         {
             SelectionData.data.towerCodes = new[] { 0 };
             SelectionData.data.map = tutorialMap;

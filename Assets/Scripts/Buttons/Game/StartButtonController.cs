@@ -16,6 +16,7 @@ public class StartButtonController : Selectable
     public static bool waveGoing = false;
     public static bool waveFinished = true;
     public List<GameObject> objects;
+    public bool tutorial = false;
     void Start()
     {
         waves = SelectionData.data.difficulty;
@@ -129,12 +130,20 @@ public class StartButtonController : Selectable
 
             wave++;
             InGameState.generateNewTowerCode(wave + 1);
+            if (tutorial)
+            {
+                TutorialManager.manager.runNext();
+            }
             waveFinished = true;
         }
     }
 
     public void go()
     {
+        if (tutorial)
+        {
+            TutorialManager.manager.runNext();
+        }
         text.SetText("Start");
         started = true;
         foreach (var tower in PathfinderManager.manager.tiles)
