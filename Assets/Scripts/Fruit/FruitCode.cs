@@ -37,7 +37,7 @@ public class FruitCode : MonoBehaviour
       }
 
       float z = ((maxScale - minScale) * ((float)hp / maxHp))   + minScale;
-      transform.localScale = new Vector3(z, z, z);
+      transform.localScale = new Vector3(z, z, z)*MapCreator.scale;
    }
 
    public virtual void FixedUpdate()

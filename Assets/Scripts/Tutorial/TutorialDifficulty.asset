@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - {fileID: 11400000, guid: efea6b3d37a3445759bb7767fdd12824, type: 2}
+  - {fileID: 11400000, guid: 070a48cc9cdca4a2a9d4869b67fa0763, type: 2}
   freeplayWaves: []
   maxLives: 10
   awardMultiplier: 10
