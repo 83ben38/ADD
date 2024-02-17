@@ -9,4 +9,29 @@ public class EarthProjectile : ProjectileCode
         damage = 3;
         pierce = 10;
     }
+
+    public override void Start(ProjectileController controller)
+    {
+        base.Start(controller);
+        controller.transform.localScale *= 2;
+    }
+    public override void tick(ProjectileController controller)
+    {
+        //do projectile stuff
+        if (target != null)
+        {
+            move = lvl * speed * (target.transform.position - controller.transform.position).normalized;
+        }
+        else
+        {
+            move.y = 0;
+        }
+
+        controller.transform.Translate(Time.deltaTime*move);
+        Collider[] hit = Physics.OverlapSphere(controller.transform.position, .5f*MapCreator.scale, LayerMask.GetMask("Enemy"));
+        for (int i = 0; i < hit.Length; i++)
+        {
+            this.hit(hit[i].gameObject.GetComponent<FruitCode>(), controller);
+        }
+    }
 }

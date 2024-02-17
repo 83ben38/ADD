@@ -24,7 +24,8 @@ public class AtomicProjectile : ProjectileCode
             new Vector3(0,0,1),
             new Vector3(0, 0,-1),
             new Vector3(-2,0,0),
-            new Vector3(2,0,0)
+            new Vector3(2,0,0),
+            new Vector3(3,0,0)
         }[num]*MapCreator.scale;
         this.startPos.y += aboveAmount;
     }
@@ -53,7 +54,12 @@ public class AtomicProjectile : ProjectileCode
             float degrees = (time - (1f+offset)) * (float)Math.PI / 2.0f;
             double xPosition = Math.Cos(degrees);
             double zPosition = Math.Sin(degrees);
-            if (pathNum > 3)
+            if (pathNum > 5)
+            {
+                xPosition *= 3;
+                zPosition *= 3;
+            }
+            else if (pathNum > 3)
             {
                 xPosition *= 2;
                 zPosition *= 2;
