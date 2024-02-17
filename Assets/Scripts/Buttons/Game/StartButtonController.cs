@@ -132,6 +132,7 @@ public class StartButtonController : Selectable
             InGameState.generateNewTowerCode(wave + 1);
             if (tutorial)
             {
+                tutorial = false;
                 TutorialManager.manager.runNext();
             }
             waveFinished = true;
