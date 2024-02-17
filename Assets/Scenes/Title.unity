@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -391,6 +391,10 @@ MonoBehaviour:
         b3: 0
     loadoutsUnlocked: 0000000001000000020000000300000004000000
     loadoutSelected: 0
+    difficultiesCompleted:
+      keys: 
+      values: []
+    tutorialStep: 0
   path: 
 --- !u!114 &86080132
 MonoBehaviour:
@@ -406,7 +410,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerSelected: 0
   map: {fileID: 11400000, guid: b9c5a439495214c2ba310bb37cd17c1a, type: 2}
+  selectedMap: 0
   difficulty: {fileID: 11400000, guid: b96bccabab5d1a74d9cc8cdb6497fccf, type: 2}
+  selectedDifficulty: 0
   towerCodes: 0800000000000000
 --- !u!4 &86080133
 Transform:
@@ -1294,6 +1300,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54cc4d01d9c344f478bef509d1b046fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorialMap: {fileID: 11400000, guid: 669bdc03422aa4605988c73bd763e14f, type: 2}
+  tutorialDifficulty: {fileID: 11400000, guid: 3bf66cba00dfa481598189c075d32659, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

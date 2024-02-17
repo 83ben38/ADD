@@ -25,6 +25,7 @@ public class LivesController : MonoBehaviour
         maxLives = lives;
         text = GetComponentInChildren<TextMeshPro>();
         InGameState.held = null;
+        text.SetText("Lives:\n" + lives);
     }
 
     public void damage(int amount)

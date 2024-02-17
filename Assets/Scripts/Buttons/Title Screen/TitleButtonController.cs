@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class TitleButtonController : Selectable
 {
     private Material _material;
+    public MapScriptableObject tutorialMap;
+    public DifficultyScriptableObject tutorialDifficulty;
+    
     private void Start()
     {
         _material = GetComponent<Renderer>().material;
@@ -22,6 +25,18 @@ public class TitleButtonController : Selectable
 
     public override void MouseClick()
     {
-        SceneManager.LoadScene("Title Screen");
+        if (SaveData.save.getTutorialPhase() == 0)
+        {
+            SelectionData.data.towerCodes = new[] { 0 };
+            SelectionData.data.map = tutorialMap;
+            SelectionData.data.selectedMap = -1;
+            SelectionData.data.selectedDifficulty = -1;
+            SelectionData.data.difficulty = tutorialDifficulty;
+            SceneManager.LoadScene("Tutorial");
+        }
+        else
+        {
+            SceneManager.LoadScene("Title Screen");
+        }
     }
 }
