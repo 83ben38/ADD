@@ -13,7 +13,7 @@ public class IceProjectile : ProjectileCode
 
     public override int getPierce()
     {
-        return lvl;
+        return lvl * (upgrade1 ? 2 : 1);
     }
 
     public override void hit(FruitCode fruit, ProjectileController controller)
@@ -36,9 +36,9 @@ public class IceProjectile : ProjectileCode
     }
     IEnumerator hitEnemy(FruitCode fruit)
     {
-        float z = .03f * lvl / (float)(Math.Log(fruit.hp, 3) + 1);
+        float z = .03f * (upgrade1 ? 1 : lvl) / (float)(Math.Log(fruit.hp, 3) + 1);
         fruit.speed -= z;
-        for (float i = 0; i < (lvl > 4 ? 24f : 16f); i+=Time.deltaTime*64f)
+        for (float i = 0; i < (lvl > 4 ? 24f : 16f) * (upgrade1 ? lvl : 1); i+=Time.deltaTime*64f)
         {
             yield return null;
         }
