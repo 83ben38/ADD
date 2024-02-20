@@ -16,7 +16,26 @@ public class LightningTower : TowerCode
         
     }
 
-    
+    public override bool shoot()
+    {
+        Collider[] sphere = Physics.OverlapSphere(self, getRange() * MapCreator.scale,LayerMask.GetMask("Enemy"));
+        if (sphere.Length > 0)
+        {
+            for (int i = 0; i < lvl || !upgrade1; i++)
+            {
+                GameObject projectile = Object.Instantiate(TowerCode.projectile);
+                ProjectileController pc = projectile.GetComponent<ProjectileController>();
+                pc.code = create();
+                pc.code.lvl = lvl;
+                pc.code.target = sphere[i].gameObject.GetComponent<FruitCode>();
+                projectile.transform.position = controller.towerVisual.shoot(rechargeTime);
+                pc.material.color = getColor();
+                pc.code.Start(pc);
+            }
+            return true;
+        }
+        return false;
+    }
 
     public override ProjectileCode create()
     {

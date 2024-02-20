@@ -15,6 +15,6 @@ MonoBehaviour:
   title: Lighting Tower
   description: This tower shoots thundering bolts of electrical energy that strike
     multiple targets in a chain.
-  upgrade1Description: 
+  upgrade1Description: Throws more bolts per level. Chain length reduced.
   upgrade2Description: 
   upgrade3Description: 

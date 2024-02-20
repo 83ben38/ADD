@@ -18,7 +18,7 @@ public class LightningProjectile : ProjectileCode
 
     public override int getPierce()
     {
-        return 2 + lvl;
+        return (upgrade1 ? 1 : 2) + lvl;
     }
 
     public override void tick(ProjectileController controller)
@@ -75,8 +75,9 @@ public class LightningProjectile : ProjectileCode
                 }
                 i++;
             }
-            lineRenderer.SetPosition(getPierce()-pierceLeft,hit[i].gameObject.transform.position);
             this.hit(hit[i].gameObject.GetComponent<FruitCode>(),controller);
+            lineRenderer.SetPosition(getPierce()-pierceLeft,hit[i].gameObject.transform.position);
+            
         }
         
     }
