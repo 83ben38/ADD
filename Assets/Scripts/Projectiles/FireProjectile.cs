@@ -22,6 +22,18 @@ public class FireProjectile : ProjectileCode
             target = null;
         }
 
+        if (upgrade1 && fruit.frozenTime > 0)
+        {
+            GameObject projectile = Object.Instantiate(TowerCode.projectile);
+            ProjectileController pc = projectile.GetComponent<ProjectileController>();
+            pc.code = new WaterProjectile(false,false,false);
+            pc.code.lvl = lvl;
+            ((WaterProjectile)pc.code).hitEnemy = true;
+            projectile.transform.position = controller.transform.position;
+            pc.material.color = ColorManager.manager.waterTower;
+            pc.code.Start(pc);
+        }
+
         ColorManager.manager.StartCoroutine(hitEnemy(fruit));
         pierceLeft--;
         if (pierceLeft < 1)
