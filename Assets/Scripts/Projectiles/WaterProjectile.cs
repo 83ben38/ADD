@@ -14,7 +14,18 @@ public class WaterProjectile : ProjectileCode
     }
     public override void tick(ProjectileController controller)
     {
-        //do projectile stuff
+        if (damage == 2 && upgrade1)
+        {
+            Collider[] hitProjectiles = Physics.OverlapSphere(controller.transform.position, .25f * explosionAmount);
+            for (int i = 0; i < hitProjectiles.Length; i++)
+            {
+                if (hitProjectiles[i].GetComponent<LightningProjectile>() != null)
+                {
+                    damage = 4;
+                }
+            }
+        }
+
         if (!hitEnemy)
         {
             if (target != null)
@@ -41,7 +52,7 @@ public class WaterProjectile : ProjectileCode
         {
             explosionAmount += Time.deltaTime * lvl * 2;
             controller.transform.localScale = baseTransform * explosionAmount;
-            Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f, LayerMask.GetMask("Enemy"));
+            Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f*explosionAmount, LayerMask.GetMask("Enemy"));
             for (int i = 0; i < hit.Length; i++)
             {
                 this.hit(hit[i].gameObject.GetComponent<FruitCode>(), controller);

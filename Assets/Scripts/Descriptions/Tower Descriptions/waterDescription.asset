@@ -15,6 +15,7 @@ MonoBehaviour:
   title: 'Water Tower '
   description: This tower forms spheres of pure elemental water that detonate on
     impact causing area damage.
-  upgrade1Description: 
+  upgrade1Description: When a water sphere hits a lightning bolt, it will become
+    charged, dealing extra damage. Attack speed slightly decreased.
   upgrade2Description: 
   upgrade3Description: 
