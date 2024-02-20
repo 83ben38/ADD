@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EarthTower
   m_EditorClassIdentifier: 
   title: Earth Tower
-  description: This tower summons boulders and throws them out in all directions.
-  upgrade1Description: 
+  description: This tower summons boulders and throws them out in six directions.
+  upgrade1Description: Now throws boulders in four directions.
   upgrade2Description: 
   upgrade3Description: 
