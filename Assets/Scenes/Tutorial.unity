@@ -4994,7 +4994,7 @@ MonoBehaviour:
       text:
       - Welcome to Elemental Defender. This is a game about destroying fruits with
         elements.
-      - The fruits will start and the green tile and go towards the light green tile,
+      - The fruits will start at the green tile and go towards the light green tile,
         afterwhich they will exit at the red tile.
       - The goal of the game is to not let the fruits reach the red tile. When they
         do, you will lose lives.
