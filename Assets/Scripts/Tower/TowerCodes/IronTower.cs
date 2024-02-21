@@ -12,6 +12,12 @@ public class IronTower : TowerCode
     {
         
         range = 2;
+        attackSpeed *= upgrade1 ? 16 : 1;
+    }
+
+    public override float getRange()
+    {
+        return upgrade1 ? -1.5f : base.getRange();
     }
 
     public override void MouseClick(TowerController controller)
@@ -37,7 +43,7 @@ public class IronTower : TowerCode
 
 
                 TowerController possibleTarget = path[i][j];
-                if ((possibleTarget.transform.position - controller.transform.position).magnitude <= (getRange() + 0.5f)*MapCreator.scale)
+                if ((possibleTarget.transform.position - controller.transform.position).magnitude <= (getRange() + 0.5f)*MapCreator.scale || upgrade1)
                 {
                     availableTargets.Add(possibleTarget);
                 }
@@ -46,6 +52,23 @@ public class IronTower : TowerCode
 
         if (availableTargets.Count == 0)
         {
+            return true;
+        }
+
+        if (upgrade1)
+        {
+            for (int i = 0; i < availableTargets.Count; i++)
+            {
+                TowerController t = availableTargets[i];
+                GameObject pr = Object.Instantiate(TowerCode.projectile);
+                ProjectileController pco = pr.GetComponent<ProjectileController>();
+                pco.code = create();
+                pco.code.lvl = lvl;
+                ((IronProjectile)pco.code).targetPath = t;
+                pr.transform.position = controller.towerVisual.shoot(rechargeTime);
+                pco.material.color = getColor();
+                pco.code.Start(pco);
+            }
             return true;
         }
 
