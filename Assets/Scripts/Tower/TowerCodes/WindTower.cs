@@ -83,8 +83,8 @@ public class WindTower : TowerCode
         {
             if (nextTo[i].tower != null && !(nextTo[i].tower is WindTower) && nextTo[i].tower.ticksLeft > 0)
             {
-                nextTo[i].tower.ticksLeft -= Time.deltaTime * nextTo[i].tower.lvl * lvl * 11f;
-                nextTo[i].tower.rechargeTime -= Time.deltaTime * nextTo[i].tower.lvl * lvl * 11f;
+                nextTo[i].tower.ticksLeft -= Time.deltaTime * lvl * 11f;
+                nextTo[i].tower.rechargeTime -= Time.deltaTime * lvl * 11f;
                 if (!buffed.Contains(nextTo[i]))
                 {
                     buffed.Add(nextTo[i]);
