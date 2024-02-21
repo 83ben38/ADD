@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class SaveData : MonoBehaviour
 {
     public static SaveData save;
     [SerializeField]
-    private SaveState state;
+    SaveState state;
     private FileSaver saver;
     [SerializeField]
     private string path;
@@ -33,6 +34,12 @@ public class SaveData : MonoBehaviour
             state = new SaveState();
             saver.Save(state);
         }
+    }
+
+    public void deleteSaveData()
+    {
+        state = new SaveState();
+        saver.Save(state);
     }
 
     public bool isUpgradeAvailable(int tower, int upgrade)
@@ -132,5 +139,17 @@ public class SaveData : MonoBehaviour
     {
         state.money += money;
         saver.Save(state);
+    }
+}
+[CustomEditor(typeof(SaveData))]
+public class SaveDeleter : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        base.OnInspectorGUI();
+        if (GUILayout.Button("Delete Save"))
+        {
+            ((SaveData)target).deleteSaveData();
+        }
     }
 }
