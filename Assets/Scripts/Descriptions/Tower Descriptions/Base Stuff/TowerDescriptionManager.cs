@@ -25,6 +25,7 @@ public class TowerDescriptionManager : MonoBehaviour
         manager = this;
         description = descriptions[SelectionData.data.towerSelected];
         TowerController tc = tower.GetComponent<TowerController>();
+        tc.state = new EmptyState();
         tc.tower = TowerCodeFactory.getTowerCode(SelectionData.data.towerSelected);
         tc.tower.lvl = 1;
         Vector3 scale = tc.transform.localScale;

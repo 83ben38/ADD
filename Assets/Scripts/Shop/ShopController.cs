@@ -20,7 +20,7 @@ public class ShopController : MonoBehaviour
         loadoutObject.transform.localScale *= 0.25f;
         shopShape = towerObject.GetComponentInChildren<Shape>();
         shopShape.scriptableObject = sobject;
-        towerObject.GetComponent<TowerController>().state = new DescriptionState();
+        towerObject.GetComponent<TowerController>().state = new EmptyState();
         Vector3 scale = towerObject.transform.localScale;
         towerObject.transform.localScale = new Vector3(scale.x*0.35f,scale.y*0.7f,scale.z*0.35f);
         manager = this;
