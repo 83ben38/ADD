@@ -21,8 +21,12 @@ public class LightningTower : TowerCode
         Collider[] sphere = Physics.OverlapSphere(self, getRange() * MapCreator.scale,LayerMask.GetMask("Enemy"));
         if (sphere.Length > 0)
         {
-            for (int i = 0; i < lvl || !upgrade1; i++)
+            for (int i = 0; (i < lvl && upgrade1) || i < 1; i++)
             {
+                if (sphere.Length == i)
+                {
+                    break;
+                }
                 GameObject projectile = Object.Instantiate(TowerCode.projectile);
                 ProjectileController pc = projectile.GetComponent<ProjectileController>();
                 pc.code = create();
