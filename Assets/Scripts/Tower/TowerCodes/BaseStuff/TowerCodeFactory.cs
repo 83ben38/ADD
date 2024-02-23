@@ -21,6 +21,7 @@ public class TowerCodeFactory : MonoBehaviour
             case 7 : return new SpaceTower(b1,b2,b3);
             case 8 : return new WindTower(b1,b2,b3);
             case 9 : return new ColorTower(b1, b2, b3);
+            case 10: return new PoisonTower(b1, b2, b3);
             case 11 : return new DarkTower(b1, b2, b3);
         }
 

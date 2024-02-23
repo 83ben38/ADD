@@ -9,7 +9,7 @@ public class CoconutCode : FruitCode
     
     public override void Damage(int amount)
     {
-        hp -= amount / reductionMod;
+        hp -= amount + vulnerability - reductionMod;
         if (hp < 1)
         {
             StartButtonController.startButton.objects.Remove(gameObject);

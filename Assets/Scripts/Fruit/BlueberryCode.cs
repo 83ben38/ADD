@@ -7,7 +7,7 @@ public class BlueberryCode : FruitCode
     public float speedIncrease;
     public override void Damage(int amount)
     {
-        hp -= amount;
+        hp -= amount + vulnerability;
         if (hp < 1)
         {
             StartButtonController.startButton.objects.Remove(gameObject);

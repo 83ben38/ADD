@@ -11,7 +11,7 @@ public class OrangeCode : FruitCode
     public EnemyConfiguration splitConfig;
     public override void Damage(int amount)
     {
-        hp -= amount;
+        hp -= amount+vulnerability;
         if (hp < 1)
         {
             //split
