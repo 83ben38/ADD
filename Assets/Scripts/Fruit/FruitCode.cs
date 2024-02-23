@@ -16,6 +16,7 @@ public class FruitCode : MonoBehaviour
    public Vector3 goalPos;
    public float maxScale;
    public float minScale;
+   public int vulnerability = 0;
    [DoNotSerialize]
    public float frozenTime = 0f;
    public virtual void OnEnable()
@@ -29,7 +30,7 @@ public class FruitCode : MonoBehaviour
 
    public virtual void Damage(int amount)
    {
-      hp -= amount;
+      hp -= amount + vulnerability;
       if (hp < 1)
       {
          StartButtonController.startButton.objects.Remove(gameObject);

@@ -13,7 +13,7 @@ public class MangoCode : FruitCode
     public override void Damage(int amount)
     {
       
-        hp -= amount;
+        hp -= amount+vulnerability;
         if (hp <= 0)
         {
             
