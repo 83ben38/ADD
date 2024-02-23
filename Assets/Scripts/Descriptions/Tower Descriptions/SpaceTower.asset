@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c314855411e8449a01d6e4fc5db465, type: 3}
   m_Name: SpaceTower
   m_EditorClassIdentifier: 
-  title: 
-  description: 
+  title: 'Space Tower '
+  description: 'this tower lanches a dence tungsten projectile high in to the atmospere
+    befor it comes crashing down causing masive damige '
   upgrade1Description: 
   upgrade2Description: 
   upgrade3Description: 

@@ -15,6 +15,7 @@ MonoBehaviour:
   title: 'Ice Tower '
   description: This tower harneses the power of Ice and Snow to incapacitate and
     slow enemies.
-  upgrade1Description: Slows more enemies for longer, but slows them less.
+  upgrade1Description: "permafrost\nincreses slow derashon and projectile pearce
+    \ndecreses slow potencey \n"
   upgrade2Description: 
   upgrade3Description: 

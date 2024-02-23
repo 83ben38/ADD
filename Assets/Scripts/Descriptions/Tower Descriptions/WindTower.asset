@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90c314855411e8449a01d6e4fc5db465, type: 3}
-  m_Name: FireDescription
+  m_Name: WindTower
   m_EditorClassIdentifier: 
-  title: Fire Tower
-  description: This tower channels the essence of the elemental plain of fire to
-    rapidly form fire balls.
-  upgrade1Description: "   antifreeze ingector \nrapidly heats frosen enameys causing
-    an explosion of steam.\ndecreses Attack speed slightly."
+  title: 'wind tower '
+  description: 'acumulats caotic energey and redestributs it to near by towers  hasening
+    them '
+  upgrade1Description: 
   upgrade2Description: 
   upgrade3Description: 
