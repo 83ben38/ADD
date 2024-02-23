@@ -29,7 +29,7 @@ public class WindTower : TowerCode
 
     public override Color getColor()
     {
-       return ColorManager.manager.WindTower;
+       return ColorManager.manager.windTower;
     }
 
     public override bool shoot()
