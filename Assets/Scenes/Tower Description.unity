@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1773,9 +1773,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 919e3bbbfe2d1b149962a8f62c1d2220, type: 2}
   - {fileID: 11400000, guid: 253122a624d848443aca7ce46b791429, type: 2}
   - {fileID: 11400000, guid: af31ab18be469ec40947255e5a5a0349, type: 2}
-  - {fileID: 11400000, guid: af31ab18be469ec40947255e5a5a0349, type: 2}
-  - {fileID: 11400000, guid: af31ab18be469ec40947255e5a5a0349, type: 2}
-  - {fileID: 11400000, guid: af31ab18be469ec40947255e5a5a0349, type: 2}
+  - {fileID: 11400000, guid: 998f111ae44aa7547bf0934f9c0f5c53, type: 2}
+  - {fileID: 11400000, guid: a292c13403fbfc9428965a1e284b991c, type: 2}
+  - {fileID: 11400000, guid: d5f67a56dd29219459d14d7c435e9be0, type: 2}
   description: {fileID: 0}
   tower: {fileID: 1052858946}
   title: {fileID: 795349577}
