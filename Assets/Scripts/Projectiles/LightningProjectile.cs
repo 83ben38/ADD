@@ -18,7 +18,7 @@ public class LightningProjectile : ProjectileCode
 
     public override int getPierce()
     {
-        return (upgrade1 ? 1 : 2) + lvl;
+        return (upgrade1 ? 1 : 3) + lvl;
     }
 
     public override void tick(ProjectileController controller)
@@ -38,6 +38,7 @@ public class LightningProjectile : ProjectileCode
             for (int i = 0; i < hit.Length && i < 1; i++)
             {
                 this.hit(hit[i].gameObject.GetComponent<FruitCode>(), controller);
+                SoundEffectsManager.manager.playSound("zap");
             }
         }
         else if (pierceLeft == 1)
@@ -56,7 +57,7 @@ public class LightningProjectile : ProjectileCode
                 lineRenderer.material = new Material(controller.material);
                 lineRenderer.startWidth = 0.1f;
                 lineRenderer.endWidth = 0.1f;
-                lineRenderer.positionCount = getPierce();
+                lineRenderer.positionCount = getPierce()-1;
                 lineRenderer.SetPosition(0,controller.transform.position);
                 lineRenderer.useWorldSpace = true;
                 lineRenderer.generateLightingData = true;
@@ -75,9 +76,8 @@ public class LightningProjectile : ProjectileCode
                 }
                 i++;
             }
-            this.hit(hit[i].gameObject.GetComponent<FruitCode>(),controller);
             lineRenderer.SetPosition(getPierce()-pierceLeft,hit[i].gameObject.transform.position);
-            
+            this.hit(hit[i].gameObject.GetComponent<FruitCode>(),controller);
         }
         
     }

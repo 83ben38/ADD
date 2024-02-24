@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TerrainUtils;
 
 public class StrawberryCode : FruitCode
 {
@@ -23,6 +24,11 @@ public class StrawberryCode : FruitCode
                 {
                     //Debug.Log("Stunning " + tc.tower.self);
                     tc.tower.ticksLeft += stunAmount * tc.tower.lvl;
+                    if (tc.tower.ticksLeft > (stunAmount * tc.tower.lvl) + tc.tower.getAttackSpeed())
+                    {
+                        tc.tower.ticksLeft = (stunAmount * tc.tower.lvl) + tc.tower.getAttackSpeed();
+                    }
+
                     stunned.Add(tc);
                 }
             }

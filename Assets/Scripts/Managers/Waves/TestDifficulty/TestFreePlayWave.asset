@@ -273,7 +273,7 @@ MonoBehaviour:
     bananaOptions:
       speedIncrease: 0
     strawberryOptions:
-      stunRadius: 3
+      stunRadius: 1.5
       stunAmount: 3
   - defaultHp: 10
     hpScaling: 5
