@@ -16,15 +16,18 @@ MonoBehaviour:
   - {fileID: 8267130134565377638, guid: 8461deba704492e45a16e4e04d639d8f, type: 3}
   - {fileID: 8267130134565377638, guid: a513c56fc7019834e95d9626b5945075, type: 3}
   - {fileID: 8267130134565377638, guid: 51f97fa94ec68b54492318ca3440fd42, type: 3}
-  waveNums: 010000000100000003000000
+  - {fileID: 8267130134565377638, guid: c9a5103b1e8794d75b5fe7fdf3e36e93, type: 3}
+  waveNums: 01000000010000000300000005000000
   waveSpacings:
   - 1
   - 0
+  - 1
   - 1
   waveDelays:
   - 0
   - 3
   - 0.5
+  - 0
   configs:
   - hp: 10
     speed: 10
@@ -101,10 +104,35 @@ MonoBehaviour:
                         maxSize: 0
                         minSize: 0
                       splitAmount: 0
+                    mangoOptions:
+                      radius: 0
+                      healAmount: 0
+                    bananaOptions:
+                      speedIncrease: 0
                   splitAmount: 0
+                mangoOptions:
+                  radius: 0
+                  healAmount: 0
+                bananaOptions:
+                  speedIncrease: 0
               splitAmount: 0
+            mangoOptions:
+              radius: 0
+              healAmount: 0
+            bananaOptions:
+              speedIncrease: 0
           splitAmount: 0
+        mangoOptions:
+          radius: 0
+          healAmount: 0
+        bananaOptions:
+          speedIncrease: 0
       splitAmount: 0
+    mangoOptions:
+      radius: 0
+      healAmount: 0
+    bananaOptions:
+      speedIncrease: 0
   - hp: 15
     speed: 7
     maxSize: 600
@@ -180,10 +208,35 @@ MonoBehaviour:
                         maxSize: 0
                         minSize: 0
                       splitAmount: 0
+                    mangoOptions:
+                      radius: 0
+                      healAmount: 0
+                    bananaOptions:
+                      speedIncrease: 0
                   splitAmount: 0
+                mangoOptions:
+                  radius: 0
+                  healAmount: 0
+                bananaOptions:
+                  speedIncrease: 0
               splitAmount: 0
+            mangoOptions:
+              radius: 0
+              healAmount: 0
+            bananaOptions:
+              speedIncrease: 0
           splitAmount: 0
+        mangoOptions:
+          radius: 0
+          healAmount: 0
+        bananaOptions:
+          speedIncrease: 0
       splitAmount: 0
+    mangoOptions:
+      radius: 0
+      healAmount: 0
+    bananaOptions:
+      speedIncrease: 0
   - hp: 5
     speed: 6
     maxSize: 300
@@ -259,7 +312,136 @@ MonoBehaviour:
                         maxSize: 0
                         minSize: 0
                       splitAmount: 0
+                    mangoOptions:
+                      radius: 0
+                      healAmount: 0
+                    bananaOptions:
+                      speedIncrease: 0
                   splitAmount: 0
+                mangoOptions:
+                  radius: 0
+                  healAmount: 0
+                bananaOptions:
+                  speedIncrease: 0
               splitAmount: 0
+            mangoOptions:
+              radius: 0
+              healAmount: 0
+            bananaOptions:
+              speedIncrease: 0
           splitAmount: 0
+        mangoOptions:
+          radius: 0
+          healAmount: 0
+        bananaOptions:
+          speedIncrease: 0
       splitAmount: 0
+    mangoOptions:
+      radius: 0
+      healAmount: 0
+    bananaOptions:
+      speedIncrease: 0
+  - hp: 5
+    speed: 15
+    maxSize: 400
+    minSize: 200
+    blueberryOptions:
+      speedIncrease: 0
+    coconutOptions:
+      reductionMod: 0
+    lemonOptions:
+      radius: 3
+      speedIncrease: 4
+    orangeOptions:
+      childObject: {fileID: 0}
+      childConfig:
+        hp: 0
+        speed: 0
+        maxSize: 0
+        minSize: 0
+        blueberryOptions:
+          speedIncrease: 0
+        coconutOptions:
+          reductionMod: 0
+        lemonOptions:
+          radius: 0
+          speedIncrease: 0
+        orangeOptions:
+          childObject: {fileID: 0}
+          childConfig:
+            hp: 0
+            speed: 0
+            maxSize: 0
+            minSize: 0
+            blueberryOptions:
+              speedIncrease: 0
+            coconutOptions:
+              reductionMod: 0
+            lemonOptions:
+              radius: 0
+              speedIncrease: 0
+            orangeOptions:
+              childObject: {fileID: 0}
+              childConfig:
+                hp: 0
+                speed: 0
+                maxSize: 0
+                minSize: 0
+                blueberryOptions:
+                  speedIncrease: 0
+                coconutOptions:
+                  reductionMod: 0
+                lemonOptions:
+                  radius: 0
+                  speedIncrease: 0
+                orangeOptions:
+                  childObject: {fileID: 0}
+                  childConfig:
+                    hp: 0
+                    speed: 0
+                    maxSize: 0
+                    minSize: 0
+                    blueberryOptions:
+                      speedIncrease: 0
+                    coconutOptions:
+                      reductionMod: 0
+                    lemonOptions:
+                      radius: 0
+                      speedIncrease: 0
+                    orangeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      splitAmount: 0
+                    mangoOptions:
+                      radius: 0
+                      healAmount: 0
+                    bananaOptions:
+                      speedIncrease: 0
+                  splitAmount: 0
+                mangoOptions:
+                  radius: 0
+                  healAmount: 0
+                bananaOptions:
+                  speedIncrease: 0
+              splitAmount: 0
+            mangoOptions:
+              radius: 0
+              healAmount: 0
+            bananaOptions:
+              speedIncrease: 0
+          splitAmount: 0
+        mangoOptions:
+          radius: 0
+          healAmount: 0
+        bananaOptions:
+          speedIncrease: 0
+      splitAmount: 0
+    mangoOptions:
+      radius: 0
+      healAmount: 0
+    bananaOptions:
+      speedIncrease: 5

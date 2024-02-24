@@ -30,6 +30,7 @@ public class BananaCode : FruitCode
         {
             StartButtonController.startButton.objects.Remove(gameObject);
             dead = true;
+            gameObject.layer = 0;
             transform.localScale = new Vector3(minScale, minScale, minScale)*MapCreator.scale;
             return;
         }
