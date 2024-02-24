@@ -9,6 +9,6 @@ public class BananaOptions
     private int speedIncrease;
     public void config(FruitCode f)
     {
-        ((BananaCode)f).speedIncrease = speedIncrease;
+        ((BananaCode)f).speedIncrease = speedIncrease/1000f;
     }
 }

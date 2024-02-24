@@ -104,7 +104,6 @@ public class DarkTower : TowerCode
                     if (nextTo[i].tower != null && !(nextTo[i].tower is DarkTower))
                     {
                         nextTo[i].tower.ticksLeft += attackSpeed * nextTo[i].tower.lvl * 0.25f / lvl;
-                        nextTo[i].tower.rechargeTime += attackSpeed * nextTo[i].tower.lvl * 0.25f / lvl;
                         statIncreaseAmount += nextTo[i].tower.lvl;
                     }
                 }
