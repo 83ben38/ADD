@@ -34,7 +34,7 @@ public class LightningProjectile : ProjectileCode
                 move.y = 0;
             }
             controller.transform.Translate(Time.deltaTime*move);
-            Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f, LayerMask.GetMask("Enemy"));
+            Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f*MapCreator.scale, LayerMask.GetMask("Enemy"));
             for (int i = 0; i < hit.Length && i < 1; i++)
             {
                 this.hit(hit[i].gameObject.GetComponent<FruitCode>(), controller);
@@ -62,7 +62,7 @@ public class LightningProjectile : ProjectileCode
                 lineRenderer.generateLightingData = true;
                 lineRenderer.transform.SetParent(controller.transform);
             }
-            Collider[] hit = Physics.OverlapSphere(lineRenderer.GetPosition(getPierce()-pierceLeft-1), 10f, LayerMask.GetMask("Enemy"));
+            Collider[] hit = Physics.OverlapSphere(lineRenderer.GetPosition(getPierce()-pierceLeft-1), 10f*MapCreator.scale, LayerMask.GetMask("Enemy"));
             
 
             int i = 0;
