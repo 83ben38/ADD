@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class StrawberryCode : FruitCode
@@ -12,12 +13,17 @@ public class StrawberryCode : FruitCode
         {
             StartButtonController.startButton.objects.Remove(gameObject);
             Collider[] hit = Physics.OverlapSphere(transform.position, stunRadius*MapCreator.scale);
+            //
+            //[Debug.Log("Hit " + hit.Length + " Objects.");
+            List<TowerController> stunned = new List<TowerController>();
             for (int i = 0; i < hit.Length; i++)
             {
-                TowerController tc = hit[i].GetComponent<TowerController>();
-                if (tc != null && tc.tower != null)
+                TowerController tc = hit[i].GetComponentInParent<TowerController>();
+                if (tc != null && tc.tower != null && ! stunned.Contains(tc))
                 {
+                    //Debug.Log("Stunning " + tc.tower.self);
                     tc.tower.ticksLeft += stunAmount * tc.tower.lvl;
+                    stunned.Add(tc);
                 }
             }
             Destroy(gameObject);
