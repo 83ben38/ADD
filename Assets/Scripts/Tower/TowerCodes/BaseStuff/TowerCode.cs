@@ -53,7 +53,7 @@ public abstract class TowerCode : TowerState
             ticksLeft -= lvl*Time.deltaTime*64f;
         }
 
-        if (ticksLeft < 1)
+        if (ticksLeft <= 0)
         {
             
             if (shoot())

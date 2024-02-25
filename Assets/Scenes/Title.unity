@@ -499,6 +499,7 @@ MonoBehaviour:
   windTower: {r: 0.8018868, g: 0.8018868, b: 0.8018868, a: 0.56078434}
   darkTower: {r: 0, g: 0, b: 0, a: 1}
   poisonTower: {r: 0.0724141, g: 0.3962264, b: 0, a: 1}
+  laserTower: {r: 1, g: 0.47272673, b: 0, a: 1}
   projectile: {fileID: 6165706959806861308, guid: 0f7785055af1ec14585430c61af7807c,
     type: 3}
 --- !u!82 &86080136

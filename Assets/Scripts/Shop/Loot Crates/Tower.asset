@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chances:
   - chance: 1
-    items: 0b000000
+    items: 0b0000000c000000
   loadouts: 0
   cost: 0
