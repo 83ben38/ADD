@@ -18,20 +18,27 @@ public class LightningTower : TowerCode
 
     public override bool shoot()
     {
-        Collider[] sphere = Physics.OverlapSphere(self, getRange() * MapCreator.scale,LayerMask.GetMask("Enemy"));
-        if (sphere.Length > 0)
+        List<Collider> sphere = new List<Collider>(Physics.OverlapSphere(self, getRange() * MapCreator.scale,LayerMask.GetMask("Enemy")));
+        if (sphere.Count > 0)
         {
             for (int i = 0; (i < lvl && upgrade1) || i < 1; i++)
             {
-                if (sphere.Length == i)
+                if (sphere.Count == i)
                 {
                     break;
+                }
+                FruitCode fc = sphere[i].gameObject.GetComponent<FruitCode>();
+                if (fc.hidden)
+                {
+                    sphere.RemoveAt(0);
+                    i--;
+                    continue;
                 }
                 GameObject projectile = Object.Instantiate(TowerCode.projectile);
                 ProjectileController pc = projectile.GetComponent<ProjectileController>();
                 pc.code = create();
                 pc.code.lvl = lvl;
-                pc.code.target = sphere[i].gameObject.GetComponent<FruitCode>();
+                pc.code.target = fc;
                 projectile.transform.position = controller.towerVisual.shoot(rechargeTime);
                 pc.material.color = getColor();
                 pc.code.Start(pc);
