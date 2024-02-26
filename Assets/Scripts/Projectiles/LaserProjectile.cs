@@ -22,8 +22,10 @@ public class LaserProjectile : ProjectileCode
         base.Start(controller);
         laser = new GameObject("Laser").AddComponent<LineRenderer>();
         laser.material = new Material(controller.material);
-        laser.startWidth = 0.1f;
-        laser.endWidth = 0.1f;
+        Color c = laser.material.color;
+        laser.material.color = new Color(c.r,c.g,c.b,0.25f);
+        laser.startWidth = 0.01f*lvl;
+        laser.endWidth = 0.01f*lvl;
         laser.positionCount = 3;
         pos = start.transform.position;
         pos1 = end.transform.position;

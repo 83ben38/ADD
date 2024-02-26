@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class FreeplayButton : Selectable
 {
+    public static FreeplayButton button;
     private Material _material;
-    private bool enabled = false;
+    public bool enabled = false;
     private void Start()
     {
         _material = GetComponent<Renderer>().material;
         _material.color = ColorManager.manager.tile;
+        button = this;
     }
 
     private void OnEnable()

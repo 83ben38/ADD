@@ -24,6 +24,7 @@ public class WinController : Selectable
         else
         {
             text.SetText("You Lose!");
+            FreeplayButton.button.enabled = true;
         }
         gameObject.SetActive(true);
     }
