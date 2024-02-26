@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: RambowTower
   m_EditorClassIdentifier: 
   title: 'color Tower '
-  description: 'A cyotic mishmash of energs this tower can be merged with eny other
-    of its level  '
+  description: A chaotic mishmash of colors, this tower can be merged with any other
+    of its level.
   upgrade1Description: gay
   upgrade2Description: 
   upgrade3Description: 

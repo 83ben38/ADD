@@ -39,9 +39,9 @@ public class TowerSelectionManager : MonoBehaviour
         {
             int x = j%z;
             int y = 8-((j/z)+3);
-            while (y < 0)
+            while (y < 1)
             {
-                y += 6;
+                y += 5;
                 x += z + 1;
             }
             Vector2 pos = shape.getPosition(new Vector2(x, y));

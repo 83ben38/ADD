@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: WindTower
   m_EditorClassIdentifier: 
   title: 'wind tower '
-  description: 'acumulats caotic energey and redestributs it to near by towers  hasening
-    them '
+  description: Accumulates chaotic energy and redestributes it to nearby towers,
+    hastening them.
   upgrade1Description: 
   upgrade2Description: 
   upgrade3Description: 

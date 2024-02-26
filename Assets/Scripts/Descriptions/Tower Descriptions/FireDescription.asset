@@ -15,7 +15,11 @@ MonoBehaviour:
   title: Fire Tower
   description: This tower channels the essence of the elemental plain of fire to
     rapidly form fire balls.
-  upgrade1Description: "   antifreeze ingector \nrapidly heats frosen enameys causing
-    an explosion of steam.\ndecreses Attack speed slightly."
+  upgrade1Description: 'Antifreeze Injector:
+
+    Rapidly heats frosen enemies causing
+    an explosion of water.
+
+    Decreases attack speed slightly.'
   upgrade2Description: 
   upgrade3Description: 
