@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GoldTower : TowerCode
 {
-    private GameObject projectile;
+    private new GameObject projectile;
     private int turns=0;
 
     public GoldTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)

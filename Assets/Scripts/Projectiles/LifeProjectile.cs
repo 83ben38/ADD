@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LifeProjectile : ProjectileCode
 {
-    public Vector3 target;
+    public new Vector3 target;
     public Vector3 start;
     private float time = -64f;
     private float totalTime;

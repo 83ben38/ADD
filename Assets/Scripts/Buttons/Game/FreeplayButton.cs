@@ -7,7 +7,7 @@ public class FreeplayButton : Selectable
 {
     public static FreeplayButton button;
     private Material _material;
-    public bool enabled = false;
+    public new bool enabled = false;
     private void Start()
     {
         _material = GetComponent<Renderer>().material;
