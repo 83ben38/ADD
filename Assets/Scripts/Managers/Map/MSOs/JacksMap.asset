@@ -18,7 +18,7 @@ MonoBehaviour:
   yDimensions: 20
   shape: {fileID: 11400000, guid: 7e9158ab34feaf84083bc0ac5842f93b, type: 2}
   startPos: {x: 0, y: 0, z: 0}
-  scaleAmt: 0.5
+  scaleAmt: 0.45
   paths: 2
   checkpointsRequired: 0
   mapName: Jack's Map
