@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
+     [SerializeReference]
      public ProjectileCode code;
      public Material material;
 

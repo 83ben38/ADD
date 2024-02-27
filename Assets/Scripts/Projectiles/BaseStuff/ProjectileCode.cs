@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO.IsolatedStorage;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
+[Serializable]
 public abstract class ProjectileCode
 {
     

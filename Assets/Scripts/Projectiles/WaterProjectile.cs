@@ -16,7 +16,7 @@ public class WaterProjectile : ProjectileCode
     {
         if (damage == 2 && upgrade1)
         {
-            Collider[] hitProjectiles = Physics.OverlapSphere(controller.transform.position, .25f * explosionAmount);
+            Collider[] hitProjectiles = Physics.OverlapSphere(controller.transform.position, .25f * explosionAmount * MapCreator.scale);
             for (int i = 0; i < hitProjectiles.Length; i++)
             {
                 if (hitProjectiles[i].GetComponent<LightningProjectile>() != null)
@@ -37,7 +37,7 @@ public class WaterProjectile : ProjectileCode
                 move.y = 0;
             }
             controller.transform.Translate(Time.deltaTime * move);
-            Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f, LayerMask.GetMask("Enemy"));
+            Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f * MapCreator.scale, LayerMask.GetMask("Enemy"));
             for (int i = 0; i < hit.Length; i++)
             {
                 this.hit(hit[i].gameObject.GetComponent<FruitCode>(), controller);
@@ -52,7 +52,7 @@ public class WaterProjectile : ProjectileCode
         {
             explosionAmount += Time.deltaTime * lvl * 2;
             controller.transform.localScale = baseTransform * explosionAmount;
-            Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f*explosionAmount, LayerMask.GetMask("Enemy"));
+            Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f*explosionAmount*MapCreator.scale, LayerMask.GetMask("Enemy"));
             for (int i = 0; i < hit.Length; i++)
             {
                 this.hit(hit[i].gameObject.GetComponent<FruitCode>(), controller);

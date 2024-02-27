@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public abstract class TowerCode : TowerState
 {
@@ -53,7 +54,7 @@ public abstract class TowerCode : TowerState
             ticksLeft -= lvl*Time.deltaTime*64f;
         }
 
-        if (ticksLeft < 1)
+        if (ticksLeft <= 0)
         {
             
             if (shoot())
@@ -66,8 +67,12 @@ public abstract class TowerCode : TowerState
 
     public virtual bool shoot()
     {
-        Collider[] sphere = Physics.OverlapSphere(self, getRange() * MapCreator.scale,LayerMask.GetMask("Enemy"));
-        if (sphere.Length > 0)
+        List<Collider> sphere = new List<Collider>(Physics.OverlapSphere(self, getRange() * MapCreator.scale,LayerMask.GetMask("Enemy")));
+        while (sphere.Count > 0 && sphere[0].gameObject.GetComponent<FruitCode>().hidden)
+        {
+            sphere.RemoveAt(0);
+        }
+        if (sphere.Count > 0)
         {
             GameObject projectile = Object.Instantiate(TowerCode.projectile);
             ProjectileController pc = projectile.GetComponent<ProjectileController>();

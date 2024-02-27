@@ -22,8 +22,12 @@ public class SpaceTower : TowerCode
     }
     public override bool shoot()
     {
-        Collider[] sphere = Physics.OverlapSphere(self, 25f,LayerMask.GetMask("Enemy"));
-        if (sphere.Length > 0)
+        List<Collider> sphere = new List<Collider>(Physics.OverlapSphere(self, 25f,LayerMask.GetMask("Enemy")));
+        while (sphere.Count > 0 && sphere[0].gameObject.GetComponent<FruitCode>().hidden)
+        {
+            sphere.RemoveAt(0);
+        }
+        if (sphere.Count > 0)
         {
             GameObject projectile = Object.Instantiate(TowerCode.projectile);
             ProjectileController pc = projectile.GetComponent<ProjectileController>();

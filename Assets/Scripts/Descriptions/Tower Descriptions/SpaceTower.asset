@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SpaceTower
   m_EditorClassIdentifier: 
   title: 'Space Tower '
-  description: 'this tower lanches a dence tungsten projectile high in to the atmospere
-    befor it comes crashing down causing masive damige '
+  description: This tower launches a dense tungsten projectile high in to the atmosphere
+    before it comes crashing down causing massive damage.
   upgrade1Description: 
   upgrade2Description: 
   upgrade3Description: 

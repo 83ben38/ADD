@@ -18,7 +18,7 @@ public class LightningProjectile : ProjectileCode
 
     public override int getPierce()
     {
-        return (upgrade1 ? 1 : 2) + lvl;
+        return (upgrade1 ? 1 : 3) + lvl;
     }
 
     public override void tick(ProjectileController controller)
@@ -34,10 +34,11 @@ public class LightningProjectile : ProjectileCode
                 move.y = 0;
             }
             controller.transform.Translate(Time.deltaTime*move);
-            Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f, LayerMask.GetMask("Enemy"));
+            Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f*MapCreator.scale, LayerMask.GetMask("Enemy"));
             for (int i = 0; i < hit.Length && i < 1; i++)
             {
                 this.hit(hit[i].gameObject.GetComponent<FruitCode>(), controller);
+                SoundEffectsManager.manager.playSound("zap");
             }
         }
         else if (pierceLeft == 1)
@@ -56,13 +57,13 @@ public class LightningProjectile : ProjectileCode
                 lineRenderer.material = new Material(controller.material);
                 lineRenderer.startWidth = 0.1f;
                 lineRenderer.endWidth = 0.1f;
-                lineRenderer.positionCount = getPierce();
+                lineRenderer.positionCount = getPierce()-1;
                 lineRenderer.SetPosition(0,controller.transform.position);
                 lineRenderer.useWorldSpace = true;
                 lineRenderer.generateLightingData = true;
                 lineRenderer.transform.SetParent(controller.transform);
             }
-            Collider[] hit = Physics.OverlapSphere(lineRenderer.GetPosition(getPierce()-pierceLeft-1), 10f, LayerMask.GetMask("Enemy"));
+            Collider[] hit = Physics.OverlapSphere(lineRenderer.GetPosition(getPierce()-pierceLeft-1), 10f*MapCreator.scale, LayerMask.GetMask("Enemy"));
             
 
             int i = 0;
@@ -75,9 +76,8 @@ public class LightningProjectile : ProjectileCode
                 }
                 i++;
             }
-            this.hit(hit[i].gameObject.GetComponent<FruitCode>(),controller);
             lineRenderer.SetPosition(getPierce()-pierceLeft,hit[i].gameObject.transform.position);
-            
+            this.hit(hit[i].gameObject.GetComponent<FruitCode>(),controller);
         }
         
     }

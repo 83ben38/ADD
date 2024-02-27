@@ -91,7 +91,7 @@ public class DarkTower : TowerCode
             ticksLeft -= lvl*Time.deltaTime*64f;
         }
 
-        if (ticksLeft < 1)
+        if (ticksLeft <= 0)
         {
             
             if (shoot())
@@ -104,7 +104,6 @@ public class DarkTower : TowerCode
                     if (nextTo[i].tower != null && !(nextTo[i].tower is DarkTower))
                     {
                         nextTo[i].tower.ticksLeft += attackSpeed * nextTo[i].tower.lvl * 0.25f / lvl;
-                        nextTo[i].tower.rechargeTime += attackSpeed * nextTo[i].tower.lvl * 0.25f / lvl;
                         statIncreaseAmount += nextTo[i].tower.lvl;
                     }
                 }

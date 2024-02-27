@@ -29,6 +29,10 @@ public class FreeplayEnemyConfiguration
     private OrangeOptions orangeOptions = null;
     [SerializeField] 
     private MangoOptions mangoOptions = null;
+    [SerializeField] 
+    private BananaOptions bananaOptions = null;
+    [SerializeField] 
+    private StrawberryOptions strawberryOptions = null;
     public void runOptions(FruitCode fc, int increase)
     {
         fc.hp = defaultHp + (int)(hpScaling*increase);
@@ -56,6 +60,16 @@ public class FreeplayEnemyConfiguration
         if (fc is MangoCode)
         {
             mangoOptions.config(fc);
+        }
+
+        if (fc is BananaCode)
+        {
+            bananaOptions.config(fc);
+        }
+
+        if (fc is StrawberryCode)
+        {
+            strawberryOptions.config(fc);
         }
     }
 }

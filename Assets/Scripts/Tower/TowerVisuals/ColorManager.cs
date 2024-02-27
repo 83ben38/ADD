@@ -48,6 +48,9 @@ public class ColorManager : MonoBehaviour
     public Color windTower;
     public Color darkTower;
     public Color poisonTower;
+    public Color laserTower;
+    public Color goldTower;
+    public Color lifeTower;
     public GameObject projectile;
     
     void Awake()
