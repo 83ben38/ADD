@@ -1885,6 +1885,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2422f0fb642e84cccbec3d41241694bd, type: 2}
   - {fileID: 11400000, guid: 02f5bbeab5cf04c2cbb7de574f55f8fd, type: 2}
   - {fileID: 11400000, guid: e11e93e1d4f30754f830be9924c8a2b6, type: 2}
+  - {fileID: 11400000, guid: 9eee1afaaefa5a645ae4a065625aefaf, type: 2}
   screenNum: 0
   buttonObject: {fileID: 966796936}
 --- !u!114 &499034138
@@ -4663,7 +4664,12 @@ MonoBehaviour:
   ironTower: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
   atomicTower: {r: 0.15739894, g: 1, b: 0, a: 1}
   spaceTower: {r: 0, g: 0, b: 0, a: 1}
-  WindTower: {r: 0.8773585, g: 0.87322, b: 0.87322, a: 0.6509804}
+  windTower: {r: 0, g: 0, b: 0, a: 0}
+  darkTower: {r: 0, g: 0, b: 0, a: 0}
+  poisonTower: {r: 0, g: 0, b: 0, a: 0}
+  laserTower: {r: 0, g: 0, b: 0, a: 0}
+  goldTower: {r: 0, g: 0, b: 0, a: 0}
+  lifeTower: {r: 0, g: 0, b: 0, a: 0}
   projectile: {fileID: 6165706959806861308, guid: 0f7785055af1ec14585430c61af7807c,
     type: 3}
 --- !u!114 &1627071317
@@ -4771,6 +4777,7 @@ MonoBehaviour:
     difficultiesCompleted:
       keys: 
       values: []
+    tutorials: 000000000000
   path: 
 --- !u!114 &1627071319
 MonoBehaviour:
