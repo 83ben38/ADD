@@ -45,6 +45,10 @@ public class MapCreator : MonoBehaviour
         {
             for (int j = 0; j < yDimensions; j++)
             {
+                if (types[i + (j * xDimensions)] == -4)
+                {
+                    continue;
+                }
                 Vector2 pos = shape.getPosition(new Vector2(i, j))*scale;
                 Quaternion rot = shape.getRotation(new Vector2(i, j));
                 cloneObject.transform.rotation = rot;
