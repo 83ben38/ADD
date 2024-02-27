@@ -68,7 +68,7 @@ public abstract class TowerCode : TowerState
     public virtual bool shoot()
     {
         List<Collider> sphere = new List<Collider>(Physics.OverlapSphere(self, getRange() * MapCreator.scale,LayerMask.GetMask("Enemy")));
-        while (sphere[0].gameObject.GetComponent<FruitCode>().hidden && sphere.Count > 0)
+        while (sphere.Count > 0 && sphere[0].gameObject.GetComponent<FruitCode>().hidden)
         {
             sphere.RemoveAt(0);
         }

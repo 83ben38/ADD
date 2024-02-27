@@ -501,6 +501,7 @@ MonoBehaviour:
   poisonTower: {r: 0.0724141, g: 0.3962264, b: 0, a: 1}
   laserTower: {r: 1, g: 0.47272673, b: 0, a: 1}
   goldTower: {r: 0.9339623, g: 0.7497558, b: 0.3216002, a: 1}
+  lifeTower: {r: 0.41322616, g: 1, b: 0.3443396, a: 1}
   projectile: {fileID: 6165706959806861308, guid: 0f7785055af1ec14585430c61af7807c,
     type: 3}
 --- !u!82 &86080136
