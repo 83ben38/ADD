@@ -73,7 +73,7 @@ public class LifeProjectile : ProjectileCode
     {
         for (float i = 1; i <= rechargeTime; i+=Time.deltaTime*64f)
         {
-            controller.transform.localScale = new Vector3(i * .25f /  rechargeTime, i * .25f / rechargeTime, i * .25f / rechargeTime);
+            controller.transform.localScale = new Vector3(i * .25f * MapCreator.scale /  rechargeTime, i * .25f * MapCreator.scale / rechargeTime, i * .25f * MapCreator.scale / rechargeTime);
             yield return null;
         }
     }
