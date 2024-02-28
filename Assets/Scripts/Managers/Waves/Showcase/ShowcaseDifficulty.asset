@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59df5b7ad47e1f944a64ae76720ee300, type: 3}
-  m_Name: EasyDifficulty
+  m_Name: ShowcaseDifficulty
   m_EditorClassIdentifier: 
   waves:
   - {fileID: 11400000, guid: 157c1a22bb6cc0f45871fe52b6465934, type: 2}
@@ -18,9 +18,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 86d8ab12f60ceee45906685f2276255f, type: 2}
   - {fileID: 11400000, guid: 20a48910aec495f4ba4657b0f12397f0, type: 2}
   freeplayWaves: []
-  maxLives: 200
+  maxLives: 1000
   awardMultiplier: 1
-  difficultyName: Easy
-  difficultyColor: {r: 0.05724919, g: 1, b: 0, a: 1}
-  difficultyColorHighlighted: {r: 0.53568196, g: 1, b: 0.514151, a: 1}
+  difficultyName: Enemy Showcase
+  difficultyColor: {r: 1, g: 0, b: 0.7112603, a: 1}
+  difficultyColorHighlighted: {r: 1, g: 0.5137255, b: 0.81848156, a: 1}
   preRequisites: 
