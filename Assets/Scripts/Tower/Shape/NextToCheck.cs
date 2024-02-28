@@ -22,7 +22,52 @@ public class NextToCheck
             return isNextToTriangle(x1, y1, x2, y2);
         }
 
+        if (name == "pentagon")
+        {
+            return isNextToPentagon(x1, y1, x2, y2);
+        }
+
         return false;
+    }
+    private static bool isNextToPentagon(int x1, int y1, int x2, int y2)
+    {
+        switch ((x1+((y1%2)*2))%4)
+        {
+            case 0: return isNextToPentagonFacingVertical(x1, y1, x2, y2, true);
+            case 1: return isNextToPentagonFacingHorizontal(x1, y1, x2, y2, false);
+            case 2: return isNextToPentagonFacingVertical(x1, y1, x2, y2, false);
+            case 3: return isNextToPentagonFacingHorizontal(x1, y1, x2, y2, true);
+        }
+        return false;
+    }
+
+    private static bool isNextToPentagonFacingVertical(int x1, int y1, int x2, int y2, bool up)
+    {
+        for (int i = -1; i <= 1; i+=2)
+        {
+            for (int j = -1; j <= 0; j++)
+            {
+                if (x1 + i == x2 && y1 + j == y2)
+                {
+                    return true;
+                }
+            }
+        }
+        return (x1 == x2 && y1 + (up ? 1 : -1) == y2);
+    }
+    private static bool isNextToPentagonFacingHorizontal(int x1, int y1, int x2, int y2, bool right)
+    {
+        for (int i = -1; i <= 1; i+=2)
+        {
+            for (int j = 0; j <= 1; j++)
+            {
+                if (x1 + i == x2 && y1 + j == y2)
+                {
+                    return true;
+                }
+            }
+        }
+        return (x1 + (right ? -2:2) == x2 && y1 == y2);
     }
 
     private static bool isNextToHex(int x1, int y1, int x2, int y2)
