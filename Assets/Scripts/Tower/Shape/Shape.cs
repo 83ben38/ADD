@@ -14,7 +14,7 @@ public class Shape : MonoBehaviour
     void Awake()
     {
         transform.localPosition = scriptableObject.meshPosition;
-        transform.rotation = scriptableObject.meshRotation;
+        transform.localRotation = scriptableObject.meshRotation;
         transform.localScale = scriptableObject.meshScale;
         GetComponent<MeshCollider>().sharedMesh = scriptableObject.mesh;
         GetComponent<MeshFilter>().sharedMesh = scriptableObject.mesh;
@@ -23,7 +23,7 @@ public class Shape : MonoBehaviour
     public void Reset()
     {
         transform.localPosition = scriptableObject.meshPosition;
-        transform.rotation = scriptableObject.meshRotation;
+        transform.localRotation = scriptableObject.meshRotation;
         transform.localScale = scriptableObject.meshScale;
         GetComponent<MeshCollider>().sharedMesh = scriptableObject.mesh;
         GetComponent<MeshFilter>().sharedMesh = scriptableObject.mesh;
