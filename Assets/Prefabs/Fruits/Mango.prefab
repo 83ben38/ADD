@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8267130134565377638
+--- !u!1 &4020007738164027732
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1234347296725938323}
-  - component: {fileID: 4554660371838982761}
-  - component: {fileID: 7175493134299800891}
-  - component: {fileID: 1280423757253061221}
-  - component: {fileID: -3120868626275999166}
-  m_Layer: 3
+  - component: {fileID: 4683761988168210418}
+  - component: {fileID: 1545554835039872532}
+  - component: {fileID: 5383000489823177999}
+  m_Layer: 0
   m_Name: Mango
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1234347296725938323
+--- !u!4 &4683761988168210418
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8267130134565377638}
+  m_GameObject: {fileID: 4020007738164027732}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.229, y: 0.103, z: -1.497}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0.002, y: -0.066, z: 0}
+  m_LocalScale: {x: 152.02164, y: 152.02158, z: 152.02158}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1234347296725938323}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4554660371838982761
+--- !u!33 &1545554835039872532
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8267130134565377638}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &7175493134299800891
+  m_GameObject: {fileID: 4020007738164027732}
+  m_Mesh: {fileID: -2096400302357360989, guid: 7bf4c336673b7d64da75fc20c19e6420, type: 3}
+--- !u!23 &5383000489823177999
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8267130134565377638}
+  m_GameObject: {fileID: 4020007738164027732}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -63,7 +61,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 92f6dddf0e1165642931146b039ad711, type: 2}
+  - {fileID: -698929962238800601, guid: 7bf4c336673b7d64da75fc20c19e6420, type: 3}
+  - {fileID: 2220517279044427248, guid: 7bf4c336673b7d64da75fc20c19e6420, type: 3}
+  - {fileID: -6501104399273127766, guid: 7bf4c336673b7d64da75fc20c19e6420, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,6 +85,40 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &8267130134565377638
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1234347296725938323}
+  - component: {fileID: 1280423757253061221}
+  - component: {fileID: -3120868626275999166}
+  m_Layer: 3
+  m_Name: Mango
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1234347296725938323
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8267130134565377638}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4683761988168210418}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1280423757253061221
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -126,6 +160,8 @@ MonoBehaviour:
   goalPos: {x: 0, y: 0, z: 0}
   maxScale: 0
   minScale: 0
+  vulnerability: 0
   frozenTime: 0
+  hidden: 0
   radius: 0
   HealAmount: 0

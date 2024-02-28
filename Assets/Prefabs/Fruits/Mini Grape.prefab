@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1234347296725938323}
-  - component: {fileID: 1280423757253061221}
-  - component: {fileID: 1810279870280609025}
+  - component: {fileID: 2524876219397561525}
+  - component: {fileID: 3217486226008386059}
   m_Layer: 3
-  m_Name: Strawberry
+  m_Name: Mini Grape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,11 +31,34 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1639139210102058865}
+  - {fileID: 7788285792664074050}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1280423757253061221
-SphereCollider:
+--- !u!114 &2524876219397561525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8267130134565377638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f5e2a1903afc241b2c2508441edf3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: 0
+  hp: 4
+  maxHp: 0
+  speed: 0.02
+  pathNum: 1
+  goalPos: {x: 0, y: 0, z: 0}
+  maxScale: 0.5
+  minScale: 0.25
+  vulnerability: 0
+  frozenTime: 0
+  hidden: 0
+--- !u!64 &3217486226008386059
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -52,35 +75,11 @@ SphereCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1810279870280609025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8267130134565377638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2065635dff9aa47299b8ba6de4abe26f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  path: 0
-  hp: 0
-  maxHp: 0
-  speed: 0
-  pathNum: 1
-  goalPos: {x: 0, y: 0, z: 0}
-  maxScale: 0
-  minScale: 0
-  vulnerability: 0
-  frozenTime: 0
-  hidden: 0
-  stunAmount: 0
-  stunRadius: 0
---- !u!1 &8819531285744332991
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 07b22a6217c99d4438d5af8d62376462, type: 3}
+--- !u!1 &8859676777479815937
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,46 +87,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1639139210102058865}
-  - component: {fileID: 224875921821829729}
-  - component: {fileID: 8343773554748053368}
+  - component: {fileID: 7788285792664074050}
+  - component: {fileID: 8451069706923544828}
+  - component: {fileID: 3282755985372303225}
   m_Layer: 0
-  m_Name: Strawberry
+  m_Name: Grape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1639139210102058865
+--- !u!4 &7788285792664074050
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8819531285744332991}
+  m_GameObject: {fileID: 8859676777479815937}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.004, y: -0.074, z: -0.026}
-  m_LocalScale: {x: 33.09386, y: 33.093834, z: 33.093834}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 30.209259, y: 30.209259, z: 30.209259}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1234347296725938323}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &224875921821829729
+--- !u!33 &8451069706923544828
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8819531285744332991}
-  m_Mesh: {fileID: 3840383602836954559, guid: 7bf4c336673b7d64da75fc20c19e6420, type: 3}
---- !u!23 &8343773554748053368
+  m_GameObject: {fileID: 8859676777479815937}
+  m_Mesh: {fileID: 6280523690729728749, guid: 7bf4c336673b7d64da75fc20c19e6420, type: 3}
+--- !u!23 &3282755985372303225
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8819531285744332991}
+  m_GameObject: {fileID: 8859676777479815937}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -141,11 +140,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7220267034735141759, guid: 7bf4c336673b7d64da75fc20c19e6420, type: 3}
-  - {fileID: 2773994266411505379, guid: 7bf4c336673b7d64da75fc20c19e6420, type: 3}
-  - {fileID: -7184144384587008327, guid: 7bf4c336673b7d64da75fc20c19e6420, type: 3}
-  - {fileID: -8132669321305824702, guid: 7bf4c336673b7d64da75fc20c19e6420, type: 3}
-  - {fileID: 5950455985620435409, guid: 7bf4c336673b7d64da75fc20c19e6420, type: 3}
+  - {fileID: -6054631155237125963, guid: 7bf4c336673b7d64da75fc20c19e6420, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

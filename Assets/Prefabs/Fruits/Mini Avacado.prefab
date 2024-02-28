@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8267130134565377638
+--- !u!1 &7079682758369160748
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1234347296725938323}
-  - component: {fileID: 4554660371838982761}
-  - component: {fileID: 7175493134299800891}
-  - component: {fileID: 1280423757253061221}
-  - component: {fileID: 545909132101514063}
-  m_Layer: 3
-  m_Name: Koconut
+  - component: {fileID: 2332323971962700808}
+  - component: {fileID: 8933529220149180515}
+  - component: {fileID: 4412619258312937789}
+  m_Layer: 0
+  m_Name: Avacado Half
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1234347296725938323
+--- !u!4 &2332323971962700808
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8267130134565377638}
+  m_GameObject: {fileID: 7079682758369160748}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.229, y: 0.103, z: -1.497}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: 0.002, y: 0, z: -0.03999996}
+  m_LocalScale: {x: 41.22086, y: 41.22086, z: 41.22086}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4554660371838982761
+  m_Father: {fileID: 1234347296725938323}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -90}
+--- !u!33 &8933529220149180515
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8267130134565377638}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &7175493134299800891
+  m_GameObject: {fileID: 7079682758369160748}
+  m_Mesh: {fileID: -8617305685962152684, guid: 7bf4c336673b7d64da75fc20c19e6420, type: 3}
+--- !u!23 &4412619258312937789
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8267130134565377638}
+  m_GameObject: {fileID: 7079682758369160748}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -63,7 +61,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 12a8890cfece7e44fb817d8a359285ca, type: 2}
+  - {fileID: 1491300172477513056, guid: 7bf4c336673b7d64da75fc20c19e6420, type: 3}
+  - {fileID: -7185524079207435328, guid: 7bf4c336673b7d64da75fc20c19e6420, type: 3}
+  - {fileID: 3097926796698509387, guid: 7bf4c336673b7d64da75fc20c19e6420, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,6 +85,40 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &8267130134565377638
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1234347296725938323}
+  - component: {fileID: 1280423757253061221}
+  - component: {fileID: 7669383704476128136}
+  m_Layer: 3
+  m_Name: Mini Avacado
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1234347296725938323
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8267130134565377638}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2332323971962700808}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1280423757253061221
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -106,7 +140,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &545909132101514063
+--- !u!114 &7669383704476128136
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,16 +149,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 8267130134565377638}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97478f7fa884b2440bad050c8371bc7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 96f5e2a1903afc241b2c2508441edf3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   path: 0
-  hp: 5
+  hp: 2
   maxHp: 0
-  speed: 0.02
+  speed: 0.04
   pathNum: 1
   goalPos: {x: 0, y: 0, z: 0}
-  maxScale: 0.75
-  minScale: 0.25
+  maxScale: 0.3
+  minScale: 0.15
+  vulnerability: 0
   frozenTime: 0
-  reductionMod: 10
+  hidden: 0
