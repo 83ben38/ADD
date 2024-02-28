@@ -22,8 +22,18 @@ public class SpaceProjectile : ProjectileCode
         time += Time.deltaTime * lvl;
         if (target == null)
         {
-            Object.Destroy(controller.gameObject);
-            return;
+            List<Collider> sphere = new List<Collider>(Physics.OverlapSphere(controller.transform.position, 25f,LayerMask.GetMask("Enemy")));
+            while (sphere.Count > 0 && sphere[0].gameObject.GetComponent<FruitCode>().hidden)
+            {
+                sphere.RemoveAt(0);
+            }
+
+            if (sphere.Count == 0)
+            {
+                Object.Destroy(controller.gameObject);
+                return;
+            }
+            target = sphere[0].gameObject.GetComponent<FruitCode>();
         }
         //do projectile stuff
         if (time < 1)
