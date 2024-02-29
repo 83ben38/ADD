@@ -45,7 +45,7 @@ public class NextToCheck
     {
         for (int i = -1; i <= 1; i+=2)
         {
-            for (int j = -1; j <= 0; j++)
+            for (int j = 0; j <= 1; j++)
             {
                 if (x1 + i == x2 && y1 + j == y2)
                 {
@@ -53,7 +53,7 @@ public class NextToCheck
                 }
             }
         }
-        return (x1 == x2 && y1 + (up ? 1 : -1) == y2);
+        return (x1 == x2 && y1 + (up ? -1 : 1) == y2);
     }
     private static bool isNextToPentagonFacingHorizontal(int x1, int y1, int x2, int y2, bool right)
     {
