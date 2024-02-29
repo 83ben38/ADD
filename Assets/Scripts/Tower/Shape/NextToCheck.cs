@@ -24,7 +24,7 @@ public class NextToCheck
 
         if (name == "pentagon")
         {
-            return isNextToPentagon(x1, y1, x2, y2);
+            return isNextToPentagon(x1, y1, x2, y2)||isNextToPentagon(x2,y2,x1,y1);
         }
 
         return false;
@@ -59,7 +59,7 @@ public class NextToCheck
     {
         for (int i = -1; i <= 1; i+=2)
         {
-            for (int j = 0; j <= 1; j++)
+            for (int j = -1; j <= 0; j++)
             {
                 if (x1 + i == x2 && y1 + j == y2)
                 {
