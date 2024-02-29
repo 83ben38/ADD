@@ -51,6 +51,7 @@ public class ColorManager : MonoBehaviour
     public Color laserTower;
     public Color goldTower;
     public Color lifeTower;
+    public Color deathTower;
     public GameObject projectile;
     
     void Awake()
