@@ -40,6 +40,11 @@ public class WaterProjectile : ProjectileCode
             Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f * MapCreator.scale, LayerMask.GetMask("Enemy"));
             for (int i = 0; i < hit.Length; i++)
             {
+                if (i == 0)
+                {
+                    SoundEffectsManager.manager.playSound("splash");
+                }
+
                 this.hit(hit[i].gameObject.GetComponent<FruitCode>(), controller);
             }
 

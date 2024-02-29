@@ -16,11 +16,17 @@ public class SoundEffectsManager : MonoBehaviour
     private AudioSource source;
     [SerializeField]
     private AudioClip zap;
+    [SerializeField]
+    private AudioClip splash;
     public void playSound(string sound)
     {
         if (sound.Equals("zap"))
         {
             source.PlayOneShot(zap);
+        }
+        if (sound.Equals("splash"))
+        {
+            source.PlayOneShot(splash);
         }
     }
 
