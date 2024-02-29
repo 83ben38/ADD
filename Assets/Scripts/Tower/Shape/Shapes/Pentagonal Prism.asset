@@ -13,21 +13,21 @@ MonoBehaviour:
   m_Name: Pentagonal Prism
   m_EditorClassIdentifier: 
   mesh: {fileID: -5495902117074765545, guid: d9c670d7b59e54608ace70f26faf6e6f, type: 3}
-  meshPosition: {x: 0.93, y: 0, z: 0}
-  meshRotation: {x: -0.59302956, y: 0.38511798, z: -0.38511798, w: -0.59302956}
-  meshScale: {x: 100, y: 100, z: 50}
-  xXFactor: 0.95
+  meshPosition: {x: 0.425, y: 0, z: 0}
+  meshRotation: {x: -0.6123724, y: 0.3535534, z: -0.3535534, w: -0.6123724}
+  meshScale: {x: 50, y: 50, z: 50}
+  xXFactor: 0.45
   xYFactor: 0
-  yXFactor: 0
-  yYFactor: 0.84
+  yXFactor: -0.48
+  yYFactor: 0.95
   xYFactorMod: 1
-  yXFactorMod: 1
+  yXFactorMod: 2
   xyXFactor: 0
-  xyYFactor: -1
+  xyYFactor: 0
   xyXFactorMod: 1
-  xyYFactorMod: 2
+  xyYFactorMod: 1
   xRotationFactor: 270
-  yRotationFactor: 270
+  yRotationFactor: 180
   checkName: pentagon
   dotPositions:
   - {x: 0, y: 0.8, z: 0}
