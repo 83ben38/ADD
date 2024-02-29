@@ -9,6 +9,11 @@ public class CoconutCode : FruitCode
     
     public override void Damage(int amount)
     {
+        if (amount + vulnerability - reductionMod < 0)
+        {
+            return;
+        }
+
         hp -= amount + vulnerability - reductionMod;
         if (hp < 1)
         {
