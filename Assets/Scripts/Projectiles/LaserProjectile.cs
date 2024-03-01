@@ -39,7 +39,7 @@ public class LaserProjectile : ProjectileCode
         laser.transform.SetParent(controller.transform);
         dir = pos - pos1;
         pos3 = new Vector3(pos.x,pos.y- (MapCreator.scale * 0.8f),pos.z);
-        pos4 = new Vector3(pos1.x,pos1.y- (MapCreator.scale * 0.8f),pos1.z);
+        pos4 = new Vector3(pos1.x, pos1.y - (MapCreator.scale * 0.8f), pos1.z);
     }
 
     public override void tick(ProjectileController controller)
