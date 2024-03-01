@@ -27,7 +27,7 @@ public class DeathProjectile : ProjectileCode
     public override void Start(ProjectileController controller)
     {
         base.Start(controller);
-        controller.transform.localScale *= 3;
+        controller.transform.localScale *= 2;
         controller.transform.position = pos;
     }
 
@@ -37,7 +37,7 @@ public class DeathProjectile : ProjectileCode
       Vector3 goal = goalPos - transform.position;
       Vector2 diff = new Vector2(goal.x, goal.z);
       Vector2 unit = diff.normalized;
-      float newSpeed = speed*Time.deltaTime*64;
+      float newSpeed = speed*Time.deltaTime;
       Vector2 div = (diff / unit);
       if (!float.IsFinite(div.x))
       {
@@ -87,7 +87,7 @@ public class DeathProjectile : ProjectileCode
          }
       }
       transform.Translate(unit.x*newSpeed,0,unit.y*newSpeed);
-      Collider[] hit = Physics.OverlapSphere(controller.transform.position, .75f*MapCreator.scale, LayerMask.GetMask("Enemy"));
+      Collider[] hit = Physics.OverlapSphere(controller.transform.position, .5f*MapCreator.scale, LayerMask.GetMask("Enemy"));
       for (int i = 0; i < hit.Length; i++)
       {
          this.hit(hit[i].gameObject.GetComponent<FruitCode>(), controller);

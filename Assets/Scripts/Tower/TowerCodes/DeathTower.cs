@@ -26,6 +26,7 @@ public class DeathTower : TowerCode
 
     public DeathTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
+        inRange = new List<GameObject>();
         range = 3;
     }
 
