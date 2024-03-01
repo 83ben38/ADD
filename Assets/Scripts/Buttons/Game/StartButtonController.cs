@@ -52,6 +52,20 @@ public class StartButtonController : Selectable
 
     public void start()
     {
+        if (waves.waves.Length == wave)
+        {
+            wave++;
+            int money = waves.awardMultiplier * SelectionData.data.map.baseAward;
+            if (!SaveData.save.isDifficultyCompleted(SelectionData.data.selectedMap, SelectionData.data.selectedDifficulty))
+            {
+                SaveData.save.completeDifficulty(SelectionData.data.selectedMap, SelectionData.data.selectedDifficulty);
+                money *= 3;
+            }
+
+            SaveData.save.addMoney(money);
+            WinController.controller.go(true);
+            return;
+        }
         if (waveFinished)
         {
             if (PathfinderManager.manager.path.Count == 0)
@@ -93,19 +107,6 @@ public class StartButtonController : Selectable
             wave++;
             InGameState.generateNewTowerCode(wave + 1);
             waveFinished = true;
-        }
-        else if (waves.waves.Length == wave)
-        {
-            wave++;
-            int money = waves.awardMultiplier * SelectionData.data.map.baseAward;
-            if (!SaveData.save.isDifficultyCompleted(SelectionData.data.selectedMap, SelectionData.data.selectedDifficulty))
-            {
-                SaveData.save.completeDifficulty(SelectionData.data.selectedMap, SelectionData.data.selectedDifficulty);
-                money *= 3;
-            }
-
-            SaveData.save.addMoney(money);
-            WinController.controller.go(true);
         }
         else
         {
