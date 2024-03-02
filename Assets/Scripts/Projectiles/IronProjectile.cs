@@ -47,7 +47,7 @@ public class IronProjectile : ProjectileCode
                     targetPosition = Vector3.zero;
                 }
             }
-            Collider[] hit = Physics.OverlapSphere(controller.transform.position, .5f*MapCreator.scale, LayerMask.GetMask("Enemy"));
+            Collider[] hit = Physics.OverlapSphere(controller.transform.position, MapCreator.scale, LayerMask.GetMask("Enemy"));
             if (hit.Length > 0)
             {
                 target = hit[0].gameObject.GetComponent<FruitCode>();
