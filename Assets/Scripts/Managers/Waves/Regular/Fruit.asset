@@ -17,6 +17,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 96dc6cf8d29314dc58e8259a35d57830, type: 2}
   - {fileID: 11400000, guid: c7fa663e7bb8e45bc9fbdd0ecb4c298e, type: 2}
   - {fileID: 11400000, guid: c2db6f7524c824b05a0d68ad585c43df, type: 2}
+  - {fileID: 11400000, guid: a63a0f05fcf764d07881c2a4006631de, type: 2}
+  - {fileID: 11400000, guid: cc8687e9924f4470289fff3561f6d36a, type: 2}
+  - {fileID: 11400000, guid: 11e67068740aa4a28a90003fce426687, type: 2}
+  - {fileID: 11400000, guid: b33453dee7eec40fa97b0764fa870e52, type: 2}
+  - {fileID: 11400000, guid: 8eceeacccc8f9463e897096fcb647b35, type: 2}
+  - {fileID: 11400000, guid: e3873b9430e4346ce9dc12dbf70ade22, type: 2}
   freeplayWaves: []
   maxLives: 150
   awardMultiplier: 2
