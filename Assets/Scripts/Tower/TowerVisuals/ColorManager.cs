@@ -58,13 +58,14 @@ public class ColorManager : MonoBehaviour
     void Awake()
     {
         //setColorScheme(availableColorSchemes[0]);
-        doColorScheme(availableColorSchemes[0]);
+        
         //doColorScheme(availableColorSchemes[0]);
         if (manager != null)
         {
             Destroy(gameObject);
             return;
         }
+        doColorScheme(availableColorSchemes[0]);
         manager = this;
         TowerCode.projectile = projectile;
     }
