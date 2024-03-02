@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59df5b7ad47e1f944a64ae76720ee300, type: 3}
+  m_Name: Fruit
+  m_EditorClassIdentifier: 
+  waves:
+  - {fileID: 11400000, guid: 7651c9f43902640048da26526c980bae, type: 2}
+  - {fileID: 11400000, guid: 96dc6cf8d29314dc58e8259a35d57830, type: 2}
+  - {fileID: 11400000, guid: c7fa663e7bb8e45bc9fbdd0ecb4c298e, type: 2}
+  - {fileID: 11400000, guid: c2db6f7524c824b05a0d68ad585c43df, type: 2}
+  freeplayWaves: []
+  maxLives: 150
+  awardMultiplier: 2
+  difficultyName: Fruit
+  difficultyColor: {r: 0.76641333, g: 1, b: 0, a: 1}
+  difficultyColorHighlighted: {r: 0.84456664, g: 1, b: 0.47450984, a: 1}
+  preRequisites: 

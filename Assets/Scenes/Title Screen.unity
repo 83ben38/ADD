@@ -1907,7 +1907,8 @@ MonoBehaviour:
   availableDifficulties:
   - {fileID: 11400000, guid: 19940148451dc7e4cbdb0a9d9131e18d, type: 2}
   - {fileID: 11400000, guid: b96bccabab5d1a74d9cc8cdb6497fccf, type: 2}
-  xDimensions: 2
+  - {fileID: 11400000, guid: acc5edf47378140a1a07e9b240110785, type: 2}
+  xDimensions: 3
   yDimensions: 1
   buttonObject: {fileID: 1003852782}
   starObject: {fileID: 1993208591}
