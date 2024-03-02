@@ -35,6 +35,7 @@ public class MapSelectorButton : Selectable
         _material = GetComponent<Renderer>().material;
         tmp = GetComponentInChildren<TextMeshPro>();
         tmp.text = map.mapName;
+        _material.color = ColorManager.manager.tile;
     }
 
     

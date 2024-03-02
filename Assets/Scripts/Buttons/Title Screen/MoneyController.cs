@@ -17,5 +17,6 @@ public class MoneyController : MonoBehaviour
             return;
         }
         text.text = money+ " \u20b5\u00a2";
+        GetComponent<Renderer>().material.color = ColorManager.manager.tile;
     }
 }

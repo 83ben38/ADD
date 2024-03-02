@@ -13,6 +13,7 @@ public class WinController : Selectable
         _material = GetComponent<Renderer>().material;
         controller = this;
         gameObject.SetActive(false);
+        _material.color =ColorManager.manager.tile;
     }
 
     public void go(bool win)

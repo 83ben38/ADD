@@ -18,7 +18,7 @@ MonoBehaviour:
   yDimensions: 7
   shape: {fileID: 11400000, guid: 371eae48f2c4a458d9dcf2f73c7a973f, type: 2}
   startPos: {x: 0, y: 0, z: 0}
-  scaleAmt: 0
+  scaleAmt: 1
   paths: 1
   checkpointsRequired: 1
   mapName: Donut

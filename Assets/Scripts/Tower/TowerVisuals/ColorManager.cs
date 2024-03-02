@@ -35,6 +35,7 @@ public class ColorManager : MonoBehaviour
     public Color path;
 
     public Color pathHighlighted;
+    public Color background;
     public Color tower;
     public Color towerHighlighted;
     public Color earthTower;
@@ -53,9 +54,12 @@ public class ColorManager : MonoBehaviour
     public Color lifeTower;
     public Color deathTower;
     public GameObject projectile;
-    
+    public ColorSchemeScriptableObject[] availableColorSchemes;
     void Awake()
     {
+        //setColorScheme(availableColorSchemes[0]);
+        doColorScheme(availableColorSchemes[0]);
+        //doColorScheme(availableColorSchemes[0]);
         if (manager != null)
         {
             Destroy(gameObject);
@@ -65,9 +69,65 @@ public class ColorManager : MonoBehaviour
         TowerCode.projectile = projectile;
     }
 
-    // Update is called once per frame
-    void Update()
+    void setColorScheme(ColorSchemeScriptableObject scheme)
     {
-        
+        scheme.portal1 = portal1;
+        scheme.portal1Highlighted = portal1Highlighted;
+        scheme.portal2 = portal2;
+        scheme.portal2Highlighted = portal2Highlighted;
+        scheme.portal3 = portal3;
+        scheme.portal3Highlighted = portal3Highlighted;
+        scheme.wallPerm = wallPerm;
+        scheme.wallPermHighlighted = wallPermHighlighted;
+        scheme.tilePerm = tilePerm;
+        scheme.tilePermHighlighted = tilePermHighlighted;
+        scheme.pathPerm = pathPerm;
+        scheme.pathPermHighlighted = pathPermHighlighted;
+        scheme.start = start;
+        scheme.startHighlighted = startHighlighted;
+        scheme.end = end;
+        scheme.endHighlighted = endHighlighted;
+        scheme.checkpoint = checkpoint;
+        scheme.checkpointHighlighted = checkpointHighlighted;
+        scheme.tile = tile;
+        scheme.tileHighlighted = tileHighlighted;
+        scheme.wall = wall;
+        scheme.wallHighlighted = wallHighlighted;
+        scheme.path = path;
+        scheme.pathHighlighted = pathHighlighted;
+        scheme.background = background;
+        scheme.towerHighlighted = towerHighlighted;
+        scheme.tower = tower;
+    }
+
+    void doColorScheme(ColorSchemeScriptableObject scheme)
+    {
+        portal1 = scheme.portal1;
+        portal1Highlighted = scheme.portal1Highlighted;
+        portal2 = scheme.portal2;
+        portal2Highlighted = scheme.portal2Highlighted;
+        portal3 = scheme.portal3;
+        portal3Highlighted = scheme.portal3Highlighted;
+        wallPerm = scheme.wallPerm;
+        wallPermHighlighted = scheme.wallPermHighlighted;
+        tilePerm = scheme.tilePerm;
+        tilePermHighlighted = scheme.tilePermHighlighted;
+        pathPerm = scheme.pathPerm;
+        pathPermHighlighted = scheme.pathPermHighlighted;
+        start = scheme.start;
+        startHighlighted = scheme.startHighlighted;
+        end = scheme.end;
+        endHighlighted = scheme.endHighlighted;
+        checkpoint = scheme.checkpoint;
+        checkpointHighlighted = scheme.checkpointHighlighted;
+        tile = scheme.tile;
+        tileHighlighted = scheme.tileHighlighted;
+        wall = scheme.wall;
+        wallHighlighted = scheme.wallHighlighted;
+        path = scheme.path;
+        pathHighlighted = scheme.pathHighlighted;
+        tower = scheme.tower;
+        towerHighlighted = scheme.towerHighlighted;
+        background = scheme.background;
     }
 }

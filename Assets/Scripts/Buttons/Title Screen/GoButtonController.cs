@@ -10,6 +10,7 @@ public class GoButtonController : Selectable
     {
         _material = GetComponent<Renderer>().material;
         Time.timeScale = 1;
+        _material.color = ColorManager.manager.tile;
     }
     public override void MouseEnter()
     {

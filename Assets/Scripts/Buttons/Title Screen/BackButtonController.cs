@@ -11,6 +11,7 @@ public class BackButtonController : Selectable
     private void Start()
     {
         _material = GetComponent<Renderer>().material;
+        _material.color = ColorManager.manager.tile;
     }
     public override void MouseEnter()
     {

@@ -2334,6 +2334,7 @@ GameObject:
   - component: {fileID: 886921988}
   - component: {fileID: 886921987}
   - component: {fileID: 886921986}
+  - component: {fileID: 886921990}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -2428,6 +2429,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &886921990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886921985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18368ad08f8724168a78a9f7a3eb3560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &930160187
 GameObject:
   m_ObjectHideFlags: 0
@@ -4658,6 +4671,7 @@ MonoBehaviour:
   wallHighlighted: {r: 0.49019608, g: 0.49019608, b: 1, a: 1}
   path: {r: 0.49019608, g: 0, b: 0, a: 1}
   pathHighlighted: {r: 1, g: 0.49019608, b: 0.49019608, a: 1}
+  background: {r: 0, g: 0, b: 0, a: 0}
   tower: {r: 0.49019608, g: 0.49019608, b: 0, a: 1}
   towerHighlighted: {r: 1, g: 1, b: 0.49019608, a: 1}
   earthTower: {r: 0.745283, g: 0.45438078, b: 0, a: 1}
@@ -4677,6 +4691,7 @@ MonoBehaviour:
   deathTower: {r: 0, g: 0, b: 0, a: 0}
   projectile: {fileID: 6165706959806861308, guid: 0f7785055af1ec14585430c61af7807c,
     type: 3}
+  availableColorSchemes: []
 --- !u!114 &1627071317
 MonoBehaviour:
   m_ObjectHideFlags: 0

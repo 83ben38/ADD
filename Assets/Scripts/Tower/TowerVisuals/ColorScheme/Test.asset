@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9d2a11145fdf46ce8b2afd053cb9eb5, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: 
+  portal1: {r: 0, g: 0, b: 0, a: 0}
+  portal1Highlighted: {r: 0, g: 0, b: 0, a: 0}
+  portal2: {r: 0, g: 0, b: 0, a: 0}
+  portal2Highlighted: {r: 0, g: 0, b: 0, a: 0}
+  portal3: {r: 0, g: 0, b: 0, a: 0}
+  portal3Highlighted: {r: 0, g: 0, b: 0, a: 0}
+  wallPerm: {r: 0, g: 0, b: 0, a: 0}
+  wallPermHighlighted: {r: 0, g: 0, b: 0, a: 0}
+  tilePerm: {r: 0, g: 0, b: 0, a: 0}
+  tilePermHighlighted: {r: 0, g: 0, b: 0, a: 0}
+  pathPerm: {r: 0, g: 0, b: 0, a: 0}
+  pathPermHighlighted: {r: 0, g: 0, b: 0, a: 0}
+  start: {r: 0, g: 0, b: 0, a: 0}
+  startHighlighted: {r: 0, g: 0, b: 0, a: 0}
+  end: {r: 0, g: 0, b: 0, a: 0}
+  endHighlighted: {r: 0, g: 0, b: 0, a: 0}
+  checkpoint: {r: 0, g: 0, b: 0, a: 0}
+  checkpointHighlighted: {r: 0, g: 0, b: 0, a: 0}
+  tile: {r: 0, g: 0, b: 0, a: 0}
+  tileHighlighted: {r: 0, g: 0, b: 0, a: 0}
+  wall: {r: 0, g: 0, b: 0, a: 0}
+  wallHighlighted: {r: 0, g: 0, b: 0, a: 0}
+  path: {r: 0, g: 0, b: 0, a: 0}
+  pathHighlighted: {r: 0, g: 0, b: 0, a: 0}
+  tower: {r: 0, g: 0, b: 0, a: 0}
+  towerHighlighted: {r: 0, g: 0, b: 0, a: 0}
+  background: {r: 0, g: 0, b: 0, a: 0}

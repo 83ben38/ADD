@@ -486,6 +486,7 @@ MonoBehaviour:
   wallHighlighted: {r: 0.49019608, g: 0.49019608, b: 1, a: 1}
   path: {r: 0.49019608, g: 0, b: 0, a: 1}
   pathHighlighted: {r: 1, g: 0.49019608, b: 0.49019608, a: 1}
+  background: {r: 0, g: 0, b: 0, a: 1}
   tower: {r: 0.49019608, g: 0.49019608, b: 0, a: 1}
   towerHighlighted: {r: 1, g: 1, b: 0.49019608, a: 1}
   earthTower: {r: 0.745283, g: 0.45438078, b: 0, a: 1}
@@ -505,6 +506,9 @@ MonoBehaviour:
   deathTower: {r: 0.312678, g: 0.4433962, b: 0.28653434, a: 1}
   projectile: {fileID: 6165706959806861308, guid: 0f7785055af1ec14585430c61af7807c,
     type: 3}
+  availableColorSchemes:
+  - {fileID: 11400000, guid: e85e2b1fca0834772bfd683eca01c0e2, type: 2}
+  - {fileID: 11400000, guid: 4a1365048a1c04a5480125e6ad6e4c00, type: 2}
 --- !u!82 &86080136
 AudioSource:
   m_ObjectHideFlags: 0
@@ -940,6 +944,7 @@ GameObject:
   - component: {fileID: 1489129003}
   - component: {fileID: 1489129002}
   - component: {fileID: 1489129001}
+  - component: {fileID: 1489129005}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -1034,6 +1039,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1489129005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489129000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18368ad08f8724168a78a9f7a3eb3560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1718600829
 GameObject:
   m_ObjectHideFlags: 0
