@@ -63,7 +63,7 @@ public class IronTower : TowerCode
                 GameObject pr = Object.Instantiate(TowerCode.projectile);
                 ProjectileController pco = pr.GetComponent<ProjectileController>();
                 pco.code = create();
-                pco.code.lvl = lvl;
+                pco.code.lvl = lvl > 1 ? lvl : 2;
                 ((IronProjectile)pco.code).targetPath = t;
                 pr.transform.position = controller.towerVisual.shoot(rechargeTime);
                 pco.material.color = getColor();

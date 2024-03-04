@@ -21,7 +21,7 @@ public class LifeTower : TowerCode
         GameObject projectile = Object.Instantiate(TowerCode.projectile);
         ProjectileController pc = projectile.GetComponent<ProjectileController>();
         pc.code = create();
-        pc.code.lvl = lvl;
+        pc.code.lvl = lvl > 1 ? lvl : 2;
         Vector2 rand = Random.insideUnitCircle*(MapCreator.scale*getRange());
         Vector3 pos = controller.transform.position;
         ((LifeProjectile)pc.code).target = new Vector3(pos.x+rand.x,pos.y+(1.8f*MapCreator.scale),pos.z+rand.y);
