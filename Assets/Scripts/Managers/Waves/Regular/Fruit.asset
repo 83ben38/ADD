@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59df5b7ad47e1f944a64ae76720ee300, type: 3}
+  m_Name: Fruit
+  m_EditorClassIdentifier: 
+  waves:
+  - {fileID: 11400000, guid: 7651c9f43902640048da26526c980bae, type: 2}
+  - {fileID: 11400000, guid: 96dc6cf8d29314dc58e8259a35d57830, type: 2}
+  - {fileID: 11400000, guid: c7fa663e7bb8e45bc9fbdd0ecb4c298e, type: 2}
+  - {fileID: 11400000, guid: c2db6f7524c824b05a0d68ad585c43df, type: 2}
+  - {fileID: 11400000, guid: a63a0f05fcf764d07881c2a4006631de, type: 2}
+  - {fileID: 11400000, guid: cc8687e9924f4470289fff3561f6d36a, type: 2}
+  - {fileID: 11400000, guid: 11e67068740aa4a28a90003fce426687, type: 2}
+  - {fileID: 11400000, guid: b33453dee7eec40fa97b0764fa870e52, type: 2}
+  - {fileID: 11400000, guid: 8eceeacccc8f9463e897096fcb647b35, type: 2}
+  - {fileID: 11400000, guid: e3873b9430e4346ce9dc12dbf70ade22, type: 2}
+  - {fileID: 11400000, guid: 5c08855c410884c7daf224210d13cd7c, type: 2}
+  - {fileID: 11400000, guid: 5822a9d6ca6b643ccbe625a99b6c1549, type: 2}
+  - {fileID: 11400000, guid: 8b5b7da07c12840259caa1a0c4768eef, type: 2}
+  - {fileID: 11400000, guid: 7b2166e074144475ea5209c8b03ce141, type: 2}
+  - {fileID: 11400000, guid: c9beb75555e524919a0a07c644764e7e, type: 2}
+  - {fileID: 11400000, guid: 1a46d98a8c3bd48c4b0c2194df95be4b, type: 2}
+  - {fileID: 11400000, guid: 6a860dd8c651246d9a1049d64f91d9a9, type: 2}
+  - {fileID: 11400000, guid: 85ad25500248442588a43e0dd0663846, type: 2}
+  - {fileID: 11400000, guid: 970f25ce66c5245f0ab0f12465f7d976, type: 2}
+  - {fileID: 11400000, guid: 5c5dfae4fc56642abb6c6d9b79c40c5a, type: 2}
+  - {fileID: 11400000, guid: b1ce7d1da02b0444b87a6b91b9612583, type: 2}
+  - {fileID: 11400000, guid: c72d13c8cd05841bc82a4db2585c5590, type: 2}
+  - {fileID: 11400000, guid: 472eddcc306a449e9bbaba2ab582683d, type: 2}
+  - {fileID: 11400000, guid: 1e065d43aa84b4320a997062670e2028, type: 2}
+  - {fileID: 11400000, guid: 327f9321fe1364c8d89b9773acb0df48, type: 2}
+  - {fileID: 11400000, guid: efbd4324be7d87b43a1cf6e401a96597, type: 2}
+  - {fileID: 11400000, guid: 233f41d87d554ab42a1f07f80e2dab5d, type: 2}
+  - {fileID: 11400000, guid: e35307048268397479d95dde4281757e, type: 2}
+  - {fileID: 11400000, guid: 8c45f2765d6782e40b87c1c661dd8565, type: 2}
+  freeplayWaves: []
+  maxLives: 150
+  awardMultiplier: 2
+  difficultyName: Fruit
+  difficultyColor: {r: 0.76641333, g: 1, b: 0, a: 1}
+  difficultyColorHighlighted: {r: 0.84456664, g: 1, b: 0.47450984, a: 1}
+  preRequisites: 
