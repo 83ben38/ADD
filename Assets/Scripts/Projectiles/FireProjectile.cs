@@ -44,7 +44,7 @@ public class FireProjectile : ProjectileCode
 
     public override int getDamage()
     {
-        return lvl / 2;
+        return lvl;
     }
 
     IEnumerator hitEnemy(FruitCode fruit)
