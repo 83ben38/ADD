@@ -1,6 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
+using Object = UnityEngine.Object;
+using Random = UnityEngine.Random;
 
 public class IronProjectile : ProjectileCode
 {
@@ -21,9 +22,24 @@ public class IronProjectile : ProjectileCode
 
     public override int getPierce()
     {
-        return 1;
+        return lvl;
     }
+    public virtual void hit(FruitCode fruit, ProjectileController controller)
+    {
+        
+        if (fruit.Equals(target))
+        {
+            target = null;
+        }
 
+        int damage = Math.Min(fruit.hp - fruit.vulnerability, pierceLeft);
+        fruit.Damage(damage);
+        pierceLeft -= damage;
+        if (pierceLeft < 1)
+        {
+            Object.Destroy(controller.gameObject);
+        }
+    }
     public override void tick(ProjectileController controller)
     {
         //do projectile stuff
@@ -32,9 +48,9 @@ public class IronProjectile : ProjectileCode
             move = lvl * MapCreator.scale * speed * (target.transform.position - controller.transform.position).normalized;
             controller.transform.Translate(Time.deltaTime * move);
             Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f*MapCreator.scale, LayerMask.GetMask("Enemy"));
-            for (int i = 0; i < hit.Length; i++)
+            if (hit.Length > 0)
             {
-                this.hit(hit[i].gameObject.GetComponent<FruitCode>(), controller);
+                this.hit(hit[0].gameObject.GetComponent<FruitCode>(),controller);
             }
         }
         else { 
@@ -51,6 +67,19 @@ public class IronProjectile : ProjectileCode
             if (hit.Length > 0)
             {
                 target = hit[0].gameObject.GetComponent<FruitCode>();
+            }
+            Collider[] hit2 = Physics.OverlapSphere(controller.transform.position, .05f*MapCreator.scale);
+            for (int i = 0; i < hit2.Length; i++)
+            {
+                ProjectileController pc = hit2[i].gameObject.GetComponent<ProjectileController>();
+                if (pc != null)
+                {
+                    if (pc.code is IronProjectile && pc != controller)
+                    {
+                        pierceLeft += pc.code.pierceLeft;
+                        Object.DestroyImmediate(pc.gameObject);
+                    }
+                }
             }
         }
     }

@@ -25,7 +25,17 @@ public class IronTower : TowerCode
         
     }
 
-   
+    public override int getAttackSpeed()
+    {
+        switch (lvl)
+        {
+            case 5: return (int)(base.getAttackSpeed() * .75);
+            case 6: return (int)(base.getAttackSpeed() * .55);
+            case 7: return (int)(base.getAttackSpeed() * .38);
+        }
+        return base.getAttackSpeed();
+    }
+
 
     public override ProjectileCode create()
     {
