@@ -55,7 +55,7 @@ public class WaterProjectile : ProjectileCode
         }
         else
         {
-            explosionAmount += Time.deltaTime * lvl * 2;
+            explosionAmount += Time.deltaTime * 2;
             controller.transform.localScale = baseTransform * explosionAmount;
             Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f*explosionAmount*MapCreator.scale, LayerMask.GetMask("Enemy"));
             for (int i = 0; i < hit.Length; i++)
@@ -63,7 +63,7 @@ public class WaterProjectile : ProjectileCode
                 this.hit(hit[i].gameObject.GetComponent<FruitCode>(), controller);
             }
 
-            if (explosionAmount >= (lvl + 1))
+            if (explosionAmount >= ((lvl*0.5f) + 1))
             {
                 Object.Destroy(controller.gameObject);
             }
