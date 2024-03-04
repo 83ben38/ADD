@@ -42,7 +42,7 @@ public class WindTower : TowerCode
                 GameObject projectile = Object.Instantiate(TowerCode.projectile);
                 ProjectileController pc = projectile.GetComponent<ProjectileController>();
                 pc.code = new WindProjectile(upgrade1,upgrade2,upgrade3,buffed[i]);
-                pc.code.lvl = lvl;
+                pc.code.lvl = lvl > 1 ? lvl : 2;
                 projectile.transform.position = controller.towerVisual.shoot(getAttackSpeed()-1);
                 pc.material.color = getColor();
                 pc.code.Start(pc);

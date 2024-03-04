@@ -31,7 +31,7 @@ public class EarthTower : TowerCode
             GameObject projectile = Object.Instantiate(TowerCode.projectile);
             ProjectileController pc = projectile.GetComponent<ProjectileController>();
             pc.code = create();
-            pc.code.lvl = lvl;
+            pc.code.lvl = lvl > 1 ? lvl : 2;
             pc.code.move = MapCreator.scale*2*vector3;
             projectile.transform.position = controller.transform.position+new Vector3(0,0.65f*MapCreator.scale,0);
             pc.material.color = getColor();
