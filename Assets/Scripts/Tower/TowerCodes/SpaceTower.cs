@@ -7,8 +7,19 @@ public class SpaceTower : TowerCode
 {
     public SpaceTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
-        attackSpeed = 192;
+        attackSpeed = 256;
         
+    }
+
+    public override int getAttackSpeed()
+    {
+        switch (lvl)
+        {
+            case 5 : return 192;
+            case 6 : return 144;
+            case 7 : return 96;
+        }
+        return base.getAttackSpeed();
     }
 
     public override float getRange()
