@@ -64,7 +64,7 @@ public class InGameState : TowerState
         if (controller.tower != null)
         {
             held = controller.tower;
-            controller.tower.pickedUp();
+            held.pickedUp();
             controller.tower = null;
             controller.towerVisual.updateTower();
             controller.setBaseColor(false);

@@ -47,8 +47,17 @@ public class LaserTower : TowerCode
 
     public void runLasers()
     {
-            List<TowerController> nextTo = new List<TowerController>(controller.nextTo);
-            for (int i = 0; i < nextTo.Count; i++)
+        List<TowerController> nextTo;
+        if (controller.nextTo == null)
+        {
+            nextTo = new List<TowerController>();
+        }
+        else
+        {
+            nextTo = new List<TowerController>(controller.nextTo);
+        }
+
+        for (int i = 0; i < nextTo.Count; i++)
             {
                 nextTo[i].minDist = 1;
             }
@@ -87,6 +96,10 @@ public class LaserTower : TowerCode
                         {
                             LaserProjectile lp = ((LaserProjectile)projectiles[i].code);
                             if (lp.start == t && lp.end == controller)
+                            {
+                                goto end;
+                            }
+                            if (lp.end == t && lp.start == controller)
                             {
                                 goto end;
                             }

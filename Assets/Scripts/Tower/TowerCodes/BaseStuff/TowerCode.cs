@@ -41,7 +41,7 @@ public abstract class TowerCode : TowerState
     }
     public virtual void pickedUp()
     {
-        
+        controller = null;
     }
 
     public virtual int getAttackSpeed()
