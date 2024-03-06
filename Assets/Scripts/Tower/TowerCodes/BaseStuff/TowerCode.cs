@@ -35,6 +35,15 @@ public abstract class TowerCode : TowerState
         ticksLeft = getAttackSpeed();
     }
 
+    public virtual void placedDown()
+    {
+        
+    }
+    public virtual void pickedUp()
+    {
+        
+    }
+
     public virtual int getAttackSpeed()
     {
         return attackSpeed;
