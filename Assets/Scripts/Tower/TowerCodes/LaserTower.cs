@@ -43,9 +43,8 @@ public class LaserTower : TowerCode
 
                     for (int j = 0; j < nextToNextTo.Count; j++)
                     {
-                        if (! nextTo.Contains(nextToNextTo[j]) )
+                        if (!nextTo.Contains(nextToNextTo[j]) )
                         {
-                            
                             nextTo.Add(nextToNextTo[j]);
                             nextToNextTo[j].minDist = k+1;
                         } 
@@ -69,6 +68,13 @@ public class LaserTower : TowerCode
                             goto end;
                         }
                     }
+
+                    LaserTower lt = ((LaserTower)t.tower);
+                    if (projectiles.Count == maxLasers() || lt.projectiles.Count == lt.maxLasers())
+                    {
+                        continue;
+                    }
+
                     GameObject projectile = Object.Instantiate(TowerCode.projectile);
                     ProjectileController pc = projectile.GetComponent<ProjectileController>();
                     pc.code = new LaserProjectile(upgrade1, upgrade2, upgrade3, controller, t);
@@ -76,7 +82,7 @@ public class LaserTower : TowerCode
                     pc.material.color = getColor();
                     pc.code.Start(pc);
                     projectiles.Add(pc);
-                    ((LaserTower)t.tower).projectiles.Add(pc);
+                    lt.projectiles.Add(pc);
                 }
                 end: ;
             }
@@ -93,4 +99,21 @@ public class LaserTower : TowerCode
     {
         return ColorManager.manager.laserTower;
     }
+
+    public int maxLasers()
+    {
+        switch (lvl)
+        {
+            case 1: return 2;
+            case 2: return 2;
+            case 3: return 3;
+            case 4: return 4;
+            case 5: return 6;
+            case 6: return 10;
+            case 7: return 18;
+        }
+
+        return 0;
+    }
+
 }

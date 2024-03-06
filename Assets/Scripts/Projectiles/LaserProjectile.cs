@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class LaserProjectile : ProjectileCode
@@ -44,7 +45,7 @@ public class LaserProjectile : ProjectileCode
 
     public override void tick(ProjectileController controller)
     {
-        ticksLeft -= lvl * Time.deltaTime * 32f;
+        ticksLeft -= Time.deltaTime * 64f;
         if (ticksLeft <= 0)
         {
             shoot();
