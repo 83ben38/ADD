@@ -37,9 +37,9 @@ public abstract class TowerCode : TowerState, ICloneable
         ticksLeft = getAttackSpeed();
     }
 
-    public virtual void placedDown()
+    public virtual void placedDown(TowerController tc)
     {
-        
+        controller = tc;
     }
     public virtual void pickedUp()
     {

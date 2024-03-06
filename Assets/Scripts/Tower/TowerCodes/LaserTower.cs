@@ -142,8 +142,9 @@ public class LaserTower : TowerCode
         return new LaserTower(upgrade1, upgrade2, upgrade3);
     }
 
-    public override void placedDown()
+    public override void placedDown(TowerController tc)
     {
+        base.placedDown(tc);
         for (int i = 0; i < priority.Count; i++)
         {
             if (priority[i].lvl <= lvl)
@@ -157,6 +158,7 @@ public class LaserTower : TowerCode
 
     public override void pickedUp()
     {
+        base.pickedUp();
         priority.Remove(this);
     }
 

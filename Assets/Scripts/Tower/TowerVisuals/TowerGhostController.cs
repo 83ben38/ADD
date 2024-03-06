@@ -24,6 +24,7 @@ public class TowerGhostController : MonoBehaviour
         Color co = ColorManager.manager.tower;
         disable.GetComponentInChildren<Renderer>().material.color = new Color(co.r,co.g,co.b,0.4f);
         transform.localScale = new Vector3(transform.localScale.x, (float)(transform.localScale.y * Math.Sqrt(2)), transform.localScale.z);
+        LaserTower.priority = new List<LaserTower>();
     }
 
     private void Update()

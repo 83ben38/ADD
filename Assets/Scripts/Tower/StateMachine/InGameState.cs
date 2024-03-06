@@ -40,7 +40,7 @@ public class InGameState : TowerState
             if (controller.tower != null)
             {
                 controller.tower = controller.tower.merge(held);
-                controller.tower.placedDown();
+                controller.tower.placedDown(controller);
                 controller.towerVisual.updateTower();
                 if (controller.tower.lvl != held.lvl)
                 {
@@ -56,7 +56,7 @@ public class InGameState : TowerState
                 controller.StartCoroutine(changeTower(controller ,true));
                 controller.setBaseColor(ColorManager.manager.tower,ColorManager.manager.towerHighlighted);
                 controller.tower = held;
-                controller.tower.placedDown();
+                controller.tower.placedDown(controller);
                 controller.towerVisual.updateTower();
                 held = null;
                 return;
