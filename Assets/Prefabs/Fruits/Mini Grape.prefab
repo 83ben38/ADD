@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1234347296725938323}
   - component: {fileID: 2524876219397561525}
-  - component: {fileID: 3217486226008386059}
+  - component: {fileID: 7020991090215925618}
   m_Layer: 3
   m_Name: Mini Grape
   m_TagString: Untagged
@@ -57,8 +57,8 @@ MonoBehaviour:
   vulnerability: 0
   frozenTime: 0
   hidden: 0
---- !u!64 &3217486226008386059
-MeshCollider:
+--- !u!135 &7020991090215925618
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -75,10 +75,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 07b22a6217c99d4438d5af8d62376462, type: 3}
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8859676777479815937
 GameObject:
   m_ObjectHideFlags: 0
