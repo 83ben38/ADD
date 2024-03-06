@@ -1,11 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
+using Object = UnityEngine.Object;
 
-public abstract class TowerCode : TowerState
+public abstract class TowerCode : TowerState, ICloneable
 {
     
     public static GameObject projectile;
@@ -110,4 +112,6 @@ public abstract class TowerCode : TowerState
 
     public abstract ProjectileCode create();
     public abstract Color getColor();
+    public abstract object Clone();
+
 }

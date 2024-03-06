@@ -53,4 +53,9 @@ public class AtomicTower : TowerCode
     {
         return ColorManager.manager.atomicTower;
     }
+
+    public override object Clone()
+    {
+        return new AtomicTower(upgrade1, upgrade2, upgrade3);
+    }
 }

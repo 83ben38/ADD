@@ -42,7 +42,11 @@ public class InGameState : TowerState
                 controller.tower = controller.tower.merge(held);
                 controller.tower.placedDown();
                 controller.towerVisual.updateTower();
-                held = null;
+                if (controller.tower.lvl != held.lvl)
+                {
+                    held = null;
+                }
+
                 return;
             }
 

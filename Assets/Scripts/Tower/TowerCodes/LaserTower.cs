@@ -137,6 +137,11 @@ public class LaserTower : TowerCode
         return ColorManager.manager.laserTower;
     }
 
+    public override object Clone()
+    {
+        return new LaserTower(upgrade1, upgrade2, upgrade3);
+    }
+
     public override void placedDown()
     {
         for (int i = 0; i < priority.Count; i++)

@@ -98,4 +98,9 @@ public class IronTower : TowerCode
     {
         return ColorManager.manager.ironTower;
     }
+
+    public override object Clone()
+    {
+        return new IronTower(upgrade1, upgrade2, upgrade3);
+    }
 }

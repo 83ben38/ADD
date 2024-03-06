@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Properties;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ColorTower : TowerCode
@@ -24,6 +26,13 @@ public class ColorTower : TowerCode
 
     public override TowerCode merge(TowerCode c)
     {
+        if (upgrade1)
+        {
+            TowerCode tc=(TowerCode)c.Clone();
+            tc.lvl = lvl;
+            return tc;
+        }
+
         c.lvl++;
         return c;
     }
@@ -36,6 +45,11 @@ public class ColorTower : TowerCode
     public override Color getColor()
     {
         return new Color(0.5f, 0, 1, 1);
+    }
+
+    public override object Clone()
+    {
+        return new ColorTower(upgrade1, upgrade2, upgrade3);
     }
 
     public override void tick()

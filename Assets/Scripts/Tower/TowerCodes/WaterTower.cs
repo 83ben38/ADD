@@ -26,4 +26,9 @@ public class WaterTower : TowerCode
     {
         return ColorManager.manager.waterTower;
     }
+
+    public override object Clone()
+    {
+        return new WaterTower(upgrade1, upgrade2, upgrade3);
+    }
 }

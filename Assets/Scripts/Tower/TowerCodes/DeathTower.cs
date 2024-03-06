@@ -73,4 +73,9 @@ public class DeathTower : TowerCode
     {
         return ColorManager.manager.deathTower;
     }
+
+    public override object Clone()
+    {
+        return new DeathTower(upgrade1, upgrade2, upgrade3);
+    }
 }

@@ -32,6 +32,11 @@ public class WindTower : TowerCode
        return ColorManager.manager.windTower;
     }
 
+    public override object Clone()
+    {
+        return new WindTower(upgrade1, upgrade2, upgrade3);
+    }
+
     public override bool shoot()
     {
         

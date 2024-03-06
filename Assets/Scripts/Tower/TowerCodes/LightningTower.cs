@@ -57,4 +57,9 @@ public class LightningTower : TowerCode
     {
         return ColorManager.manager.lightningTower;
     }
+
+    public override object Clone()
+    {
+        return new LightningTower(upgrade1, upgrade2, upgrade3);
+    }
 }

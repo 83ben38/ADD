@@ -60,4 +60,9 @@ public class GoldTower : TowerCode
     {
         return ColorManager.manager.goldTower;
     }
+
+    public override object Clone()
+    {
+        return new GoldTower(upgrade1, upgrade2, upgrade3);
+    }
 }

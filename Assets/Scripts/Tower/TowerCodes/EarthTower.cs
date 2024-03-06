@@ -63,4 +63,9 @@ public class EarthTower : TowerCode
     {
         return ColorManager.manager.earthTower;
     }
+
+    public override object Clone()
+    {
+        return new EarthTower(upgrade1, upgrade2, upgrade3);
+    }
 }

@@ -63,4 +63,9 @@ public class SpaceTower : TowerCode
     {
         return ColorManager.manager.spaceTower;
     }
+
+    public override object Clone()
+    {
+        return new SpaceTower(upgrade1, upgrade2, upgrade3);
+    }
 }
