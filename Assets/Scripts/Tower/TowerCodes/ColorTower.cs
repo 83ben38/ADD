@@ -26,7 +26,7 @@ public class ColorTower : TowerCode
 
     public override TowerCode merge(TowerCode c)
     {
-        if (upgrade1)
+        if (upgrade1 && c is not ColorTower)
         {
             TowerCode tc=(TowerCode)c.Clone();
             tc.lvl = lvl;
