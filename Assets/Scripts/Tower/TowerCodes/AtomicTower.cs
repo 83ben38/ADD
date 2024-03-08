@@ -23,6 +23,11 @@ public class AtomicTower : TowerCode
         }
     }
 
+    public override void tick()
+    {
+        
+    }
+
     public override void roundStart()
     {
         projectiles = new GameObject[lvl];
