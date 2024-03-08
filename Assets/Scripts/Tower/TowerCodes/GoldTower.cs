@@ -23,31 +23,24 @@ public class GoldTower : TowerCode
 
     public override void tick()
     {
-        if (projectile == null)
-        {
-            turns++;
-            if (turns == 3)
-            {
-                int[] towerCodes = SelectionData.data.towerCodes;
-                TowerCode t = TowerCodeFactory.getTowerCode(towerCodes[Random.Range(0, towerCodes.Length)]);
-                t.lvl = lvl + 1;
-                if (t.lvl > 7)
-                {
-                    t.lvl=7;
-                }
-                controller.tower = t;
-                controller.state = t;
-                controller.towerVisual.updateTower();
-                return;
-            }
+        
+    }
 
-            projectile = Object.Instantiate(TowerCode.projectile);
-            ProjectileController pc = projectile.GetComponent<ProjectileController>();
-            pc.code = create();
-            pc.code.lvl = lvl; 
-            projectile.transform.position = controller.transform.position;
-            pc.material.color = getColor();
-            pc.code.Start(pc);
+    public override void roundStart()
+    {
+        turns++;
+        if (turns == 3)
+        {
+            int[] towerCodes = SelectionData.data.towerCodes;
+            TowerCode t = TowerCodeFactory.getTowerCode(towerCodes[Random.Range(0, towerCodes.Length)]);
+            t.lvl = lvl + 1;
+            if (t.lvl > 7)
+            {
+                t.lvl=7;
+            }
+            controller.tower = t;
+            controller.state = t;
+            controller.towerVisual.updateTower();
         }
     }
 

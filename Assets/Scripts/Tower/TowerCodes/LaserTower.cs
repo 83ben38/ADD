@@ -26,21 +26,22 @@ public class LaserTower : TowerCode
 
     public override void tick()
     {
+        
+    }
+
+    public override void roundStart()
+    {
         if (priority[0] == this)
         {
-            int count = projectiles.Count;
             projectiles.RemoveAll(item => item == null);
-            if (projectiles.Count == 0 || projectiles.Count != count)
-            {
-                for (int i = 0; i < priority.Count; i++)
-                {
-                    priority[i].projectiles.RemoveAll(item => item == null);
-                }
+            for (int i = 0; i < priority.Count; i++)
+            { 
+                priority[i].projectiles.RemoveAll(item => item == null);
+            }
 
-                for (int i = 0; i < priority.Count; i++)
-                {
-                    priority[i].runLasers();
-                }
+            for (int i = 0; i < priority.Count; i++)
+            {
+                priority[i].runLasers();
             }
         }
     }

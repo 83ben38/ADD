@@ -108,7 +108,12 @@ public abstract class TowerCode : TowerState, ICloneable
         lvl++;
         return this;
     }
-    
+
+    public virtual void roundStart()
+    {
+        
+    }
+
 
     public abstract ProjectileCode create();
     public abstract Color getColor();

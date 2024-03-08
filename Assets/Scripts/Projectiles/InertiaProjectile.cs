@@ -8,9 +8,4 @@ public class InertiaProjectile : ProjectileCode
     {
         pierce = 1;
     }
-
-    public override int getDamage()
-    {
-        return new int[] { 1, 2, 4, 8, 16, 32, 64 }[lvl];
-    }
 }

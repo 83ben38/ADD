@@ -15,7 +15,7 @@ public class InertiaTower : TowerCode
         if (ticksLeft > 0)
         {
             ticksLeft -= Time.deltaTime*accelerationFactor;
-            accelerationFactor += 8 * Time.deltaTime;
+            accelerationFactor += 8 * Time.deltaTime * lvl;
         }
 
         if (ticksLeft <= 0)
@@ -42,6 +42,11 @@ public class InertiaTower : TowerCode
     public override Color getColor()
     {
         return ColorManager.manager.inertiaTower;
+    }
+
+    public override void roundStart()
+    {
+        accelerationFactor = 64f;
     }
 
     public override object Clone()

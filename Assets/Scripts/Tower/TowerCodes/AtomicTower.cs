@@ -23,26 +23,22 @@ public class AtomicTower : TowerCode
         }
     }
 
-    public override void tick()
+    public override void roundStart()
     {
-        if (projectiles[0] == null)
+        projectiles = new GameObject[lvl];
+        // create projectiles
+        for (int i = 0; i < lvl; i++)
         {
-            projectiles = new GameObject[lvl];
-            // create projectiles
-            for (int i = 0; i < lvl; i++)
-            {
-                projectiles[i] = Object.Instantiate(projectile);
-                ProjectileController pc = projectiles[i].GetComponent<ProjectileController>();
-                pc.code = new AtomicProjectile(i,controller.transform.position,upgrade1,upgrade2,upgrade3);
-                pc.code.lvl = lvl > 2 ? lvl : 2;
-                projectiles[i].transform.position = controller.towerVisual.shoot(rechargeTime);
-                pc.material.color = getColor();
-                pc.code.Start(pc);
-            }
+            projectiles[i] = Object.Instantiate(projectile);
+            ProjectileController pc = projectiles[i].GetComponent<ProjectileController>();
+            pc.code = new AtomicProjectile(i,controller.transform.position,upgrade1,upgrade2,upgrade3);
+            pc.code.lvl = lvl > 2 ? lvl : 2;
+            projectiles[i].transform.position = controller.towerVisual.shoot(rechargeTime);
+            pc.material.color = getColor();
+            pc.code.Start(pc);
         }
     }
 
-    
 
     public override ProjectileCode create()
     {
