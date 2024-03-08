@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class LaserProjectile : ProjectileCode
@@ -16,7 +17,7 @@ public class LaserProjectile : ProjectileCode
     private Vector3 pos3;
     private Vector3 pos4;
     private Vector3 dir;
-    private float ticksLeft = 12f;
+    private float ticksLeft = 6f;
     public override void Start(ProjectileController controller)
     {
         base.Start(controller);
@@ -44,11 +45,11 @@ public class LaserProjectile : ProjectileCode
 
     public override void tick(ProjectileController controller)
     {
-        ticksLeft -= lvl * Time.deltaTime * 32f;
+        ticksLeft -= Time.deltaTime * 64f;
         if (ticksLeft <= 0)
         {
             shoot();
-            ticksLeft += 12;
+            ticksLeft += 6;
         }
     }
 
@@ -59,12 +60,12 @@ public class LaserProjectile : ProjectileCode
         Physics.Raycast(pos3, -dir, out hit, dir.magnitude, LayerMask.GetMask("Enemy"));
         if (hit.collider != null)
         {
-            hit.collider.gameObject.GetComponent<FruitCode>().Damage(lvl / 2);
+            hit.collider.gameObject.GetComponent<FruitCode>().Damage(lvl);
         }
         Physics.Raycast(pos4, dir, out hit, dir.magnitude, LayerMask.GetMask("Enemy"));
         if (hit.collider != null)
         {
-            hit.collider.gameObject.GetComponent<FruitCode>().Damage(lvl / 2);
+            hit.collider.gameObject.GetComponent<FruitCode>().Damage(lvl);
         }
     }
 }

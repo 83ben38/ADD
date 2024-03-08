@@ -41,4 +41,9 @@ public class LifeTower : TowerCode
     {
         return ColorManager.manager.lifeTower;
     }
+
+    public override object Clone()
+    {
+        return new LifeTower(upgrade1, upgrade2, upgrade3);
+    }
 }

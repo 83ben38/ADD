@@ -26,4 +26,9 @@ public class IceTower : TowerCode
     {
         return ColorManager.manager.iceTower;
     }
+
+    public override object Clone()
+    {
+        return new IceTower(upgrade1, upgrade2, upgrade3);
+    }
 }

@@ -13,7 +13,7 @@ public class SpaceProjectile : ProjectileCode
 
     public override int getDamage()
     {
-        return 10 * lvl * lvl;
+        return 10 * lvl;
     }
     
 

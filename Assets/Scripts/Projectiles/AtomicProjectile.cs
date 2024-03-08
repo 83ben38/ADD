@@ -12,6 +12,8 @@ public class AtomicProjectile : ProjectileCode
     private Vector3 centerPos;
     private float time = 0f;
     private static float aboveAmount = 1f;
+    private bool rotating = false;
+    public bool clockwise = true;
     public AtomicProjectile(int num, Vector3 startPos,bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1,upgrade2, upgrade3)
     {
         pathNum = num;
@@ -32,16 +34,22 @@ public class AtomicProjectile : ProjectileCode
 
     public override void tick(ProjectileController controller)
     {
-        time += Time.deltaTime * lvl;
-        if (time < 1f)
+        
+        if (!rotating)
         {
+            time += Time.deltaTime * lvl;
             Vector3 difference = startPos - centerPos;
             difference *= time;
             difference += centerPos;
             controller.transform.position = difference;
+            if (time > 1f)
+            {
+                rotating = true;
+            }
         }
         else
         {
+            time += Time.deltaTime * lvl * (clockwise ? 1 : -1);
             int offset = new int[]
             {
                 2,
@@ -68,7 +76,7 @@ public class AtomicProjectile : ProjectileCode
             controller.transform.position = new Vector3((float)xPosition, 0, (float)zPosition)*MapCreator.scale + centerPos;
         }
 
-        Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f*MapCreator.scale, LayerMask.GetMask("Enemy"));
+        Collider[] hit = Physics.OverlapSphere(controller.transform.position, .5f*MapCreator.scale, LayerMask.GetMask("Enemy"));
         for (int i = 0; i < pierced.Count; i++)
         {
             for (int j = 0; j <= hit.Length; j++)
@@ -99,5 +107,16 @@ public class AtomicProjectile : ProjectileCode
         }
         pierced.Add(fruit);
         fruit.Damage(getDamage());
+    }
+
+    public override int getDamage()
+    {
+        switch (lvl)
+        {
+            case 5: return 4;
+            case 6: return 5;
+            case 7: return 8;
+        }
+        return 3;
     }
 }

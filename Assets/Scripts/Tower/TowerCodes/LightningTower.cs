@@ -8,7 +8,7 @@ public class LightningTower : TowerCode
     public LightningTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
         range = 3;
-        attackSpeed = 128;
+        attackSpeed = 192;
     }
 
     public override void MouseClick(TowerController controller)
@@ -56,5 +56,10 @@ public class LightningTower : TowerCode
     public override Color getColor()
     {
         return ColorManager.manager.lightningTower;
+    }
+
+    public override object Clone()
+    {
+        return new LightningTower(upgrade1, upgrade2, upgrade3);
     }
 }

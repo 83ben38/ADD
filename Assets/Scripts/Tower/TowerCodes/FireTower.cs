@@ -27,4 +27,9 @@ public class FireTower : TowerCode
     {
         return ColorManager.manager.fireTower;
     }
+
+    public override object Clone()
+    {
+        return new FireTower(upgrade1, upgrade2, upgrade3);
+    }
 }

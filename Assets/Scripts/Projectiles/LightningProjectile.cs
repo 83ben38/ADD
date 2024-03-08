@@ -12,7 +12,7 @@ public class LightningProjectile : ProjectileCode
     public LineRenderer lineRenderer;
     public override int getDamage()
     {
-        return (int)Math.Pow(1.5, pierceLeft);
+        return (int)Math.Pow(1.5, pierceLeft-1);
     }
     
 

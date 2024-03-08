@@ -122,4 +122,9 @@ public class DarkTower : TowerCode
     {
         return ColorManager.manager.darkTower;
     }
+
+    public override object Clone()
+    {
+        return new DarkTower(upgrade1, upgrade2, upgrade3);
+    }
 }

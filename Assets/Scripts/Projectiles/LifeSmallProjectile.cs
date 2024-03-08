@@ -11,6 +11,17 @@ public class LifeSmallProjectile : ProjectileCode
         pierce = 1;
     }
 
+    public override int getDamage()
+    {
+        switch (lvl)
+        {
+            case 6: return 2;
+            case 7: return 3;
+        }
+
+        return 1;
+    }
+
     public override void tick(ProjectileController controller)
     {
         if (target != null)

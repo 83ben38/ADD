@@ -1,11 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
+using Object = UnityEngine.Object;
 
-public abstract class TowerCode : TowerState
+public abstract class TowerCode : TowerState, ICloneable
 {
     
     public static GameObject projectile;
@@ -33,6 +35,15 @@ public abstract class TowerCode : TowerState
         this.upgrade2 = upgrade2;
         this.upgrade3 = upgrade3;
         ticksLeft = getAttackSpeed();
+    }
+
+    public virtual void placedDown(TowerController tc)
+    {
+        controller = tc;
+    }
+    public virtual void pickedUp()
+    {
+        controller = null;
     }
 
     public virtual int getAttackSpeed()
@@ -89,7 +100,7 @@ public abstract class TowerCode : TowerState
 
     public virtual bool canMerge(TowerCode c)
     {
-        return (c.lvl == lvl && c.GetType() == GetType() && lvl < 6) || (c.lvl==lvl && c is ColorTower && lvl < 7);
+        return (c.lvl == lvl && c.GetType() == GetType() && lvl < 6) || (c.lvl==lvl && c is ColorTower && lvl < 7 && !c.upgrade1);
     }
 
     public virtual TowerCode merge(TowerCode c)
@@ -101,4 +112,6 @@ public abstract class TowerCode : TowerState
 
     public abstract ProjectileCode create();
     public abstract Color getColor();
+    public abstract object Clone();
+
 }

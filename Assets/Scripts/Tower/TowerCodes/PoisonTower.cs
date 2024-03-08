@@ -26,4 +26,9 @@ public class PoisonTower : TowerCode
     {
         return ColorManager.manager.poisonTower;
     }
+
+    public override object Clone()
+    {
+        return new PoisonTower(upgrade1, upgrade2, upgrade3);
+    }
 }
