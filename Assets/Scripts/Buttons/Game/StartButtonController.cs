@@ -76,7 +76,7 @@ public class StartButtonController : Selectable
             foreach (var tower in PathfinderManager.manager.tiles)
             {
                 tower.state = tower.tower;
-                tower.tower.roundStart();
+                tower.tower?.roundStart();
             }
             StartCoroutine(spawnWave());
         }
