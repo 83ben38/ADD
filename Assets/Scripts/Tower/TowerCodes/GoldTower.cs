@@ -63,6 +63,8 @@ public class GoldTower : TowerCode
 
     public override object Clone()
     {
-        return new GoldTower(upgrade1, upgrade2, upgrade3);
+        GoldTower gt = new GoldTower(upgrade1, upgrade2, upgrade3);
+        gt.turns = turns;
+        return gt;
     }
 }
