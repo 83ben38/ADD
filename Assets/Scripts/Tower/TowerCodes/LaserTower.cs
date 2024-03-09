@@ -49,9 +49,9 @@ public class LaserTower : TowerCode
     public void runLasers()
     {
         List<TowerController> nextTo;
-        if (controller.nextTo == null)
+        if (controller == null)
         {
-            nextTo = new List<TowerController>();
+            return;
         }
         else
         {
