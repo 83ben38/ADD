@@ -1890,6 +1890,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b0bf68ee3cbcb48a2a6e06b8acaf0891, type: 2}
   - {fileID: 11400000, guid: 9e71f6230620fb24e920a8fe8d0f91e8, type: 2}
   - {fileID: 11400000, guid: 43b337bcba0525a43ab5ea9060e31c13, type: 2}
+  - {fileID: 11400000, guid: 6a7e0e44a4bc047678dc1733aa614e80, type: 2}
+  - {fileID: 11400000, guid: 56624a2e6f2504f1f9e286ad8021a16b, type: 2}
   screenNum: 0
   buttonObject: {fileID: 966796936}
 --- !u!114 &499034138
@@ -4690,6 +4692,7 @@ MonoBehaviour:
   goldTower: {r: 0, g: 0, b: 0, a: 0}
   lifeTower: {r: 0, g: 0, b: 0, a: 0}
   deathTower: {r: 0, g: 0, b: 0, a: 0}
+  inertiaTower: {r: 0, g: 0, b: 0, a: 0}
   projectile: {fileID: 6165706959806861308, guid: 0f7785055af1ec14585430c61af7807c,
     type: 3}
   availableColorSchemes: []
