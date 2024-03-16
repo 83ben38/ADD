@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: Test
   m_EditorClassIdentifier: 
   chances:
-  - chance: 0.8
+  - chance: 1
     items: 000000000100000002000000
-  - chance: 0.2
-    items: 030000000400000005000000
   loadouts: 1
   cost: 100

@@ -1,29 +1,35 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Tilemaps;
-using Debug = UnityEngine.Debug;
-using Vector2 = System.Numerics.Vector2;
 
 public class PathfinderManager : MonoBehaviour
 {
+    //singleton manager
     public static PathfinderManager manager;
+    //list of all tiles
     public List<TowerController> tiles = new List<TowerController>();
+    //list of paths
     public List<List<TowerController>> path = new List<List<TowerController>>();
+    //list of all starting tiles
     public List<TowerController> starts = new List<TowerController>();
+    //list of all ending tiles
     public List<TowerController> ends = new List<TowerController>();
+    //list of all checkpoints
     public List<TowerController> checkpoints = new List<TowerController>();
+    //the number of paths
     public int numPaths;
+    //the number of checkpoints per path
     public int numCheckpoints;
+    //the shape nextTo code
     public string shapeCode;
+    
     private void Awake()
     {
         manager = this;
     }
-
+    /**
+     * Performs set up for pathfinding
+     */
     public void Run()
     {
         foreach (var tower in tiles)
@@ -44,7 +50,9 @@ public class PathfinderManager : MonoBehaviour
             }
         }
     }
-
+    /**
+     * Uses dijkstras algorithm to find the shortest path from the given tile
+     */
     public void pathFind(TowerController start)
     {
         foreach (var tower in tiles)
@@ -80,6 +88,9 @@ public class PathfinderManager : MonoBehaviour
         }
 
     }
+    /**
+     * does the same thing as pathFind() but allows pears to jump walls
+     */
     public void pathFindPear(TowerController start)
     {
         foreach (var tower in tiles)
@@ -134,66 +145,7 @@ public class PathfinderManager : MonoBehaviour
 
     }
 
-    /*public bool pathFind()
-    {
-        
-        foreach (var tower in tiles)
-        {
-            tower.minDist = 999;
-        }
-
-        List<TowerController> stack = new List<TowerController>();
-        foreach (var tower in starts)
-        {
-            if (!tower.block)
-            {
-                stack.Add(tower);
-                tower.minDist = 0;
-            }
-        }
-
-        while (stack.Count > 0)
-        {
-            TowerController c = stack[0];
-            stack.RemoveAt(0);
-            foreach (var next in c.nextTo)
-            {
-                if (!next.block && next.minDist == 999 && !stack.Contains(next))
-                {
-                    next.minDist = c.minDist + 1;
-                    stack.Add(next);
-                }
-            }
-        }
-
-        int mindist = 999;
-        TowerController minTower = null;
-        foreach (var tower in ends)
-        {
-            if (tower.minDist < mindist)
-            {
-                mindist = tower.minDist;
-                minTower = tower;
-            }
-        }
-
-        if (mindist < 998)
-        {
-            foreach (var tower in path)
-            {
-                if (!tower.block)
-                {
-                    tower.setBaseColor(false);
-                }
-            }
-
-            path = new List<TowerController>();
-            reversePathFind(minTower);
-            return true;
-        }
-        
-        return false;
-    }*/
+    //gives a path to a pear from the starting tile
 
     public List<TowerController> requestPearPath(TowerController start)
     {
@@ -304,6 +256,9 @@ public class PathfinderManager : MonoBehaviour
         path.AddRange(pathSection1);
         return path;
     }
+    /**
+     * Does pathfinding
+     */
 
     public bool pathFind()
     {
@@ -487,7 +442,9 @@ public class PathfinderManager : MonoBehaviour
         
         return true;
     }
-
+    /**
+     * Used for the graph in the pathfinding algorithm
+     */
     public class Node
     {
         public int distToEnd;
@@ -495,7 +452,6 @@ public class PathfinderManager : MonoBehaviour
         public int minDist = -1;
         public Node nextNode;
         public TowerController tower;
-
         public int assignMinDist(int numCheckpoints)
         {
             return (minDist = getMinDist(new List<Node>(), numCheckpoints));
@@ -534,7 +490,7 @@ public class PathfinderManager : MonoBehaviour
            
             return minDist;
         }
-
+        
         public void collapse()
         {
             foreach (Node node in connecetions.Keys)
@@ -553,7 +509,9 @@ public class PathfinderManager : MonoBehaviour
         }
     }
 
-
+    /**
+     * Finds the path by pathfinding backwards
+     */
     private void reversePathFind(TowerController t, List<TowerController> path, bool change)
     {
         path.Insert(0,t);
