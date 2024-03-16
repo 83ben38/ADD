@@ -24,18 +24,18 @@ public class LifeProjectile : ProjectileCode
         }
         totalTime += lvl*Time.deltaTime*64f;
         
-        if (time < 64f)
+        if (time < 96f)
         {
             time += lvl*Time.deltaTime*64f;
         }
 
-        if (time >= 64f)
+        if (time >= 96f)
         {
             
             if (shoot(controller))
             {
 
-                time -= 64f;
+                time -= 96f;
             }
         }
 
@@ -71,7 +71,7 @@ public class LifeProjectile : ProjectileCode
 
     public IEnumerator recharge(ProjectileController controller, float rechargeTime)
     {
-        for (float i = 1; i <= rechargeTime; i+=Time.deltaTime*64f)
+        for (float i = 1; i <= rechargeTime; i+=Time.deltaTime*96f)
         {
             controller.transform.localScale = new Vector3(i * .25f * MapCreator.scale /  rechargeTime, i * .25f * MapCreator.scale / rechargeTime, i * .25f * MapCreator.scale / rechargeTime);
             yield return null;

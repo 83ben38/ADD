@@ -15,11 +15,12 @@ public class LifeSmallProjectile : ProjectileCode
     {
         switch (lvl)
         {
-            case 6: return 2;
-            case 7: return 3;
+            case 5: return 3;
+            case 6: return 4;
+            case 7: return 5;
         }
 
-        return 1;
+        return 2;
     }
 
     public override void tick(ProjectileController controller)
