@@ -19,6 +19,8 @@ public class StartButtonController : Selectable
     public bool tutorial = false;
     void Start()
     {
+        waveGoing = false;
+        waveFinished = true;
         waves = SelectionData.data.difficulty;
         _material = GetComponent<Renderer>().material;
         _material.color = ColorManager.manager.tile;
