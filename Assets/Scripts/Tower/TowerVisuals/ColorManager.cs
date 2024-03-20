@@ -54,6 +54,7 @@ public class ColorManager : MonoBehaviour
     public Color lifeTower;
     public Color deathTower;
     public Color inertiaTower;
+    public Color glassTower;
     public GameObject projectile;
     public ColorSchemeScriptableObject[] availableColorSchemes;
     void Awake()

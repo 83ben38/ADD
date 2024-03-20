@@ -28,6 +28,7 @@ public class TowerCodeFactory : MonoBehaviour
             case 14 : return new LifeTower(b1, b2, b3);
             case 15 : return new DeathTower(b1, b2, b3);
             case 16 : return new InertiaTower(b1, b2, b3);
+            case 17 : return new GlassTower(b1, b2, b3);
         }
 
         return null;

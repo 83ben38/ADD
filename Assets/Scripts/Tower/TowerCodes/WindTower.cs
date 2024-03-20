@@ -63,25 +63,25 @@ public class WindTower : TowerCode
         base.tick();
 
         List<TowerController> nextTo = new List<TowerController>(controller.nextTo);
-            if (getRange() > 1)
+        for (int k = 0; k < getRange()-1; k++)
+        {
+            int z = nextTo.Count;
+            for (int i = 0; i < z; i++)
             {
-                int z = nextTo.Count;
-                for (int i = 0; i < z; i++)
+
+                List<TowerController> nextToNextTo = nextTo[i].nextTo;
+
+                for (int j = 0; j < nextToNextTo.Count; j++)
                 {
-
-                    List<TowerController> nextToNextTo = nextTo[i].nextTo;
-
-                    for (int j = 0; j < nextToNextTo.Count; j++)
+                    if (! nextTo.Contains(nextToNextTo[j]) )
                     {
-                        if (! nextTo.Contains(nextToNextTo[j]) )
-                        {
                             
-                            nextTo.Add(nextToNextTo[j]);
+                        nextTo.Add(nextToNextTo[j]);
                             
-                        } 
-                    }
+                    } 
                 }
             }
+        }
         
 
         for (int i = 0; i < nextTo.Count; i++)

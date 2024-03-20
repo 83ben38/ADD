@@ -12,6 +12,7 @@ public class LaserTower : TowerCode
     public LaserTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
         projectiles = new List<ProjectileController>();
+        range = 2;
     }
     
     public override void MouseClick(TowerController controller)
@@ -21,7 +22,7 @@ public class LaserTower : TowerCode
 
     public override float getRange()
     {
-        return lvl + 2;
+        return lvl + range;
     }
 
     public override void tick()
