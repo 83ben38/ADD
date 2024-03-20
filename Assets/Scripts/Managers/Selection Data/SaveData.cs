@@ -140,6 +140,18 @@ public class SaveData : MonoBehaviour
         state.money += money;
         saver.Save(state);
     }
+
+    public void unlockEverything()
+    {
+        for (int i = 0; i < 20; i++)
+        {
+            setAvailableTower(i);
+            setAvailableLoadout(i);
+            setUpgradeAvailable(i,1,true);
+            setUpgradeAvailable(i,2,true);
+            setUpgradeAvailable(i,3,true);
+        }
+    }
 }
 [CustomEditor(typeof(SaveData))]
 public class SaveDeleter : Editor
@@ -150,6 +162,10 @@ public class SaveDeleter : Editor
         if (GUILayout.Button("Delete Save"))
         {
             ((SaveData)target).deleteSaveData();
+        }
+        if (GUILayout.Button("Unlock Everything"))
+        {
+            ((SaveData)target).unlockEverything();
         }
     }
 }
