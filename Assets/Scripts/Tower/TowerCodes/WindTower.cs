@@ -5,6 +5,7 @@ using UnityEngine;
 public class WindTower : TowerCode
 {
     private List<TowerController> buffed = new List<TowerController>();
+    private List<TowerController> nextTo = new List<TowerController>();
     public WindTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1,upgrade2, upgrade3) {
         range = 1;
         attackSpeed = 32;
@@ -62,7 +63,30 @@ public class WindTower : TowerCode
     {
         base.tick();
 
-        List<TowerController> nextTo = new List<TowerController>(controller.nextTo);
+        
+        
+
+        for (int i = 0; i < nextTo.Count; i++)
+        {
+            if (nextTo[i].tower != null && !(nextTo[i].tower is WindTower) && nextTo[i].tower.ticksLeft > 0)
+            {
+                nextTo[i].tower.ticksLeft -= Time.deltaTime * lvl * 11f;
+                nextTo[i].tower.rechargeTime -= Time.deltaTime * lvl * 11f;
+                if (!buffed.Contains(nextTo[i]))
+                {
+                    buffed.Add(nextTo[i]);
+                }
+            }
+        }
+
+
+
+    }
+
+    public override void roundStart()
+    {
+        base.roundStart();
+        nextTo = new List<TowerController>(controller.nextTo);
         for (int k = 0; k < getRange()-1; k++)
         {
             int z = nextTo.Count;
@@ -82,22 +106,5 @@ public class WindTower : TowerCode
                 }
             }
         }
-        
-
-        for (int i = 0; i < nextTo.Count; i++)
-        {
-            if (nextTo[i].tower != null && !(nextTo[i].tower is WindTower) && nextTo[i].tower.ticksLeft > 0)
-            {
-                nextTo[i].tower.ticksLeft -= Time.deltaTime * lvl * 11f;
-                nextTo[i].tower.rechargeTime -= Time.deltaTime * lvl * 11f;
-                if (!buffed.Contains(nextTo[i]))
-                {
-                    buffed.Add(nextTo[i]);
-                }
-            }
-        }
-
-
-
     }
 }

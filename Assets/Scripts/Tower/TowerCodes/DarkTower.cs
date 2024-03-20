@@ -97,7 +97,6 @@ public class DarkTower : TowerCode
             if (shoot())
             {
                 int attackSpeed = getAttackSpeed();
-                statIncreaseAmount = 0;
                 List<TowerController> nextTo = new List<TowerController>(controller.nextTo);
                 for (int k = 0; k < getRange()-1; k++)
                 {
@@ -122,12 +121,44 @@ public class DarkTower : TowerCode
                 {
                     if (nextTo[i].tower != null && !(nextTo[i].tower is DarkTower))
                     {
-                        nextTo[i].tower.ticksLeft += attackSpeed * nextTo[i].tower.lvl * 0.25f / lvl;
-                        statIncreaseAmount += nextTo[i].tower.lvl;
+                        nextTo[i].tower.ticksLeft += attackSpeed * nextTo[i].tower.lvl * 0.25f;
                     }
                 }
                 ticksLeft = getAttackSpeed() + ticksLeft;
                 rechargeTime = getAttackSpeed() - 1;
+            }
+        }
+    }
+
+    public override void roundStart()
+    {
+        base.roundStart();
+        statIncreaseAmount = 0;
+        List<TowerController> nextTo = new List<TowerController>(controller.nextTo);
+        for (int k = 0; k < getRange()-1; k++)
+        {
+            int z = nextTo.Count;
+            for (int i = 0; i < z; i++)
+            {
+
+                List<TowerController> nextToNextTo = nextTo[i].nextTo;
+
+                for (int j = 0; j < nextToNextTo.Count; j++)
+                {
+                    if (! nextTo.Contains(nextToNextTo[j]) )
+                    {
+                            
+                        nextTo.Add(nextToNextTo[j]);
+                            
+                    } 
+                }
+            }
+        }
+        for (int i = 0; i < nextTo.Count; i++)
+        {
+            if (nextTo[i].tower != null && !(nextTo[i].tower is DarkTower))
+            {
+                statIncreaseAmount += nextTo[i].tower.lvl;
             }
         }
     }
