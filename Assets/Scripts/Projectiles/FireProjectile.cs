@@ -49,6 +49,7 @@ public class FireProjectile : ProjectileCode
 
     IEnumerator hitEnemy(FruitCode fruit)
     {
+        SoundEffectsManager.manager.playSound("fire");
         for (int i = 0; i < 3; i++)
         {
             for (float j = 0; j < 0.5f; j+=Time.deltaTime)

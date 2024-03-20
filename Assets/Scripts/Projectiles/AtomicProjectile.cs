@@ -35,6 +35,7 @@ public class AtomicProjectile : ProjectileCode
     public override void tick(ProjectileController controller)
     {
         
+        
         if (!rotating)
         {
             time += Time.deltaTime * lvl;
@@ -101,8 +102,10 @@ public class AtomicProjectile : ProjectileCode
 
     public override void hit(FruitCode fruit, ProjectileController controller)
     {
+        SoundEffectsManager.manager.playSound("atomic");
         if (pierced.Contains(fruit))
         {
+            
             return;
         }
         pierced.Add(fruit);

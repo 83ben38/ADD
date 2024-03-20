@@ -44,6 +44,7 @@ public class IronTower : TowerCode
 
     public override bool shoot()
     {
+        SoundEffectsManager.manager.playSound("iron-deploy");
         List< List<TowerController>> path = PathfinderManager.manager.path;
         List<TowerController> availableTargets = new List<TowerController>();
         for (int i = 0; i < path.Count; i++)

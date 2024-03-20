@@ -18,6 +18,7 @@ public class IceProjectile : ProjectileCode
 
     public override void hit(FruitCode fruit, ProjectileController controller)
     {
+        SoundEffectsManager.manager.playSound("ice");
         if (pierced.Contains(fruit))
         {
             return;

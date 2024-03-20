@@ -31,6 +31,7 @@ public class EarthTower : TowerCode
 
     public override bool shoot()
     {
+        SoundEffectsManager.manager.playSound("earth");
         controller.towerVisual.shoot(rechargeTime);
         Vector3[] directions = upgrade1 ? directions4 : directions6;
         foreach (var vector3 in directions)
