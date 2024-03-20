@@ -13,6 +13,7 @@ public class AtomicTower : TowerCode
 
     public override void MouseClick(TowerController controller)
     {
+        
         if (upgrade1)
         {
             for (int i = 0; i < projectiles.Length; i++)
@@ -42,6 +43,7 @@ public class AtomicTower : TowerCode
             pc.material.color = getColor();
             pc.code.Start(pc);
         }
+        
     }
 
 

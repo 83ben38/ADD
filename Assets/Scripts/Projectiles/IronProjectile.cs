@@ -27,6 +27,7 @@ public class IronProjectile : ProjectileCode
     public virtual void hit(FruitCode fruit, ProjectileController controller)
     {
         
+        SoundEffectsManager.manager.playSound("iron_hit");
         if (fruit.Equals(target))
         {
             target = null;
@@ -61,6 +62,7 @@ public class IronProjectile : ProjectileCode
                 if ((targetPosition - controller.transform.position).magnitude < 0.05f*lvl*MapCreator.scale)
                 {
                     targetPosition = Vector3.zero;
+                    
                 }
             }
             Collider[] hit = Physics.OverlapSphere(controller.transform.position, MapCreator.scale, LayerMask.GetMask("Enemy"));
