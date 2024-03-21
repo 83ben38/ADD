@@ -4,41 +4,55 @@ using UnityEngine;
 
 public class CopperProjectile : ProjectileCode
 {
-    public float ticksLeft = 4f;
+    public float ticksLeft = 8f;
     public LineRenderer lineRenderer;
     private int damage;
+    public bool destroy = false;
     public override int getDamage()
     {
         return lvl;
     }
-    
 
-    
+    public void doDamage()
+    {
+        target.Damage(damage);
+    }
+
+    public override void Start(ProjectileController controller)
+    {
+        base.Start(controller);
+        
+        lineRenderer = new GameObject("Copper Electricity").AddComponent<LineRenderer>();
+        lineRenderer.material = new Material(controller.material);
+        lineRenderer.startWidth = 0.1f;
+        lineRenderer.endWidth = 0.1f;
+        lineRenderer.positionCount = 2;
+        lineRenderer.SetPosition(0, controller.transform.position);
+        lineRenderer.SetPosition(1, target.transform.position);
+        lineRenderer.useWorldSpace = true;
+        lineRenderer.generateLightingData = true;
+        lineRenderer.transform.SetParent(controller.transform);
+        
+    }
+
 
     public override void tick(ProjectileController controller)
     {
-        if (lineRenderer == null)
+        if (target == null)
         {
-            lineRenderer = new GameObject("Copper Electricity").AddComponent<LineRenderer>();
-            lineRenderer.material = new Material(controller.material);
-            lineRenderer.startWidth = 0.1f;
-            lineRenderer.endWidth = 0.1f;
-            lineRenderer.positionCount = 2;
-            lineRenderer.SetPosition(0, controller.transform.position);
-            lineRenderer.SetPosition(1, target.transform.position);
-            lineRenderer.useWorldSpace = true;
-            lineRenderer.generateLightingData = true;
-            lineRenderer.transform.SetParent(controller.transform);
-            target.Damage(damage);
+            destroy = true;
         }
+        if (destroy)
+        {
+            ticksLeft -= Time.deltaTime * 64f;
+            if (ticksLeft <= 0)
+            {
+                Object.Destroy(controller.gameObject);
+            }
 
-        ticksLeft -= Time.deltaTime * 64;
-        if (ticksLeft <= 0)
-        {
-            Object.Destroy(controller.gameObject);
+            return;
         }
-        
-        
+        lineRenderer.SetPosition(1, target.transform.position);
     }
 
     public CopperProjectile(bool upgrade1, bool upgrade2, bool upgrade3, int damage) : base(upgrade1, upgrade2, upgrade3)

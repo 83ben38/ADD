@@ -6,6 +6,7 @@ public class CopperTower : TowerCode
 {
     private int charges = 0;
     private List<TowerController> nextTo = new List<TowerController>();
+    private List<CopperProjectile> projectiles = new List<CopperProjectile>();
 
     public CopperTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
@@ -40,6 +41,11 @@ public class CopperTower : TowerCode
             }
         }
 
+        if (charges > lvl * 20)
+        {
+            charges = lvl * 20;
+        }
+
         shoot();
     }
 
@@ -53,21 +59,63 @@ public class CopperTower : TowerCode
         List<Collider> sphere = new List<Collider>(Physics.OverlapSphere(self, getRange() * MapCreator.scale,LayerMask.GetMask("Enemy")));
         for (int i = 0; i < sphere.Count; i++)
         {
+            FruitCode fc = sphere[i].gameObject.GetComponent<FruitCode>();
+            for (int j = 0; j < projectiles.Count; j++)
+            {
+                if (projectiles[j].target == fc)
+                {
+                    goto end;
+                }
+            }
             GameObject projectile = Object.Instantiate(TowerCode.projectile);
             ProjectileController pc = projectile.GetComponent<ProjectileController>();
-            pc.code = create();
-            pc.code.lvl = lvl > 1 ? lvl : 2;
-            pc.code.target = sphere[i].gameObject.GetComponent<FruitCode>();
-            projectile.transform.position = controller.transform.position;
+            pc.code = new CopperProjectile(upgrade1,upgrade2,upgrade3,lvl > 1 ? lvl : 2);
+            pc.code.target = fc;
+            Vector3 v = controller.transform.position;
+            v.y += 1.45f;
+            projectile.transform.position = v;
             pc.material.color = getColor();
             pc.code.Start(pc);
+            projectiles.Add(pc.code as CopperProjectile);
+            end: ;
         }
+
+        for (int i = 0; i < projectiles.Count; i++)
+        {
+            if (projectiles[i].target == null)
+            {
+                projectiles[i].destroy = true;
+            }
+
+            if (projectiles[i].destroy)
+            {
+                projectiles.RemoveAt(i);
+                i--;
+                continue;
+            }
+
+            if (charges > 0)
+            {
+                projectiles[i].doDamage();
+                charges--;
+            }
+        }
+
+        if (charges == 0)
+        {
+            while (projectiles.Count > 0)
+            {
+                projectiles[0].destroy = true;
+            }
+        }
+
         return true;
     }
 
     public override void roundStart()
     {
         base.roundStart();
+        projectiles = new List<CopperProjectile>();
         nextTo = new List<TowerController>(controller.nextTo);
         for (int k = 0; k < getRange()-1; k++)
         {
