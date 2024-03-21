@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class CopperTower : TowerCode
 {
+    [SerializeField]
     private int charges = 0;
+    [SerializeField]
     private List<TowerController> nextTo = new List<TowerController>();
+    [SerializeField]
     private List<CopperProjectile> projectiles = new List<CopperProjectile>();
 
     public CopperTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
-        attackSpeed = 16;
+        attackSpeed = 32;
         range = 1;
     }
 
@@ -45,7 +48,6 @@ public class CopperTower : TowerCode
         {
             charges = lvl * 20;
         }
-
         shoot();
     }
 
@@ -106,6 +108,7 @@ public class CopperTower : TowerCode
             while (projectiles.Count > 0)
             {
                 projectiles[0].destroy = true;
+                projectiles.RemoveAt(0);
             }
         }
 
@@ -115,6 +118,7 @@ public class CopperTower : TowerCode
     public override void roundStart()
     {
         base.roundStart();
+        charges = 0;
         projectiles = new List<CopperProjectile>();
         nextTo = new List<TowerController>(controller.nextTo);
         for (int k = 0; k < getRange()-1; k++)

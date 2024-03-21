@@ -61,7 +61,7 @@ public class ColorManager : MonoBehaviour
     void Awake()
     {
         //setColorScheme(availableColorSchemes[0])
-       doColorScheme(availableColorSchemes[0]);
+       //doColorScheme(availableColorSchemes[0]);
         if (manager != null)
         {
             Destroy(gameObject);
