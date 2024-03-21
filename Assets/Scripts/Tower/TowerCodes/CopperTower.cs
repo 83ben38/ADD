@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class CopperTower : TowerCode
 {
-    [SerializeField]
+    
     private int charges = 0;
-    [SerializeField]
     private List<TowerController> nextTo = new List<TowerController>();
-    [SerializeField]
     private List<CopperProjectile> projectiles = new List<CopperProjectile>();
+    private GameObject chargeObject;
 
     public CopperTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
-        attackSpeed = 32;
+        attackSpeed = 24;
         range = 1;
     }
 
@@ -49,6 +48,7 @@ public class CopperTower : TowerCode
             charges = lvl * 20;
         }
         shoot();
+        chargeObject.transform.localScale = new Vector3(.25f + (charges/(lvl*30f)), .25f + (charges/(lvl*30f)), .25f + (charges/(lvl*30f)));
     }
 
     public override bool shoot()
@@ -74,7 +74,7 @@ public class CopperTower : TowerCode
             pc.code = new CopperProjectile(upgrade1,upgrade2,upgrade3,lvl > 1 ? lvl : 2);
             pc.code.target = fc;
             Vector3 v = controller.transform.position;
-            v.y += 1.45f;
+            v.y += 1.6f;
             projectile.transform.position = v;
             pc.material.color = getColor();
             pc.code.Start(pc);
@@ -119,6 +119,12 @@ public class CopperTower : TowerCode
     {
         base.roundStart();
         charges = 0;
+        chargeObject = Object.Instantiate(projectile);
+        chargeObject.transform.localScale = new Vector3(.25f, .25f, .25f);
+        chargeObject.GetComponent<ProjectileController>().material.color = getColor();
+        Vector3 v = controller.transform.position;
+        v.y += 1.6f;
+        chargeObject.transform.position = v;
         projectiles = new List<CopperProjectile>();
         nextTo = new List<TowerController>(controller.nextTo);
         for (int k = 0; k < getRange()-1; k++)
