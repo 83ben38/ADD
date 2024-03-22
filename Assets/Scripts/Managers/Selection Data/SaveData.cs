@@ -147,9 +147,9 @@ public class SaveData : MonoBehaviour
         {
             setAvailableTower(i);
             setAvailableLoadout(i);
+            setUpgradeAvailable(i,0,true);
             setUpgradeAvailable(i,1,true);
             setUpgradeAvailable(i,2,true);
-            setUpgradeAvailable(i,3,true);
         }
     }
 }
