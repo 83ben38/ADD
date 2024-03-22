@@ -1034,9 +1034,9 @@ MonoBehaviour:
   - {fileID: 31379989}
   - {fileID: 540043276}
   availableCrates:
-  - {fileID: 11400000, guid: ce93e493ff9254ba8b53b209dff900a5, type: 2}
-  - {fileID: 11400000, guid: e19d3b71b0fdf45828dea5e5789bb4cc, type: 2}
-  - {fileID: 11400000, guid: 67ddcf9f283447f448926a3f353c12dd, type: 2}
+  - {fileID: 11400000, guid: 01915add200b60f48abdd6a1c5577480, type: 2}
+  - {fileID: 11400000, guid: 81f02e2de911c2a48b1041f04256dc65, type: 2}
+  - {fileID: 11400000, guid: 054b51e1168811848af4604da11ba595, type: 2}
   crateTitle: {fileID: 1373478675}
   crateObjects:
   - {fileID: 511949330}
