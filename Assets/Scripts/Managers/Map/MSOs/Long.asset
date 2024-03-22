@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b4f4ca8dfa58d4d9d462319b7ef9b2, type: 3}
+  m_Name: Long
+  m_EditorClassIdentifier: 
+  map: fdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffefffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffffffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdfffffffdffffff
+  baseAward: 0
+  xDimensions: 10
+  yDimensions: 10
+  shape: {fileID: 11400000, guid: e13777d37f0b04f779c0c6060fe8f414, type: 2}
+  startPos: {x: 0, y: 0, z: 0}
+  scaleAmt: 1
+  paths: 1
+  checkpointsRequired: 25
+  mapName: Check
