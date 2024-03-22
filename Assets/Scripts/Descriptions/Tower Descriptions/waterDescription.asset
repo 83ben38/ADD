@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: 'Water Tower '
   description: This tower forms spheres of pure elemental water that detonate on
-    impact causing area damage.
+    impact causing AOE damage.
   upgrade1Description: 'Increased conductivity:
 
     Increses damage when a water

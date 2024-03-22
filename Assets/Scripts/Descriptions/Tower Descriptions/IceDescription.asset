@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: IceDescription
   m_EditorClassIdentifier: 
   title: 'Ice Tower '
-  description: This tower harneses the power of Ice and Snow to incapacitate and
+  description: This tower harnesses the power of Ice and Snow to incapacitate and
     slow enemies.
   upgrade1Description: "Permafrost:\nIncreases slow duration and projectile pierce.
-    \nDecreases slow potencey.\n"
+    \nDecreases slow potency\n"
   upgrade2Description: 
   upgrade3Description: 

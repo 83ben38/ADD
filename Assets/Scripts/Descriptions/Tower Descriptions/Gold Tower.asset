@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Gold Tower
   m_EditorClassIdentifier: 
   title: Gold Tower
-  description: 'the manifestashon of luck andwelth after three rounds this tower
-    upgrads its self and has a chance to becom a new tower '
+  description: 'the manifestaion of luck and wealth after three rounds this tower
+    upgrades itself and has a chance to become a new tower '
   upgrade1Description: 'MONEY '
   upgrade2Description: 
   upgrade3Description: 

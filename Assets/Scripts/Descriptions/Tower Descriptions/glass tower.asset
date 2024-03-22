@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: glass tower
   m_EditorClassIdentifier: 
   title: 'glass tower '
-  description: 'sporting a cerfuly honed glass lens this tower can consentrate defuce
-    light and allow towers to see enemeys from ferther away. '
+  description: 'sporting a carefully honed glass lens this tower can concentrate
+    diffuse light and allows towers to see enemys from further away. '
   upgrade1Description: 
   upgrade2Description: 
   upgrade3Description: 
