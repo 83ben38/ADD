@@ -9,10 +9,16 @@ public class CopperTower : TowerCode
     private List<TowerController> nextTo = new List<TowerController>();
     private List<CopperProjectile> projectiles = new List<CopperProjectile>();
     private GameObject chargeObject;
-
+    //upgrade 1 electroconductivity
+    //upgrade 2 the grid
     public CopperTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
-        attackSpeed = 24;
+        attackSpeed = 16;
+        if (upgrade1)
+        {
+            attackSpeed += 4;
+        }
+
         range = 1;
     }
 
@@ -24,7 +30,7 @@ public class CopperTower : TowerCode
 
     public override void tick()
     {
-        ticksLeft -= lvl*Time.deltaTime*64f;
+        ticksLeft -= lvl*Time.deltaTime*32f;
         if (ticksLeft <= 0)
         {
             ticksLeft += getAttackSpeed();
@@ -34,6 +40,11 @@ public class CopperTower : TowerCode
         {
             if (nextTo[i].tower != null && nextTo[i].tower.ticksLeft < 0)
             {
+                if (upgrade1 && nextTo[i].tower is LightningTower)
+                {
+                    ticksLeft -= nextTo[i].tower.lvl*Time.deltaTime*64f;
+                }
+
                 ticksLeft -= nextTo[i].tower.lvl*Time.deltaTime*64f;
                 if (ticksLeft <= 0)
                 {
