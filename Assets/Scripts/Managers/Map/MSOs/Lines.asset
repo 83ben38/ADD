@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Lines
   m_EditorClassIdentifier: 
   map: fffffffffcffffff00000000fcfffffffcffffff00000000fcffffff0300000002000000fcffffff00000000fcfffffffcffffff00000000fcffffff0200000002000000fcffffff00000000fcfffffffcffffff00000000fcffffff0200000002000000fcffffff00000000fcfffffffcffffff00000000fcffffff0200000003000000fcffffff00000000fcfffffffcffffff00000000fcfffffffeffffff
-  baseAward: 0
+  baseAward: 150
   xDimensions: 8
   yDimensions: 5
   shape: {fileID: 11400000, guid: 7e9158ab34feaf84083bc0ac5842f93b, type: 2}
