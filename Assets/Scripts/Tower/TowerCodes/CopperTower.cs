@@ -45,12 +45,13 @@ public class CopperTower : TowerCode
         {
             if (nextTo[i].tower != null && nextTo[i].tower.ticksLeft < 0)
             {
+                float chargeFactor = upgrade2 ? lvl / 6f : 1f;
                 if (upgrade1 && nextTo[i].tower is LightningTower)
                 {
-                    ticksLeft -= nextTo[i].tower.lvl*Time.deltaTime*64f;
+                    ticksLeft -= nextTo[i].tower.lvl*Time.deltaTime*64f*chargeFactor;
                 }
 
-                ticksLeft -= nextTo[i].tower.lvl*Time.deltaTime*64f;
+                ticksLeft -= nextTo[i].tower.lvl*Time.deltaTime*64f*chargeFactor;
                 if (ticksLeft <= 0)
                 {
                     ticksLeft += getAttackSpeed();
@@ -78,7 +79,16 @@ public class CopperTower : TowerCode
             charges = lvl * 20;
         }
         shoot();
-        chargeObject.transform.localScale = new Vector3(.25f + (charges/(lvl*30f)), .25f + (charges/(lvl*30f)), .25f + (charges/(lvl*30f))) * MapCreator.scale;
+        if (upgrade2)
+        {
+            chargeObject.transform.localScale =
+                Vector3.one * ((.25f+(sharedCharges / (sharedMaxCharges * 1.5f))) * MapCreator.scale);
+        }
+        else
+        {
+            chargeObject.transform.localScale =
+                Vector3.one * ((.25f+(charges / (lvl * 30f))) * MapCreator.scale);
+        }
     }
 
     public override bool shoot()
