@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: AtomicTower
   m_EditorClassIdentifier: 
   title: 'Atomic Tower '
-  description: Powered by Uranium-234 this tower manifests orbs of condensed Atomic
-    energy which orbit the tower causing damage to enemies in their path.
-  upgrade1Description: cancer
-  upgrade2Description: 
+  description: Powered by Uranium-234 this tower manifests orbs of condensed bata
+    particals which orbit the tower causing damage to enemies in their path.
+  upgrade1Description: "qwontom nonsence \nby the contredictory power of qwontome
+    mecanics you can now change the orbital direction of the towers bata particals "
+  upgrade2Description: cancer
   upgrade3Description: 
