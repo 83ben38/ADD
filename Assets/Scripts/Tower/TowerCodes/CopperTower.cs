@@ -6,6 +6,9 @@ public class CopperTower : TowerCode
 {
     
     private int charges = 0;
+    private static int sharedCharges = 0;
+    private bool contributed = false;
+    private static int sharedMaxCharges = 0;
     private List<TowerController> nextTo = new List<TowerController>();
     private List<CopperProjectile> projectiles = new List<CopperProjectile>();
     private GameObject chargeObject;
@@ -30,6 +33,8 @@ public class CopperTower : TowerCode
 
     public override void tick()
     {
+        
+
         ticksLeft -= lvl*Time.deltaTime*32f;
         if (ticksLeft <= 0)
         {
@@ -53,8 +58,22 @@ public class CopperTower : TowerCode
                 }
             }
         }
-
-        if (charges > lvl * 20)
+        if (upgrade2)
+        {
+            if (!contributed)
+            {
+                sharedMaxCharges += lvl * 15;
+                contributed = true;
+            }
+            
+            sharedCharges += charges;
+            charges = 0;
+            if (sharedCharges > sharedMaxCharges)
+            {
+                sharedCharges = sharedMaxCharges;
+            }
+        }
+        else if (charges > lvl * 20)
         {
             charges = lvl * 20;
         }
@@ -64,7 +83,7 @@ public class CopperTower : TowerCode
 
     public override bool shoot()
     {
-        if (charges == 0)
+        if ((upgrade2 ? sharedCharges : charges) == 0)
         {
             return false;
         }
@@ -107,14 +126,21 @@ public class CopperTower : TowerCode
                 continue;
             }
 
-            if (charges > 0)
+            if ((upgrade2 ? sharedCharges : charges) > 0)
             {
                 projectiles[i].doDamage();
-                charges--;
+                if (upgrade2)
+                {
+                    sharedCharges--;
+                }
+                else
+                {
+                    charges--;
+                }
             }
         }
 
-        if (charges == 0)
+        if ((upgrade2 ? sharedCharges : charges) == 0)
         {
             while (projectiles.Count > 0)
             {
@@ -156,6 +182,13 @@ public class CopperTower : TowerCode
                     } 
                 }
             }
+        }
+
+        if (upgrade2)
+        {
+            sharedCharges = 0;
+            sharedMaxCharges = 0;
+            contributed = false;
         }
     }
 
