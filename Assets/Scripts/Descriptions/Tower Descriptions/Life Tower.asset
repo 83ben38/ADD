@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Life Tower
   m_EditorClassIdentifier: 
   title: 'Life tower '
-  description: 'a conduit for the primordeal energy of life this tower creats weak
-    but numerus living autotons '
+  description: 'a conduit for the primoridial energy of life. This tower creates
+    weak but numerous living automatons. '
   upgrade1Description: 'its alive! ITS ALIVE !!!! '
   upgrade2Description: 
   upgrade3Description: 

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: void tower
   m_EditorClassIdentifier: 
   title: 'void tower '
-  description: an empty adyss that consums the energey of other towers to enhance
-    its abilitey to create void spheres
+  description: an empty abyss that consumes the energy of other towers to enhance
+    its ability to create void spheres
   upgrade1Description: 
   upgrade2Description: 
   upgrade3Description: 

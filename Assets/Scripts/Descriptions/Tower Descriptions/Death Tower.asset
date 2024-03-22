@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Death Tower
   m_EditorClassIdentifier: 
   title: 'Death tower '
-  description: 'this tower feeds off death and decay bringing enemeys back from the
-    dead as aliyes '
-  upgrade1Description: 'you keep what you kill '
+  description: this tower feeds off death and decay bringing enemies back from the
+    dead as allies
+  upgrade1Description: you keep what you kill alive between rounds.
   upgrade2Description: 
   upgrade3Description: 

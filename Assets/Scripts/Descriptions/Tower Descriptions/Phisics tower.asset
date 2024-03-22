@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Phisics tower
   m_EditorClassIdentifier: 
   title: 'phisics tower '
-  description: 'this tower is the embodiment of the natural laws gaining inertia
-    and incresing in speed the longer it fires '
+  description: This tower is the embodiment of the natural law of inertia and increasing
+    in speed the longer it fires.
   upgrade1Description: 
   upgrade2Description: 
   upgrade3Description: 
