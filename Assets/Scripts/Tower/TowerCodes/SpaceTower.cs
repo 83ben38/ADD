@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SpaceTower : TowerCode
 {
+    private Vector3 targetPos = Vector3.zero;
     public SpaceTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
         attackSpeed = 256;
@@ -29,10 +31,34 @@ public class SpaceTower : TowerCode
 
     public override void MouseClick(TowerController controller)
     {
-        
+        MouseManager.manager.input.Mouse.LeftClick.performed += setPos;
     }
+
+    public void setPos(InputAction.CallbackContext c)
+    {
+        MouseManager.manager.input.Mouse.LeftClick.performed -= setPos;
+        RaycastHit hit;
+        Ray ray = MouseManager.manager.cameraTransform.ScreenPointToRay(UnityEngine.Input.mousePosition);
+        Physics.Raycast(ray, out hit,1000);
+        targetPos = hit.point;
+        targetPos.y = MapCreator.scale;
+    }
+
     public override bool shoot()
     {
+        if (upgrade1)
+        {
+            GameObject projectile = Object.Instantiate(TowerCode.projectile);
+            ProjectileController pc = projectile.GetComponent<ProjectileController>();
+            pc.code = create();
+            pc.code.lvl = lvl > 1 ? lvl : 2;
+            ((SpaceProjectile)pc.code).targetPos = targetPos;
+            projectile.transform.position = controller.towerVisual.shoot(rechargeTime);
+            pc.material.color = getColor();
+            pc.code.Start(pc);
+            return true;
+        }
+
         List<Collider> sphere = new List<Collider>(Physics.OverlapSphere(self, 25f,LayerMask.GetMask("Enemy")));
         while (sphere.Count > 0 && sphere[0].gameObject.GetComponent<FruitCode>().hidden)
         {
