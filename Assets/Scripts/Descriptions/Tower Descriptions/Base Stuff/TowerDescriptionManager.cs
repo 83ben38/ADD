@@ -62,6 +62,11 @@ public class TowerDescriptionManager : MonoBehaviour
             enabledButton.c1 = upgradeEnabled ? ColorManager.manager.tile: ColorManager.manager.path;
             enabledButton.c2 = upgradeEnabled ? ColorManager.manager.tileHighlighted: ColorManager.manager.pathHighlighted;
             enabledText.text = upgradeEnabled ? "Enabled" : "Disabled";
+            if (!SaveData.save.isUpgradeAvailable(SelectionData.data.towerSelected, num))
+            {
+                enabledText.text = "Locked";
+            }
+
             towerText.text = "Upgrade " + (num+1);
             enabledButton._material.color = enabledButton.c1;
         }
