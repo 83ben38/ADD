@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17871776, g: 0.21790792, b: 0.2719018, a: 1}
+  m_IndirectSpecularColor: {r: 0.17873424, g: 0.21794097, b: 0.2719776, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -796,10 +796,8 @@ MonoBehaviour:
   - {fileID: 542116464}
   - {fileID: 847850031}
   - {fileID: 1344264169}
-  - {fileID: 1076766131}
-  - {fileID: 231973074}
-  - {fileID: 1415932552}
   - {fileID: 1829558767}
+  - {fileID: 231973074}
 --- !u!65 &80579193
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3184,7 +3182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1076766132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3937,7 +3935,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1415932553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4137,14 +4135,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476854241}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20297703, y: -0.08028529, z: -0.016060298, w: 0.9757545}
-  m_LocalPosition: {x: -9.69, y: 3.72, z: 5.66}
+  m_LocalRotation: {x: 0.29103428, y: -0.081414625, z: -0.008678662, w: 0.9532027}
+  m_LocalPosition: {x: -6.58, y: 1.59, z: 0.95}
   m_LocalScale: {x: 6, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1537871764}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 23.174, y: -10.225, z: -3.988}
+  m_LocalEulerAnglesHint: {x: 33.602, y: -11.094, z: -4.402}
 --- !u!114 &1476854247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4937,14 +4935,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829558767}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.04525076, y: 0.20637104, z: 0.045366514, w: 0.97637355}
-  m_LocalPosition: {x: 4.3699584, y: 3.9819796, z: 3.947442}
+  m_LocalRotation: {x: 0.13633989, y: -0.22679272, z: 0.005803832, w: 0.9643355}
+  m_LocalPosition: {x: -6.35, y: 4.64, z: 1.92}
   m_LocalScale: {x: 3.4102113, y: 1.6163336, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 62505626}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 3.993, y: 24.085, z: 6.173}
+  m_LocalEulerAnglesHint: {x: 15.402, y: -26.876, z: -3.011}
 --- !u!114 &1829558772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5311,10 +5309,8 @@ MonoBehaviour:
   - {fileID: 542116464}
   - {fileID: 847850031}
   - {fileID: 1344264169}
-  - {fileID: 1076766131}
-  - {fileID: 231973074}
-  - {fileID: 1415932552}
   - {fileID: 1829558767}
+  - {fileID: 231973074}
 --- !u!1 &2085120741
 GameObject:
   m_ObjectHideFlags: 0
