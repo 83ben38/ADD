@@ -8,7 +8,7 @@ public class WindTower : TowerCode
     private List<TowerController> nextTo = new List<TowerController>();
     public WindTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1,upgrade2, upgrade3) {
         range = 1;
-        attackSpeed = 32;
+        attackSpeed = 64;
     }
 
     public override void MouseClick(TowerController controller)
@@ -18,7 +18,7 @@ public class WindTower : TowerCode
 
     public override int getAttackSpeed()
     {
-        return 32 * lvl;
+        return 64 * lvl;
     }
 
     
@@ -43,7 +43,7 @@ public class WindTower : TowerCode
         
         for (int i = 0; i < buffed.Count; i++)
         {
-            if (buffed[i].tower != null && !(buffed[i].tower is WindTower))
+            if (buffed[i].tower != null)
             {
                 GameObject projectile = Object.Instantiate(TowerCode.projectile);
                 ProjectileController pc = projectile.GetComponent<ProjectileController>();
@@ -63,15 +63,14 @@ public class WindTower : TowerCode
     {
         base.tick();
 
-        
-        
+
+        List<TowerController> toBuff = new List<TowerController>();
 
         for (int i = 0; i < nextTo.Count; i++)
         {
             if (nextTo[i].tower != null && !(nextTo[i].tower is WindTower) && nextTo[i].tower.ticksLeft > 0)
             {
-                nextTo[i].tower.ticksLeft -= Time.deltaTime * lvl * 11f;
-                nextTo[i].tower.rechargeTime -= Time.deltaTime * lvl * 11f;
+                toBuff.Add(nextTo[i]);
                 if (!buffed.Contains(nextTo[i]))
                 {
                     buffed.Add(nextTo[i]);
@@ -79,6 +78,11 @@ public class WindTower : TowerCode
             }
         }
 
+        for (int i = 0; i < toBuff.Count; i++)
+        {
+            toBuff[i].tower.ticksLeft -= Time.deltaTime * lvl * 64f / (upgrade1 ? toBuff.Count : 3f);
+            toBuff[i].tower.rechargeTime -= Time.deltaTime * lvl * 64f / (upgrade1 ? toBuff.Count : 3f);
+        }
 
 
     }
