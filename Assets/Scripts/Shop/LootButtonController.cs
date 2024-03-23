@@ -62,7 +62,7 @@ public class LootButtonController : Selectable
                 }
                 else
                 {
-                    if (SaveData.save.isUpgradeAvailable(crate.chances[i].items[j],3))
+                    if (SaveData.save.isUpgradeAvailable(crate.chances[i].items[j],0))
                     {
                         crate.chances[i].items.RemoveAt(j);
                         j--;
