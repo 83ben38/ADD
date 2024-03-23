@@ -8,7 +8,7 @@ public class LifeTower : TowerCode
 
     public LifeTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
-        attackSpeed = 256;
+        attackSpeed = upgrade1 ? 512 : 256;
     }
 
     public override void MouseClick(TowerController controller)

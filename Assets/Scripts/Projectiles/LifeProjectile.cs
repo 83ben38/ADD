@@ -39,7 +39,7 @@ public class LifeProjectile : ProjectileCode
             }
         }
 
-        if (totalTime > 704f*lvl)
+        if (totalTime > 704f*lvl*(upgrade1?3f:1f))
         {
             Object.Destroy(controller.gameObject);
         }
