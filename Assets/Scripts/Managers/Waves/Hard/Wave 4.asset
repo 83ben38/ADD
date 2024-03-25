@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2237115e707a74cbd8037e926025c8f5, type: 3}
-  m_Name: Wave 1
+  m_Name: Wave 4
   m_EditorClassIdentifier: 
   waves:
   - {fileID: 8267130134565377638, guid: 8461deba704492e45a16e4e04d639d8f, type: 3}
-  waveNums: 0a000000
+  waveNums: 1e000000
   waveSpacings:
-  - 1.2
+  - 0.2
   waveDelays:
   - 0
   configs:
   - hp: 10
-    speed: 15
+    speed: 10
     maxSize: 350
     minSize: 200
     blueberryOptions:
