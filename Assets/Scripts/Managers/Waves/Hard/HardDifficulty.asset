@@ -12,7 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59df5b7ad47e1f944a64ae76720ee300, type: 3}
   m_Name: HardDifficulty
   m_EditorClassIdentifier: 
-  waves: []
+  waves:
+  - {fileID: 11400000, guid: a4c8ed4363b0e47f9a5ff1231e2c418c, type: 2}
+  - {fileID: 11400000, guid: ab5e42eb2ccca4d0c8053a7b1ff8e7bb, type: 2}
+  - {fileID: 11400000, guid: b66371664d9c74d5ea5f97faffdc98ad, type: 2}
+  - {fileID: 11400000, guid: 921817b468c71442d9fd8f3ad84fa6b7, type: 2}
+  - {fileID: 11400000, guid: 425d4bd747dc44a28a6bb2fe8c42d0a4, type: 2}
+  - {fileID: 11400000, guid: af1c0d6e978830c4b9705bff11145699, type: 2}
+  - {fileID: 11400000, guid: 3e6f87e674128b04fa42298f79cad08e, type: 2}
+  - {fileID: 11400000, guid: d370372ee2e04ea45adfc51a34ef93dd, type: 2}
+  - {fileID: 11400000, guid: d5f322035fc6cfa4e877b7ab63fcc228, type: 2}
+  - {fileID: 11400000, guid: c8330713bd100b74b9849965b3557e83, type: 2}
+  - {fileID: 11400000, guid: 5b097e6a77f2095498ce0ae48b437e3b, type: 2}
+  - {fileID: 11400000, guid: b9743785b0390814ebeed6e2c1478793, type: 2}
+  - {fileID: 11400000, guid: a1b8df3aa57599d4280bcd374d679a86, type: 2}
+  - {fileID: 11400000, guid: 1a1608bad131cbf4ca7725c87453f25e, type: 2}
+  - {fileID: 11400000, guid: 3f7b4b572f6949c418c53cec0ae3a44f, type: 2}
   freeplayWaves: []
   maxLives: 100
   awardMultiplier: 3
