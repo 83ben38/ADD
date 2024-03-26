@@ -989,7 +989,7 @@ MonoBehaviour:
           spawnCooldown: 0
       spawnCooldown: 0
   - hp: 450
-    speed: 10
+    speed: 20
     maxSize: 750
     minSize: 200
     blueberryOptions:
