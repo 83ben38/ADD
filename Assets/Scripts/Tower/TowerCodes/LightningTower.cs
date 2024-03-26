@@ -21,7 +21,7 @@ public class LightningTower : TowerCode
         List<Collider> sphere = new List<Collider>(Physics.OverlapSphere(self, getRange() * MapCreator.scale,LayerMask.GetMask("Enemy")));
         if (sphere.Count > 0)
         {
-            for (int i = 0; (i < lvl && upgrade1) || i < 1; i++)
+            for (int i = 0; (i < (lvl > 2 ? lvl : 2) && upgrade1) || i < 1; i++)
             {
                 if (sphere.Count == i)
                 {
