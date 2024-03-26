@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: 'Life tower '
   description: 'a conduit for the primoridial energy of life. This tower creates
-    weak but numerous living automatons. '
-  upgrade1Description: 'its alive! ITS ALIVE !!!! '
-  upgrade2Description: 
+    weak but numerous living automatons that fire on the enemey. '
+  upgrade1Description: "incresed Life span \nthances to resent medical edvansments
+    spaned mobs now live longer but take longer to make "
+  upgrade2Description: 'its alive! ITS ALIVE !!!! '
   upgrade3Description: 

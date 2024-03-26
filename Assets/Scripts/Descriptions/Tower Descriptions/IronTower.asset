@@ -17,6 +17,8 @@ MonoBehaviour:
     in the enemies path.
   upgrade1Description: 'batch production
 
-    changing from a production line '
+    changing from a production line to
+    batch production increses the over all production time but alowes the tower to
+    produce and lanch trapes for each enemy path tile'
   upgrade2Description: 
   upgrade3Description: 

@@ -15,6 +15,7 @@ MonoBehaviour:
   title: 'wind tower '
   description: Accumulates chaotic energy and redestributes it to nearby towers,
     hastening them.
-  upgrade1Description: 
+  upgrade1Description: "hecen wimdey \nthe tower can now harnes adishonal energey
+    but it must be divided among all towers in range  "
   upgrade2Description: 
   upgrade3Description: 
