@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -629,6 +629,7 @@ MonoBehaviour:
   atomic: {fileID: 8300000, guid: 19f42356dfa58824a85e0c6526230481, type: 3}
   ironDeploy: {fileID: 8300000, guid: cb3a31e5125e66b468a931711f17a0a2, type: 3}
   ironHit: {fileID: 8300000, guid: 754088ae2e68e7e4eb67d56df24795ba, type: 3}
+  artilleryFire: {fileID: 8300000, guid: e67edc9c118a4c44aa5f26a3c321bca1, type: 3}
 --- !u!1 &613646301
 GameObject:
   m_ObjectHideFlags: 0

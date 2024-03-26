@@ -33,6 +33,7 @@ public class SpaceTower : TowerCode
     }
     public override bool shoot()
     {
+        SoundEffectsManager.manager.playSound("artillery-fire");
         List<Collider> sphere = new List<Collider>(Physics.OverlapSphere(self, 25f,LayerMask.GetMask("Enemy")));
         while (sphere.Count > 0 && sphere[0].gameObject.GetComponent<FruitCode>().hidden)
         {

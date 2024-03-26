@@ -31,6 +31,8 @@ public class SoundEffectsManager : MonoBehaviour
     private AudioClip ironDeploy;
     [SerializeField]
     private AudioClip ironHit;
+    [SerializeField]
+    private AudioClip artilleryFire;
     public void playSound(string sound)
     {
         if (sound.Equals("zap"))
@@ -68,6 +70,10 @@ public class SoundEffectsManager : MonoBehaviour
         if (sound.Equals("iron-hit"))
         {
             source.PlayOneShot(ironHit);
+        }
+        if (sound.Equals("artillery-fire"))
+        {
+            source.PlayOneShot(artilleryFire);
         }
     }
 
