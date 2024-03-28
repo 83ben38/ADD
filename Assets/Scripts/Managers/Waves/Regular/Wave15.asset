@@ -21,7 +21,7 @@ MonoBehaviour:
   - 0
   configs:
   - hp: 800
-    speed: 27
+    speed: 17
     maxSize: 850
     minSize: 200
     blueberryOptions:
