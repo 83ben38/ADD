@@ -33,10 +33,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0a61dcf2a0e88074c9851dd0d5cc5c32, type: 2}
   - {fileID: 11400000, guid: de8aace406deb134e8a1c8eed348d262, type: 2}
   - {fileID: 11400000, guid: 55f8e5b25c18a19459ed0cec557f6339, type: 2}
+  - {fileID: 11400000, guid: 6b9c0335ae12590489bb560e1cb07890, type: 2}
+  - {fileID: 11400000, guid: 2d1c2191a7ac39746a8d71d064dcb837, type: 2}
   freeplayWaves: []
   maxLives: 100
   awardMultiplier: 3
-  difficultyName: Hard
+  difficultyName: Ripe
   difficultyColor: {r: 1, g: 0.35391176, b: 0, a: 1}
   difficultyColorHighlighted: {r: 1, g: 0.4963929, b: 0.2216981, a: 1}
   preRequisites: 
