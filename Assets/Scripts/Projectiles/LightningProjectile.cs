@@ -18,7 +18,7 @@ public class LightningProjectile : ProjectileCode
 
     public override int getPierce()
     {
-        return  upgrade1 ? 4 : 3 + lvl;
+        return  upgrade1 ? 4 : 4 + lvl;
     }
 
     public override void tick(ProjectileController controller)
