@@ -10,27 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2237115e707a74cbd8037e926025c8f5, type: 3}
-  m_Name: Wave15
+  m_Name: Wave 18
   m_EditorClassIdentifier: 
   waves:
-  - {fileID: 8267130134565377638, guid: 8461deba704492e45a16e4e04d639d8f, type: 3}
-  waveNums: 01000000
+  - {fileID: 8267130134565377638, guid: 51f97fa94ec68b54492318ca3440fd42, type: 3}
+  - {fileID: 8267130134565377638, guid: 55ed76952c496a24faec5ee75af48507, type: 3}
+  waveNums: 0500000005000000
   waveSpacings:
-  - 0
+  - 2
+  - 2
   waveDelays:
+  - 1
   - 0
   configs:
-  - hp: 800
-    speed: 17
-    maxSize: 850
+  - hp: 200
+    speed: 15
+    maxSize: 450
     minSize: 200
     blueberryOptions:
       speedIncrease: 0
     coconutOptions:
       reductionMod: 0
     lemonOptions:
-      radius: 0
-      speedIncrease: 0
+      radius: 2
+      speedIncrease: 3
     orangeOptions:
       childObject: {fileID: 0}
       childConfig:
@@ -507,6 +510,971 @@ MonoBehaviour:
     mangoOptions:
       radius: 0
       healAmount: 0
+    bananaOptions:
+      speedIncrease: 0
+    strawberryOptions:
+      stunRadius: 0
+      stunAmount: 0
+    grapeOptions:
+      childObject: {fileID: 0}
+      childConfig:
+        hp: 0
+        speed: 0
+        maxSize: 0
+        minSize: 0
+        blueberryOptions:
+          speedIncrease: 0
+        coconutOptions:
+          reductionMod: 0
+        lemonOptions:
+          radius: 0
+          speedIncrease: 0
+        orangeOptions:
+          childObject: {fileID: 0}
+          childConfig:
+            hp: 0
+            speed: 0
+            maxSize: 0
+            minSize: 0
+            blueberryOptions:
+              speedIncrease: 0
+            coconutOptions:
+              reductionMod: 0
+            lemonOptions:
+              radius: 0
+              speedIncrease: 0
+            orangeOptions:
+              childObject: {fileID: 0}
+              childConfig:
+                hp: 0
+                speed: 0
+                maxSize: 0
+                minSize: 0
+                blueberryOptions:
+                  speedIncrease: 0
+                coconutOptions:
+                  reductionMod: 0
+                lemonOptions:
+                  radius: 0
+                  speedIncrease: 0
+                orangeOptions:
+                  childObject: {fileID: 0}
+                  childConfig:
+                    hp: 0
+                    speed: 0
+                    maxSize: 0
+                    minSize: 0
+                    blueberryOptions:
+                      speedIncrease: 0
+                    coconutOptions:
+                      reductionMod: 0
+                    lemonOptions:
+                      radius: 0
+                      speedIncrease: 0
+                    orangeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      splitAmount: 0
+                    mangoOptions:
+                      radius: 0
+                      healAmount: 0
+                    bananaOptions:
+                      speedIncrease: 0
+                    strawberryOptions:
+                      stunRadius: 0
+                      stunAmount: 0
+                    grapeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      spawnCooldown: 0
+                  splitAmount: 0
+                mangoOptions:
+                  radius: 0
+                  healAmount: 0
+                bananaOptions:
+                  speedIncrease: 0
+                strawberryOptions:
+                  stunRadius: 0
+                  stunAmount: 0
+                grapeOptions:
+                  childObject: {fileID: 0}
+                  childConfig:
+                    hp: 0
+                    speed: 0
+                    maxSize: 0
+                    minSize: 0
+                    blueberryOptions:
+                      speedIncrease: 0
+                    coconutOptions:
+                      reductionMod: 0
+                    lemonOptions:
+                      radius: 0
+                      speedIncrease: 0
+                    orangeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      splitAmount: 0
+                    mangoOptions:
+                      radius: 0
+                      healAmount: 0
+                    bananaOptions:
+                      speedIncrease: 0
+                    strawberryOptions:
+                      stunRadius: 0
+                      stunAmount: 0
+                    grapeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      spawnCooldown: 0
+                  spawnCooldown: 0
+              splitAmount: 0
+            mangoOptions:
+              radius: 0
+              healAmount: 0
+            bananaOptions:
+              speedIncrease: 0
+            strawberryOptions:
+              stunRadius: 0
+              stunAmount: 0
+            grapeOptions:
+              childObject: {fileID: 0}
+              childConfig:
+                hp: 0
+                speed: 0
+                maxSize: 0
+                minSize: 0
+                blueberryOptions:
+                  speedIncrease: 0
+                coconutOptions:
+                  reductionMod: 0
+                lemonOptions:
+                  radius: 0
+                  speedIncrease: 0
+                orangeOptions:
+                  childObject: {fileID: 0}
+                  childConfig:
+                    hp: 0
+                    speed: 0
+                    maxSize: 0
+                    minSize: 0
+                    blueberryOptions:
+                      speedIncrease: 0
+                    coconutOptions:
+                      reductionMod: 0
+                    lemonOptions:
+                      radius: 0
+                      speedIncrease: 0
+                    orangeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      splitAmount: 0
+                    mangoOptions:
+                      radius: 0
+                      healAmount: 0
+                    bananaOptions:
+                      speedIncrease: 0
+                    strawberryOptions:
+                      stunRadius: 0
+                      stunAmount: 0
+                    grapeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      spawnCooldown: 0
+                  splitAmount: 0
+                mangoOptions:
+                  radius: 0
+                  healAmount: 0
+                bananaOptions:
+                  speedIncrease: 0
+                strawberryOptions:
+                  stunRadius: 0
+                  stunAmount: 0
+                grapeOptions:
+                  childObject: {fileID: 0}
+                  childConfig:
+                    hp: 0
+                    speed: 0
+                    maxSize: 0
+                    minSize: 0
+                    blueberryOptions:
+                      speedIncrease: 0
+                    coconutOptions:
+                      reductionMod: 0
+                    lemonOptions:
+                      radius: 0
+                      speedIncrease: 0
+                    orangeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      splitAmount: 0
+                    mangoOptions:
+                      radius: 0
+                      healAmount: 0
+                    bananaOptions:
+                      speedIncrease: 0
+                    strawberryOptions:
+                      stunRadius: 0
+                      stunAmount: 0
+                    grapeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      spawnCooldown: 0
+                  spawnCooldown: 0
+              spawnCooldown: 0
+          splitAmount: 0
+        mangoOptions:
+          radius: 0
+          healAmount: 0
+        bananaOptions:
+          speedIncrease: 0
+        strawberryOptions:
+          stunRadius: 0
+          stunAmount: 0
+        grapeOptions:
+          childObject: {fileID: 0}
+          childConfig:
+            hp: 0
+            speed: 0
+            maxSize: 0
+            minSize: 0
+            blueberryOptions:
+              speedIncrease: 0
+            coconutOptions:
+              reductionMod: 0
+            lemonOptions:
+              radius: 0
+              speedIncrease: 0
+            orangeOptions:
+              childObject: {fileID: 0}
+              childConfig:
+                hp: 0
+                speed: 0
+                maxSize: 0
+                minSize: 0
+                blueberryOptions:
+                  speedIncrease: 0
+                coconutOptions:
+                  reductionMod: 0
+                lemonOptions:
+                  radius: 0
+                  speedIncrease: 0
+                orangeOptions:
+                  childObject: {fileID: 0}
+                  childConfig:
+                    hp: 0
+                    speed: 0
+                    maxSize: 0
+                    minSize: 0
+                    blueberryOptions:
+                      speedIncrease: 0
+                    coconutOptions:
+                      reductionMod: 0
+                    lemonOptions:
+                      radius: 0
+                      speedIncrease: 0
+                    orangeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      splitAmount: 0
+                    mangoOptions:
+                      radius: 0
+                      healAmount: 0
+                    bananaOptions:
+                      speedIncrease: 0
+                    strawberryOptions:
+                      stunRadius: 0
+                      stunAmount: 0
+                    grapeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      spawnCooldown: 0
+                  splitAmount: 0
+                mangoOptions:
+                  radius: 0
+                  healAmount: 0
+                bananaOptions:
+                  speedIncrease: 0
+                strawberryOptions:
+                  stunRadius: 0
+                  stunAmount: 0
+                grapeOptions:
+                  childObject: {fileID: 0}
+                  childConfig:
+                    hp: 0
+                    speed: 0
+                    maxSize: 0
+                    minSize: 0
+                    blueberryOptions:
+                      speedIncrease: 0
+                    coconutOptions:
+                      reductionMod: 0
+                    lemonOptions:
+                      radius: 0
+                      speedIncrease: 0
+                    orangeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      splitAmount: 0
+                    mangoOptions:
+                      radius: 0
+                      healAmount: 0
+                    bananaOptions:
+                      speedIncrease: 0
+                    strawberryOptions:
+                      stunRadius: 0
+                      stunAmount: 0
+                    grapeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      spawnCooldown: 0
+                  spawnCooldown: 0
+              splitAmount: 0
+            mangoOptions:
+              radius: 0
+              healAmount: 0
+            bananaOptions:
+              speedIncrease: 0
+            strawberryOptions:
+              stunRadius: 0
+              stunAmount: 0
+            grapeOptions:
+              childObject: {fileID: 0}
+              childConfig:
+                hp: 0
+                speed: 0
+                maxSize: 0
+                minSize: 0
+                blueberryOptions:
+                  speedIncrease: 0
+                coconutOptions:
+                  reductionMod: 0
+                lemonOptions:
+                  radius: 0
+                  speedIncrease: 0
+                orangeOptions:
+                  childObject: {fileID: 0}
+                  childConfig:
+                    hp: 0
+                    speed: 0
+                    maxSize: 0
+                    minSize: 0
+                    blueberryOptions:
+                      speedIncrease: 0
+                    coconutOptions:
+                      reductionMod: 0
+                    lemonOptions:
+                      radius: 0
+                      speedIncrease: 0
+                    orangeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      splitAmount: 0
+                    mangoOptions:
+                      radius: 0
+                      healAmount: 0
+                    bananaOptions:
+                      speedIncrease: 0
+                    strawberryOptions:
+                      stunRadius: 0
+                      stunAmount: 0
+                    grapeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      spawnCooldown: 0
+                  splitAmount: 0
+                mangoOptions:
+                  radius: 0
+                  healAmount: 0
+                bananaOptions:
+                  speedIncrease: 0
+                strawberryOptions:
+                  stunRadius: 0
+                  stunAmount: 0
+                grapeOptions:
+                  childObject: {fileID: 0}
+                  childConfig:
+                    hp: 0
+                    speed: 0
+                    maxSize: 0
+                    minSize: 0
+                    blueberryOptions:
+                      speedIncrease: 0
+                    coconutOptions:
+                      reductionMod: 0
+                    lemonOptions:
+                      radius: 0
+                      speedIncrease: 0
+                    orangeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      splitAmount: 0
+                    mangoOptions:
+                      radius: 0
+                      healAmount: 0
+                    bananaOptions:
+                      speedIncrease: 0
+                    strawberryOptions:
+                      stunRadius: 0
+                      stunAmount: 0
+                    grapeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      spawnCooldown: 0
+                  spawnCooldown: 0
+              spawnCooldown: 0
+          spawnCooldown: 0
+      spawnCooldown: 0
+  - hp: 300
+    speed: 15
+    maxSize: 500
+    minSize: 200
+    blueberryOptions:
+      speedIncrease: 0
+    coconutOptions:
+      reductionMod: 0
+    lemonOptions:
+      radius: 2
+      speedIncrease: 3
+    orangeOptions:
+      childObject: {fileID: 0}
+      childConfig:
+        hp: 0
+        speed: 0
+        maxSize: 0
+        minSize: 0
+        blueberryOptions:
+          speedIncrease: 0
+        coconutOptions:
+          reductionMod: 0
+        lemonOptions:
+          radius: 0
+          speedIncrease: 0
+        orangeOptions:
+          childObject: {fileID: 0}
+          childConfig:
+            hp: 0
+            speed: 0
+            maxSize: 0
+            minSize: 0
+            blueberryOptions:
+              speedIncrease: 0
+            coconutOptions:
+              reductionMod: 0
+            lemonOptions:
+              radius: 0
+              speedIncrease: 0
+            orangeOptions:
+              childObject: {fileID: 0}
+              childConfig:
+                hp: 0
+                speed: 0
+                maxSize: 0
+                minSize: 0
+                blueberryOptions:
+                  speedIncrease: 0
+                coconutOptions:
+                  reductionMod: 0
+                lemonOptions:
+                  radius: 0
+                  speedIncrease: 0
+                orangeOptions:
+                  childObject: {fileID: 0}
+                  childConfig:
+                    hp: 0
+                    speed: 0
+                    maxSize: 0
+                    minSize: 0
+                    blueberryOptions:
+                      speedIncrease: 0
+                    coconutOptions:
+                      reductionMod: 0
+                    lemonOptions:
+                      radius: 0
+                      speedIncrease: 0
+                    orangeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      splitAmount: 0
+                    mangoOptions:
+                      radius: 0
+                      healAmount: 0
+                    bananaOptions:
+                      speedIncrease: 0
+                    strawberryOptions:
+                      stunRadius: 0
+                      stunAmount: 0
+                    grapeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      spawnCooldown: 0
+                  splitAmount: 0
+                mangoOptions:
+                  radius: 0
+                  healAmount: 0
+                bananaOptions:
+                  speedIncrease: 0
+                strawberryOptions:
+                  stunRadius: 0
+                  stunAmount: 0
+                grapeOptions:
+                  childObject: {fileID: 0}
+                  childConfig:
+                    hp: 0
+                    speed: 0
+                    maxSize: 0
+                    minSize: 0
+                    blueberryOptions:
+                      speedIncrease: 0
+                    coconutOptions:
+                      reductionMod: 0
+                    lemonOptions:
+                      radius: 0
+                      speedIncrease: 0
+                    orangeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      splitAmount: 0
+                    mangoOptions:
+                      radius: 0
+                      healAmount: 0
+                    bananaOptions:
+                      speedIncrease: 0
+                    strawberryOptions:
+                      stunRadius: 0
+                      stunAmount: 0
+                    grapeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      spawnCooldown: 0
+                  spawnCooldown: 0
+              splitAmount: 0
+            mangoOptions:
+              radius: 0
+              healAmount: 0
+            bananaOptions:
+              speedIncrease: 0
+            strawberryOptions:
+              stunRadius: 0
+              stunAmount: 0
+            grapeOptions:
+              childObject: {fileID: 0}
+              childConfig:
+                hp: 0
+                speed: 0
+                maxSize: 0
+                minSize: 0
+                blueberryOptions:
+                  speedIncrease: 0
+                coconutOptions:
+                  reductionMod: 0
+                lemonOptions:
+                  radius: 0
+                  speedIncrease: 0
+                orangeOptions:
+                  childObject: {fileID: 0}
+                  childConfig:
+                    hp: 0
+                    speed: 0
+                    maxSize: 0
+                    minSize: 0
+                    blueberryOptions:
+                      speedIncrease: 0
+                    coconutOptions:
+                      reductionMod: 0
+                    lemonOptions:
+                      radius: 0
+                      speedIncrease: 0
+                    orangeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      splitAmount: 0
+                    mangoOptions:
+                      radius: 0
+                      healAmount: 0
+                    bananaOptions:
+                      speedIncrease: 0
+                    strawberryOptions:
+                      stunRadius: 0
+                      stunAmount: 0
+                    grapeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      spawnCooldown: 0
+                  splitAmount: 0
+                mangoOptions:
+                  radius: 0
+                  healAmount: 0
+                bananaOptions:
+                  speedIncrease: 0
+                strawberryOptions:
+                  stunRadius: 0
+                  stunAmount: 0
+                grapeOptions:
+                  childObject: {fileID: 0}
+                  childConfig:
+                    hp: 0
+                    speed: 0
+                    maxSize: 0
+                    minSize: 0
+                    blueberryOptions:
+                      speedIncrease: 0
+                    coconutOptions:
+                      reductionMod: 0
+                    lemonOptions:
+                      radius: 0
+                      speedIncrease: 0
+                    orangeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      splitAmount: 0
+                    mangoOptions:
+                      radius: 0
+                      healAmount: 0
+                    bananaOptions:
+                      speedIncrease: 0
+                    strawberryOptions:
+                      stunRadius: 0
+                      stunAmount: 0
+                    grapeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      spawnCooldown: 0
+                  spawnCooldown: 0
+              spawnCooldown: 0
+          splitAmount: 0
+        mangoOptions:
+          radius: 0
+          healAmount: 0
+        bananaOptions:
+          speedIncrease: 0
+        strawberryOptions:
+          stunRadius: 0
+          stunAmount: 0
+        grapeOptions:
+          childObject: {fileID: 0}
+          childConfig:
+            hp: 0
+            speed: 0
+            maxSize: 0
+            minSize: 0
+            blueberryOptions:
+              speedIncrease: 0
+            coconutOptions:
+              reductionMod: 0
+            lemonOptions:
+              radius: 0
+              speedIncrease: 0
+            orangeOptions:
+              childObject: {fileID: 0}
+              childConfig:
+                hp: 0
+                speed: 0
+                maxSize: 0
+                minSize: 0
+                blueberryOptions:
+                  speedIncrease: 0
+                coconutOptions:
+                  reductionMod: 0
+                lemonOptions:
+                  radius: 0
+                  speedIncrease: 0
+                orangeOptions:
+                  childObject: {fileID: 0}
+                  childConfig:
+                    hp: 0
+                    speed: 0
+                    maxSize: 0
+                    minSize: 0
+                    blueberryOptions:
+                      speedIncrease: 0
+                    coconutOptions:
+                      reductionMod: 0
+                    lemonOptions:
+                      radius: 0
+                      speedIncrease: 0
+                    orangeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      splitAmount: 0
+                    mangoOptions:
+                      radius: 0
+                      healAmount: 0
+                    bananaOptions:
+                      speedIncrease: 0
+                    strawberryOptions:
+                      stunRadius: 0
+                      stunAmount: 0
+                    grapeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      spawnCooldown: 0
+                  splitAmount: 0
+                mangoOptions:
+                  radius: 0
+                  healAmount: 0
+                bananaOptions:
+                  speedIncrease: 0
+                strawberryOptions:
+                  stunRadius: 0
+                  stunAmount: 0
+                grapeOptions:
+                  childObject: {fileID: 0}
+                  childConfig:
+                    hp: 0
+                    speed: 0
+                    maxSize: 0
+                    minSize: 0
+                    blueberryOptions:
+                      speedIncrease: 0
+                    coconutOptions:
+                      reductionMod: 0
+                    lemonOptions:
+                      radius: 0
+                      speedIncrease: 0
+                    orangeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      splitAmount: 0
+                    mangoOptions:
+                      radius: 0
+                      healAmount: 0
+                    bananaOptions:
+                      speedIncrease: 0
+                    strawberryOptions:
+                      stunRadius: 0
+                      stunAmount: 0
+                    grapeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      spawnCooldown: 0
+                  spawnCooldown: 0
+              splitAmount: 0
+            mangoOptions:
+              radius: 0
+              healAmount: 0
+            bananaOptions:
+              speedIncrease: 0
+            strawberryOptions:
+              stunRadius: 0
+              stunAmount: 0
+            grapeOptions:
+              childObject: {fileID: 0}
+              childConfig:
+                hp: 0
+                speed: 0
+                maxSize: 0
+                minSize: 0
+                blueberryOptions:
+                  speedIncrease: 0
+                coconutOptions:
+                  reductionMod: 0
+                lemonOptions:
+                  radius: 0
+                  speedIncrease: 0
+                orangeOptions:
+                  childObject: {fileID: 0}
+                  childConfig:
+                    hp: 0
+                    speed: 0
+                    maxSize: 0
+                    minSize: 0
+                    blueberryOptions:
+                      speedIncrease: 0
+                    coconutOptions:
+                      reductionMod: 0
+                    lemonOptions:
+                      radius: 0
+                      speedIncrease: 0
+                    orangeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      splitAmount: 0
+                    mangoOptions:
+                      radius: 0
+                      healAmount: 0
+                    bananaOptions:
+                      speedIncrease: 0
+                    strawberryOptions:
+                      stunRadius: 0
+                      stunAmount: 0
+                    grapeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      spawnCooldown: 0
+                  splitAmount: 0
+                mangoOptions:
+                  radius: 0
+                  healAmount: 0
+                bananaOptions:
+                  speedIncrease: 0
+                strawberryOptions:
+                  stunRadius: 0
+                  stunAmount: 0
+                grapeOptions:
+                  childObject: {fileID: 0}
+                  childConfig:
+                    hp: 0
+                    speed: 0
+                    maxSize: 0
+                    minSize: 0
+                    blueberryOptions:
+                      speedIncrease: 0
+                    coconutOptions:
+                      reductionMod: 0
+                    lemonOptions:
+                      radius: 0
+                      speedIncrease: 0
+                    orangeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      splitAmount: 0
+                    mangoOptions:
+                      radius: 0
+                      healAmount: 0
+                    bananaOptions:
+                      speedIncrease: 0
+                    strawberryOptions:
+                      stunRadius: 0
+                      stunAmount: 0
+                    grapeOptions:
+                      childObject: {fileID: 0}
+                      childConfig:
+                        hp: 0
+                        speed: 0
+                        maxSize: 0
+                        minSize: 0
+                      spawnCooldown: 0
+                  spawnCooldown: 0
+              spawnCooldown: 0
+          spawnCooldown: 0
+      splitAmount: 0
+    mangoOptions:
+      radius: 2
+      healAmount: 25
     bananaOptions:
       speedIncrease: 0
     strawberryOptions:

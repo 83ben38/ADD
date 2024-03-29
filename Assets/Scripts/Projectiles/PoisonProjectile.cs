@@ -38,7 +38,7 @@ public class PoisonProjectile : ProjectileCode
     IEnumerator hitEnemy(FruitCode fruit)
     {
         fruit.vulnerability++;
-        for (float i = 0; i < lvl * 64f; i+=Time.deltaTime*64f)
+        for (float i = 0; i < lvl*3f; i+=Time.deltaTime)
         {
             yield return null;
         }

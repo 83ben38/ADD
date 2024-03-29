@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2237115e707a74cbd8037e926025c8f5, type: 3}
-  m_Name: Wave15
+  m_Name: Wave 25
   m_EditorClassIdentifier: 
   waves:
-  - {fileID: 8267130134565377638, guid: 8461deba704492e45a16e4e04d639d8f, type: 3}
+  - {fileID: 8267130134565377638, guid: 9e8069147ea9ac1408668d81606c3613, type: 3}
   waveNums: 01000000
   waveSpacings:
   - 0
   waveDelays:
   - 0
   configs:
-  - hp: 800
-    speed: 17
-    maxSize: 850
+  - hp: 3000
+    speed: 7
+    maxSize: 750
     minSize: 200
     blueberryOptions:
       speedIncrease: 0
     coconutOptions:
-      reductionMod: 0
+      reductionMod: 2
     lemonOptions:
       radius: 0
       speedIncrease: 0
