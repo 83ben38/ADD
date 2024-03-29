@@ -16,5 +16,5 @@ MonoBehaviour:
   - chance: 1
     items: 010000000200000003000000
   loadouts: 1
-  crateName: Test
   cost: 1000
+  crateName: Loadout Crate
