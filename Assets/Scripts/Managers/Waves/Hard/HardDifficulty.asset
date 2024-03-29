@@ -38,6 +38,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e3f06a05d2ea34f67836e476fea1a39d, type: 2}
   - {fileID: 11400000, guid: ce9efe67386b047a7a0cea12ca00e957, type: 2}
   - {fileID: 11400000, guid: 354526a1edc4b4f9285bc6859f54d60a, type: 2}
+  - {fileID: 11400000, guid: b95c166ed9bf04aab95eeecc5380e850, type: 2}
+  - {fileID: 11400000, guid: a070a3742813f4719b98927ee39c3010, type: 2}
   freeplayWaves: []
   maxLives: 100
   awardMultiplier: 3
