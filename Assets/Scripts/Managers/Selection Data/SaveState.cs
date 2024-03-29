@@ -17,8 +17,7 @@ public class SaveState
     public bool[] tutorials;
     public SaveState()
     {
-        money = 999999;
-        //money = 0;
+        money = 0;
         towersUnlocked = new int[]{0,1,2,3,4};
         towerUpgradesAvailable = new SerializableDictionary<int, TripleBool>();
         towerUpgradesEnabled = new SerializableDictionary<int, TripleBool>();
