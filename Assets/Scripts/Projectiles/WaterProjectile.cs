@@ -19,7 +19,7 @@ public class WaterProjectile : ProjectileCode
             Collider[] hitProjectiles = Physics.OverlapSphere(controller.transform.position, .25f * explosionAmount * MapCreator.scale);
             for (int i = 0; i < hitProjectiles.Length; i++)
             {
-                if (hitProjectiles[i].GetComponent<LightningProjectile>() != null)
+                if (hitProjectiles[i].gameObject.GetComponent<LightningProjectile>() != null)
                 {
                     damage = 4;
                 }
