@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ShopController : MonoBehaviour
@@ -11,6 +12,7 @@ public class ShopController : MonoBehaviour
     public GameObject towerObject;
     public GameObject[] otherButtons;
     public LootCrateScriptableObject[] availableCrates;
+    public TextMeshPro crateTitle;
     public GameObject[] crateObjects;
     public GameObject[] buttons;
     public GameObject buttonObject;
@@ -48,6 +50,7 @@ public class ShopController : MonoBehaviour
             if (screenNum == i)
             {
                 buttons[i].GetComponent<LootButtonController>().SetUp();
+                crateTitle.text = availableCrates[i].crateName;
             }
         }
     }

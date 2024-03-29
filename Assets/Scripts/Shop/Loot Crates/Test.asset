@@ -17,3 +17,4 @@ MonoBehaviour:
     items: 000000000100000002000000
   loadouts: 1
   cost: 100
+  crateName: Test

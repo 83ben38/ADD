@@ -18,4 +18,6 @@ public class LootCrateScriptableObject : ScriptableObject
             chances.Add(new LootOptions(lcso.chances[i]));   
         }
     }
+
+    public string crateName;
 }

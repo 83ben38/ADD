@@ -17,3 +17,4 @@ MonoBehaviour:
     items: 0b0000000c0000000d0000000e0000000f000000100000001100000012000000
   loadouts: 0
   cost: 0
+  crateName: Tower
