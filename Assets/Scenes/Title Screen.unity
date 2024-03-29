@@ -1903,11 +1903,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableDifficulties:
-  - {fileID: 11400000, guid: 19940148451dc7e4cbdb0a9d9131e18d, type: 2}
-  - {fileID: 11400000, guid: b96bccabab5d1a74d9cc8cdb6497fccf, type: 2}
+  - {fileID: 11400000, guid: bb16e8d3a27c44a4ea4f6f1d215162e6, type: 2}
   - {fileID: 11400000, guid: acc5edf47378140a1a07e9b240110785, type: 2}
   - {fileID: 11400000, guid: 3537939224aea494c8ee86d5f54477ba, type: 2}
-  - {fileID: 11400000, guid: bb16e8d3a27c44a4ea4f6f1d215162e6, type: 2}
   xDimensions: 3
   yDimensions: 2
   buttonObject: {fileID: 1003852782}
