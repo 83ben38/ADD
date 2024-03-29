@@ -167,5 +167,9 @@ public class SaveDeleter : Editor
         {
             ((SaveData)target).unlockEverything();
         }
+        if (GUILayout.Button("Get Money"))
+        {
+            ((SaveData)target).addMoney(1000000);
+        }
     }
 }
