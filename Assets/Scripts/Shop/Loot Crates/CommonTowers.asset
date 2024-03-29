@@ -18,5 +18,5 @@ MonoBehaviour:
   - chance: 0.2
     items: 050000000600000007000000080000000e000000
   loadouts: 0
-  crateName: Testt 2
   cost: 200
+  crateName: Common Tower Crate
