@@ -1106,7 +1106,6 @@ GameObject:
   - component: {fileID: 1505752999}
   - component: {fileID: 1505752998}
   - component: {fileID: 1505752997}
-  - component: {fileID: 1505752996}
   m_Layer: 0
   m_Name: TutorialScreen
   m_TagString: Untagged
@@ -1114,32 +1113,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1505752996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1505752995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 569e1ddde62e94cdca79414620d80752, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 350819200}
-  tutorial:
-    phases:
-    - disable: []
-      text:
-      - This is the tower description scene. In this scene you can see a description
-        for towers and upgrades that they have.
-      - 'Clicking on any of the 3 upgrade blocks on the side will let you see the
-        descriptioin for that upgrade. '
-      - You can enable/disable upgrades by clicking on the enabled/disabled button.
-      - If you would like to see the description for the tower again, click on the
-        title button in the top left corner.
-      enable: []
-  tutorialNum: 3
 --- !u!65 &1505752997
 BoxCollider:
   m_ObjectHideFlags: 0
