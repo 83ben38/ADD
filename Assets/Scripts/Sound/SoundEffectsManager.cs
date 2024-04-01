@@ -81,7 +81,7 @@ public class SoundEffectsManager : MonoBehaviour
         }
         if (sound.Equals("wind"))
         {
-            source.PlayOneShot(wind);
+            source.PlayOneShot(wind, 0.50f);
         }
         if (sound.Equals("life"))
         {
