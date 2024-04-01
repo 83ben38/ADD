@@ -153,7 +153,7 @@ public class SaveData : MonoBehaviour
         }
     }
 }
-[CustomEditor(typeof(SaveData))]
+/*[CustomEditor(typeof(SaveData))]
 public class SaveDeleter : Editor
 {
     public override void OnInspectorGUI()
@@ -172,4 +172,4 @@ public class SaveDeleter : Editor
             ((SaveData)target).addMoney(1000000);
         }
     }
-}
+}*/
