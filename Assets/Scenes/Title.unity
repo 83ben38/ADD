@@ -623,7 +623,16 @@ MonoBehaviour:
   CurrentVol: 0
   source: {fileID: 86080136}
   zap: {fileID: 8300000, guid: 3113c3d9559df43748609db84c63e190, type: 3}
+  fire: {fileID: 8300000, guid: 55579f53934b9b746abefd4f041896e2, type: 3}
   splash: {fileID: 8300000, guid: de507dc64e97a4009ab998574c9e8e3b, type: 3}
+  ice: {fileID: 8300000, guid: 3c7e1fc410a98bd42b01ff628a06e097, type: 3}
+  earth: {fileID: 8300000, guid: e1b927cbae2b6844ca671c5255c44fce, type: 3}
+  atomic: {fileID: 8300000, guid: 19f42356dfa58824a85e0c6526230481, type: 3}
+  ironDeploy: {fileID: 8300000, guid: cb3a31e5125e66b468a931711f17a0a2, type: 3}
+  ironHit: {fileID: 8300000, guid: 754088ae2e68e7e4eb67d56df24795ba, type: 3}
+  artilleryFire: {fileID: 8300000, guid: e67edc9c118a4c44aa5f26a3c321bca1, type: 3}
+  wind: {fileID: 8300000, guid: c936115aa890e9146a898fd6f1970cbe, type: 3}
+  life: {fileID: 8300000, guid: 203170c5718dca8459e056991e148ca0, type: 3}
 --- !u!1 &613646301
 GameObject:
   m_ObjectHideFlags: 0

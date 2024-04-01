@@ -46,6 +46,7 @@ public class SpaceTower : TowerCode
 
     public override bool shoot()
     {
+        SoundEffectsManager.manager.playSound("artillery-fire");
         if (upgrade1)
         {
             GameObject projectile = Object.Instantiate(TowerCode.projectile);

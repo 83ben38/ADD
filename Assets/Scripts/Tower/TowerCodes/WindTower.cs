@@ -40,7 +40,7 @@ public class WindTower : TowerCode
 
     public override bool shoot()
     {
-        
+        SoundEffectsManager.manager.playSound("wind");
         for (int i = 0; i < buffed.Count; i++)
         {
             if (buffed[i].tower != null)
