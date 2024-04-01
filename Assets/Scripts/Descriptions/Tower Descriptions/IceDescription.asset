@@ -16,6 +16,6 @@ MonoBehaviour:
   description: This tower harnesses the power of Ice and Snow to incapacitate and
     slow enemies.
   upgrade1Description: "Permafrost:\nIncreases slow duration and projectile pierce.
-    \nDecreases slow potency\n"
+    \nDecreases slow potency.\n"
   upgrade2Description: 
   upgrade3Description: 

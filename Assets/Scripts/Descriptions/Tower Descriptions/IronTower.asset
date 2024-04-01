@@ -15,10 +15,10 @@ MonoBehaviour:
   title: Iron Tower
   description: Born of man's industrialism this tower manufactures and deploys traps
     in the enemies path.
-  upgrade1Description: 'batch production
+  upgrade1Description: 'Batch Production:
 
-    changing from a production line to
-    batch production increses the over all production time but alowes the tower to
-    produce and lanch trapes for each enemy path tile'
+    Changing from a production line to
+    batch production, increases the over all production time but allowes the tower
+    to produce and launch traps for each enemy path tile.'
   upgrade2Description: 
   upgrade3Description: 

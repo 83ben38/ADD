@@ -15,8 +15,8 @@ MonoBehaviour:
   title: 'Space Tower '
   description: This tower launches a dense tungsten projectile high in to the atmosphere
     before it comes crashing down causing massive damage.
-  upgrade1Description: "incresed densitey \nincresed densitey and damage at the cost
-    of automated target tracing. to silect fireing coardanence silect the tower then
-    silect the target coardenents "
+  upgrade1Description: "Increased density: \nIncresed density and damage at the cost
+    of automated target tracing. To select firing coordinates select the tower then
+    click the target coordinates."
   upgrade2Description: 
   upgrade3Description: 
