@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -620,6 +620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f8af65331c844ad28f73a142c34eaa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentVol: 0
   source: {fileID: 86080136}
   zap: {fileID: 8300000, guid: 3113c3d9559df43748609db84c63e190, type: 3}
   splash: {fileID: 8300000, guid: de507dc64e97a4009ab998574c9e8e3b, type: 3}
@@ -680,9 +681,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Apple
-
-    Dice
+  m_text: 'Elemental
 
     Defense'
   m_isRightToLeft: 0
