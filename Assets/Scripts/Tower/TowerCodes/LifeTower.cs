@@ -18,6 +18,7 @@ public class LifeTower : TowerCode
 
     public override bool shoot()
     {
+        SoundEffectsManager.manager.playSound("life");
         GameObject projectile = Object.Instantiate(TowerCode.projectile);
         ProjectileController pc = projectile.GetComponent<ProjectileController>();
         pc.code = create();

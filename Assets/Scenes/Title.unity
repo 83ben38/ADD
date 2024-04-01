@@ -630,6 +630,8 @@ MonoBehaviour:
   ironDeploy: {fileID: 8300000, guid: cb3a31e5125e66b468a931711f17a0a2, type: 3}
   ironHit: {fileID: 8300000, guid: 754088ae2e68e7e4eb67d56df24795ba, type: 3}
   artilleryFire: {fileID: 8300000, guid: e67edc9c118a4c44aa5f26a3c321bca1, type: 3}
+  wind: {fileID: 8300000, guid: c936115aa890e9146a898fd6f1970cbe, type: 3}
+  life: {fileID: 8300000, guid: 203170c5718dca8459e056991e148ca0, type: 3}
 --- !u!1 &613646301
 GameObject:
   m_ObjectHideFlags: 0
