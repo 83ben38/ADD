@@ -6,6 +6,7 @@ using UnityEngine;
 public class MapSelectionManager : MonoBehaviour
 {
     public static MapSelectionManager manager;
+    public Material material;
     public BackButtonController backButton;
     public GameObject[] arrowButtons;
     public MapScriptableObject[] availableMaps;
