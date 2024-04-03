@@ -26,6 +26,7 @@ public class MiniMap : MonoBehaviour
                 clone.transform.rotation = rot;
                 clone.transform.localPosition = new Vector3(pos.x,0,pos.y) + map.startPos * map.scaleAmt * 0.1f;
                 clone.transform.localScale *= map.scaleAmt * 0.1f;
+                clone.GetComponentInChildren<Shape>().Reset();
                 switch (map.map[i+(j*map.xDimensions)])
                 {
                     case 0 : clone.GetComponentInChildren<Renderer>().material.color = ColorManager.manager.tile;
