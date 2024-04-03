@@ -23,6 +23,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 84e133e8bb6366a4b8457b175d73e68a, type: 2}
   - {fileID: 11400000, guid: cbd81ea95b7e6cf449ee57ae58cc89f7, type: 2}
   - {fileID: 11400000, guid: 5fc84adc7a1350748ac7dc11825b2b71, type: 2}
+  - {fileID: 11400000, guid: c8fcae856a44d4198abb9b6277deb604, type: 2}
+  - {fileID: 11400000, guid: 5d21ec88a39fe4790be6d47be3eadbd5, type: 2}
+  - {fileID: 11400000, guid: a41f420e170dc42fbbebc1b3dac1ad57, type: 2}
+  - {fileID: 11400000, guid: 250b571805049d947acbdfea593e127a, type: 2}
+  - {fileID: 11400000, guid: dbcf69fc22c4b914aac5361972e225e9, type: 2}
+  - {fileID: 11400000, guid: 2139895d83621bd4baa85df48fa5562f, type: 2}
+  - {fileID: 11400000, guid: 0654675ca4540294db3defbb19367cd1, type: 2}
+  - {fileID: 11400000, guid: 8620a3b9d5d9b12489d2791f795b962e, type: 2}
+  - {fileID: 11400000, guid: 8db5f5de58496ca48ad52dd357838f58, type: 2}
+  - {fileID: 11400000, guid: 5e220a62fcf8dbe4c84905e4c194bae8, type: 2}
+  - {fileID: 11400000, guid: b4ac35cddd77cff439c459828321e83a, type: 2}
+  - {fileID: 11400000, guid: e6dff25b9d813e24289d132f220abc5a, type: 2}
+  - {fileID: 11400000, guid: dc37fdd1b3476074ba46d622c8b88872, type: 2}
+  - {fileID: 11400000, guid: cb611c1cbbcf84243b12c004cfe155d4, type: 2}
+  - {fileID: 11400000, guid: e5dbe972acaab6240b80be23901bd4bf, type: 2}
+  - {fileID: 11400000, guid: 090bb1d21ce957641bbbbb42573edc3b, type: 2}
   freeplayWaves: []
   maxLives: 200
   awardMultiplier: 1
