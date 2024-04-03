@@ -1823,6 +1823,7 @@ GameObject:
   - component: {fileID: 499034135}
   - component: {fileID: 499034137}
   - component: {fileID: 499034138}
+  - component: {fileID: 499034139}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1911,6 +1912,18 @@ MonoBehaviour:
   buttonObject: {fileID: 1003852782}
   starObject: {fileID: 1993208591}
   backButton: {fileID: 424727957}
+--- !u!114 &499034139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499034133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43cca8597077bd24fbd0bc0f19de7405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &542116464
 GameObject:
   m_ObjectHideFlags: 0
