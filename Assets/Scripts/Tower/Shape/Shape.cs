@@ -13,11 +13,14 @@ public class Shape : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        transform.localPosition = scriptableObject.meshPosition;
-        transform.localRotation = scriptableObject.meshRotation;
-        transform.localScale = scriptableObject.meshScale;
-        GetComponent<MeshCollider>().sharedMesh = scriptableObject.mesh;
-        GetComponent<MeshFilter>().sharedMesh = scriptableObject.mesh;
+        if (scriptableObject != null)
+        {
+            transform.localPosition = scriptableObject.meshPosition;
+            transform.localRotation = scriptableObject.meshRotation;
+            transform.localScale = scriptableObject.meshScale;
+            GetComponent<MeshCollider>().sharedMesh = scriptableObject.mesh;
+            GetComponent<MeshFilter>().sharedMesh = scriptableObject.mesh;
+        }
     }
 
     public void Reset()
