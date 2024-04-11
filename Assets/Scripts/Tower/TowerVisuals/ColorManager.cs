@@ -56,6 +56,7 @@ public class ColorManager : MonoBehaviour
     public Color inertiaTower;
     public Color glassTower;
     public Color copperTower;
+    public Color snowTower;
     public GameObject projectile;
     public ColorSchemeScriptableObject[] availableColorSchemes;
     void Awake()

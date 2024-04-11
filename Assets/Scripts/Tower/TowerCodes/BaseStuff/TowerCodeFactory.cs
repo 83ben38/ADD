@@ -30,6 +30,7 @@ public class TowerCodeFactory : MonoBehaviour
             case 16 : return new InertiaTower(b1, b2, b3);
             case 17 : return new GlassTower(b1, b2, b3);
             case 18 : return new CopperTower(b1, b2, b3);
+            case 19 : return new SnowTower(b1, b2, b3);
         }
 
         return null;
