@@ -309,6 +309,7 @@ GameObject:
   - component: {fileID: 86080135}
   - component: {fileID: 86080137}
   - component: {fileID: 86080136}
+  - component: {fileID: 86080138}
   m_Layer: 0
   m_Name: SelectionData
   m_TagString: Untagged
@@ -634,6 +635,18 @@ MonoBehaviour:
   artilleryFire: {fileID: 8300000, guid: e67edc9c118a4c44aa5f26a3c321bca1, type: 3}
   wind: {fileID: 8300000, guid: c936115aa890e9146a898fd6f1970cbe, type: 3}
   life: {fileID: 8300000, guid: 203170c5718dca8459e056991e148ca0, type: 3}
+--- !u!114 &86080138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86080130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b88b35729f5e14af2b871ee2d70df1ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &613646301
 GameObject:
   m_ObjectHideFlags: 0

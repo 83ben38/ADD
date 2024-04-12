@@ -116,7 +116,43 @@ public abstract class TowerCode : TowerState, ICloneable
 
     public virtual void roundStart()
     {
-        
+        List<StructureScriptableObject> options =
+            StructureManager.manager.getPotentialStructures(TowerCodeFactory.getTowerCodeID(this));
+        foreach (StructureScriptableObject sso in options)
+        {
+            int[] d = sso.getIntArray();
+            List<TowerController> remove = new List<TowerController> { controller };
+            for (int i = 0; i < d.Length; i++)
+            {
+                if (d[i] == -1)
+                {
+                    continue;
+                }
+
+                int z = i;
+                List<TowerController> nextTo = controller.nextTo;
+                while (z > nextTo.Count)
+                {
+                    nextTo = nextTo[z % nextTo.Count].nextTo;
+                    z /= nextTo.Count;
+                }
+
+                if (nextTo[z].tower is null || TowerCodeFactory.getTowerCodeID(nextTo[z].tower) != d[i])
+                {
+                    goto fail;
+                }
+                remove.Add(nextTo[z]);
+            }
+
+            foreach (TowerController tc in remove)
+            {
+                tc.tower = null;
+            }
+
+            controller.tower = sso.makeTower();
+            return;
+            fail : ;
+        }
     }
 
 

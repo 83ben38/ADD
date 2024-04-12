@@ -12,4 +12,25 @@ public class StructureScriptableObject : ScriptableObject
     public int[] pentagonConfig;
     public int[] hexagonConfig;
     public int towerMade;
+    public int resultingLevel;
+
+    public TowerCode makeTower()
+    {
+        TowerCode tc = TowerCodeFactory.getTowerCode(towerMade);
+        tc.lvl = resultingLevel;
+        return tc;
+    }
+
+    public int[] getIntArray()
+    {
+        switch (PathfinderManager.manager.shapeCode)
+        {
+            case "hexagon" : return hexagonConfig;
+            case "cube" : return squareConfig;
+            case "triangle" : return triangleConfig;
+            case "pentagon" : return pentagonConfig;
+        }
+
+        return null;
+    }
 }
