@@ -35,4 +35,89 @@ public class TowerCodeFactory : MonoBehaviour
 
         return null;
     }
+
+    public static int getTowerCodeID(TowerCode tc)
+    {
+        if (tc is FireTower)
+        {
+            return 0;
+        }
+        if (tc is WaterTower)
+        {
+            return 1;
+        }
+        if (tc is IceTower)
+        {
+            return 2;
+        }
+        if (tc is LightningTower)
+        {
+            return 3;
+        }
+        if (tc is EarthTower)
+        {
+            return 4;
+        }
+        if (tc is IronTower)
+        {
+            return 5;
+        }
+        if (tc is AtomicTower)
+        {
+            return 6;
+        }
+        if (tc is SpaceTower)
+        {
+            return 7;
+        }
+        if (tc is WindTower)
+        {
+            return 8;
+        }
+        if (tc is ColorTower)
+        {
+            return 9;
+        }
+        if (tc is PoisonTower)
+        {
+            return 10;
+        }
+        if (tc is DarkTower)
+        {
+            return 11;
+        }
+        if (tc is LaserTower)
+        {
+            return 12;
+        }
+        if (tc is GoldTower)
+        {
+            return 13;
+        }
+        if (tc is LifeTower)
+        {
+            return 14;
+        }
+        if (tc is DeathTower)
+        {
+            return 15;
+        }
+        if (tc is InertiaTower)
+        {
+            return 16;
+        }
+        if (tc is GlassTower)
+        {
+            return 17;
+        }
+        if (tc is CopperTower)
+        {
+            return 18;
+        }
+        if (tc is SnowTower)
+        {
+            return 19;
+        }
+        return -1;
+    }
 }
