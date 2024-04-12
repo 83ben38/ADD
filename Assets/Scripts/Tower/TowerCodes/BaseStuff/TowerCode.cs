@@ -120,7 +120,8 @@ public abstract class TowerCode : TowerState, ICloneable
             StructureManager.manager.getPotentialStructures(TowerCodeFactory.getTowerCodeID(this));
         foreach (StructureScriptableObject sso in options)
         {
-            int[] d = sso.getIntArray();
+            int[] d = sso.getConfig();
+            int[] l = sso.getLevels();
             List<TowerController> remove = new List<TowerController> { controller };
             for (int i = 0; i < d.Length; i++)
             {
@@ -137,7 +138,7 @@ public abstract class TowerCode : TowerState, ICloneable
                     z /= nextTo.Count;
                 }
 
-                if (nextTo[z].tower is null || TowerCodeFactory.getTowerCodeID(nextTo[z].tower) != d[i])
+                if (nextTo[z].tower is null || nextTo[z].tower.lvl != l[i] || TowerCodeFactory.getTowerCodeID(nextTo[z].tower) != d[i])
                 {
                     goto fail;
                 }

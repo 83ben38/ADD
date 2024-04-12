@@ -11,6 +11,10 @@ public class StructureScriptableObject : ScriptableObject
     public int[] squareConfig;
     public int[] pentagonConfig;
     public int[] hexagonConfig;
+    public int[] triangleLevels;
+    public int[] squareLevels;
+    public int[] pentagonLevels;
+    public int[] hexagonLevels;
     public int towerMade;
     public int resultingLevel;
 
@@ -21,7 +25,7 @@ public class StructureScriptableObject : ScriptableObject
         return tc;
     }
 
-    public int[] getIntArray()
+    public int[] getConfig()
     {
         switch (PathfinderManager.manager.shapeCode)
         {
@@ -29,6 +33,18 @@ public class StructureScriptableObject : ScriptableObject
             case "cube" : return squareConfig;
             case "triangle" : return triangleConfig;
             case "pentagon" : return pentagonConfig;
+        }
+
+        return null;
+    }
+    public int[] getLevels()
+    {
+        switch (PathfinderManager.manager.shapeCode)
+        {
+            case "hexagon" : return hexagonLevels;
+            case "cube" : return squareLevels;
+            case "triangle" : return triangleLevels;
+            case "pentagon" : return pentagonLevels;
         }
 
         return null;
