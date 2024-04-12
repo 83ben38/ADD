@@ -21,6 +21,11 @@ public class ColorTower : TowerCode
 
     public override bool canMerge(TowerCode c)
     {
+        if (c is MegaTowerCode code)
+        {
+            return code.lvl + code.towerEquivalent - 1 == lvl && code.lvl < 3;
+        }
+
         return c.lvl == lvl && lvl < 7;
     }
 
@@ -29,7 +34,7 @@ public class ColorTower : TowerCode
         if (upgrade1 && c is not ColorTower)
         {
             TowerCode tc=(TowerCode)c.Clone();
-            tc.lvl = lvl;
+            tc.lvl = c.lvl;
             return tc;
         }
 

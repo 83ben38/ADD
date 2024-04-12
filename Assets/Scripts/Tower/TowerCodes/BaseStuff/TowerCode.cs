@@ -100,6 +100,11 @@ public abstract class TowerCode : TowerState, ICloneable
 
     public virtual bool canMerge(TowerCode c)
     {
+        if (c is MegaTowerCode)
+        {
+            return false;
+        }
+
         return (c.lvl == lvl && c.GetType() == GetType() && lvl < 6) || (c.lvl==lvl && c is ColorTower && lvl < 7 && !c.upgrade1);
     }
 
