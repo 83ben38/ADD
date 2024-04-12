@@ -147,9 +147,11 @@ public abstract class TowerCode : TowerState, ICloneable
             foreach (TowerController tc in remove)
             {
                 tc.tower = null;
+                tc.towerVisual.updateTower();
             }
 
             controller.tower = sso.makeTower();
+            controller.towerVisual.updateTower();
             return;
             fail : ;
         }
