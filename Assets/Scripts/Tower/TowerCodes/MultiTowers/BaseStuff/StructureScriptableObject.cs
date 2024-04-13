@@ -7,6 +7,7 @@ using UnityEngine;
 public class StructureScriptableObject : ScriptableObject
 {
     public int centerTower;
+    public int centerLevel;
     public int[] triangleConfig;
     public int[] squareConfig;
     public int[] pentagonConfig;

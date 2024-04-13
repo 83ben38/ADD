@@ -120,6 +120,11 @@ public abstract class TowerCode : TowerState, ICloneable
             StructureManager.manager.getPotentialStructures(TowerCodeFactory.getTowerCodeID(this));
         foreach (StructureScriptableObject sso in options)
         {
+            if (lvl != sso.centerLevel)
+            {
+                continue;
+            }
+
             int[] d = sso.getConfig();
             int[] l = sso.getLevels();
             List<TowerController> remove = new List<TowerController> { controller };
