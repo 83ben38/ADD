@@ -35,5 +35,7 @@ public class ColorSchemeScriptableObject : ScriptableObject
     public Color pathHighlighted;
     public Color tower;
     public Color towerHighlighted;
+    public Color structure;
+    public Color structureHighlighted;
     public Color background;
 }

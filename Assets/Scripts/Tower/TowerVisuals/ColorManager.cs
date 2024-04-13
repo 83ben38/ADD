@@ -33,11 +33,14 @@ public class ColorManager : MonoBehaviour
     public Color wallHighlighted;
 
     public Color path;
+    
 
     public Color pathHighlighted;
     public Color background;
     public Color tower;
     public Color towerHighlighted;
+    public Color structure;
+    public Color structureHighlighted;
     public Color earthTower;
     public Color iceTower;
     public Color fireTower;
@@ -102,6 +105,8 @@ public class ColorManager : MonoBehaviour
         scheme.background = background;
         scheme.towerHighlighted = towerHighlighted;
         scheme.tower = tower;
+        scheme.structure = structure;
+        scheme.structureHighlighted = structureHighlighted;
     }
 
     void doColorScheme(ColorSchemeScriptableObject scheme)
@@ -133,5 +138,7 @@ public class ColorManager : MonoBehaviour
         tower = scheme.tower;
         towerHighlighted = scheme.towerHighlighted;
         background = scheme.background;
+        structure = scheme.structure;
+        structureHighlighted = scheme.structureHighlighted;
     }
 }

@@ -17,5 +17,9 @@ MonoBehaviour:
   squareConfig: 
   pentagonConfig: 
   hexagonConfig: 020000000200000002000000020000000200000002000000
+  triangleLevels: 
+  squareLevels: 
+  pentagonLevels: 
+  hexagonLevels: 010000000100000001000000010000000100000001000000
   towerMade: 0
   resultingLevel: 3
