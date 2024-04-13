@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class StructureManager : MonoBehaviour
@@ -22,7 +23,13 @@ public class StructureManager : MonoBehaviour
             {
                 sortedStructures.Add(new List<StructureScriptableObject>());
             }
-            sortedStructures[sso.centerTower].Add(sso);
+
+            if (SaveData.save.getAvailableTowers().Contains(sso.towerMade))
+            {
+                sortedStructures[sso.centerTower].Add(sso);
+            }
+
+            
         }
     }
 
