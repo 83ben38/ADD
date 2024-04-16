@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -490,6 +490,8 @@ MonoBehaviour:
   background: {r: 0, g: 0, b: 0, a: 1}
   tower: {r: 0.49019608, g: 0.49019608, b: 0, a: 1}
   towerHighlighted: {r: 1, g: 1, b: 0.49019608, a: 1}
+  structure: {r: 0, g: 0, b: 0, a: 0}
+  structureHighlighted: {r: 0, g: 0, b: 0, a: 0}
   earthTower: {r: 0.745283, g: 0.45438078, b: 0, a: 1}
   iceTower: {r: 0, g: 0.9620137, b: 1, a: 1}
   fireTower: {r: 1, g: 0, b: 0, a: 1}
@@ -648,7 +650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableStructures:
-  - {fileID: 11400000, guid: 0ea20b520dc0140918f68889f6190e46, type: 2}
+  - {fileID: 11400000, guid: 05d4a89457ed96340bd964957ead0c5a, type: 2}
 --- !u!1 &613646301
 GameObject:
   m_ObjectHideFlags: 0

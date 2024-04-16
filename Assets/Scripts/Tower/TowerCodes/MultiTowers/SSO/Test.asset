@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c2793e3ddf7944b28c51e911fe32e86, type: 3}
-  m_Name: TestStructure
+  m_Name: Test
   m_EditorClassIdentifier: 
-  centerTower: 1
-  centerLevel: 0
-  triangleConfig: 020000000200000002000000
+  centerTower: 0
+  centerLevel: 1
+  triangleConfig: 01000000
   squareConfig: 
   pentagonConfig: 
-  hexagonConfig: 020000000200000002000000020000000200000002000000
-  triangleLevels: 010000000100000001000000
+  hexagonConfig: 
+  triangleLevels: 01000000
   squareLevels: 
   pentagonLevels: 
-  hexagonLevels: 010000000100000001000000010000000100000001000000
-  towerMade: 0
-  resultingLevel: 3
+  hexagonLevels: 
+  towerMade: 20
+  resultingLevel: 1

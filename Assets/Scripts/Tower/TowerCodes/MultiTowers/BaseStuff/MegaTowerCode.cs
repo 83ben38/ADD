@@ -4,13 +4,27 @@ using UnityEngine;
 
 public abstract class MegaTowerCode : TowerCode
 {
-    public int towerEquivalent;
+    private Dictionary<TowerController, TowerCode> oldTowers;
     protected MegaTowerCode(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
     }
 
     public override bool canMerge(TowerCode c)
     {
-        return (c.lvl == lvl && c.GetType() == GetType() && lvl < 3) || (c.lvl==lvl+towerEquivalent-1 && c is ColorTower && lvl < 3 && !c.upgrade1);
+        return false;
+    }
+
+    public override void pickedUp()
+    {
+        foreach (var pair in oldTowers)
+        {
+            pair.Key.tower = pair.Value;
+            pair.Key.towerVisual.updateTower();
+            pair.Key.setBaseColor(ColorManager.manager.tower,ColorManager.manager.towerHighlighted);
+        }
+    }
+    public override object Clone()
+    {
+        return null;
     }
 }

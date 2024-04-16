@@ -43,11 +43,6 @@ public class InGameState : TowerState
                 controller.tower.placedDown(controller);
                 controller.towerVisual.updateTower();
                 controller.setBaseColor(ColorManager.manager.tower,ColorManager.manager.towerHighlighted);
-                if (controller.tower is MegaTowerCode)
-                {
-                    controller.setBaseColor(ColorManager.manager.structure,ColorManager.manager.structureHighlighted);
-
-                }
                 if (controller.tower.lvl != held.lvl)
                 {
                     held = null;
@@ -63,11 +58,6 @@ public class InGameState : TowerState
                 
 
                 controller.setBaseColor(ColorManager.manager.tower,ColorManager.manager.towerHighlighted);
-                if (held is MegaTowerCode)
-                {
-                    controller.setBaseColor(ColorManager.manager.structure,ColorManager.manager.structureHighlighted);
-
-                }
                 controller.tower = held;
                 controller.tower.placedDown(controller);
                 controller.towerVisual.updateTower();

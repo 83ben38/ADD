@@ -149,32 +149,14 @@ public abstract class TowerCode : TowerState, ICloneable
                 }
                 remove.Add(nextTo[z]);
             }
-
-            TowerController oldController = controller;
+            controller.tower = sso.makeTower();
+            controller.tower.controller = controller;
             foreach (TowerController tc in remove)
             {
-                tc.tower.pickedUp();
-                tc.tower = null;
+                tc.tower = controller.tower;
                 tc.towerVisual.updateTower();
-                tc.setBaseColor(false);
-                tc.block = false;
-                if (oldController != tc)
-                {
-                    tc.StartCoroutine(InGameState.changeTowerStatic(tc, false));
-                }
-            }
-
-            PathfinderManager.manager.pathFind();
-
-            oldController.tower = sso.makeTower();
-            oldController.state = oldController.tower;
-            oldController.tower.placedDown(oldController);
-            oldController.towerVisual.updateTower();
-            oldController.setBaseColor(ColorManager.manager.tower,ColorManager.manager.towerHighlighted);
-            if (oldController.tower is MegaTowerCode)
-            {
-                oldController.setBaseColor(ColorManager.manager.structure,ColorManager.manager.structureHighlighted);
-
+                tc.setBaseColor(ColorManager.manager.structure,ColorManager.manager.structureHighlighted);
+                tc.state = tc.tower;
             }
             return;
             fail : ;
