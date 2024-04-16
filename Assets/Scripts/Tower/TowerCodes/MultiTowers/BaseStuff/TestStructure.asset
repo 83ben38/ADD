@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: TestStructure
   m_EditorClassIdentifier: 
   centerTower: 1
-  triangleConfig: 
+  centerLevel: 0
+  triangleConfig: 020000000200000002000000
   squareConfig: 
   pentagonConfig: 
   hexagonConfig: 020000000200000002000000020000000200000002000000
-  triangleLevels: 
+  triangleLevels: 010000000100000001000000
   squareLevels: 
   pentagonLevels: 
   hexagonLevels: 010000000100000001000000010000000100000001000000
