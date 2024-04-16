@@ -110,4 +110,21 @@ public class InGameState : TowerState
         c.transform.localScale = new Vector3(scale.x, scale.y*(grow ? 2 : 1), scale.z);
         coroutine = false;
     }
+    public static IEnumerator changeTowerStatic(TowerController c, bool grow)
+    {
+        Vector3 scale = c.transform.localScale;
+        if (!grow)
+        {
+            scale.y /= 2;
+        }
+
+        for (float i = 0; i < 0.25f; i+=Time.deltaTime)
+        {
+            
+            c.transform.localScale = new Vector3(scale.x,scale.y*(1 + (grow ? i*4 : (0.25f-i)*4)), scale.z);
+            yield return null;
+        } 
+        
+        c.transform.localScale = new Vector3(scale.x, scale.y*(grow ? 2 : 1), scale.z);
+    }
 }
