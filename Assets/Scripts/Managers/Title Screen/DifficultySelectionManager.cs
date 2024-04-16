@@ -34,7 +34,10 @@ public class DifficultySelectionManager : MonoBehaviour
         {
             foreach (var star in someStars)
             {
-                Destroy(star.gameObject);
+                if (star != null)
+                {
+                    Destroy(star.gameObject);
+                }
             }
         }
         
