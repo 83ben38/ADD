@@ -23,13 +23,6 @@ public class DifficultySelectionManager : MonoBehaviour
     public void end()
     {
         backButton.gameObject.SetActive(false);
-        foreach (var someStars in stars)
-        {
-            foreach (var star in someStars)
-            {
-                Destroy(star.gameObject);
-            }
-        }
         foreach (var someButtons in buttons)
         {
             foreach (var button in someButtons)
@@ -37,6 +30,14 @@ public class DifficultySelectionManager : MonoBehaviour
                 Destroy(button.gameObject);
             }
         }
+        foreach (var someStars in stars)
+        {
+            foreach (var star in someStars)
+            {
+                Destroy(star.gameObject);
+            }
+        }
+        
     }
 
     public void startDifficultySelection()
