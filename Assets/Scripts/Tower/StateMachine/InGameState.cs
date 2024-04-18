@@ -70,6 +70,11 @@ public class InGameState : TowerState
 
         if (controller.tower != null)
         {
+            if (controller.tower is MultiTowerCode)
+            {
+                controller.tower.pickedUp();
+            }
+
             held = controller.tower;
             held.pickedUp();
             controller.tower = null;

@@ -21,7 +21,7 @@ public class ColorTower : TowerCode
 
     public override bool canMerge(TowerCode c)
     {
-        if (c is MegaTowerCode)
+        if (c is MultiTowerCode)
         {
             return false;
         }

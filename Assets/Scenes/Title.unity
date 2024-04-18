@@ -490,8 +490,8 @@ MonoBehaviour:
   background: {r: 0, g: 0, b: 0, a: 1}
   tower: {r: 0.49019608, g: 0.49019608, b: 0, a: 1}
   towerHighlighted: {r: 1, g: 1, b: 0.49019608, a: 1}
-  structure: {r: 0, g: 0, b: 0, a: 0}
-  structureHighlighted: {r: 0, g: 0, b: 0, a: 0}
+  structure: {r: 0.49019608, g: 0.35175523, b: 0, a: 1}
+  structureHighlighted: {r: 1, g: 0.84563035, b: 0.4901961, a: 1}
   earthTower: {r: 0.745283, g: 0.45438078, b: 0, a: 1}
   iceTower: {r: 0, g: 0.9620137, b: 1, a: 1}
   fireTower: {r: 1, g: 0, b: 0, a: 1}
@@ -511,6 +511,7 @@ MonoBehaviour:
   glassTower: {r: 0, g: 0, b: 0, a: 0}
   copperTower: {r: 0.9716981, g: 0.5868202, b: 0.21542363, a: 1}
   snowTower: {r: 1, g: 1, b: 1, a: 1}
+  volcanoTower: {r: 0.6320754, g: 0.014907437, b: 0.014907437, a: 1}
   projectile: {fileID: 6165706959806861308, guid: 0f7785055af1ec14585430c61af7807c,
     type: 3}
   availableColorSchemes:
@@ -650,7 +651,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableStructures:
-  - {fileID: 11400000, guid: 05d4a89457ed96340bd964957ead0c5a, type: 2}
+  - {fileID: 11400000, guid: d0ee85f49d0340f4aa5999f7d5c0957e, type: 2}
+  - {fileID: 11400000, guid: b8a0dbe089cc91f4d98ebfcfc35105a6, type: 2}
+  - {fileID: 11400000, guid: 544cb050ac11f364ebe01d5a33ac3d1a, type: 2}
 --- !u!1 &613646301
 GameObject:
   m_ObjectHideFlags: 0

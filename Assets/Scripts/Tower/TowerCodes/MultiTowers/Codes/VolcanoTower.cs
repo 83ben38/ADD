@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestMultiTowerCode : MegaTowerCode
+public class VolcanoTower : MultiTowerCode
 {
     
 
-    public TestMultiTowerCode(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
+    public VolcanoTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
     }
 
@@ -17,13 +17,11 @@ public class TestMultiTowerCode : MegaTowerCode
 
     public override ProjectileCode create()
     {
-        return new FireProjectile(upgrade1, upgrade2, upgrade3);
+        return new VolcanoProjectile(upgrade1, upgrade2, upgrade3);
     }
 
     public override Color getColor()
     {
-        return ColorManager.manager.portal1;
+        return ColorManager.manager.volcanoTower;
     }
-
-    
 }

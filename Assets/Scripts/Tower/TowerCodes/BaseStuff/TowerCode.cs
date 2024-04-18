@@ -100,7 +100,7 @@ public abstract class TowerCode : TowerState, ICloneable
 
     public virtual bool canMerge(TowerCode c)
     {
-        if (c is MegaTowerCode)
+        if (c is MultiTowerCode)
         {
             return false;
         }
@@ -151,8 +151,14 @@ public abstract class TowerCode : TowerState, ICloneable
             }
             controller.tower = sso.makeTower();
             controller.tower.controller = controller;
+            ((MultiTowerCode)controller.tower).oldTowers[controller] = this;
             foreach (TowerController tc in remove)
             {
+                if (tc != controller)
+                {
+                    ((MultiTowerCode)controller.tower).oldTowers[tc] = tc.tower;
+                }
+
                 tc.tower = controller.tower;
                 tc.towerVisual.updateTower();
                 tc.setBaseColor(ColorManager.manager.structure,ColorManager.manager.structureHighlighted);

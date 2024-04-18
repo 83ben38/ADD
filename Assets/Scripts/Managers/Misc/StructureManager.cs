@@ -35,7 +35,7 @@ public class StructureManager : MonoBehaviour
 
     public List<StructureScriptableObject> getPotentialStructures(int towerNum)
     {
-        if (towerNum >= sortedStructures.Count) return new List<StructureScriptableObject>();
+        if (towerNum >= sortedStructures.Count || towerNum < 0) return new List<StructureScriptableObject>();
         return sortedStructures[towerNum];
     }
 }
