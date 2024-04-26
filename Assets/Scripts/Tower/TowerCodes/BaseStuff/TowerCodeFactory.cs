@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,9 +33,10 @@ public class TowerCodeFactory : MonoBehaviour
             case 18 : return new CopperTower(b1, b2, b3);
             case 19 : return new SnowTower(b1, b2, b3);
             case 20 : return new VolcanoTower(b1, b2, b3);
+            case 21 : return new ReactorTower(b1, b2, b3);
         }
 
-        return null;
+        throw new NullReferenceException();
     }
 
     public static int getTowerCodeID(TowerCode tc)
@@ -124,7 +126,10 @@ public class TowerCodeFactory : MonoBehaviour
         {
             return 20;
         }
-
+        if (tc is ReactorTower)
+        {
+            return 21;
+        }
         return -1;
     }
 }
