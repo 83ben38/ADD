@@ -1798,6 +1798,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 279e7a471563c964bafae88778cb402c, type: 2}
   - {fileID: 11400000, guid: c902302c376fe94409db82893d24d5c8, type: 2}
   - {fileID: 11400000, guid: 3c38b04a59bc92149b6f05b2c5efa502, type: 2}
+  - {fileID: 11400000, guid: 924346dc3b84c064e8c04b6c85f4706f, type: 2}
   description: {fileID: 0}
   tower: {fileID: 1052858946}
   title: {fileID: 795349577}
@@ -2117,8 +2118,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
