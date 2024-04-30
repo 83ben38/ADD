@@ -31,6 +31,8 @@ public class EnemyConfiguration
     private StrawberryOptions strawberryOptions = null;
     [SerializeField] 
     private GrapeOptions grapeOptions = null;
+    [SerializeField] 
+    private BossOptions bossOptions = null;
     public void runOptions(FruitCode fruitCode)
     {
         if (fruitCode is BlueberryCode)
@@ -67,6 +69,10 @@ public class EnemyConfiguration
         if (fruitCode is GrapeCode)
         {
             grapeOptions.config(fruitCode);
+        }
+        if (fruitCode is BossCode)
+        {
+            bossOptions.config(fruitCode);
         }
     }
 }

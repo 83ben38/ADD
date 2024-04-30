@@ -6,16 +6,16 @@ using UnityEngine;
 public abstract class BossCode : FruitCode
 {
    public float attackSpeed;
+   public float vulnerabilityDecrease;
    private float ticksLeft;
    public override void OnEnable()
    {
       base.OnEnable();
       ticksLeft = attackSpeed;
    }
-
    public override void Damage(int amount)
    {
-      hp -= amount + (vulnerability/3);
+      hp -= amount + (int)(vulnerability/vulnerabilityDecrease);
       if (hp < 1)
       {
          StartButtonController.startButton.objects.Remove(gameObject);
