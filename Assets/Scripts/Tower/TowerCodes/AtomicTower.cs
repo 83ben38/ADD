@@ -31,6 +31,7 @@ public class AtomicTower : TowerCode
 
     public override void roundStart()
     {
+        base.roundStart();
         projectiles = new GameObject[lvl];
         // create projectiles
         for (int i = 0; i < lvl; i++)

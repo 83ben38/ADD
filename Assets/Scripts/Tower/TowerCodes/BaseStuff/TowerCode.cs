@@ -100,6 +100,11 @@ public abstract class TowerCode : TowerState, ICloneable
 
     public virtual bool canMerge(TowerCode c)
     {
+        if (c is MultiTowerCode)
+        {
+            return false;
+        }
+
         return (c.lvl == lvl && c.GetType() == GetType() && lvl < 6) || (c.lvl==lvl && c is ColorTower && lvl < 7 && !c.upgrade1);
     }
 
@@ -111,7 +116,57 @@ public abstract class TowerCode : TowerState, ICloneable
 
     public virtual void roundStart()
     {
-        
+        List<StructureScriptableObject> options =
+            StructureManager.manager.getPotentialStructures(TowerCodeFactory.getTowerCodeID(this));
+        foreach (StructureScriptableObject sso in options)
+        {
+            if (lvl != sso.centerLevel)
+            {
+                continue;
+            }
+
+            int[] d = sso.getConfig();
+            int[] l = sso.getLevels();
+            List<TowerController> remove = new List<TowerController> { controller };
+            for (int i = 0; i < d.Length; i++)
+            {
+                if (d[i] == -1)
+                {
+                    continue;
+                }
+
+                int z = i;
+                List<TowerController> nextTo = controller.nextTo;
+                while (z > nextTo.Count)
+                {
+                    nextTo = nextTo[z % nextTo.Count].nextTo;
+                    z /= nextTo.Count;
+                }
+
+                if (nextTo[z].tower is null || nextTo[z].tower.lvl != l[i] || TowerCodeFactory.getTowerCodeID(nextTo[z].tower) != d[i])
+                {
+                    goto fail;
+                }
+                remove.Add(nextTo[z]);
+            }
+            controller.tower = sso.makeTower();
+            controller.tower.controller = controller;
+            ((MultiTowerCode)controller.tower).oldTowers[controller] = this;
+            foreach (TowerController tc in remove)
+            {
+                if (tc != controller)
+                {
+                    ((MultiTowerCode)controller.tower).oldTowers[tc] = tc.tower;
+                }
+
+                tc.tower = controller.tower;
+                tc.towerVisual.updateTower();
+                tc.setBaseColor(ColorManager.manager.structure,ColorManager.manager.structureHighlighted);
+                tc.state = tc.tower;
+            }
+            return;
+            fail : ;
+        }
     }
 
 

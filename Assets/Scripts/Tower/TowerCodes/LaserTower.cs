@@ -32,6 +32,7 @@ public class LaserTower : TowerCode
 
     public override void roundStart()
     {
+        base.roundStart();
         if (priority[0] == this)
         {
             projectiles.RemoveAll(item => item == null);

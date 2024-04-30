@@ -28,6 +28,7 @@ public class GoldTower : TowerCode
 
     public override void roundStart()
     {
+        base.roundStart();
         turns++;
         if (turns == 3)
         {

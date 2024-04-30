@@ -46,6 +46,7 @@ public class InertiaTower : TowerCode
 
     public override void roundStart()
     {
+        base.roundStart();
         accelerationFactor = 64f;
     }
 
