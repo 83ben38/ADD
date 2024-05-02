@@ -56,7 +56,7 @@ public class WaterProjectile : ProjectileCode
         }
         else
         {
-            explosionAmount += Time.deltaTime * 2;
+            explosionAmount += Time.deltaTime;
             controller.transform.localScale = baseTransform * explosionAmount;
             Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f*explosionAmount*MapCreator.scale, LayerMask.GetMask("Enemy"));
             for (int i = 0; i < hit.Length; i++)
