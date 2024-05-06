@@ -80,4 +80,10 @@ public class ColorTower : TowerCode
         }
         controller.towerVisual.setColor(c);
     }
+
+    public override bool shoot()
+    {
+        SoundEffectsManager.manager.playSound("spry-paint");
+        return base.shoot();
+    }
 }

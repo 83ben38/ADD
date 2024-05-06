@@ -638,6 +638,8 @@ MonoBehaviour:
   artilleryFire: {fileID: 8300000, guid: e67edc9c118a4c44aa5f26a3c321bca1, type: 3}
   wind: {fileID: 8300000, guid: c936115aa890e9146a898fd6f1970cbe, type: 3}
   life: {fileID: 8300000, guid: 203170c5718dca8459e056991e148ca0, type: 3}
+  spry_paint: {fileID: 8300000, guid: a24eaf63778f61a439bfd35331d1dfe8, type: 3}
+  poison: {fileID: 8300000, guid: e9e3c5839c96e054faaf3fceed53d261, type: 3}
 --- !u!114 &86080138
 MonoBehaviour:
   m_ObjectHideFlags: 0

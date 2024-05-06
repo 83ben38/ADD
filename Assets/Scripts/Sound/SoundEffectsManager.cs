@@ -38,6 +38,10 @@ public class SoundEffectsManager : MonoBehaviour
     private AudioClip wind;
     [SerializeField]
     private AudioClip life;
+    [SerializeField]
+    private AudioClip spry_paint;
+    [SerializeField]
+    private AudioClip poison;
     public void playSound(string sound)
     {
         if (sound.Equals("zap"))
@@ -88,6 +92,15 @@ public class SoundEffectsManager : MonoBehaviour
         {
             source.PlayOneShot(life);
         }
+        if (sound.Equals("spry-paint"))
+        {
+            source.PlayOneShot(spry_paint);
+        }
+        if (sound.Equals("bubble"))
+        {
+            source.PlayOneShot(poison);
+        }
+        
     }
 
     
