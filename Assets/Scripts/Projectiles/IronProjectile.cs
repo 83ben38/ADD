@@ -22,7 +22,7 @@ public class IronProjectile : ProjectileCode
 
     public override int getPierce()
     {
-        return lvl;
+        return lvl*3;
     }
     public virtual void hit(FruitCode fruit, ProjectileController controller)
     {
