@@ -20,9 +20,9 @@ MonoBehaviour:
   waveDelays:
   - 0
   configs:
-  - hp: 500
+  - hp: 250
     speed: 5
-    maxSize: 650
+    maxSize: 600
     minSize: 200
     blueberryOptions:
       speedIncrease: 1
@@ -111,6 +111,9 @@ MonoBehaviour:
                         maxSize: 0
                         minSize: 0
                       spawnCooldown: 0
+                    bossOptions:
+                      attackSpeed: 0
+                      vulnerabilityDecrease: 0
                   splitAmount: 0
                 mangoOptions:
                   radius: 0
@@ -158,7 +161,13 @@ MonoBehaviour:
                         maxSize: 0
                         minSize: 0
                       spawnCooldown: 0
+                    bossOptions:
+                      attackSpeed: 0
+                      vulnerabilityDecrease: 0
                   spawnCooldown: 0
+                bossOptions:
+                  attackSpeed: 0
+                  vulnerabilityDecrease: 0
               splitAmount: 0
             mangoOptions:
               radius: 0
@@ -220,6 +229,9 @@ MonoBehaviour:
                         maxSize: 0
                         minSize: 0
                       spawnCooldown: 0
+                    bossOptions:
+                      attackSpeed: 0
+                      vulnerabilityDecrease: 0
                   splitAmount: 0
                 mangoOptions:
                   radius: 0
@@ -267,8 +279,17 @@ MonoBehaviour:
                         maxSize: 0
                         minSize: 0
                       spawnCooldown: 0
+                    bossOptions:
+                      attackSpeed: 0
+                      vulnerabilityDecrease: 0
                   spawnCooldown: 0
+                bossOptions:
+                  attackSpeed: 0
+                  vulnerabilityDecrease: 0
               spawnCooldown: 0
+            bossOptions:
+              attackSpeed: 0
+              vulnerabilityDecrease: 0
           splitAmount: 0
         mangoOptions:
           radius: 0
@@ -344,6 +365,9 @@ MonoBehaviour:
                         maxSize: 0
                         minSize: 0
                       spawnCooldown: 0
+                    bossOptions:
+                      attackSpeed: 0
+                      vulnerabilityDecrease: 0
                   splitAmount: 0
                 mangoOptions:
                   radius: 0
@@ -391,7 +415,13 @@ MonoBehaviour:
                         maxSize: 0
                         minSize: 0
                       spawnCooldown: 0
+                    bossOptions:
+                      attackSpeed: 0
+                      vulnerabilityDecrease: 0
                   spawnCooldown: 0
+                bossOptions:
+                  attackSpeed: 0
+                  vulnerabilityDecrease: 0
               splitAmount: 0
             mangoOptions:
               radius: 0
@@ -453,6 +483,9 @@ MonoBehaviour:
                         maxSize: 0
                         minSize: 0
                       spawnCooldown: 0
+                    bossOptions:
+                      attackSpeed: 0
+                      vulnerabilityDecrease: 0
                   splitAmount: 0
                 mangoOptions:
                   radius: 0
@@ -500,9 +533,21 @@ MonoBehaviour:
                         maxSize: 0
                         minSize: 0
                       spawnCooldown: 0
+                    bossOptions:
+                      attackSpeed: 0
+                      vulnerabilityDecrease: 0
                   spawnCooldown: 0
+                bossOptions:
+                  attackSpeed: 0
+                  vulnerabilityDecrease: 0
               spawnCooldown: 0
+            bossOptions:
+              attackSpeed: 0
+              vulnerabilityDecrease: 0
           spawnCooldown: 0
+        bossOptions:
+          attackSpeed: 0
+          vulnerabilityDecrease: 0
       splitAmount: 0
     mangoOptions:
       radius: 0
@@ -592,6 +637,9 @@ MonoBehaviour:
                         maxSize: 0
                         minSize: 0
                       spawnCooldown: 0
+                    bossOptions:
+                      attackSpeed: 0
+                      vulnerabilityDecrease: 0
                   splitAmount: 0
                 mangoOptions:
                   radius: 0
@@ -639,7 +687,13 @@ MonoBehaviour:
                         maxSize: 0
                         minSize: 0
                       spawnCooldown: 0
+                    bossOptions:
+                      attackSpeed: 0
+                      vulnerabilityDecrease: 0
                   spawnCooldown: 0
+                bossOptions:
+                  attackSpeed: 0
+                  vulnerabilityDecrease: 0
               splitAmount: 0
             mangoOptions:
               radius: 0
@@ -701,6 +755,9 @@ MonoBehaviour:
                         maxSize: 0
                         minSize: 0
                       spawnCooldown: 0
+                    bossOptions:
+                      attackSpeed: 0
+                      vulnerabilityDecrease: 0
                   splitAmount: 0
                 mangoOptions:
                   radius: 0
@@ -748,8 +805,17 @@ MonoBehaviour:
                         maxSize: 0
                         minSize: 0
                       spawnCooldown: 0
+                    bossOptions:
+                      attackSpeed: 0
+                      vulnerabilityDecrease: 0
                   spawnCooldown: 0
+                bossOptions:
+                  attackSpeed: 0
+                  vulnerabilityDecrease: 0
               spawnCooldown: 0
+            bossOptions:
+              attackSpeed: 0
+              vulnerabilityDecrease: 0
           splitAmount: 0
         mangoOptions:
           radius: 0
@@ -825,6 +891,9 @@ MonoBehaviour:
                         maxSize: 0
                         minSize: 0
                       spawnCooldown: 0
+                    bossOptions:
+                      attackSpeed: 0
+                      vulnerabilityDecrease: 0
                   splitAmount: 0
                 mangoOptions:
                   radius: 0
@@ -872,7 +941,13 @@ MonoBehaviour:
                         maxSize: 0
                         minSize: 0
                       spawnCooldown: 0
+                    bossOptions:
+                      attackSpeed: 0
+                      vulnerabilityDecrease: 0
                   spawnCooldown: 0
+                bossOptions:
+                  attackSpeed: 0
+                  vulnerabilityDecrease: 0
               splitAmount: 0
             mangoOptions:
               radius: 0
@@ -934,6 +1009,9 @@ MonoBehaviour:
                         maxSize: 0
                         minSize: 0
                       spawnCooldown: 0
+                    bossOptions:
+                      attackSpeed: 0
+                      vulnerabilityDecrease: 0
                   splitAmount: 0
                 mangoOptions:
                   radius: 0
@@ -981,7 +1059,22 @@ MonoBehaviour:
                         maxSize: 0
                         minSize: 0
                       spawnCooldown: 0
+                    bossOptions:
+                      attackSpeed: 0
+                      vulnerabilityDecrease: 0
                   spawnCooldown: 0
+                bossOptions:
+                  attackSpeed: 0
+                  vulnerabilityDecrease: 0
               spawnCooldown: 0
+            bossOptions:
+              attackSpeed: 0
+              vulnerabilityDecrease: 0
           spawnCooldown: 0
+        bossOptions:
+          attackSpeed: 0
+          vulnerabilityDecrease: 0
       spawnCooldown: 0
+    bossOptions:
+      attackSpeed: 0
+      vulnerabilityDecrease: 0
