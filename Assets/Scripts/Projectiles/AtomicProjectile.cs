@@ -77,7 +77,7 @@ public class AtomicProjectile : ProjectileCode
             controller.transform.position = new Vector3((float)xPosition, 0, (float)zPosition)*MapCreator.scale + centerPos;
         }
 
-        Collider[] hit = Physics.OverlapSphere(controller.transform.position, .5f*MapCreator.scale, LayerMask.GetMask("Enemy"));
+        Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f*MapCreator.scale, LayerMask.GetMask("Enemy"));
         for (int i = 0; i < pierced.Count; i++)
         {
             for (int j = 0; j <= hit.Length; j++)
@@ -116,10 +116,10 @@ public class AtomicProjectile : ProjectileCode
     {
         switch (lvl)
         {
-            case 5: return 4;
-            case 6: return 5;
-            case 7: return 8;
+            case 5: return 8;
+            case 6: return 10;
+            case 7: return 16;
         }
-        return 3;
+        return 6;
     }
 }
