@@ -7,7 +7,7 @@ public class InertiaTower : TowerCode
     private float accelerationFactor = 64f;
     public InertiaTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
-        range = 2;
+        range = 2.5f;
         attackSpeed = 128;
     }
     public override void tick()
