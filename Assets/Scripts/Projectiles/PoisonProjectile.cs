@@ -55,7 +55,7 @@ public class PoisonProjectile : ProjectileCode
 
         fruit.vulnerability+=k;
         int z = fruit.vulnerability;
-        for (float i = 0; i < 6f; i+=Time.deltaTime)
+        for (float i = 0; i < 2f; i+=Time.deltaTime)
         {
             yield return null;
         }

@@ -7,7 +7,8 @@ public class PoisonTower : TowerCode
     public PoisonTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
         range = 1;
-        attackSpeed *= 2;
+        attackSpeed *= 4;
+        attackSpeed += 8;
     }
 
     public override void MouseClick(TowerController controller)
