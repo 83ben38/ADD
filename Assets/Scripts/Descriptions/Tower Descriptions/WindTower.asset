@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c314855411e8449a01d6e4fc5db465, type: 3}
   m_Name: WindTower
   m_EditorClassIdentifier: 
-  title: 'wind tower '
+  title: 'Wind Tower '
   description: Accumulates chaotic energy and redestributes it to nearby towers,
     hastening them.
   upgrade1Description: "Hecen wimdey: \nThe tower can now harness additional energy

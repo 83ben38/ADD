@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: light tower
   m_EditorClassIdentifier: 
   title: 'light tower '
-  description: 'the blinding light of the sun this tower creates diffuse rays of
-    light between other light towers '
+  description: 'Using the blinding light of the sun, this tower creates rays of light
+    between other light towers '
   upgrade1Description: "MY EYES\t"
   upgrade2Description: 
   upgrade3Description: 

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Poisen Tower
   m_EditorClassIdentifier: 
   title: Poison tower
-  description: 'brewing one of the most vial concoctions known this tower gives a
-    flat damage increase against the target.  '
+  description: 'Brewing one of the most dangerous concoctions known, this tower gives
+    a flat damage increase against the target.  '
   upgrade1Description: 'mayow '
   upgrade2Description: "gamer toxin \nan extract drereived form the most toxic of
     gamers "
