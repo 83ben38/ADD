@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -495,15 +495,15 @@ MonoBehaviour:
   earthTower: {r: 0.745283, g: 0.45438078, b: 0, a: 1}
   iceTower: {r: 0, g: 0.9620137, b: 1, a: 1}
   fireTower: {r: 1, g: 0, b: 0, a: 1}
-  lightningTower: {r: 1, g: 0.868332, b: 0, a: 1}
+  lightningTower: {r: 1, g: 0.76686984, b: 0, a: 1}
   waterTower: {r: 0, g: 0.12823725, b: 1, a: 1}
   ironTower: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
   atomicTower: {r: 0.15739894, g: 1, b: 0, a: 1}
   spaceTower: {r: 0, g: 0, b: 0.33333334, a: 1}
-  windTower: {r: 0.8018868, g: 0.8018868, b: 0.8018868, a: 0.56078434}
+  windTower: {r: 0.8018868, g: 0.8018868, b: 0.8018868, a: 0.7607843}
   darkTower: {r: 0, g: 0, b: 0, a: 1}
   poisonTower: {r: 0.0724141, g: 0.3962264, b: 0, a: 1}
-  laserTower: {r: 1, g: 1, b: 1, a: 1}
+  laserTower: {r: 1, g: 0.9964248, b: 0, a: 1}
   goldTower: {r: 0.9339623, g: 0.7497558, b: 0.3216002, a: 1}
   lifeTower: {r: 0.6652921, g: 1, b: 0.6273585, a: 1}
   deathTower: {r: 0.312678, g: 0.4433962, b: 0.28653434, a: 1}
