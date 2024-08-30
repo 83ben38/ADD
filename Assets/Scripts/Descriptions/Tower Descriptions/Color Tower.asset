@@ -10,11 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90c314855411e8449a01d6e4fc5db465, type: 3}
-  m_Name: RambowTower
+  m_Name: Color Tower
   m_EditorClassIdentifier: 
   title: 'Color Tower '
   description: A chaotic mishmash of colors, this tower can be merged with any other
     of its level.
-  upgrade1Description: gay
+  upgrade1Description: 'Rainbow Blueprint:
+
+    The color tower now can turn into
+    any other tower by clicking on it while holding a tower of the same level.'
   upgrade2Description: 
   upgrade3Description: 

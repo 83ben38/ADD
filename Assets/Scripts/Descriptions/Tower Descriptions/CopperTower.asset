@@ -15,11 +15,11 @@ MonoBehaviour:
   title: Copper Tower
   description: A powerful capacitor harnessing the conductivity of copper this tower
     absorbs and stores excess energy from nearby dorment towers to fuel its own attacks.
-  upgrade1Description: 'Electroconductivity
+  upgrade1Description: 'Electroconductivity:
 
     Gain more charge from lightning
     towers but less from all other sources.'
-  upgrade2Description: "Power grid \nAll copper towers share the same collective
+  upgrade2Description: "Power grid: \nAll copper towers share the same collective
     charge capacity. One quarter of all towers collective charge capacity is lost
     to waste heat."
   upgrade3Description: 
