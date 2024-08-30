@@ -119,7 +119,7 @@ public class DarkTower : TowerCode
                 }
                 for (int i = 0; i < nextTo.Count; i++)
                 {
-                    if (nextTo[i].tower != null && !(nextTo[i].tower is DarkTower))
+                    if (nextTo[i].tower != null && !(nextTo[i].tower is DarkTower) && nextTo[i].tower.rechargeTime < nextTo[i].tower.getAttackSpeed()*4)
                     {
                         nextTo[i].tower.ticksLeft += rechargeTime * nextTo[i].tower.lvl * (upgrade1 ? 0.75f : 0.5f);
                         nextTo[i].tower.rechargeTime += rechargeTime * nextTo[i].tower.lvl * (upgrade1 ? 0.75f : 0.5f);
