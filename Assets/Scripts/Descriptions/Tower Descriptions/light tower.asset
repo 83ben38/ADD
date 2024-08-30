@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c314855411e8449a01d6e4fc5db465, type: 3}
   m_Name: light tower
   m_EditorClassIdentifier: 
-  title: 'light tower '
+  title: 'Light Tower '
   description: 'Using the blinding light of the sun, this tower creates rays of light
     between other light towers '
-  upgrade1Description: "MY EYES\t"
+  upgrade1Description: 'Intense Rays:
+
+    Rays are much more intense but only a
+    few rays are allowed. Range Decreased.'
   upgrade2Description: 
   upgrade3Description: 

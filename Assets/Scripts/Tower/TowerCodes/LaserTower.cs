@@ -22,6 +22,11 @@ public class LaserTower : TowerCode
 
     public override float getRange()
     {
+        if (upgrade1)
+        {
+            return base.getRange()+1;
+        }
+        
         return lvl + range;
     }
 
@@ -167,6 +172,11 @@ public class LaserTower : TowerCode
 
     public int maxLasers()
     {
+        if (upgrade1)
+        {
+            return lvl > 4 ? 3 : 2;
+        }
+
         switch (lvl)
         {
             case 1: return 2;
