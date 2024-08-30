@@ -35,6 +35,7 @@ public abstract class TowerCode : TowerState, ICloneable
         this.upgrade2 = upgrade2;
         this.upgrade3 = upgrade3;
         ticksLeft = getAttackSpeed();
+        rechargeTime = getAttackSpeed()-1;
     }
 
     public virtual void placedDown(TowerController tc)
