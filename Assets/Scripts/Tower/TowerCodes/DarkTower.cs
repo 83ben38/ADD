@@ -121,11 +121,12 @@ public class DarkTower : TowerCode
                 {
                     if (nextTo[i].tower != null && !(nextTo[i].tower is DarkTower))
                     {
-                        nextTo[i].tower.ticksLeft += attackSpeed * nextTo[i].tower.lvl * 0.25f;
+                        nextTo[i].tower.ticksLeft += rechargeTime * nextTo[i].tower.lvl * (upgrade1 ? 0.75f : 0.5f);
+                        nextTo[i].tower.rechargeTime += rechargeTime * nextTo[i].tower.lvl * (upgrade1 ? 0.75f : 0.5f);
                     }
                 }
-                ticksLeft = getAttackSpeed() + ticksLeft;
-                rechargeTime = getAttackSpeed() - 1;
+                ticksLeft = attackSpeed + ticksLeft;
+                rechargeTime = attackSpeed - 1;
             }
         }
     }
@@ -160,6 +161,11 @@ public class DarkTower : TowerCode
             {
                 statIncreaseAmount += nextTo[i].tower.lvl;
             }
+        }
+
+        if (upgrade1)
+        {
+            statIncreaseAmount = (int)(statIncreaseAmount * 1.5f);
         }
     }
 

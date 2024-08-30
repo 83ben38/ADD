@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c314855411e8449a01d6e4fc5db465, type: 3}
   m_Name: void tower
   m_EditorClassIdentifier: 
-  title: 'void tower '
+  title: 'Void Tower '
   description: An empty abyss that consumes the energy of other towers to enhance
     its ability to create void spheres.
-  upgrade1Description: 
+  upgrade1Description: 'Black Holes:
+
+    The void tower becomes much stronger, slowing
+    nearby towers more to increase its own power.'
   upgrade2Description: 
   upgrade3Description: 

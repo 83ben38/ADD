@@ -6,6 +6,7 @@ public class WindTower : TowerCode
 {
     private List<TowerController> buffed = new List<TowerController>();
     private List<TowerController> nextTo = new List<TowerController>();
+    private float buffValue = 1f;
     public WindTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1,upgrade2, upgrade3) {
         range = 1;
         attackSpeed = 64;
@@ -40,6 +41,7 @@ public class WindTower : TowerCode
 
     public override bool shoot()
     {
+        buffValue = getAttackSpeed() / rechargeTime;
         SoundEffectsManager.manager.playSound("wind");
         for (int i = 0; i < buffed.Count; i++)
         {
@@ -80,8 +82,8 @@ public class WindTower : TowerCode
 
         for (int i = 0; i < toBuff.Count; i++)
         {
-            toBuff[i].tower.ticksLeft -= Time.deltaTime * lvl * 64f / (upgrade1 ? toBuff.Count : 3f);
-            toBuff[i].tower.rechargeTime -= Time.deltaTime * lvl * 64f / (upgrade1 ? toBuff.Count : 3f);
+            toBuff[i].tower.ticksLeft -= Time.deltaTime * lvl * 64f / (upgrade1 ? toBuff.Count : 3f) * buffValue;
+            toBuff[i].tower.rechargeTime -= Time.deltaTime * lvl * 64f / (upgrade1 ? toBuff.Count : 3f) * buffValue;
         }
 
 
