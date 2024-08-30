@@ -28,6 +28,13 @@ public class PoisonProjectile : ProjectileCode
             target = null;
         }
         fruit.Damage(0);
+        if (upgrade1)
+        {
+            fruit.Damage(0);
+            fruit.Damage(0);
+            fruit.Damage(0);
+        }
+
         controller.StartCoroutine(hitEnemy(fruit));
         pierceLeft--;
         if (pierceLeft < 1)
@@ -37,20 +44,20 @@ public class PoisonProjectile : ProjectileCode
     }
     IEnumerator hitEnemy(FruitCode fruit)
     {
-        int k = 2;
+        int k = upgrade1 ? 1 : 2;
         if (lvl == 2)
         {
-            k = 5;
+            k = upgrade1 ? 3 : 5;
         }
 
         if (lvl == 6)
         {
-            k = 3;
+            k =  upgrade1 ? 2 : 3;
         }
 
         if (lvl == 7)
         {
-            k = 4;
+            k =  upgrade1 ? 2 : 4;
         }
 
         fruit.vulnerability+=k;

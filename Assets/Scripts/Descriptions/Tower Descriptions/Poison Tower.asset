@@ -10,12 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90c314855411e8449a01d6e4fc5db465, type: 3}
-  m_Name: Poisen Tower
+  m_Name: Poison Tower
   m_EditorClassIdentifier: 
-  title: Poison tower
+  title: Poison Tower
   description: 'Brewing one of the most dangerous concoctions known, this tower gives
     a flat damage increase against the target.  '
-  upgrade1Description: 'mayow '
+  upgrade1Description: 'Reactant Poisons:
+
+    Poison now does significantly increased
+    damage to poisoned enemies while the bonus for other towers is decreased.'
   upgrade2Description: "gamer toxin \nan extract drereived form the most toxic of
     gamers "
   upgrade3Description: 
