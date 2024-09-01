@@ -22,6 +22,11 @@ public class LaserTower : TowerCode
 
     public override float getRange()
     {
+        if (upgrade2)
+        {
+            return base.getRange() - (upgrade1 ? 1 : 0);
+        }
+
         if (upgrade1)
         {
             return base.getRange()+1;
@@ -38,7 +43,41 @@ public class LaserTower : TowerCode
     public override void roundStart()
     {
         base.roundStart();
-        if (priority[0] == this)
+        if (upgrade2)
+        {
+            
+            List<TowerController> nextTo = new List<TowerController>(controller.nextTo);
+            for (int k = 0; k < getRange()-1; k++)
+            {
+                int z = nextTo.Count;
+                for (int i = 0; i < z; i++)
+                {
+
+                    List<TowerController> nextToNextTo = nextTo[i].nextTo;
+
+                    for (int j = 0; j < nextToNextTo.Count; j++)
+                    {
+                        if (!nextTo.Contains(nextToNextTo[j]) )
+                        {
+                            nextTo.Add(nextToNextTo[j]);
+                        } 
+                    }
+                }
+            }
+
+            foreach (TowerController z in nextTo)
+            {
+                GameObject projectile = Object.Instantiate(TowerCode.projectile);
+                ProjectileController pc = projectile.GetComponent<ProjectileController>();
+                pc.code = new LaserProjectile(upgrade1, upgrade2, upgrade3, controller, z);
+                pc.code.lvl = lvl > 4 ? lvl - 2 : lvl;
+                pc.material.color = getColor();
+                pc.code.Start(pc);
+                projectiles.Add(pc);
+            }
+        }
+
+        else if (priority[0] == this)
         {
             projectiles.RemoveAll(item => item == null);
             for (int i = 0; i < priority.Count; i++)

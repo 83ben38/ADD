@@ -45,7 +45,7 @@ public class LaserProjectile : ProjectileCode
 
     public override void tick(ProjectileController controller)
     {
-        ticksLeft -= Time.deltaTime * 64f * (upgrade1 ? lvl/2f : 1);
+        ticksLeft -= Time.deltaTime * 64f * (upgrade1 ? lvl/2f : 1) * (upgrade2 ? .5f : 1);
         while (ticksLeft <= 0)
         {
             shoot();
@@ -62,10 +62,14 @@ public class LaserProjectile : ProjectileCode
         {
             hit.collider.gameObject.GetComponent<FruitCode>().Damage(lvl * (upgrade1 ? 3 : 1));
         }
-        Physics.Raycast(pos4, dir, out hit, dir.magnitude, LayerMask.GetMask("Enemy"));
-        if (hit.collider != null)
+
+        if (!upgrade2)
         {
-            hit.collider.gameObject.GetComponent<FruitCode>().Damage(lvl);
+            Physics.Raycast(pos4, dir, out hit, dir.magnitude, LayerMask.GetMask("Enemy"));
+            if (hit.collider != null)
+            {
+                hit.collider.gameObject.GetComponent<FruitCode>().Damage(lvl * (upgrade1 ? 3 : 1));
+            }
         }
     }
 }
