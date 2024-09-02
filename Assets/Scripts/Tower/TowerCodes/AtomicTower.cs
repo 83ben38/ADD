@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class AtomicTower : TowerCode
 {
-    private GameObject[] projectiles;
+    private List<GameObject> projectiles;
 
     public AtomicTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
-        projectiles = new GameObject[] { null };
+        projectiles = new List<GameObject>();
     }
 
     public override void MouseClick(TowerController controller)
@@ -16,7 +16,7 @@ public class AtomicTower : TowerCode
         
         if (upgrade1)
         {
-            for (int i = 0; i < projectiles.Length; i++)
+            for (int i = 0; i < projectiles.Count; i++)
             {
                 ((AtomicProjectile)projectiles[i].GetComponent<ProjectileController>().code).clockwise =
                     !((AtomicProjectile)projectiles[i].GetComponent<ProjectileController>().code).clockwise;
@@ -26,39 +26,58 @@ public class AtomicTower : TowerCode
 
     public override void tick()
     {
-        
+        if (upgrade3)
+        {
+            base.tick();
+        }
+    }
+
+    public override bool shoot()
+    {
+        GameObject projectile = Object.Instantiate(TowerCode.projectile);
+        ProjectileController pc = projectile.GetComponent<ProjectileController>();
+        pc.code = new AtomicProjectile(0,controller.transform.position,upgrade1,upgrade2,upgrade3);
+        pc.code.lvl = lvl > 1 ? lvl : 2;
+        projectile.transform.position = controller.towerVisual.shoot(rechargeTime);
+        pc.material.color = getColor();
+        pc.code.Start(pc);
+        projectiles.Add(projectile);
+        return true;
     }
 
     public override void roundStart()
     {
         base.roundStart();
-        projectiles = new GameObject[lvl];
-        // create projectiles
-        for (int i = 0; i < lvl; i++)
+        if (!upgrade3)
         {
-            projectiles[i] = Object.Instantiate(projectile);
-            ProjectileController pc = projectiles[i].GetComponent<ProjectileController>();
-            pc.code = new AtomicProjectile(i,controller.transform.position,upgrade1,upgrade2,upgrade3);
-            pc.code.lvl = lvl > 2 ? lvl : 2;
-            projectiles[i].transform.position = controller.towerVisual.shoot(rechargeTime);
-            pc.material.color = getColor();
-            pc.code.Start(pc);
-            if (upgrade2)
+            projectiles = new List<GameObject>(lvl);
+            // create projectiles
+            for (int i = 0; i < lvl; i++)
             {
-                for (int j = 0; j < (lvl > 2 ? lvl : 2); j++)
+                projectiles[i] = Object.Instantiate(projectile);
+                ProjectileController pc = projectiles[i].GetComponent<ProjectileController>();
+                pc.code = new AtomicProjectile(i, controller.transform.position, upgrade1, upgrade2, upgrade3);
+                pc.code.lvl = lvl > 2 ? lvl : 2;
+                projectiles[i].transform.position = controller.towerVisual.shoot(rechargeTime);
+                pc.material.color = getColor();
+                pc.code.Start(pc);
+                if (upgrade2)
                 {
-                    GameObject go = Object.Instantiate(projectile);
-                    ProjectileController pc1 = go.GetComponent<ProjectileController>();
-                    pc1.code = new AtomicProjectile(j,(AtomicProjectile)pc.code,upgrade1,upgrade2,upgrade3);
-                    pc1.code.lvl = lvl > 2 ? lvl : 2;
-                    go.transform.position = projectiles[i].transform.position;
-                    go.transform.localScale *= 0.5f;
-                    pc1.material.color = getColor();
-                    pc1.code.Start(pc1);
+                    for (int j = 0; j < (lvl > 2 ? lvl : 2); j++)
+                    {
+                        GameObject go = Object.Instantiate(projectile);
+                        ProjectileController pc1 = go.GetComponent<ProjectileController>();
+                        pc1.code = new AtomicProjectile(j, (AtomicProjectile)pc.code, upgrade1, upgrade2, upgrade3);
+                        pc1.code.lvl = lvl > 2 ? lvl : 2;
+                        go.transform.position = projectiles[i].transform.position;
+                        go.transform.localScale *= 0.5f;
+                        pc1.material.color = getColor();
+                        pc1.code.Start(pc1);
+                    }
                 }
             }
         }
-        
+
     }
 
 

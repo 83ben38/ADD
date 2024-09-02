@@ -33,7 +33,10 @@ public class AtomicProjectile : ProjectileCode
             new Vector3(3,0,0)
         }[num]*MapCreator.scale;
         this.startPos.y += aboveAmount;
-        
+        if (upgrade3)
+        {
+            rotating = true;
+        }
     }
     public AtomicProjectile(int num, AtomicProjectile center,bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1,upgrade2, upgrade3)
     {
@@ -70,7 +73,7 @@ public class AtomicProjectile : ProjectileCode
         }
         else
         {
-            time += Time.deltaTime * (upgrade2 ? 1 :lvl) * (clockwise ? 1 : -1) * (center == null ? 1 : 4);
+            time += Time.deltaTime * (upgrade2 ? 1 : lvl) * (clockwise ? 1 : -1) * (center == null ? 1 : 4);
             int offset = new int[]
             {
                 2,
@@ -93,7 +96,18 @@ public class AtomicProjectile : ProjectileCode
                 xPosition *= 2;
                 zPosition *= 2;
             }
-            
+
+            if (upgrade3)
+            {
+                xPosition *= time;
+                zPosition *= time;
+                if (!upgrade2)
+                {
+                    xPosition /= lvl;
+                    zPosition /= lvl;
+                }
+            }
+
             controller.transform.position = new Vector3((float)xPosition, 0, (float)zPosition)*(MapCreator.scale*(center==null?1:0.5f)) + (center?.currentPos ?? centerPos);
             currentPos = controller.transform.position;
         }
