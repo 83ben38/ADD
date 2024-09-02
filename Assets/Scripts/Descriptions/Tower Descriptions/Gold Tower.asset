@@ -15,6 +15,12 @@ MonoBehaviour:
   title: Gold Tower
   description: 'The manifestaion of luck and wealth, after three rounds this tower
     upgrades itself and has a chance to become a new tower '
-  upgrade1Description: 'MONEY '
-  upgrade2Description: 
+  upgrade1Description: 'Long Term Investments:
+
+    This tower puts investments in
+    for longer. It upgrades itself two times every seven rounds.'
+  upgrade2Description: 'Midas Touch:
+
+    Every 4 turns this tower spawns a tower
+    of equal level on a empty spot next to it.'
   upgrade3Description: 

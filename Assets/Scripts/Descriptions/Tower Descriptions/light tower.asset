@@ -19,5 +19,8 @@ MonoBehaviour:
 
     Rays are much more intense but only a
     few rays are allowed. Range Decreased.'
-  upgrade2Description: 
+  upgrade2Description: 'Sun Beams:
+
+    The light tower channels the power of the
+    sun, sending beams in every direction.'
   upgrade3Description: 

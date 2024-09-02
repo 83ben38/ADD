@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO.IsolatedStorage;
 using UnityEngine;
+using UnityEngine.Timeline;
 
 public class GoldTower : TowerCode
 {
@@ -30,18 +32,45 @@ public class GoldTower : TowerCode
     {
         base.roundStart();
         turns++;
-        if (turns == 3)
+        if (turns == ((upgrade1 ? 7 : 3) + (upgrade2 ? 1 : 0)))
         {
             int[] towerCodes = SelectionData.data.towerCodes;
             TowerCode t = TowerCodeFactory.getTowerCode(towerCodes[Random.Range(0, towerCodes.Length)]);
-            t.lvl = lvl + 1;
+            t.lvl = lvl + (upgrade1 ? 2 : 1) + (upgrade2 ? -1 : 0);
             if (t.lvl > 7)
             {
                 t.lvl=7;
             }
-            controller.tower = t;
-            controller.state = t;
-            controller.towerVisual.updateTower();
+
+            if (upgrade2)
+            {
+                List<TowerController> nextTo = controller.nextTo;
+                foreach (TowerController tc in nextTo)
+                {
+                    if (tc.tower == null)
+                    {
+                        tc.block = true;
+                        if (PathfinderManager.manager.pathFind())
+                        {
+                            tc.StartCoroutine(InGameState.changeTowerStatic(tc ,true));
+                            tc.setBaseColor(ColorManager.manager.tower,ColorManager.manager.towerHighlighted);
+                            tc.tower = t;
+                            tc.tower.placedDown(controller);
+                            tc.state = t;
+                            tc.towerVisual.updateTower();
+                            turns = 0;
+                            return;
+                        }
+                        tc.block = false;
+                    }
+                }
+            }
+            else
+            {
+                controller.tower = t;
+                controller.state = t;
+                controller.towerVisual.updateTower();
+            }
         }
     }
 
