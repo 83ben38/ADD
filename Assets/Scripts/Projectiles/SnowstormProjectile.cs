@@ -9,7 +9,7 @@ public class SnowstormProjectile : ProjectileCode
     public float radius;
     public SnowstormProjectile(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
-        damage = 10;
+        damage = 4;
         pierce = 3;
         radius = .5f + (lvl * 0.25f);
         
