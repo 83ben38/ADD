@@ -15,6 +15,15 @@ MonoBehaviour:
   title: Snow Tower
   description: This tower shoots giant snow balls in a straight line, gaining mass
     and damage as they go.
-  upgrade1Description: 
-  upgrade2Description: 
-  upgrade3Description: 
+  upgrade1Description: 'Reverse Snowballs:
+
+    Snow balls decrease in size as they
+    go. Starting size increased.'
+  upgrade2Description: 'Splitting Snowballs:
+
+    Snow balls split into two when
+    they get big enough. Max size decreased.'
+  upgrade3Description: 'Snowstorm:
+
+    Once per round, cilck on the snow tower to
+    summon a snowstorm that damages and slows enemies. Attack speed decreased.'
