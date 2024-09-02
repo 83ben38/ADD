@@ -20,5 +20,8 @@ MonoBehaviour:
     By the contradictory power of quantum
     mechanics you can now change the orbital direction of the towers'' beta particles
     by clicking on the tower. '
-  upgrade2Description: cancer
+  upgrade2Description: 'Molecular Orbs:
+
+    More orbs are added that rotate around
+    orbs. Rotation Speed Reduced.'
   upgrade3Description: 

@@ -8,8 +8,11 @@ using UnityEngine;
 public class AtomicProjectile : ProjectileCode
 {
     private int pathNum;
+    [SerializeField]
+    private AtomicProjectile center;
     private Vector3 startPos;
     private Vector3 centerPos;
+    private Vector3 currentPos;
     private float time = 0f;
     private static float aboveAmount = 1f;
     private bool rotating = false;
@@ -30,6 +33,23 @@ public class AtomicProjectile : ProjectileCode
             new Vector3(3,0,0)
         }[num]*MapCreator.scale;
         this.startPos.y += aboveAmount;
+        
+    }
+    public AtomicProjectile(int num, AtomicProjectile center,bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1,upgrade2, upgrade3)
+    {
+        pathNum = num;
+        this.center = center;
+        centerPos = center.centerPos;
+        startPos = center.startPos + new Vector3[]
+        {
+            new Vector3(-1,0,0),
+            new Vector3(1,0,0),
+            new Vector3(0,0,1),
+            new Vector3(0, 0,-1),
+            new Vector3(-2,0,0),
+            new Vector3(2,0,0),
+            new Vector3(3,0,0)
+        }[num]*MapCreator.scale*0.5f;
     }
 
     public override void tick(ProjectileController controller)
@@ -50,7 +70,7 @@ public class AtomicProjectile : ProjectileCode
         }
         else
         {
-            time += Time.deltaTime * lvl * (clockwise ? 1 : -1);
+            time += Time.deltaTime * (upgrade2 ? 1 :lvl) * (clockwise ? 1 : -1) * (center == null ? 1 : 4);
             int offset = new int[]
             {
                 2,
@@ -74,7 +94,8 @@ public class AtomicProjectile : ProjectileCode
                 zPosition *= 2;
             }
             
-            controller.transform.position = new Vector3((float)xPosition, 0, (float)zPosition)*MapCreator.scale + centerPos;
+            controller.transform.position = new Vector3((float)xPosition, 0, (float)zPosition)*(MapCreator.scale*(center==null?1:0.5f)) + (center?.currentPos ?? centerPos);
+            currentPos = controller.transform.position;
         }
 
         Collider[] hit = Physics.OverlapSphere(controller.transform.position, .25f*MapCreator.scale, LayerMask.GetMask("Enemy"));
@@ -102,7 +123,6 @@ public class AtomicProjectile : ProjectileCode
 
     public override void hit(FruitCode fruit, ProjectileController controller)
     {
-        SoundEffectsManager.manager.playSound("atomic");
         if (pierced.Contains(fruit))
         {
             
@@ -114,6 +134,7 @@ public class AtomicProjectile : ProjectileCode
 
     public override int getDamage()
     {
+        
         switch (lvl)
         {
             case 5: return 8;
