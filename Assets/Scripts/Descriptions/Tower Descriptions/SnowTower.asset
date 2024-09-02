@@ -10,14 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90c314855411e8449a01d6e4fc5db465, type: 3}
-  m_Name: Death Tower
+  m_Name: SnowTower
   m_EditorClassIdentifier: 
-  title: 'Death tower '
-  description: This tower feeds off death and decay bringing enemies back from the
-    dead as allies.
-  upgrade1Description: 'Lych:
-
-    The death tower now drains the life force from
-    fruits inside its range.'
+  title: Snow Tower
+  description: This tower shoots giant snow balls in a straight line, gaining mass
+    and damage as they go.
+  upgrade1Description: 
   upgrade2Description: 
   upgrade3Description: 

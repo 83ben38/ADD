@@ -21,7 +21,7 @@ public class DeathProjectile : ProjectileCode
 
     public override int getPierce()
     {
-        return lvl * lvl * 3;
+        return lvl * lvl * 3 * (upgrade1 ? 2 : 1);
     }
 
     public override void Start(ProjectileController controller)
