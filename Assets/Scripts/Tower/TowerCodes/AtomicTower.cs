@@ -42,12 +42,27 @@ public class AtomicTower : TowerCode
         pc.material.color = getColor();
         pc.code.Start(pc);
         projectiles.Add(projectile);
+        if (upgrade2)
+        {
+            for (int j = 0; j < (lvl > 2 ? lvl : 2); j++)
+            {
+                GameObject go = Object.Instantiate(projectile);
+                ProjectileController pc1 = go.GetComponent<ProjectileController>();
+                pc1.code = new AtomicProjectile(j, (AtomicProjectile)pc.code, upgrade1, upgrade2, upgrade3);
+                pc1.code.lvl = lvl > 2 ? lvl : 2;
+                go.transform.position = projectile.transform.position;
+                go.transform.localScale *= 0.5f;
+                pc1.material.color = getColor();
+                pc1.code.Start(pc1);
+            }
+        }
         return true;
     }
 
     public override void roundStart()
     {
         base.roundStart();
+        projectiles = new List<GameObject>();
         if (!upgrade3)
         {
             projectiles = new List<GameObject>(lvl);

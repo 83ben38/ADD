@@ -52,7 +52,11 @@ public class AtomicProjectile : ProjectileCode
             new Vector3(-2,0,0),
             new Vector3(2,0,0),
             new Vector3(3,0,0)
-        }[num]*MapCreator.scale*0.5f;
+        }[num]*(MapCreator.scale*0.5f);
+        if (upgrade3)
+        {
+            rotating = true;
+        }
     }
 
     public override void tick(ProjectileController controller)
@@ -97,7 +101,7 @@ public class AtomicProjectile : ProjectileCode
                 zPosition *= 2;
             }
 
-            if (upgrade3)
+            if (upgrade3 && center == null) 
             {
                 xPosition *= time;
                 zPosition *= time;
