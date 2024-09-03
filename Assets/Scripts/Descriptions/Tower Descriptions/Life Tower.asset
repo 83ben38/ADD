@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c314855411e8449a01d6e4fc5db465, type: 3}
   m_Name: Life Tower
   m_EditorClassIdentifier: 
-  title: 'Life tower '
+  title: 'Life Tower '
   description: 'A conduit for the primoridial energy of life. This tower creates
     weak but numerous living automatons that fire on the enemy. '
-  upgrade1Description: "Increased life span: \nThanks to recent medical advancements
+  upgrade1Description: "Increased Life Span: \nThanks to recent medical advancements
     spawned automatons now live longer but take longer to make."
   upgrade2Description: 'its alive! ITS ALIVE !!!! '
   upgrade3Description: 

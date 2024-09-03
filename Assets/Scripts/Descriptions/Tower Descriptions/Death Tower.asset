@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c314855411e8449a01d6e4fc5db465, type: 3}
   m_Name: Death Tower
   m_EditorClassIdentifier: 
-  title: 'Death tower '
+  title: 'Death Tower '
   description: This tower feeds off death and decay bringing enemies back from the
     dead as allies.
   upgrade1Description: 'Lych:

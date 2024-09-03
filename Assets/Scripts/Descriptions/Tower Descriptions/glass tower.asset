@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c314855411e8449a01d6e4fc5db465, type: 3}
   m_Name: glass tower
   m_EditorClassIdentifier: 
-  title: 'glass tower '
+  title: 'Glass Tower '
   description: 'Sporting a carefully honed glass lens this tower can concentrate
     diffused light and allows towers to see enemies from further away. '
   upgrade1Description: 

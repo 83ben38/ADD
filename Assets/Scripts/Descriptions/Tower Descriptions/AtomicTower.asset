@@ -24,4 +24,7 @@ MonoBehaviour:
 
     More orbs are added that rotate around
     orbs. Rotation Speed Reduced.'
-  upgrade3Description: 
+  upgrade3Description: 'Atomic Spiral:
+
+    The towers orbs now spiral around the
+    tower, getting further away as time goes on.'
