@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO.IsolatedStorage;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 public class EarthProjectile : ProjectileCode
 {
@@ -32,6 +35,40 @@ public class EarthProjectile : ProjectileCode
         for (int i = 0; i < hit.Length; i++)
         {
             this.hit(hit[i].gameObject.GetComponent<FruitCode>(), controller);
+        }
+    }
+
+    public override void hit(FruitCode fruit, ProjectileController controller)
+    {
+        if (pierced.Contains(fruit))
+        {
+            return;
+        }
+        pierced.Add(fruit);
+        if (fruit.Equals(target))
+        {
+            target = null;
+        }
+
+        fruit.Damage(getDamage());
+        pierceLeft--;
+        if (upgrade2)
+        {
+            controller.StartCoroutine(pushBack(fruit));
+        }
+
+        if (pierceLeft < 1)
+        {
+            Object.Destroy(controller.gameObject);
+        }
+    }
+
+    public IEnumerator pushBack(FruitCode fruit)
+    {
+        for (float i = 0; i < 0.125f; i+=Time.deltaTime)
+        {
+            fruit.transform.position += move * ((Time.deltaTime) / (float)Math.Log(fruit.maxHp,8));
+            yield return null;
         }
     }
 }

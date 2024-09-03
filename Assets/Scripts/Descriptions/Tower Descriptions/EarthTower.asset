@@ -17,5 +17,10 @@ MonoBehaviour:
   upgrade1Description: 'Tectonic Fractures:
 
     It now throws boulders in four directions.'
-  upgrade2Description: 
-  upgrade3Description: 
+  upgrade2Description: 'Unstoppable Boulders:
+
+    Boulders now push back enemies.'
+  upgrade3Description: 'Earthquake:
+
+    Click on the tower to summon an earthquake
+    of balls, once  per round.'

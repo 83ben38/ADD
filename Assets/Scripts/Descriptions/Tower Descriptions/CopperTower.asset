@@ -23,5 +23,4 @@ MonoBehaviour:
     charge capacity. One quarter of all towers collective charge capacity is lost
     to waste heat."
   upgrade3Description: "Charge mode: \nClick on the tower to change between charge
-    mode and release mode. Much more charge is gained during charge mode, but none
-    is gained during release mode."
+    mode and release mode. Switches to release mode after reaching full charge."
