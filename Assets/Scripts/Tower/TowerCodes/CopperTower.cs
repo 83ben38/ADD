@@ -9,6 +9,7 @@ public class CopperTower : TowerCode
     private static int sharedCharges = 0;
     private bool contributed = false;
     private static int sharedMaxCharges = 0;
+    private bool chargeMode = true;
     private List<TowerController> nextTo = new List<TowerController>();
     private List<CopperProjectile> projectiles = new List<CopperProjectile>();
     private GameObject chargeObject;
@@ -27,58 +28,69 @@ public class CopperTower : TowerCode
 
     public override void MouseClick(TowerController controller)
     {
-        
+        chargeMode = !chargeMode;
     }
     
 
     public override void tick()
     {
-        
 
-        ticksLeft -= lvl*Time.deltaTime*32f;
-        if (ticksLeft <= 0)
+        if (!upgrade3 || chargeMode)
         {
-            ticksLeft += getAttackSpeed();
-            charges++;
-        }
-        for (int i = 0; i < nextTo.Count; i++)
-        {
-            if (nextTo[i].tower != null && nextTo[i].tower.ticksLeft < 0)
+            ticksLeft -= lvl * Time.deltaTime * 32f * (upgrade3 ? 2 : 1);
+            if (ticksLeft <= 0)
             {
-                float chargeFactor = upgrade2 ? lvl / 6f : 1f;
-                if (upgrade1 && nextTo[i].tower is LightningTower)
+                ticksLeft += getAttackSpeed();
+                charges++;
+            }
+
+            for (int i = 0; i < nextTo.Count; i++)
+            {
+                if (nextTo[i].tower != null && nextTo[i].tower.ticksLeft < 0)
                 {
-                    ticksLeft -= nextTo[i].tower.lvl*Time.deltaTime*64f*chargeFactor;
+                    float chargeFactor = upgrade2 ? lvl / 6f : 1f;
+                    if (upgrade1 && nextTo[i].tower is LightningTower)
+                    {
+                        ticksLeft -= nextTo[i].tower.lvl * Time.deltaTime * 64f * chargeFactor;
+                    }
+
+                    ticksLeft -= nextTo[i].tower.lvl * Time.deltaTime * 64f * chargeFactor;
+                    if (ticksLeft <= 0)
+                    {
+                        ticksLeft += getAttackSpeed();
+                        charges++;
+                    }
+                }
+            }
+
+            if (upgrade2)
+            {
+                if (!contributed)
+                {
+                    sharedMaxCharges += lvl * 15 * (upgrade3 ? 2 : 1);
+                    contributed = true;
                 }
 
-                ticksLeft -= nextTo[i].tower.lvl*Time.deltaTime*64f*chargeFactor;
-                if (ticksLeft <= 0)
+                sharedCharges += charges;
+                charges = 0;
+                if (sharedCharges > sharedMaxCharges)
                 {
-                    ticksLeft += getAttackSpeed();
-                    charges++;
+                    chargeMode = false;
+                    sharedCharges = sharedMaxCharges;
                 }
             }
-        }
-        if (upgrade2)
-        {
-            if (!contributed)
+            else if (charges > lvl * 20 * (upgrade3 ? 2 : 1))
             {
-                sharedMaxCharges += lvl * 15;
-                contributed = true;
-            }
-            
-            sharedCharges += charges;
-            charges = 0;
-            if (sharedCharges > sharedMaxCharges)
-            {
-                sharedCharges = sharedMaxCharges;
+                chargeMode = false;
+                charges = lvl * 20 * (upgrade3 ? 2 : 1);
             }
         }
-        else if (charges > lvl * 20)
+
+        if (!upgrade3 || !chargeMode)
         {
-            charges = lvl * 20;
+            chargeMode = !shoot();
         }
-        shoot();
+
         if (upgrade2)
         {
             chargeObject.transform.localScale =
@@ -87,7 +99,7 @@ public class CopperTower : TowerCode
         else
         {
             chargeObject.transform.localScale =
-                Vector3.one * ((.25f+(charges / (lvl * 30f))) * MapCreator.scale);
+                Vector3.one * ((.25f+(charges / (lvl * 30f * (upgrade3 ? 2 : 1)))) * MapCreator.scale);
         }
     }
 

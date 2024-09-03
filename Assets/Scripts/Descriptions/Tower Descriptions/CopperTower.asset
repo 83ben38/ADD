@@ -22,4 +22,6 @@ MonoBehaviour:
   upgrade2Description: "Power grid: \nAll copper towers share the same collective
     charge capacity. One quarter of all towers collective charge capacity is lost
     to waste heat."
-  upgrade3Description: 
+  upgrade3Description: "Charge mode: \nClick on the tower to change between charge
+    mode and release mode. Much more charge is gained during charge mode, but none
+    is gained during release mode."

@@ -10,7 +10,7 @@ public class CopperProjectile : ProjectileCode
     public bool destroy = false;
     public override int getDamage()
     {
-        return lvl;
+        return lvl * (upgrade3 ? 2 : 1);
     }
 
     public void doDamage()
