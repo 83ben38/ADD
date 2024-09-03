@@ -10,6 +10,36 @@ public class InertiaTower : TowerCode
         range = 2.5f;
         attackSpeed = 128;
     }
+
+    public override bool shoot()
+    {
+        if (upgrade1)
+        {
+            Ray ray = MouseManager.manager.cameraTransform.ScreenPointToRay(UnityEngine.Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, 1000))
+            {
+                Vector3 targetPos = (hit.point - controller.transform.position).normalized;
+                targetPos.y = -MapCreator.scale;
+                GameObject projectile = Object.Instantiate(TowerCode.projectile);
+                ProjectileController pc = projectile.GetComponent<ProjectileController>();
+                pc.code = create();
+                pc.code.lvl = lvl > 1 ? lvl : 2;
+                pc.code.move =  targetPos * pc.code.lvl;
+                projectile.transform.position = controller.towerVisual.shoot(rechargeTime);
+                pc.material.color = getColor();
+                pc.code.Start(pc);
+                return true;
+            }
+
+            return false;
+        }
+        else
+        {
+            return base.shoot();
+        }
+    }
+
     public override void tick()
     {
         if (ticksLeft > 0)

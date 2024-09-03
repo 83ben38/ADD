@@ -48,7 +48,7 @@ public abstract class ProjectileCode
         {
             move = lvl * speed * (target.transform.position - controller.transform.position).normalized;
         }
-        else
+        else if (controller.transform.position.y <= 1)
         {
             move.y = 0;
         }

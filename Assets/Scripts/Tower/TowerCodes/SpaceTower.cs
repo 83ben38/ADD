@@ -31,7 +31,10 @@ public class SpaceTower : TowerCode
 
     public override void MouseClick(TowerController controller)
     {
-        MouseManager.manager.input.Mouse.LeftClick.performed += setPos;
+        if (upgrade1)
+        {
+            MouseManager.manager.input.Mouse.LeftClick.performed += setPos;
+        }
     }
 
     public void setPos(InputAction.CallbackContext c)

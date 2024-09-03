@@ -15,7 +15,7 @@ MonoBehaviour:
   title: 'Water Tower '
   description: This tower forms spheres of pure elemental water that detonate on
     impact causing AOE damage.
-  upgrade1Description: 'Increased conductivity:
+  upgrade1Description: 'Increased Conductivity:
 
     Increses damage when a water
     and lightning projectile collide.
@@ -24,5 +24,8 @@ MonoBehaviour:
 
 
 '
-  upgrade2Description: 
+  upgrade2Description: 'Recursive Explosions:
+
+    Shoots an explosion that splits
+    into 6 more.'
   upgrade3Description: 
