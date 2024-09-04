@@ -42,7 +42,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a070a3742813f4719b98927ee39c3010, type: 2}
   - {fileID: 11400000, guid: a0b2c6f25ca5a4ae3a0f43b8735c226f, type: 2}
   - {fileID: 11400000, guid: f649243731b7f4ba9a362af58eb48852, type: 2}
-  freeplayWaves: []
+  freeplayWaves:
+  - {fileID: 11400000, guid: d76d52a20c5c244cfb9d5ac6a568945e, type: 2}
+  - {fileID: 11400000, guid: 6aa2a772b7d644c96916caa9f9d4d401, type: 2}
+  - {fileID: 11400000, guid: 1891b82c7d6c343a69eee09b8388b677, type: 2}
+  - {fileID: 11400000, guid: 8c7d0c559acd64fc2b988f3cc938a3a2, type: 2}
+  - {fileID: 11400000, guid: 4f469aed0a8044729b6301836bc9608b, type: 2}
   maxLives: 100
   awardMultiplier: 3
   difficultyName: Ripe
