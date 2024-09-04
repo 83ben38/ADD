@@ -28,4 +28,7 @@ MonoBehaviour:
 
     Shoots an explosion that splits
     into 6 more.'
-  upgrade3Description: 
+  upgrade3Description: 'Water Pump:
+
+    Click on the tower to pump more water into
+    the next shot.'
