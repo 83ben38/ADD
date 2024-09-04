@@ -19,5 +19,8 @@ MonoBehaviour:
 
     The tower now constantly fires
     towards the mouse.'
-  upgrade2Description: 
+  upgrade2Description: 'Weakening Attacks:
+
+    Hitting the same enemy multiple times
+    in a row deals extra damage to that enemy.'
   upgrade3Description: 
