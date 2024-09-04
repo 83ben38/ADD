@@ -6,6 +6,7 @@ public class InertiaProjectile : ProjectileCode
 {
     public static FruitCode lastHit;
     public static int damageCombo = -1;
+    public static List<ProjectileCode> affected =  new List<ProjectileCode>();
     public InertiaProjectile(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
         pierce = 1;
@@ -21,10 +22,11 @@ public class InertiaProjectile : ProjectileCode
             foreach (var t in hit)
             {
                 ProjectileCode c = t.GetComponent<ProjectileController>().code;
-                if (c.move.magnitude < c.lvl * c.speed * 2)
+                if (!affected.Contains(c) && c is not InertiaProjectile)
                 {
                     c.damage++;
-                    c.move *= 1.1f;
+                    c.move *= 2f;
+                    Object.Destroy(controller.gameObject);
                 }
             }
         }

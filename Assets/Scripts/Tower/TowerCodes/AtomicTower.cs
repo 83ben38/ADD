@@ -69,7 +69,7 @@ public class AtomicTower : TowerCode
             // create projectiles
             for (int i = 0; i < lvl; i++)
             {
-                projectiles[i] = Object.Instantiate(projectile);
+                projectiles.Add(Object.Instantiate(projectile));
                 ProjectileController pc = projectiles[i].GetComponent<ProjectileController>();
                 pc.code = new AtomicProjectile(i, controller.transform.position, upgrade1, upgrade2, upgrade3);
                 pc.code.lvl = lvl > 2 ? lvl : 2;
