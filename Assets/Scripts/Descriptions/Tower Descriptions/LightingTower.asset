@@ -15,7 +15,11 @@ MonoBehaviour:
   title: Lighting Tower
   description: This tower shoots thunder bolts of electrical energy that strikes
     multiple targets in a chain.
-  upgrade1Description: "Lightning storm: \nThrows more bolts per level. \nArc length
+  upgrade1Description: "Lightning Storm: \nThrows more bolts per level. \nArc length
     reduced."
-  upgrade2Description: 'thunder strike '
+  upgrade2Description: 'Thunder Strike:
+
+    Click on the lightning tower, dealing
+    high damage to enemies in the affected spot. Can be used once per round. Attack
+    speed reduced.'
   upgrade3Description: 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO.IsolatedStorage;
 using UnityEngine;
 
 public class DeathTower : TowerCode
@@ -9,7 +10,7 @@ public class DeathTower : TowerCode
     private List<pathData> rangePositions;
     private FruitCode target;
     private pathData targetData;
-    private LineRenderer lineRenderer;
+    
     public class pathData
     {
         public Vector3 pos;
@@ -89,10 +90,6 @@ public class DeathTower : TowerCode
             if (ticksLeft <= 0)
             {
                 ticksLeft += 0.125f;
-                if (lineRenderer != null)
-                {
-                    Object.Destroy(lineRenderer);
-                }
 
                 if (target != null &&
                     (controller.transform.position - target.transform.position).magnitude > getRange())
@@ -121,7 +118,7 @@ public class DeathTower : TowerCode
                     target.Damage(1);
                     if (target != null)
                     {
-                        lineRenderer = new GameObject("Death Lifeforce").AddComponent<LineRenderer>();
+                        LineRenderer lineRenderer = new GameObject("Death Lifeforce").AddComponent<LineRenderer>();
                         lineRenderer.material.color = getColor();
                         lineRenderer.startWidth = 0.1f;
                         lineRenderer.endWidth = 0.1f;
@@ -134,11 +131,22 @@ public class DeathTower : TowerCode
                         lineRenderer.generateLightingData = true;
                         lineRenderer.transform.SetParent(controller.transform);
                         targetData = new pathData(target);
+                        controller.StartCoroutine(delete(lineRenderer));
                     }
                 }
             }
         }
     }
+
+    public IEnumerator delete(LineRenderer delete)
+    {
+        for (float i = 0; i < .125f; i+=Time.deltaTime)
+        {
+            yield return null;
+        }
+        Object.Destroy(delete);
+    }
+    
 
     public override ProjectileCode create()
     {
