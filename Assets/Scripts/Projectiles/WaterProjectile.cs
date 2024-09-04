@@ -26,7 +26,7 @@ public class WaterProjectile : ProjectileCode
     {
         if (damage == 2 && upgrade1)
         {
-            Collider[] hitProjectiles = Physics.OverlapSphere(controller.transform.position, .25f * explosionAmount * MapCreator.scale);
+            Collider[] hitProjectiles = Physics.OverlapSphere(controller.transform.position, .25f * explosionAmount * MapCreator.scale, LayerMask.GetMask("Projectile"));
             for (int i = 0; i < hitProjectiles.Length; i++)
             {
                 ProjectileController pc = hitProjectiles[i].GetComponent<ProjectileController>();
