@@ -1915,13 +1915,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableDifficulties:
-  - {fileID: 11400000, guid: 19940148451dc7e4cbdb0a9d9131e18d, type: 2}
-  - {fileID: 11400000, guid: b96bccabab5d1a74d9cc8cdb6497fccf, type: 2}
+  - {fileID: 11400000, guid: bb16e8d3a27c44a4ea4f6f1d215162e6, type: 2}
   - {fileID: 11400000, guid: acc5edf47378140a1a07e9b240110785, type: 2}
   - {fileID: 11400000, guid: 3537939224aea494c8ee86d5f54477ba, type: 2}
-  - {fileID: 11400000, guid: bb16e8d3a27c44a4ea4f6f1d215162e6, type: 2}
   xDimensions: 3
-  yDimensions: 2
+  yDimensions: 1
   buttonObject: {fileID: 1003852782}
   starObject: {fileID: 1993208591}
   backButton: {fileID: 424727957}
@@ -4687,6 +4685,8 @@ MonoBehaviour:
   background: {r: 0, g: 0, b: 0, a: 0}
   tower: {r: 0.49019608, g: 0.49019608, b: 0, a: 1}
   towerHighlighted: {r: 1, g: 1, b: 0.49019608, a: 1}
+  structure: {r: 0, g: 0, b: 0, a: 0}
+  structureHighlighted: {r: 0, g: 0, b: 0, a: 0}
   earthTower: {r: 0.745283, g: 0.45438078, b: 0, a: 1}
   iceTower: {r: 0, g: 0.9620137, b: 1, a: 1}
   fireTower: {r: 1, g: 0, b: 0, a: 1}
@@ -4705,6 +4705,8 @@ MonoBehaviour:
   inertiaTower: {r: 0, g: 0, b: 0, a: 0}
   glassTower: {r: 0, g: 0, b: 0, a: 0}
   copperTower: {r: 0, g: 0, b: 0, a: 0}
+  snowTower: {r: 0, g: 0, b: 0, a: 0}
+  volcanoTower: {r: 0, g: 0, b: 0, a: 0}
   projectile: {fileID: 6165706959806861308, guid: 0f7785055af1ec14585430c61af7807c,
     type: 3}
   availableColorSchemes: []
