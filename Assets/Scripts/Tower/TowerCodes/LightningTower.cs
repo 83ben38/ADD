@@ -36,7 +36,7 @@ public class LightningTower : TowerCode
         Vector3 v3 = hit.transform.position;
         v3.y = MapCreator.scale;
         Collider[] hits = Physics.OverlapSphere(v3, MapCreator.scale, LayerMask.GetMask("Enemy"));
-        for (int i = 0; i < hits.Length && i < 1; i++)
+        for (int i = 0; i < hits.Length; i++)
         {
             hits[i].gameObject.GetComponent<FruitCode>().Damage(25*lvl*lvl);
         }
