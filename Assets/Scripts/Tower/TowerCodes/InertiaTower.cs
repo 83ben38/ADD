@@ -45,7 +45,7 @@ public class InertiaTower : TowerCode
         if (ticksLeft > 0)
         {
             ticksLeft -= Time.deltaTime*accelerationFactor;
-            accelerationFactor += 8 * Time.deltaTime * lvl;
+            accelerationFactor += (upgrade3 ? 6 : 8) * Time.deltaTime * lvl;
         }
 
         if (ticksLeft <= 0)

@@ -22,5 +22,8 @@ MonoBehaviour:
   upgrade2Description: 'Weakening Attacks:
 
     Hitting the same enemy multiple times
-    in a row deals extra damage to that enemy.'
-  upgrade3Description: 
+    in a row deals extra damage to that enemy. Starting damage decreased.'
+  upgrade3Description: 'Improved Collisions:
+
+    Increases the speed and damage
+    of projectiles it collides with. Acceleration speed decreased.'
