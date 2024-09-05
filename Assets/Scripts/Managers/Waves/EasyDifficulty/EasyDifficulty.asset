@@ -39,7 +39,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cb611c1cbbcf84243b12c004cfe155d4, type: 2}
   - {fileID: 11400000, guid: e5dbe972acaab6240b80be23901bd4bf, type: 2}
   - {fileID: 11400000, guid: 090bb1d21ce957641bbbbb42573edc3b, type: 2}
-  freeplayCreditMultiplier: 5
+  freeplayCreditMultiplier: 1
   maxLives: 200
   awardMultiplier: 1
   difficultyName: Blossom

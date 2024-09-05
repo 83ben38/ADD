@@ -93,7 +93,7 @@ public class StartButtonController : Selectable
             waveGoing = true;
             waveFinished = false;
             objects = new List<GameObject>();
-            freeplayWave = FreeplayWaveGenerator.manager.generateWave(waves.freeplayCreditMultiplier * wave * wave);
+            freeplayWave = FreeplayWaveGenerator.manager.generateWave(waves.freeplayCreditMultiplier * wave * wave * wave);
             StartCoroutine(freeplayWave.spawnWaves(objects,this));
             while (waveGoing)
             {
