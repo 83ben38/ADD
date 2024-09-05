@@ -22,7 +22,7 @@ public class IronProjectile : ProjectileCode
 
     public override int getPierce()
     {
-        return lvl*3;
+        return lvl*2;
     }
     public virtual void hit(FruitCode fruit, ProjectileController controller)
     {
@@ -33,7 +33,14 @@ public class IronProjectile : ProjectileCode
             target = null;
         }
 
-        int damage = Math.Min(fruit.hp - fruit.vulnerability, pierceLeft);
+        int z = 1;
+        if (fruit is CoconutCode code)
+        {
+            z = code.reductionMod+1;
+        }
+        int damage = Math.Min((fruit.hp + fruit.vulnerability)*z, pierceLeft);
+        damage /= z;
+        damage += z-1;
         fruit.Damage(damage);
         pierceLeft -= damage;
         if (pierceLeft < 1)

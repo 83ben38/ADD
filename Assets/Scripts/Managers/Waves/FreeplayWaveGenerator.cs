@@ -147,7 +147,7 @@ public class FreeplayWaveGenerator : MonoBehaviour
         if (enemyNum == 6)
         {
             config.lemonOptions.radius = Random.Range(1, 3);
-            config.lemonOptions.speedIncrease = Math.Max(1,(int)Math.Log(abilityCredits/config.lemonOptions.radius, 1.5));
+            config.lemonOptions.speedIncrease = Math.Max(1,(int)((Math.Log(abilityCredits, 2)-5)/config.lemonOptions.radius));
         }
 
         if (enemyNum == 7)
