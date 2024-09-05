@@ -6,11 +6,11 @@ using UnityEngine;
 public class OrangeOptions
 {
     [SerializeField] 
-    private GameObject childObject;
+    public GameObject childObject;
     [SerializeField]
-    private EnemyConfiguration childConfig;
+    public EnemyConfiguration childConfig;
     [SerializeField] 
-    private int splitAmount;
+    public int splitAmount;
     public void config(FruitCode f)
     {
         OrangeCode o = (OrangeCode)f;

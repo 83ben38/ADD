@@ -6,7 +6,7 @@ using UnityEngine;
 public class BlueberryOptions
 {
     [SerializeField]
-    private int speedIncrease;
+    public int speedIncrease;
     public void config(FruitCode f)
     {
         ((BlueberryCode)f).speedIncrease = speedIncrease/1000f;

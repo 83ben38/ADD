@@ -6,11 +6,11 @@ using UnityEngine;
 public class GrapeOptions
 {
     [SerializeField] 
-    private GameObject childObject;
+    public GameObject childObject;
     [SerializeField]
-    private EnemyConfiguration childConfig;
+    public EnemyConfiguration childConfig;
     [SerializeField] 
-    private float spawnCooldown;
+    public float spawnCooldown;
     public void config(FruitCode f)
     {
         GrapeCode o = (GrapeCode)f;

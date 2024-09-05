@@ -7,9 +7,9 @@ using UnityEngine;
 public class LemonOptions
 {
     [SerializeField]
-    private float radius;
+    public float radius;
     [SerializeField]
-    private int speedIncrease;
+    public int speedIncrease;
     public void config(FruitCode f)
     {
         ((LemonCode)f).radius = radius;

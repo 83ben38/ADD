@@ -42,7 +42,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 233f41d87d554ab42a1f07f80e2dab5d, type: 2}
   - {fileID: 11400000, guid: e35307048268397479d95dde4281757e, type: 2}
   - {fileID: 11400000, guid: 8c45f2765d6782e40b87c1c661dd8565, type: 2}
-  freeplayWaves: []
+  freeplayCreditMultiplier: 10
   maxLives: 150
   awardMultiplier: 2
   difficultyName: Fruit

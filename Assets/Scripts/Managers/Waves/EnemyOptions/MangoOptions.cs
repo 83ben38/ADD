@@ -7,9 +7,9 @@ using UnityEngine;
 public class MangoOptions
 {
     [SerializeField]
-    private float radius;
+    public float radius;
     [SerializeField]
-    private int healAmount;
+    public int healAmount;
     public void config(FruitCode f)
     {
         ((MangoCode)f).radius = radius;

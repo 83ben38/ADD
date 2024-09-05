@@ -7,9 +7,9 @@ using UnityEngine;
 public class StrawberryOptions
 {
     [SerializeField]
-    private float stunRadius;
+    public float stunRadius;
     [SerializeField] 
-    private float stunAmount;
+    public float stunAmount;
     public void config(FruitCode f)
     {
         ((StrawberryCode)f).stunRadius = stunRadius;

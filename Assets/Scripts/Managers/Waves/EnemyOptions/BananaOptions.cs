@@ -6,7 +6,7 @@ using UnityEngine;
 public class BananaOptions
 {
     [SerializeField]
-    private int speedIncrease;
+    public int speedIncrease;
     public void config(FruitCode f)
     {
         ((BananaCode)f).speedIncrease = speedIncrease/1000f;

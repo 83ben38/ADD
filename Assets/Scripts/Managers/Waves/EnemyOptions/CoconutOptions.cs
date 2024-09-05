@@ -6,7 +6,7 @@ using UnityEngine;
 public class CoconutOptions
 {
     [SerializeField]
-    private int reductionMod;
+    public int reductionMod;
     public void config(FruitCode f)
     {
         ((CoconutCode)f).reductionMod = reductionMod;

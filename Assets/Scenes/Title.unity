@@ -310,6 +310,7 @@ GameObject:
   - component: {fileID: 86080137}
   - component: {fileID: 86080136}
   - component: {fileID: 86080138}
+  - component: {fileID: 86080139}
   m_Layer: 0
   m_Name: SelectionData
   m_TagString: Untagged
@@ -655,6 +656,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b8a0dbe089cc91f4d98ebfcfc35105a6, type: 2}
   - {fileID: 11400000, guid: 544cb050ac11f364ebe01d5a33ac3d1a, type: 2}
   - {fileID: 11400000, guid: e68604b4a297c56448da0b6939ad27df, type: 2}
+--- !u!114 &86080139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86080130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 852181e94598e4e48aa6a74c3a58f8a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  apple: {fileID: 0}
 --- !u!1 &613646301
 GameObject:
   m_ObjectHideFlags: 0
