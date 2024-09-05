@@ -668,7 +668,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 852181e94598e4e48aa6a74c3a58f8a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  apple: {fileID: 0}
+  apple: {fileID: 8267130134565377638, guid: 8461deba704492e45a16e4e04d639d8f, type: 3}
+  avocado: {fileID: 8267130134565377638, guid: 5aef467e2273b0040a50960616cfe361, type: 3}
+  banana: {fileID: 8267130134565377638, guid: c9a5103b1e8794d75b5fe7fdf3e36e93, type: 3}
+  blueberry: {fileID: 8267130134565377638, guid: a513c56fc7019834e95d9626b5945075,
+    type: 3}
+  coconut: {fileID: 8267130134565377638, guid: 9e8069147ea9ac1408668d81606c3613, type: 3}
+  grape: {fileID: 8267130134565377638, guid: 072cce87e93d46b4cbde01ef0161b514, type: 3}
+  lemon: {fileID: 8267130134565377638, guid: 51f97fa94ec68b54492318ca3440fd42, type: 3}
+  mango: {fileID: 8267130134565377638, guid: 55ed76952c496a24faec5ee75af48507, type: 3}
+  miniAvocado: {fileID: 8267130134565377638, guid: 873a7e8fc40e0f444a3b4614ef3d2b75,
+    type: 3}
+  miniGrape: {fileID: 8267130134565377638, guid: 9ca9bee5fd0236e4caad36643d293702,
+    type: 3}
+  miniOrange: {fileID: 8267130134565377638, guid: d254217c86a674d1cbb04972f9131f3c,
+    type: 3}
+  orange: {fileID: 8267130134565377638, guid: 7ce5080c06fb24d45ba7a3cc032d2b01, type: 3}
+  pear: {fileID: 8267130134565377638, guid: acbce5b4ad1d145d6b115b29650738cb, type: 3}
+  raspberry: {fileID: 8267130134565377638, guid: 35142e013129ff445ade65c9e4bd89d3,
+    type: 3}
+  strawberry: {fileID: 8267130134565377638, guid: 26e2700b2ebda42caa0b381e982be42d,
+    type: 3}
 --- !u!1 &613646301
 GameObject:
   m_ObjectHideFlags: 0
