@@ -51,7 +51,7 @@ public class FreeplayWaveGenerator : MonoBehaviour
                     break;
                 default:
                 {
-                    numEnemies = Random.Range((int)(credits*0.01),(int)(credits*0.02));
+                    numEnemies = Random.Range((int)(credits*0.001),(int)(credits*0.002));
                 }
                     break;
             }

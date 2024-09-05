@@ -8,6 +8,8 @@ using UnityEngine;
 public class StartButtonController : Selectable
 {
     public static StartButtonController startButton;
+    [SerializeField]
+    public WaveScriptableObject freeplayWave;
     private Material _material;
     public TextMeshPro text;
     private bool started = false;
@@ -91,7 +93,8 @@ public class StartButtonController : Selectable
             waveGoing = true;
             waveFinished = false;
             objects = new List<GameObject>();
-            StartCoroutine(FreeplayWaveGenerator.manager.generateWave(waves.freeplayCreditMultiplier*wave*wave).spawnWaves(objects,this));
+            freeplayWave = FreeplayWaveGenerator.manager.generateWave(waves.freeplayCreditMultiplier * wave * wave);
+            StartCoroutine(freeplayWave.spawnWaves(objects,this));
             while (waveGoing)
             {
                 yield return null;
