@@ -123,7 +123,7 @@ public class CopperTower : TowerCode
             }
             GameObject projectile = Object.Instantiate(TowerCode.projectile);
             ProjectileController pc = projectile.GetComponent<ProjectileController>();
-            pc.code = new CopperProjectile(upgrade1,upgrade2,upgrade3,lvl > 1 ? lvl : 2);
+            pc.code = new CopperProjectile(upgrade1,upgrade2,upgrade3);
             pc.code.target = fc;
             Vector3 v = controller.transform.position;
             v.y += 1.6f*MapCreator.scale;
@@ -216,7 +216,7 @@ public class CopperTower : TowerCode
 
     public override ProjectileCode create()
     {
-        return new CopperProjectile(upgrade1,upgrade2,upgrade3,3);
+        return new CopperProjectile(upgrade1,upgrade2,upgrade3,true);
     }
 
     public override Color getColor()

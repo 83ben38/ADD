@@ -15,7 +15,7 @@ public class CopperProjectile : ProjectileCode
 
     public void doDamage()
     {
-        target.Damage(damage);
+        target.Damage(getDamage());
     }
 
     public override void Start(ProjectileController controller)
@@ -60,14 +60,14 @@ public class CopperProjectile : ProjectileCode
         lineRenderer.SetPosition(1, target.transform.position);
     }
 
-    public CopperProjectile(bool upgrade1, bool upgrade2, bool upgrade3, int damage) : base(upgrade1, upgrade2, upgrade3)
+    public CopperProjectile(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
-        this.damage = damage;
+        
         immediate = false;
     }
-    public CopperProjectile(bool upgrade1, bool upgrade2, bool upgrade3, int damage, bool immediate) : base(upgrade1, upgrade2, upgrade3)
+    public CopperProjectile(bool upgrade1, bool upgrade2, bool upgrade3, bool immediate) : base(upgrade1, upgrade2, upgrade3)
     {
-        this.damage = damage;
+        
         this.immediate = immediate;
     }
 
