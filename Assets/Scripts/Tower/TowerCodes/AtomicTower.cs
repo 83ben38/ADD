@@ -98,7 +98,7 @@ public class AtomicTower : TowerCode
 
     public override ProjectileCode create()
     {
-        return new AtomicProjectile(0,Vector3.zero,upgrade1,upgrade2,upgrade3);
+        return new AtomicProjectile(0,controller.transform.position,upgrade1,upgrade2,upgrade3);
     }
 
     public override Color getColor()

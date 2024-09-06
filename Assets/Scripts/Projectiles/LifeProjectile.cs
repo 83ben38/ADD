@@ -8,9 +8,23 @@ public class LifeProjectile : ProjectileCode
     public Vector3 start;
     private float time = -64f;
     private float totalTime;
+    private TowerCode projectileGenerator;
+    private float attackSpeed;
 
-    public LifeProjectile(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
+    public LifeProjectile(bool upgrade1, bool upgrade2, bool upgrade3, TowerCode projectileGenerator, int lvl) : base(upgrade1, upgrade2, upgrade3)
     {
+        this.projectileGenerator = projectileGenerator;
+        
+        if (projectileGenerator is LifeTower)
+        {
+            attackSpeed = 96f;
+        }
+        else
+        {
+            attackSpeed = projectileGenerator.getAttackSpeed() * 2 * (float)projectileGenerator.lvl / lvl;
+        }
+
+        this.lvl = lvl;
     }
 
     public override void tick(ProjectileController controller)
@@ -24,18 +38,18 @@ public class LifeProjectile : ProjectileCode
         }
         totalTime += lvl*Time.deltaTime*64f;
         
-        if (time < 96f)
+        if (time < attackSpeed)
         {
             time += lvl*Time.deltaTime*64f;
         }
 
-        if (time >= 96f)
+        if (time >= attackSpeed)
         {
             
             if (shoot(controller))
             {
 
-                time -= 96f;
+                time -= attackSpeed;
             }
         }
 
@@ -57,8 +71,8 @@ public class LifeProjectile : ProjectileCode
             GameObject projectile = Object.Instantiate(TowerCode.projectile);
             ProjectileController pc = projectile.GetComponent<ProjectileController>();
             pc.transform.localScale *= 0.5f;
-            pc.code = new LifeSmallProjectile(upgrade1,upgrade2,upgrade3);
-            pc.code.lvl = lvl;
+            pc.code = projectileGenerator.create();
+            pc.code.lvl = projectileGenerator.lvl > 1 ? lvl : 2;
             pc.code.target = sphere[0].gameObject.GetComponent<FruitCode>();
             projectile.transform.position = controller.transform.position;
             pc.material.color = controller.material.color;

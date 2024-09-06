@@ -38,6 +38,11 @@ public class CopperProjectile : ProjectileCode
 
     public override void tick(ProjectileController controller)
     {
+        if (immediate)
+        {
+            doDamage();
+            target = null;
+        }
         if (target == null)
         {
             destroy = true;
@@ -58,6 +63,14 @@ public class CopperProjectile : ProjectileCode
     public CopperProjectile(bool upgrade1, bool upgrade2, bool upgrade3, int damage) : base(upgrade1, upgrade2, upgrade3)
     {
         this.damage = damage;
+        immediate = false;
     }
+    public CopperProjectile(bool upgrade1, bool upgrade2, bool upgrade3, int damage, bool immediate) : base(upgrade1, upgrade2, upgrade3)
+    {
+        this.damage = damage;
+        this.immediate = immediate;
+    }
+
+    private bool immediate;
 }
 

@@ -17,5 +17,8 @@ MonoBehaviour:
     weak but numerous living automatons that fire on the enemy. '
   upgrade1Description: "Increased Life Span: \nThanks to recent medical advancements
     spawned automatons now live longer but take longer to make."
-  upgrade2Description: 'its alive! ITS ALIVE !!!! '
+  upgrade2Description: 'Modified Production:
+
+    Makes automonons that mimic another
+    tower. Click on the tower and then another tower to mimic it.'
   upgrade3Description: 

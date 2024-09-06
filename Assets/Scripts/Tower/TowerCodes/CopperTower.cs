@@ -216,7 +216,7 @@ public class CopperTower : TowerCode
 
     public override ProjectileCode create()
     {
-        return new CopperProjectile(upgrade1,upgrade2,upgrade3,0);
+        return new CopperProjectile(upgrade1,upgrade2,upgrade3,3);
     }
 
     public override Color getColor()
