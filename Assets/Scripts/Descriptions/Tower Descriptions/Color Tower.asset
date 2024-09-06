@@ -19,5 +19,8 @@ MonoBehaviour:
 
     The color tower now can turn into
     any other tower by clicking on it while holding a tower of the same level.'
-  upgrade2Description: 
+  upgrade2Description: 'Random Colors:
+
+    Clicking on the tower during the round
+    transforms it into a random unlocked tower.'
   upgrade3Description: 

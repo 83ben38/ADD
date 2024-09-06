@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Properties;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ColorTower : TowerCode
 {
@@ -16,7 +18,17 @@ public class ColorTower : TowerCode
 
     public override void MouseClick(TowerController controller)
     {
-        
+        if (upgrade2)
+        {
+            int[] unlocked = SaveData.save.getAvailableTowers();
+            int z = Random.Range(0, unlocked.Length);
+            controller.tower = TowerCodeFactory.getTowerCode(unlocked[z]);
+            controller.tower.lvl = lvl;
+            controller.tower.placedDown(controller);
+            controller.tower.roundStart();
+            controller.towerVisual.updateTower();
+            controller.state = controller.tower;
+        }
     }
 
     public override bool canMerge(TowerCode c)
