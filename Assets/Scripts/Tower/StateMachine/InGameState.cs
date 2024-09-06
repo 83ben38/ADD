@@ -39,11 +39,12 @@ public class InGameState : TowerState
 
             if (controller.tower != null)
             {
+                int lvl = held.lvl;
                 controller.tower = controller.tower.merge(held);
                 controller.tower.placedDown(controller);
                 controller.towerVisual.updateTower();
                 controller.setBaseColor(ColorManager.manager.tower,ColorManager.manager.towerHighlighted);
-                if (controller.tower.lvl != held.lvl)
+                if (controller.tower.lvl != lvl)
                 {
                     held = null;
                 }
