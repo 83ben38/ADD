@@ -12,13 +12,13 @@ public class LightningProjectile : ProjectileCode
     public LineRenderer lineRenderer;
     public override int getDamage()
     {
-        return (int)Math.Pow(1.5, pierceLeft-1);
+        return (int)Math.Pow((upgrade3 ? 2 : 1.5), pierceLeft-1);
     }
     
 
     public override int getPierce()
     {
-        return  upgrade1 ? 4 : 4 + lvl;
+        return  upgrade1 ? 2 + lvl : 4 + lvl;
     }
 
     public override void tick(ProjectileController controller)

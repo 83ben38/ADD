@@ -22,4 +22,7 @@ MonoBehaviour:
     Click on the lightning tower, dealing
     high damage to enemies in the affected spot. Can be used once per round. Attack
     speed reduced.'
-  upgrade3Description: 
+  upgrade3Description: 'Stronger Lightning:
+
+    Lightning deals more damage. Range
+    and attack speed reduced.'

@@ -14,7 +14,38 @@ public class LightningTower : TowerCode
         attackSpeed = 192;
         if (upgrade2)
         {
-            attackSpeed = 240;
+            attackSpeed *= 5;
+            attackSpeed /= 4;
+        }
+
+        if (upgrade3)
+        {
+            range = 2;
+        }
+    }
+
+    public override void tick()
+    {
+        if (ticksLeft > 0)
+        {
+            if (upgrade3)
+            {
+                ticksLeft -= (lvl > 1 ? 2 : 1) * Time.deltaTime * 64f;
+            }
+            else
+            {
+                ticksLeft -= lvl * Time.deltaTime * 64f;
+            }
+        }
+
+        if (ticksLeft <= 0)
+        {
+            
+            if (shoot())
+            {
+                ticksLeft = getAttackSpeed() + ticksLeft;
+                rechargeTime = getAttackSpeed() - 1;
+            }
         }
     }
 
