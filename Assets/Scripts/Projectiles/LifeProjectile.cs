@@ -21,7 +21,7 @@ public class LifeProjectile : ProjectileCode
         }
         else
         {
-            attackSpeed = projectileGenerator.getAttackSpeed() * 2 * (float)projectileGenerator.lvl / lvl;
+            attackSpeed = projectileGenerator.getAttackSpeed() * 2 * (float)projectileGenerator.lvl;
         }
 
         this.lvl = lvl;
@@ -77,7 +77,7 @@ public class LifeProjectile : ProjectileCode
             projectile.transform.position = controller.transform.position;
             pc.material.color = controller.material.color;
             pc.code.Start(pc);
-            controller.StartCoroutine(recharge(controller,64f/lvl));
+            controller.StartCoroutine(recharge(controller,attackSpeed/lvl));
             return true;
         }
         return false;

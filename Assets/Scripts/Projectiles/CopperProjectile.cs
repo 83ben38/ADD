@@ -38,11 +38,7 @@ public class CopperProjectile : ProjectileCode
 
     public override void tick(ProjectileController controller)
     {
-        if (immediate)
-        {
-            doDamage();
-            target = null;
-        }
+        
         if (target == null)
         {
             destroy = true;
@@ -56,6 +52,12 @@ public class CopperProjectile : ProjectileCode
             }
 
             return;
+        }
+        if (immediate)
+        {
+            doDamage();
+            target = null;
+            Object.Destroy(controller.gameObject);
         }
         lineRenderer.SetPosition(1, target.transform.position);
     }
