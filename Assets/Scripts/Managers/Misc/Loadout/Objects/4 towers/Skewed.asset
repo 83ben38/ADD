@@ -9,12 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aca5ca9818b6f4c06b3a751fbea319f9, type: 3}
-  m_Name: Test
+  m_Script: {fileID: 11500000, guid: fdca74eed94a53a4782074d2fc446fb4, type: 3}
+  m_Name: Skewed
   m_EditorClassIdentifier: 
-  chances:
-  - chance: 1
-    items: 000000000100000002000000
-  loadouts: 1
-  cost: 100
-  crateName: Test
+  loadout: 03000000030000000100000001000000

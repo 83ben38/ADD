@@ -10,11 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aca5ca9818b6f4c06b3a751fbea319f9, type: 3}
-  m_Name: Tower
+  m_Name: Wacky Loadout Crate
   m_EditorClassIdentifier: 
   chances:
-  - chance: 1
-    items: 0b0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000
-  loadouts: 0
-  cost: 0
-  crateName: Tower
+  - chance: 0
+    items: 010000000200000005000000060000000a000000
+  - chance: 0
+    items: 03000000070000000b0000000c0000000d000000
+  - chance: 0.1
+    items: 04000000080000000e000000
+  - chance: 0.3
+    items: 090000000f0000001000000012000000
+  - chance: 0.6
+    items: 110000001300000014000000
+  loadouts: 1
+  cost: 1000
+  crateName: Wacky Loadout Crate
