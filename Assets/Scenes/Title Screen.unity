@@ -793,14 +793,11 @@ MonoBehaviour:
   difficultyDisable: {fileID: 0}
   enable:
   - {fileID: 2072616220}
-  - {fileID: 0}
+  - {fileID: 1829558767}
   - {fileID: 542116464}
   - {fileID: 847850031}
   - {fileID: 1344264169}
-  - {fileID: 0}
   - {fileID: 231973074}
-  - {fileID: 0}
-  - {fileID: 1829558767}
 --- !u!65 &80579193
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4619,14 +4616,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   disable:
   - {fileID: 2072616220}
-  - {fileID: 0}
+  - {fileID: 1829558767}
   - {fileID: 542116464}
   - {fileID: 847850031}
   - {fileID: 1344264169}
-  - {fileID: 0}
   - {fileID: 231973074}
-  - {fileID: 0}
-  - {fileID: 1829558767}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -63,10 +63,6 @@ public class LoadoutSelectionManager : MonoBehaviour
                 buttons[i] = Instantiate(cloneObject).GetComponent<LoadoutButtonController>();
                 buttons[i].text.text = loadout[i] + "";
                 buttons[i].loadoutNum = loadouts[j];
-                if (j > 9)
-                {
-                    buttons[i].gameObject.SetActive(false);
-                }
             }
 
             for (int i = 0; i < buttons.Length; i++)
@@ -83,8 +79,10 @@ public class LoadoutSelectionManager : MonoBehaviour
             if (loadouts[j] == SaveData.save.getLoadoutSelected())
             {
                 currentButtons = buttons;
+                screen = (j / 10);
             }
         }
+        ResetMap();
         Destroy(cloneObject);
     }
 }
