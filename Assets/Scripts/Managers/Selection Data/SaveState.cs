@@ -17,8 +17,8 @@ public class SaveState
     public bool[] tutorials;
     public SaveState()
     {
-        money = 999999;
-        //money = 0;
+        
+        money = 1000;
         towersUnlocked = new int[]{0,1,2,3,4};
         towerUpgradesAvailable = new SerializableDictionary<int, TripleBool>();
         towerUpgradesEnabled = new SerializableDictionary<int, TripleBool>();
@@ -32,22 +32,6 @@ public class SaveState
             towerUpgradesEnabled[i] = new TripleBool(false,false,false);
         }
     }
-    /*public SaveState()
-    {
-        money = 99999;
-        towersUnlocked = new int[]{0,1,2,3,4,5,6,7,8,9};
-        towerUpgradesAvailable = new SerializableDictionary<int,TripleBool>();
-        towerUpgradesEnabled = new SerializableDictionary<int,TripleBool>();
-        loadoutsUnlocked = new int[] { 0, 1, 2, 3, 4 };
-        loadoutSelected = 0;
-        for (int i = 0; i < 10; i++)
-        {
-            towerUpgradesAvailable[i] = new TripleBool( true, true, true);
-            towerUpgradesEnabled[i] = new TripleBool(false, false, false);
-        }
-
-        difficultiesCompleted = new SerializableDictionary<int, SerializableDictionary<int, bool>>();
-    }*/
 }
 
 
