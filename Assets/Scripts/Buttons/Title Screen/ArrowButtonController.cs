@@ -5,11 +5,19 @@ using UnityEngine;
 public class ArrowButtonController : Selectable
 {
     public bool right;
+    public bool loadout = false;
     private Material _material;
     private void Start()
     {
         _material = GetComponent<Renderer>().material;
         _material.color = ColorManager.manager.tile;
+        if (loadout)
+        {
+            if (LoadoutSelectionManager.allButtons.Length == 1)
+            {
+                gameObject.SetActive(false);
+            }
+        }
     }
 
     public override void MouseEnter()
@@ -24,22 +32,48 @@ public class ArrowButtonController : Selectable
 
     public override void MouseClick()
     {
-        if (right)
+        if (loadout)
         {
-            MapSelectionManager.manager.screenNum++;
-            if (MapSelectionManager.manager.screenNum >= MapSelectionManager.manager.maps.Length)
+            if (right)
             {
-                MapSelectionManager.manager.screenNum--;
+                LoadoutSelectionManager.screen++;
+                if (LoadoutSelectionManager.screen >= LoadoutSelectionManager.allButtons.Length)
+                {
+                    LoadoutSelectionManager.screen--;
+                }
             }
+            else
+            {
+                LoadoutSelectionManager.screen--;
+                if (LoadoutSelectionManager.screen < 0)
+                {
+                    LoadoutSelectionManager.screen++;
+                }
+            }
+
+            LoadoutSelectionManager.manager.ResetMap();
         }
         else
         {
-            MapSelectionManager.manager.screenNum--;
-            if (MapSelectionManager.manager.screenNum < 0)
+
+            if (right)
             {
                 MapSelectionManager.manager.screenNum++;
+                if (MapSelectionManager.manager.screenNum >= MapSelectionManager.manager.maps.Length)
+                {
+                    MapSelectionManager.manager.screenNum--;
+                }
             }
+            else
+            {
+                MapSelectionManager.manager.screenNum--;
+                if (MapSelectionManager.manager.screenNum < 0)
+                {
+                    MapSelectionManager.manager.screenNum++;
+                }
+            }
+
+            MapSelectionManager.manager.setEnabled();
         }
-        MapSelectionManager.manager.setEnabled();
     }
 }
