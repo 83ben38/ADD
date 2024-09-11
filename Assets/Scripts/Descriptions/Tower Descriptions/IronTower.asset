@@ -20,5 +20,11 @@ MonoBehaviour:
     Changing from a production line to
     batch production, increases the over all production time but allowes the tower
     to produce and launch traps for each enemy path tile.'
-  upgrade2Description: 
-  upgrade3Description: 
+  upgrade2Description: 'Magnetic Traps:
+
+    Mines stick to earth projectiles, enhancing
+    their damage.'
+  upgrade3Description: 'Explosive Traps:
+
+    Traps no longer attack enemies by default.
+    Click on the tower to detonate all deployed traps.'

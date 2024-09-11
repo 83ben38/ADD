@@ -18,5 +18,11 @@ MonoBehaviour:
   upgrade1Description: "Increased density: \nIncresed density and damage at the cost
     of automated target tracing. To select firing coordinates select the tower then
     click the target coordinates."
-  upgrade2Description: 
-  upgrade3Description: 
+  upgrade2Description: 'Space Shrapnel:
+
+    Projectiles split into shrapnel upon
+    hitting an enemy. Attack speed decreased.'
+  upgrade3Description: 'Precise Targeting:
+
+    Glass towers increase the damage
+    of the tower. Base damage decreased'

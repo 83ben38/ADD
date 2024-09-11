@@ -21,5 +21,12 @@ MonoBehaviour:
     an explosion of water.
 
     Decreases attack speed slightly.'
-  upgrade2Description: 
-  upgrade3Description: 
+  upgrade2Description: 'Flamethrower:
+
+    Shoots much quicker at a cost of range
+    and projectile lifespan.'
+  upgrade3Description: 'Controlled Wildfire:
+
+    Shoots a stream of fire in the
+    direction you choose by clicking on the tower and then the direction you want
+    to shoot. Attack speed decreased.'

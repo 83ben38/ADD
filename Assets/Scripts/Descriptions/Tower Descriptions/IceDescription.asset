@@ -17,5 +17,9 @@ MonoBehaviour:
     slow enemies.
   upgrade1Description: "Permafrost:\nIncreases slow duration and projectile pierce.
     \nDecreases slow potency.\n"
-  upgrade2Description: 
+  upgrade2Description: 'Glacial Burst:
+
+    Click on the tower to temporarily freeze
+    all towers in range, increasing their vulnrability significantly, once per round.
+    Attack speed decreased.'
   upgrade3Description: 

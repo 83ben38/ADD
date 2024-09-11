@@ -17,5 +17,9 @@ MonoBehaviour:
     hastening them.
   upgrade1Description: "Concentrated gusts: \nThe tower can now harness additional
     energy but it must be divided among all towers in range."
-  upgrade2Description: 
+  upgrade2Description: 'Whirlwind:
+
+    Click on the tower to summon a whirlwind,
+    once per round. The whirlwind follows your mouse and pushes back enemies. Buff
+    decreased.'
   upgrade3Description: 
