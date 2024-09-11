@@ -7,6 +7,11 @@ public class FireTower : TowerCode
     public FireTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
         range = 2;
+        if (upgrade2)
+        {
+            range = 1;
+            attackSpeed /= 2;
+        }
         attackSpeed = (int)(attackSpeed * (upgrade1 ? 1.15 : 1));
     }
 

@@ -4,7 +4,8 @@ using System.IO.IsolatedStorage;
 using UnityEngine;
 
 public class FireProjectile : ProjectileCode
-{ 
+{
+    private float time = 0;
     public override int getPierce()
     {
         return 3;
@@ -47,10 +48,24 @@ public class FireProjectile : ProjectileCode
         return lvl;
     }
 
+    public override void tick(ProjectileController controller)
+    {
+        if (upgrade2)
+        {
+            time += Time.deltaTime * lvl;
+            if (time > (lvl > 4 ? 2 : 1))
+            {
+                Object.Destroy(controller.gameObject);
+            }
+        }
+
+        base.tick(controller);
+    }
+
     IEnumerator hitEnemy(FruitCode fruit)
     {
         SoundEffectsManager.manager.playSound("fire");
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < (upgrade2 ? 5 : 3); i++)
         {
             for (float j = 0; j < 0.5f; j+=Time.deltaTime)
             {
