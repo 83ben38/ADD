@@ -110,6 +110,8 @@ public class FreeplayWaveGenerator : MonoBehaviour
             speed = Random.Range(8, 25);
             hp = (int)(statsCredits / speed);
         }
+
+        hp++;
         config.hp = hp;
         config.speed = speed;
         config.minSize = 200;
