@@ -7,6 +7,7 @@ public class IronProjectile : ProjectileCode
 {
     public TowerController targetPath;
     private Vector3 targetPosition;
+    public ProjectileController stickTo;
     
     public override void Start(ProjectileController controller)
     {
@@ -17,7 +18,7 @@ public class IronProjectile : ProjectileCode
         Vector2 circle = Random.insideUnitCircle * 0.4f * MapCreator.scale;
         targetPosition.x += circle.x;
         targetPosition.z += circle.y;
-        
+        speed *= 1.5f;
     }
 
     public override int getPierce()
@@ -38,11 +39,11 @@ public class IronProjectile : ProjectileCode
         {
             z = code.reductionMod+1;
         }
-        int damage = Math.Min((fruit.hp + fruit.vulnerability)*z, pierceLeft);
+        int damage = Math.Min((fruit.hp + fruit.vulnerability)*z, pierceLeft*base.damage);
         damage /= z;
         damage += z-1;
         fruit.Damage(damage);
-        pierceLeft -= damage;
+        pierceLeft -= (damage / base.damage);
         if (pierceLeft < 1)
         {
             Object.Destroy(controller.gameObject);
@@ -62,7 +63,20 @@ public class IronProjectile : ProjectileCode
             }
         }
         else { 
-            if (targetPosition != Vector3.zero)
+            if (upgrade2 && stickTo != null)
+            {
+                if ((stickTo.transform.position - controller.transform.position ).magnitude < 0.375f)
+                {
+                    move = stickTo.code.move;
+                }
+                else
+                {
+                    move = lvl * MapCreator.scale * speed * (stickTo.transform.position - controller.transform.position).normalized;
+                }
+
+                controller.transform.Translate(Time.deltaTime * move);
+            }
+            else if (targetPosition != Vector3.zero)
             {
                 move = lvl * MapCreator.scale * speed * (targetPosition - controller.transform.position).normalized;
                 controller.transform.Translate(Time.deltaTime * move);
@@ -77,7 +91,7 @@ public class IronProjectile : ProjectileCode
             {
                 target = hit[0].gameObject.GetComponent<FruitCode>();
             }
-            Collider[] hit2 = Physics.OverlapSphere(controller.transform.position, .05f*MapCreator.scale);
+            Collider[] hit2 = Physics.OverlapSphere(controller.transform.position, .05f*MapCreator.scale, LayerMask.GetMask("Projectile"));
             for (int i = 0; i < hit2.Length; i++)
             {
                 ProjectileController pc = hit2[i].gameObject.GetComponent<ProjectileController>();
@@ -87,6 +101,24 @@ public class IronProjectile : ProjectileCode
                     {
                         pierceLeft += pc.code.pierceLeft;
                         Object.DestroyImmediate(pc.gameObject);
+                    }
+                }
+            }
+
+            if (upgrade2 && stickTo == null)
+            {
+                hit2 = Physics.OverlapSphere(controller.transform.position, MapCreator.scale,
+                    LayerMask.GetMask("Projectile"));
+                for (int i = 0; i < hit2.Length; i++)
+                {
+                    ProjectileController pc = hit2[i].gameObject.GetComponent<ProjectileController>();
+                    if (pc != null)
+                    {
+                        if (pc.code is EarthProjectile)
+                        {
+                            stickTo = pc;
+                            damage += 2;
+                        }
                     }
                 }
             }
