@@ -8,6 +8,7 @@ using Random = UnityEngine.Random;
 
 public class IronTower : TowerCode
 {
+    private List<IronProjectile> projectiles =  new List<IronProjectile>();
     public IronTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
         
@@ -22,7 +23,24 @@ public class IronTower : TowerCode
 
     public override void MouseClick(TowerController controller)
     {
-        
+        if (upgrade3)
+        {
+            foreach (var VARIABLE in projectiles)
+            {
+                VARIABLE.explode = 0.25f;
+            }
+
+            projectiles = new List<IronProjectile>();
+        }
+    }
+
+    public override void roundStart()
+    {
+        if (upgrade3)
+        {
+            projectiles = new List<IronProjectile>();
+        }
+        base.roundStart();
     }
 
     public override int getAttackSpeed()
@@ -74,6 +92,11 @@ public class IronTower : TowerCode
                 GameObject pr = Object.Instantiate(TowerCode.projectile);
                 ProjectileController pco = pr.GetComponent<ProjectileController>();
                 pco.code = create();
+                if (upgrade3)
+                {
+                    projectiles.Add((IronProjectile)pco.code);
+                }
+
                 pco.code.lvl = lvl > 1 ? lvl : 2;
                 ((IronProjectile)pco.code).targetPath = t;
                 pr.transform.position = controller.towerVisual.shoot(rechargeTime);
@@ -87,6 +110,11 @@ public class IronTower : TowerCode
         GameObject projectile = Object.Instantiate(TowerCode.projectile);
         ProjectileController pc = projectile.GetComponent<ProjectileController>();
         pc.code = create();
+        if (upgrade3)
+        {
+            projectiles.Add((IronProjectile)pc.code);
+        }
+
         pc.code.lvl = lvl;
         ((IronProjectile)pc.code).targetPath = target;
         projectile.transform.position = controller.towerVisual.shoot(rechargeTime);

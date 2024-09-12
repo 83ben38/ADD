@@ -8,10 +8,16 @@ public class IronProjectile : ProjectileCode
     public TowerController targetPath;
     private Vector3 targetPosition;
     public ProjectileController stickTo;
+    public float explode = 0;
     
     public override void Start(ProjectileController controller)
     {
         damage = 1;
+        if (upgrade3)
+        {
+            damage++;
+        }
+
         base.Start(controller);
         targetPosition = targetPath.transform.position;
         targetPosition.y += 0.5f * MapCreator.scale;
@@ -52,7 +58,29 @@ public class IronProjectile : ProjectileCode
     public override void tick(ProjectileController controller)
     {
         //do projectile stuff
-        if (target != null)
+        if (explode > 0)
+        {
+            explode += Time.deltaTime;
+            Color c = controller.material.color;
+            c.a = 0.5f;
+            controller.material.color = c;
+            controller.transform.localScale = new Vector3(explode, explode, explode);
+            Collider[] hit = Physics.OverlapSphere(controller.transform.position, explode*MapCreator.scale, LayerMask.GetMask("Enemy"));
+            for (int i = 0; i < hit.Length; i++)
+            {
+                FruitCode fc = hit[i].GetComponent<FruitCode>();
+                if (!pierced.Contains(fc))
+                {
+                    fc.Damage(damage * getPierce());
+                }
+            }
+
+            if (explode > 1)
+            {
+                Object.Destroy(controller.gameObject);
+            }
+        }
+        else if (target != null)
         {
             move = lvl * MapCreator.scale * speed * (target.transform.position - controller.transform.position).normalized;
             controller.transform.Translate(Time.deltaTime * move);
@@ -86,11 +114,17 @@ public class IronProjectile : ProjectileCode
                     
                 }
             }
-            Collider[] hit = Physics.OverlapSphere(controller.transform.position, MapCreator.scale, LayerMask.GetMask("Enemy"));
-            if (hit.Length > 0)
+
+            if (!upgrade3)
             {
-                target = hit[0].gameObject.GetComponent<FruitCode>();
+                Collider[] hit = Physics.OverlapSphere(controller.transform.position, MapCreator.scale,
+                    LayerMask.GetMask("Enemy"));
+                if (hit.Length > 0)
+                {
+                    target = hit[0].gameObject.GetComponent<FruitCode>();
+                }
             }
+
             Collider[] hit2 = Physics.OverlapSphere(controller.transform.position, .05f*MapCreator.scale, LayerMask.GetMask("Projectile"));
             for (int i = 0; i < hit2.Length; i++)
             {
