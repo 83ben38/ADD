@@ -16,25 +16,24 @@ public class EnemyConfiguration
     [SerializeField]
     public int minSize;
     [SerializeField] 
-    public BlueberryOptions blueberryOptions = new BlueberryOptions();
+    public BlueberryOptions blueberryOptions = null;
     [SerializeField] 
-    public CoconutOptions coconutOptions = new CoconutOptions();
+    public CoconutOptions coconutOptions = null;
     [SerializeField] 
-    public LemonOptions lemonOptions = new LemonOptions();
+    public LemonOptions lemonOptions = null;
     [SerializeField] 
-    public OrangeOptions orangeOptions = new OrangeOptions();
+    public OrangeOptions orangeOptions = null;
     [SerializeField] 
-    public MangoOptions mangoOptions = new MangoOptions();
+    public MangoOptions mangoOptions = null;
     [SerializeField] 
-    public BananaOptions bananaOptions = new BananaOptions();
+    public BananaOptions bananaOptions = null;
     [SerializeField] 
-    public StrawberryOptions strawberryOptions = new StrawberryOptions();
+    public StrawberryOptions strawberryOptions = null;
     [SerializeField] 
-    public GrapeOptions grapeOptions = new GrapeOptions();
+    public GrapeOptions grapeOptions = null;
     [SerializeField] 
-    public BossOptions bossOptions = new BossOptions();
-    [SerializeField] 
-    public WatermelonOptions watermelonOptions = new WatermelonOptions();
+    public BossOptions bossOptions = null;
+   
     public void runOptions(FruitCode fruitCode)
     {
         if (fruitCode is BlueberryCode)
@@ -76,10 +75,6 @@ public class EnemyConfiguration
         {
             bossOptions.config(fruitCode);
         }
-
-        if (fruitCode is WatermelonCode code)
-        {
-            watermelonOptions.config(code);
-        }
+        
     }
 }
