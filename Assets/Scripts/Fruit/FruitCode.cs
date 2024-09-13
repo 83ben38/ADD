@@ -17,7 +17,6 @@ public class FruitCode : MonoBehaviour
    public float maxScale;
    public float minScale;
    public int vulnerability = 0;
-   [DoNotSerialize]
    public float frozenTime = 0f;
 
    public bool hidden = false;

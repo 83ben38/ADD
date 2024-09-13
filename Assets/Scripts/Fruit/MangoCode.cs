@@ -29,6 +29,8 @@ public class MangoCode : FruitCode
                     {
                         f.hp = f.maxHp;
                     }
+                    float x = ((maxScale - minScale) * ((float)f.hp / maxHp))   + minScale;
+                    f.transform.localScale = new Vector3(x,x,x)*MapCreator.scale;
                 }
             }
             StartButtonController.startButton.objects.Remove(gameObject);
