@@ -75,6 +75,10 @@ public class EnemyConfiguration
         {
             bossOptions.config(fruitCode);
         }
-        
+
+        if (fruitCode is WatermelonCode w)
+        {
+            BossConfigManager.manager.config(w);
+        }
     }
 }

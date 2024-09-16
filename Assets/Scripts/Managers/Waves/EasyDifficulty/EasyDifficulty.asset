@@ -39,6 +39,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cb611c1cbbcf84243b12c004cfe155d4, type: 2}
   - {fileID: 11400000, guid: e5dbe972acaab6240b80be23901bd4bf, type: 2}
   - {fileID: 11400000, guid: 090bb1d21ce957641bbbbb42573edc3b, type: 2}
+  - {fileID: 11400000, guid: f5d745d287941f945999ae05999c1f92, type: 2}
+  - {fileID: 11400000, guid: 596ea55eaaef23241a043e9591fb99c0, type: 2}
+  - {fileID: 11400000, guid: 6c192eccd74c81e419a4c7cda7604717, type: 2}
+  - {fileID: 11400000, guid: d199f1d02844b4325848e5fe56985944, type: 2}
   freeplayCreditMultiplier: 1
   maxLives: 200
   awardMultiplier: 1

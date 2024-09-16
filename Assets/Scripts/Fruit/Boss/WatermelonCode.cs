@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class WatermelonCode : BossCode
 {
-    public int phase;
+    public int phase = 1;
     public GameObject splitObject;
     public EnemyConfiguration splitConfig;
     //phase 1
@@ -211,6 +211,7 @@ public class WatermelonCode : BossCode
                     f.minScale = splitConfig.minSize / 1000f;
                     f.maxScale = splitConfig.maxSize / 1000f;
                     f.transform.localScale = new Vector3(f.maxScale, f.maxScale, f.maxScale) * MapCreator.scale;
+                    ((WatermelonCode)f).phase = phase + 1;
                     splitConfig.runOptions(f);
                     StartButtonController.startButton.objects.Add(o);
                 }

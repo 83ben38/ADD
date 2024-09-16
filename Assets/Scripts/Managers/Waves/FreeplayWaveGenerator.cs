@@ -118,6 +118,7 @@ public class FreeplayWaveGenerator : MonoBehaviour
         config.maxSize = Math.Max(300, ((int)Math.Log(hp, 2)-2) * 100);
         if (enemyNum == 1)
         {
+            config.orangeOptions = new OrangeOptions();
             config.orangeOptions.splitAmount = 1;
             int enemyNum2 = Random.Range(0, 15);
             config.orangeOptions.childObject = allFruits[enemyNum2]; ;
@@ -126,21 +127,25 @@ public class FreeplayWaveGenerator : MonoBehaviour
 
         if (enemyNum == 2)
         {
+            config.bananaOptions = new BananaOptions();
             config.bananaOptions.speedIncrease = Math.Max(1,(int)Math.Log(abilityCredits, 1.5));
         }
 
         if (enemyNum == 3)
         {
+            config.blueberryOptions = new BlueberryOptions();
             config.blueberryOptions.speedIncrease = Math.Max(1,(int)abilityCredits / hp);
         }
 
         if (enemyNum is 4 or 8)
         {
+            config.coconutOptions = new CoconutOptions();
             config.coconutOptions.reductionMod = Math.Max(1,(int)(abilityCredits * 4 / (hp*speed)));
         }
 
         if (enemyNum is 5)
         {
+            config.grapeOptions = new GrapeOptions();
             config.grapeOptions.spawnCooldown = Random.Range(0.5f, 2f);
             int enemyNum2 = Random.Range(0, 15);
             config.grapeOptions.childObject = allFruits[enemyNum2]; ;
@@ -148,18 +153,21 @@ public class FreeplayWaveGenerator : MonoBehaviour
         }
         if (enemyNum == 6)
         {
+            config.lemonOptions = new LemonOptions();
             config.lemonOptions.radius = Random.Range(1, 3);
             config.lemonOptions.speedIncrease = Math.Max(1,(int)((Math.Log(abilityCredits, 2)-5)/config.lemonOptions.radius));
         }
 
         if (enemyNum == 7)
         {
+            config.mangoOptions = new MangoOptions();
             config.mangoOptions.radius = Random.Range(1, 3);
             config.mangoOptions.healAmount = (int)(abilityCredits / (config.mangoOptions.radius * 10));
         }
 
         if (enemyNum == 11)
         {
+            config.orangeOptions = new OrangeOptions();
             config.orangeOptions.splitAmount = Random.Range(2,6);
             int enemyNum2 = Random.Range(0, 15);
             config.orangeOptions.childObject = allFruits[enemyNum2]; ;
@@ -168,6 +176,7 @@ public class FreeplayWaveGenerator : MonoBehaviour
 
         if (enemyNum == 14)
         {
+            config.strawberryOptions = new StrawberryOptions();
             config.strawberryOptions.stunRadius = Random.Range(1, 3);
             config.strawberryOptions.stunAmount = (float)Math.Log(abilityCredits, 2) / (config.strawberryOptions.stunRadius*5);
         }
