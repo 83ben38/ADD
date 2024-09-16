@@ -7,6 +7,8 @@ public class SpaceProjectile : ProjectileCode
 {
     private float time;
     public Vector3 targetPos;
+    private static Vector3[] directions = new[] {new Vector3(1,0,0),new Vector3(-1,0,0),new Vector3(0.5f,0,0.76f).normalized,new Vector3(0.5f,0,-0.76f).normalized,new Vector3(-0.5f,0,0.76f).normalized,new Vector3(-0.5f,0,-0.76f).normalized };
+
     public override int getPierce()
     {
         return upgrade1 ? 5 : 1;
@@ -69,6 +71,21 @@ public class SpaceProjectile : ProjectileCode
             else if (time > 2)
             {
                 hit(target, controller);
+                if (upgrade2)
+                {
+                    foreach (var vector3 in directions)
+                    {
+                        GameObject projectile = Object.Instantiate(TowerCode.projectile);
+                        ProjectileController pc = projectile.GetComponent<ProjectileController>();
+                        pc.code = new ShrapnelCode(upgrade1,upgrade2,upgrade3,vector3*(MapCreator.scale* lvl*0.5f));
+                        pc.code.lvl = lvl;
+                        
+                        projectile.transform.position =
+                            controller.transform.position;
+                        pc.material.color = controller.material.color;
+                        pc.code.Start(pc);
+                    }
+                }
             }
             else
             {

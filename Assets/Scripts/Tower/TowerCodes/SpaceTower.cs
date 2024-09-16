@@ -10,6 +10,11 @@ public class SpaceTower : TowerCode
     public SpaceTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
         attackSpeed = 256;
+        if (upgrade2)
+        {
+            attackSpeed += 64;
+        }
+
         range = 0;
     }
 
