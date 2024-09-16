@@ -6,6 +6,7 @@ using Object = UnityEngine.Object;
 
 public class IceProjectile : ProjectileCode
 {
+    public Vector3 startPos;
     public IceProjectile(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1,upgrade2, upgrade3)
     {
         damage = 0;
@@ -29,16 +30,21 @@ public class IceProjectile : ProjectileCode
             target = null;
         }
         fruit.Damage(0);
-        ColorManager.manager.StartCoroutine(hitEnemy(fruit));
+        float freezeAmount = 0.3f;
+        if (upgrade3)
+        {
+            freezeAmount = 0.3f * (controller.transform.position - startPos).magnitude / (lvl > 4 ? 2 : 1);
+        }
+        ColorManager.manager.StartCoroutine(hitEnemy(fruit,freezeAmount));
         pierceLeft--;
         if (pierceLeft < 1)
         {
             Object.Destroy(controller.gameObject);
         }
     }
-    IEnumerator hitEnemy(FruitCode fruit)
+    IEnumerator hitEnemy(FruitCode fruit, float freezeAmount)
     {
-        float z = .03f * (upgrade1 ? 1 : lvl) / (float)(Math.Log(fruit.hp, 3) + 1);
+        float z = freezeAmount * (upgrade1 ? 1 : lvl) / (float)(Math.Log(fruit.hp, 3) + 1);
         fruit.speed -= z;
         for (float i = 0; i < (lvl > 4 ? 24f : 16f) * (upgrade1 ? lvl : 1); i+=Time.deltaTime*64f)
         {

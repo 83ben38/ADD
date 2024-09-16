@@ -65,9 +65,32 @@ public class IceTower : TowerCode
         base.roundStart();
     }
 
+    public override bool shoot()
+    {
+        List<Collider> sphere = new List<Collider>(Physics.OverlapSphere(self, getRange() * MapCreator.scale,LayerMask.GetMask("Enemy")));
+        while (sphere.Count > 0 && sphere[0].gameObject.GetComponent<FruitCode>().hidden)
+        {
+            sphere.RemoveAt(0);
+        }
+        if (sphere.Count > 0)
+        {
+            GameObject projectile = Object.Instantiate(TowerCode.projectile);
+            ProjectileController pc = projectile.GetComponent<ProjectileController>();
+            pc.code = create();
+            pc.code.lvl = lvl > 1 ? lvl : 2;
+            pc.code.target = sphere[0].gameObject.GetComponent<FruitCode>();
+            projectile.transform.position = controller.towerVisual.shoot(rechargeTime);
+            ((IceProjectile)pc.code).startPos = projectile.transform.position;
+            pc.material.color = getColor();
+            pc.code.Start(pc);
+            return true;
+        }
+        return false;
+    }
 
     public override ProjectileCode create()
     {
+        
         return new IceProjectile(upgrade1,upgrade2,upgrade3);
     }
 
