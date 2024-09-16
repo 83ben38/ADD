@@ -14,7 +14,7 @@ public class SpaceProjectile : ProjectileCode
 
     public override int getDamage()
     {
-        return 10 * lvl * (upgrade1 ? 3 : 1);
+        return (int)(10 * damage * lvl * (upgrade1 ? 1.5 : 1) * (upgrade3 ? 0.5 : 1));
     }
 
 
@@ -85,5 +85,6 @@ public class SpaceProjectile : ProjectileCode
 
     public SpaceProjectile(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
+        damage = 1;
     }
 }

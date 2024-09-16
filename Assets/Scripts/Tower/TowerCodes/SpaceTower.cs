@@ -10,7 +10,7 @@ public class SpaceTower : TowerCode
     public SpaceTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
         attackSpeed = 256;
-        
+        range = 0;
     }
 
     public override int getAttackSpeed()
@@ -75,6 +75,10 @@ public class SpaceTower : TowerCode
             pc.code = create();
             pc.code.lvl = lvl > 1 ? lvl : 2;
             pc.code.target = sphere[0].GameObject().GetComponent<FruitCode>();
+            if (upgrade3)
+            {
+                pc.code.damage = (int)(range + 1);
+            }
             projectile.transform.position = controller.towerVisual.shoot(rechargeTime);
             pc.material.color = getColor();
             pc.code.Start(pc);
