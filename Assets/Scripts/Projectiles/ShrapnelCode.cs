@@ -8,13 +8,14 @@ public class ShrapnelCode : ProjectileCode
     public ShrapnelCode(bool upgrade1, bool upgrade2, bool upgrade3, Vector3 move) : base(upgrade1, upgrade2, upgrade3)
     {
         base.move = move;
-        ticksLeft = 2;
-        damage = 1;
+        ticksLeft = 0.5f;
+        damage = 3;
+        base.move *= 3;
     }
 
     public override int getPierce()
     {
-        return 2;
+        return 3;
     }
 
     

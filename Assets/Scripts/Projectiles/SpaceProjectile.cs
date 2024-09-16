@@ -16,7 +16,7 @@ public class SpaceProjectile : ProjectileCode
 
     public override int getDamage()
     {
-        return (int)(10 * damage * lvl * (upgrade1 ? 1.5 : 1) * (upgrade3 ? 0.5 : 1));
+        return (int)(damage * lvl * (upgrade1 ? 1.5 : 1) * (upgrade3 ? 0.5 : 1));
     }
 
 
@@ -76,10 +76,11 @@ public class SpaceProjectile : ProjectileCode
                     foreach (var vector3 in directions)
                     {
                         GameObject projectile = Object.Instantiate(TowerCode.projectile);
+                        projectile.transform.localScale *= 0.5f;
                         ProjectileController pc = projectile.GetComponent<ProjectileController>();
                         pc.code = new ShrapnelCode(upgrade1,upgrade2,upgrade3,vector3*(MapCreator.scale* lvl*0.5f));
                         pc.code.lvl = lvl;
-                        
+                        pc.code.pierced.Add(target);
                         projectile.transform.position =
                             controller.transform.position;
                         pc.material.color = controller.material.color;
@@ -102,6 +103,6 @@ public class SpaceProjectile : ProjectileCode
 
     public SpaceProjectile(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
-        damage = 1;
+        damage = 10;
     }
 }

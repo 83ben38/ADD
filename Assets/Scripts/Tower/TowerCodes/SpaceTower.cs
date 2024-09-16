@@ -82,7 +82,7 @@ public class SpaceTower : TowerCode
             pc.code.target = sphere[0].GameObject().GetComponent<FruitCode>();
             if (upgrade3)
             {
-                pc.code.damage = (int)(range + 1);
+                pc.code.damage = (int)((range + 1)*5f);
             }
             projectile.transform.position = controller.towerVisual.shoot(rechargeTime);
             pc.material.color = getColor();
