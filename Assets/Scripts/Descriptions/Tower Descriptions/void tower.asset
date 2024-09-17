@@ -15,9 +15,15 @@ MonoBehaviour:
   title: 'Void Tower '
   description: An empty abyss that consumes the energy of other towers to enhance
     its ability to create void spheres.
-  upgrade1Description: 'Black Holes:
+  upgrade1Description: 'Stronger Pull:
 
-    The void tower becomes much stronger, slowing
-    nearby towers more to increase its own power.'
-  upgrade2Description: 
-  upgrade3Description: 
+    The void tower becomes much stronger,
+    slowing nearby towers more to increase its own power.'
+  upgrade2Description: 'Lifeforce Consumption:
+
+    Can now reduce the lifeforce
+    of undead enemies to increase its power temporarily.'
+  upgrade3Description: 'Black Holes:
+
+    Once per round, click on the tower to release
+    a black hole, pulling in enemies and dealing damage, gets stronger with the tower.'

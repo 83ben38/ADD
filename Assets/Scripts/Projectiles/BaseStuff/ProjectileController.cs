@@ -20,7 +20,7 @@ public class ProjectileController : MonoBehaviour
           {
                Destroy(gameObject);
           }
-
-          code.tick(this);
+          
+          code?.tick(this);
      }
 }

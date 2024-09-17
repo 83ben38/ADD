@@ -5,6 +5,9 @@ using UnityEngine;
 public class DarkTower : TowerCode
 {
     private int statIncreaseAmount = 0;
+    private float ticksLeft2;
+    private bool abilityUsed = true;
+    private bool pause = false;
 
     public DarkTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
@@ -14,8 +17,54 @@ public class DarkTower : TowerCode
 
     public override void MouseClick(TowerController controller)
     {
-        
+        if (!abilityUsed)
+        {
+            GameObject projectile = Object.Instantiate(TowerCode.projectile);
+            ProjectileController pc = projectile.GetComponent<ProjectileController>();
+            Vector3 v3 = controller.transform.position;
+            v3.y += +(MapCreator.scale * 1.5f);
+            projectile.transform.position = v3;
+            pc.material.color = getColor();
+            pause = true;
+            base.controller.StartCoroutine(runBlackHole(projectile));
+        }
     }
+
+    public IEnumerator runBlackHole(GameObject projectile)
+    {
+        
+        float range = (statIncreaseAmount / 4f) + 1f;
+        for (float i = 0; i < 1; i+=Time.deltaTime*2)
+        {
+            projectile.transform.localScale = new Vector3(i*MapCreator.scale,i*MapCreator.scale,i*MapCreator.scale);
+            yield return null;
+        }
+        projectile.transform.localScale = new Vector3(MapCreator.scale,MapCreator.scale,MapCreator.scale);
+        int damageDone = 0;
+        for (float i = 0; i < lvl*2; i+=Time.deltaTime)
+        {
+            List<Collider> sphere = new List<Collider>(Physics.OverlapSphere(self, range * MapCreator.scale,LayerMask.GetMask("Enemy")));
+            for (int j = 0; j < sphere.Count; j++)
+            {
+                Vector3 move = (projectile.transform.position - sphere[j].gameObject.transform.position).normalized *
+                    ((statIncreaseAmount / 4f) + 1f);
+                sphere[j].gameObject.transform.position += move * Time.deltaTime;
+            }
+
+            int damage = (int)((i / statIncreaseAmount) - damageDone);
+            sphere = new List<Collider>(Physics.OverlapSphere(self, MapCreator.scale * 0.5f,LayerMask.GetMask("Enemy")));
+            for (int j = 0; j < sphere.Count; j++)
+            {
+                sphere[j].GetComponent<FruitCode>().Damage(damage*lvl);
+            }
+
+            damageDone += damage;
+            yield return null;
+        }
+        Object.Destroy(projectile);
+        pause = false;
+    }
+
 
     public override int getAttackSpeed()
     {
@@ -86,7 +135,34 @@ public class DarkTower : TowerCode
 
     public override void tick()
     {
-        if (ticksLeft > 0)
+        int bonusStats = 0;
+        if (upgrade2)
+        {
+            ticksLeft2 -= lvl*Time.deltaTime*4f;
+            List<Collider> sphere = new List<Collider>(Physics.OverlapSphere(self, getRange() * MapCreator.scale,LayerMask.GetMask("Projectile")));
+            for (int i = 0; i < sphere.Count; i++)
+            {
+                ProjectileController z;
+                if (sphere[i].TryGetComponent(out z))
+                {
+                    if (z.code is DeathProjectile d)
+                    {
+                        d.pierceLeft -= d.lvl * (int)ticksLeft2;
+                        if (d.pierceLeft < 1)
+                        {
+                            Object.Destroy(sphere[i].gameObject);
+                        }
+
+                        bonusStats += d.lvl;
+                    }
+                }
+            }
+
+            ticksLeft2 -= (int)ticksLeft2;
+        }
+
+        statIncreaseAmount += bonusStats;
+        if (ticksLeft > 0 && !pause)
         {
             ticksLeft -= lvl*Time.deltaTime*64f;
         }
@@ -129,10 +205,17 @@ public class DarkTower : TowerCode
                 rechargeTime = attackSpeed - 1;
             }
         }
+
+        statIncreaseAmount -= bonusStats;
     }
 
     public override void roundStart()
     {
+        if (upgrade3)
+        {
+            abilityUsed = false;
+        }
+
         base.roundStart();
         statIncreaseAmount = 0;
         List<TowerController> nextTo = new List<TowerController>(controller.nextTo);
