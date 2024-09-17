@@ -21,4 +21,7 @@ MonoBehaviour:
 
     Makes automonons that mimic another
     tower. Click on the tower and then another tower to mimic it.'
-  upgrade3Description: 
+  upgrade3Description: 'Innovation:
+
+    The auutomatons now get stronger with each
+    one spawned. Base power decreased.'

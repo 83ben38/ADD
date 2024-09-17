@@ -9,7 +9,7 @@ public class LifeProjectile : ProjectileCode
     private float time = -64f;
     private float totalTime;
     private TowerCode projectileGenerator;
-    private float attackSpeed;
+    public float attackSpeed;
 
     public LifeProjectile(bool upgrade1, bool upgrade2, bool upgrade3, TowerCode projectileGenerator, int lvl) : base(upgrade1, upgrade2, upgrade3)
     {

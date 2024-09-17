@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class LifeTower : TowerCode
 {
     private TowerCode tc;
+    private float atackSpeedDivisor = 1f;
 
     public LifeTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
@@ -17,6 +18,15 @@ public class LifeTower : TowerCode
         {
             MouseManager.manager.input.Mouse.LeftClick.performed += Switch;
         }
+    }
+
+    public override void roundStart()
+    {
+        if (upgrade3)
+        {
+            atackSpeedDivisor = 0.5f;
+        }
+        base.roundStart();
     }
 
     private void Switch(InputAction.CallbackContext callbackContext)
@@ -34,6 +44,11 @@ public class LifeTower : TowerCode
         GameObject projectile = Object.Instantiate(TowerCode.projectile);
         ProjectileController pc = projectile.GetComponent<ProjectileController>();
         pc.code = new LifeProjectile(upgrade1,upgrade2,upgrade3,tc,lvl > 1 ? lvl : 2);
+        ((LifeProjectile)pc.code).attackSpeed /= atackSpeedDivisor;
+        if (upgrade3)
+        {
+            atackSpeedDivisor += .2f/lvl;
+        }
         Vector2 rand = Random.insideUnitCircle*(MapCreator.scale*getRange());
         Vector3 pos = controller.transform.position;
         ((LifeProjectile)pc.code).target = new Vector3(pos.x+rand.x,pos.y+(1.8f*MapCreator.scale),pos.z+rand.y);
