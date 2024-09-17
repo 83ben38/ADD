@@ -23,4 +23,7 @@ MonoBehaviour:
 
     Every 4 turns this tower spawns a tower
     of equal level on a empty spot next to it.'
-  upgrade3Description: 
+  upgrade3Description: 'Golden Aura:
+
+    The tower now buffs projectiles in range,
+    but it can''t change towers anymore.'

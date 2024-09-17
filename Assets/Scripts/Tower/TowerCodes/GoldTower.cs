@@ -11,11 +11,12 @@ public class GoldTower : TowerCode
 
     public GoldTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
     {
+        range = 1;
     }
 
     public override float getRange()
     {
-        return -1.5f;
+        return !upgrade3 ? -1.5f : base.getRange();
     }
 
     public override void MouseClick(TowerController controller)
@@ -25,7 +26,22 @@ public class GoldTower : TowerCode
 
     public override void tick()
     {
-        
+        if (upgrade3)
+        {
+            Collider[] hit = Physics.OverlapSphere(controller.transform.position, getRange()*MapCreator.scale, LayerMask.GetMask("Projectile"));
+            for (int i = 0; i < hit.Length; i++)
+            {
+                ProjectileController pc = hit[i].GetComponent<ProjectileController>();
+                if (pc.code != null)
+                {
+                    if (pc.code.lvl < lvl + 1)
+                    {
+                        pc.code.lvl = lvl + 1;
+                    }
+                }
+            }
+
+        }
     }
 
     public override void roundStart()
@@ -35,7 +51,7 @@ public class GoldTower : TowerCode
         if (turns == ((upgrade1 ? 7 : 3) + (upgrade2 ? 1 : 0)))
         {
             int[] towerCodes = SelectionData.data.towerCodes;
-            TowerCode t = TowerCodeFactory.getTowerCode(towerCodes[Random.Range(0, towerCodes.Length)]);
+            TowerCode t = upgrade3 ? new GoldTower(upgrade1,upgrade2,upgrade3) : TowerCodeFactory.getTowerCode(towerCodes[Random.Range(0, towerCodes.Length)]);
             t.lvl = lvl + (upgrade1 ? 2 : 1) + (upgrade2 ? -1 : 0);
             if (t.lvl > 7)
             {
