@@ -47,7 +47,6 @@ public class IceTower : TowerCode
 
     IEnumerator hitEnemy(FruitCode fruit)
     {
-        Debug.Log("HIT");
         float z = fruit.speed;
         fruit.speed -= z;
         fruit.vulnerability += lvl * 3;
