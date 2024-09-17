@@ -47,6 +47,11 @@ public class IceTower : TowerCode
 
     IEnumerator hitEnemy(FruitCode fruit)
     {
+        if (fruit.speed == 0)
+        {
+            yield break;
+        }
+
         float z = fruit.speed;
         fruit.speed -= z;
         fruit.vulnerability += lvl * 3;
