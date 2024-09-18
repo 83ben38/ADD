@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEditor;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class LaserProjectile : ProjectileCode
     {
         this.start = start;
         this.end = end;
+        damage = 1;
     }
 
     private Vector3 pos;
@@ -18,6 +20,33 @@ public class LaserProjectile : ProjectileCode
     private Vector3 pos4;
     private Vector3 dir;
     private float ticksLeft = 6f;
+
+    public IEnumerator pulse()
+    {
+        for (float i = 0; i < 3f; i+=Time.deltaTime)
+        {
+            if (laser == null)
+            {
+                yield break;
+            }
+
+            laser.startWidth = 0.01f * lvl * ((i/2) + 1);
+            laser.endWidth = laser.startWidth;
+            yield return null;
+        }
+        for (float i = 0; i < 3f; i+=Time.deltaTime)
+        {
+            if (laser == null)
+            {
+                yield break;
+            }
+            laser.startWidth = 0.01f * lvl * (2.5f - (i/2));
+            laser.endWidth = laser.startWidth;
+            yield return null;
+        }
+    }
+    
+
     public override void Start(ProjectileController controller)
     {
         base.Start(controller);
@@ -45,12 +74,17 @@ public class LaserProjectile : ProjectileCode
 
     public override void tick(ProjectileController controller)
     {
-        ticksLeft -= Time.deltaTime * 64f * (upgrade1 ? lvl/2f : 1) * (upgrade2 ? .5f : 1);
+        ticksLeft -= Time.deltaTime * 64f * (upgrade1 ? lvl/2f : 1) * (upgrade2 ? .5f : 1) * (upgrade3 ? .8f : 1);
         while (ticksLeft <= 0)
         {
             shoot();
             ticksLeft += 6;
         }
+    }
+
+    public override int getDamage()
+    {
+        return lvl * (upgrade1 ? 3 : 1) * damage;
     }
 
     private void shoot()
@@ -60,7 +94,7 @@ public class LaserProjectile : ProjectileCode
         Physics.Raycast(pos3, -dir, out hit, dir.magnitude, LayerMask.GetMask("Enemy"));
         if (hit.collider != null)
         {
-            hit.collider.gameObject.GetComponent<FruitCode>().Damage(lvl * (upgrade1 ? 3 : 1));
+            hit.collider.gameObject.GetComponent<FruitCode>().Damage(getDamage());
         }
 
         if (!upgrade2)
@@ -68,7 +102,7 @@ public class LaserProjectile : ProjectileCode
             Physics.Raycast(pos4, dir, out hit, dir.magnitude, LayerMask.GetMask("Enemy"));
             if (hit.collider != null)
             {
-                hit.collider.gameObject.GetComponent<FruitCode>().Damage(lvl * (upgrade1 ? 3 : 1));
+                hit.collider.gameObject.GetComponent<FruitCode>().Damage(getDamage());
             }
         }
     }

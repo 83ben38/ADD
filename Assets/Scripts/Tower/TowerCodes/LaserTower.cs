@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class LaserTower : TowerCode
 {
+    public bool pulseActivated = false;
     public List<ProjectileController> projectiles;
     public static List<LaserTower> priority = new List<LaserTower>();
     public LaserTower(bool upgrade1, bool upgrade2, bool upgrade3) : base(upgrade1, upgrade2, upgrade3)
@@ -17,7 +18,34 @@ public class LaserTower : TowerCode
     
     public override void MouseClick(TowerController controller)
     {
-        
+        if (!pulseActivated)
+        {
+            pulseActivated = true;
+            for (int i = 0; i < projectiles.Count; i++)
+            {
+                projectiles[i].code.damage++;
+                controller.StartCoroutine(((LaserProjectile)projectiles[i].code).pulse());
+            }
+
+            controller.StartCoroutine(stopLasers());
+        }
+    }
+
+    public IEnumerator stopLasers()
+    {
+        for (float i = 0; i < 6; i+=Time.deltaTime)
+        {
+            if (projectiles.Count < 1)
+            {
+                yield break;
+            }
+
+            yield return null;
+        }
+        for (int i = 0; i < projectiles.Count; i++)
+        {
+            projectiles[i].code.damage--;
+        }
     }
 
     public override float getRange()
@@ -42,6 +70,11 @@ public class LaserTower : TowerCode
 
     public override void roundStart()
     {
+        if (upgrade3)
+        {
+            pulseActivated = false;
+        }
+
         base.roundStart();
         if (upgrade2)
         {
