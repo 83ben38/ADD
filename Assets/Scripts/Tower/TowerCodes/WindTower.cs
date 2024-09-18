@@ -137,8 +137,8 @@ public class WindTower : TowerCode
 
         for (int i = 0; i < toBuff.Count; i++)
         {
-            toBuff[i].tower.ticksLeft -= Time.deltaTime * lvl * 64f / (upgrade1 ? toBuff.Count : 3f) * buffValue;
-            toBuff[i].tower.rechargeTime -= Time.deltaTime * lvl * 64f / (upgrade1 ? toBuff.Count : 3f) * buffValue;
+            toBuff[i].tower.ticksLeft -= Time.deltaTime * lvl * 64f / (upgrade1 ? toBuff.Count : 3f) * buffValue  * (upgrade3 ? toBuff[i].tower.getAttackSpeed() / 128f : 1f);
+            toBuff[i].tower.rechargeTime -= Time.deltaTime * lvl * 64f / (upgrade1 ? toBuff.Count : 3f) * buffValue * (upgrade3 ? toBuff[i].tower.getAttackSpeed() / 128f : 1f);
         }
 
 
