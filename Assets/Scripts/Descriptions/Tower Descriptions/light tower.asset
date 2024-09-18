@@ -23,4 +23,7 @@ MonoBehaviour:
 
     The light tower channels the power of the
     sun, sending beams in every direction.'
-  upgrade3Description: 
+  upgrade3Description: 'Pulsing Light:
+
+    Click on the tower to pulse all light
+    connected to the tower temporarily, increasing damage. Base damage decreased.'
