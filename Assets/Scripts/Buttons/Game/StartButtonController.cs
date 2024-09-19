@@ -14,7 +14,7 @@ public class StartButtonController : Selectable
     public TextMeshPro text;
     private bool started = false;
     public DifficultyScriptableObject waves;
-    private int wave = 0;
+    public int wave = 0;
     public static bool waveGoing = false;
     public static bool waveFinished = true;
     public List<GameObject> objects;
@@ -59,6 +59,7 @@ public class StartButtonController : Selectable
         if (waves.waves.Length == wave)
         {
             wave++;
+            WaveCounter.waveCounter.UpdateText();
             int money = waves.awardMultiplier * SelectionData.data.map.baseAward;
             if (!SaveData.save.isDifficultyCompleted(SelectionData.data.selectedMap, SelectionData.data.selectedDifficulty))
             {
@@ -111,6 +112,7 @@ public class StartButtonController : Selectable
             }
 
             wave++;
+            WaveCounter.waveCounter.UpdateText();
             InGameState.generateNewTowerCode(wave + 1);
             waveFinished = true;
         }
@@ -136,6 +138,7 @@ public class StartButtonController : Selectable
             }
 
             wave++;
+            WaveCounter.waveCounter.UpdateText();
             InGameState.generateNewTowerCode(wave + 1);
             if (tutorial)
             {
