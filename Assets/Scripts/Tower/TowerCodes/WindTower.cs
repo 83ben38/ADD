@@ -97,6 +97,11 @@ public class WindTower : TowerCode
     public override bool shoot()
     {
         buffValue = getAttackSpeed() * (upgrade2 ? .8f : 1) / rechargeTime;
+        if (buffValue < 0)
+        {
+            buffValue = 0;
+        }
+
         SoundEffectsManager.manager.playSound("wind");
         for (int i = 0; i < buffed.Count; i++)
         {
@@ -137,8 +142,9 @@ public class WindTower : TowerCode
 
         for (int i = 0; i < toBuff.Count; i++)
         {
-            toBuff[i].tower.ticksLeft -= Time.deltaTime * lvl * 64f / (upgrade1 ? toBuff.Count : 3f) * buffValue  * (upgrade3 ? toBuff[i].tower.getAttackSpeed() / 128f : 1f);
-            toBuff[i].tower.rechargeTime -= Time.deltaTime * lvl * 64f / (upgrade1 ? toBuff.Count : 3f) * buffValue * (upgrade3 ? toBuff[i].tower.getAttackSpeed() / 128f : 1f);
+            float z = Time.deltaTime * lvl * 64f / (upgrade1 ? toBuff.Count : 3f) * buffValue  * (upgrade3 ? toBuff[i].tower.getAttackSpeed() / 128f : 1f);
+            toBuff[i].tower.ticksLeft -= z;
+            toBuff[i].tower.rechargeTime -= z;
         }
 
 
