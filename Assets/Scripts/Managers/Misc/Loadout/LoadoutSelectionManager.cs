@@ -8,8 +8,8 @@ public class LoadoutSelectionManager : MonoBehaviour
     public GameObject cloneObject;
     public static LoadoutButtonController[] currentButtons;
     public static LoadoutButtonController[][][] allButtons;
-    public static int screen = 0;
     public static LoadoutSelectionManager manager;
+    public Quaternion rotation;
     private void Start()
     {
         
@@ -17,30 +17,14 @@ public class LoadoutSelectionManager : MonoBehaviour
         manager = this;
     }
 
-    public void ResetMap()
-    {
-        for (int i = 0; i < allButtons.Length; i++)
-        {
-            for (int j = 0; j < 10; j++)
-            {
-                if (allButtons[i][j] != null)
-                {
-                    for (int k = 0; k < allButtons[i][j].Length; k++)
-                    {
-                        allButtons[i][j][k].gameObject.SetActive(i == screen);
-                    }
-                }
-            }
-        }
-    }
 
     void CreateMap()
     {
         int[] loadouts = SaveData.save.getAvailableLoadouts();
-        allButtons = new LoadoutButtonController[(loadouts.Length + 9) / 10][][];
+        allButtons = new LoadoutButtonController[(loadouts.Length+4) / 5][][];
         for (int i = 0; i < allButtons.Length; i++)
         {
-            allButtons[i] = new LoadoutButtonController[10][];
+            allButtons[i] = new LoadoutButtonController[5][];
         }
         for (int j = 0; j < loadouts.Length; j++)
         {
@@ -56,9 +40,9 @@ public class LoadoutSelectionManager : MonoBehaviour
                     x += 7;
                 }
 
-                x %= 14;
-                
-                cloneObject.transform.position = new Vector3(x,0,y);
+                cloneObject.transform.position = new Vector3((x/2.0f),(y/2.0f)-5,-2f);
+                cloneObject.transform.rotation = rotation;
+                cloneObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 
                 buttons[i] = Instantiate(cloneObject).GetComponent<LoadoutButtonController>();
                 buttons[i].text.text = loadout[i] + "";
@@ -75,14 +59,13 @@ public class LoadoutSelectionManager : MonoBehaviour
                 }
             }
 
-            allButtons[j / 10][j % 10] = buttons;
+            allButtons[j / 5][j % 5] = buttons;
             if (loadouts[j] == SaveData.save.getLoadoutSelected())
             {
                 currentButtons = buttons;
-                screen = (j / 10);
             }
         }
-        ResetMap();
+
         Destroy(cloneObject);
     }
 }
