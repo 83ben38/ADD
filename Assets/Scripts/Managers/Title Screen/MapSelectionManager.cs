@@ -7,11 +7,9 @@ public class MapSelectionManager : MonoBehaviour
 {
     public static MapSelectionManager manager;
     public BackButtonController backButton;
-    public GameObject[] arrowButtons;
     public MapScriptableObject[] availableMaps;
     public GameObject[][][] maps;
     public GameObject[][][] buttons;
-    public int screenNum = 0;
     public GameObject buttonObject;
 
     private void Start()
@@ -29,7 +27,7 @@ public class MapSelectionManager : MonoBehaviour
                 {
                     if (one != null)
                     {
-                        one.SetActive(screenNum == i);
+                        one.SetActive(true);
                     }
                 }
             }
@@ -39,7 +37,7 @@ public class MapSelectionManager : MonoBehaviour
                 {
                     if (one != null)
                     {
-                        one.SetActive(screenNum == i);
+                        one.SetActive(true);
                     }
                 }
             }
@@ -72,20 +70,13 @@ public class MapSelectionManager : MonoBehaviour
                 }
             }
         }
-        foreach (var button in arrowButtons)
-        {
-            button.SetActive(false);
-        }
     }
 
     public void startMapSelection()
     {
         backButton.gameObject.SetActive(true);
         backButton.mapDisable = this;
-        foreach (var button in arrowButtons)
-        {
-            button.SetActive(true);
-        }
+        
 
         if (maps == null)
         {
@@ -111,12 +102,12 @@ public class MapSelectionManager : MonoBehaviour
                 maps[i / 6][i % 2][(i % 6) / 2] =
                     new GameObject(availableMaps[i].mapName + " MiniMap", typeof(MiniMap));
                 maps[i / 6][i % 2][(i % 6) / 2].GetComponent<MiniMap>().setUp(availableMaps[i]);
-                maps[i / 6][i % 2][(i % 6) / 2].transform.position = new Vector3((((i % 6) / 2) * 1.5f) - 2,
-                    3.5f + ((i % 2) * 1.5f), (i % 2) - 4);
-                maps[i / 6][i % 2][(i % 6) / 2].transform.rotation = Quaternion.Euler(((i % 2) * -5) - 55, 0, 0);
+                maps[i / 6][i % 2][(i % 6) / 2].transform.position = new Vector3(((((i % 6) / 2) + (i/6)*3) * 1.5f) - 2,
+                    -5f + ((i % 2) * 1.5f), -4);
+                maps[i / 6][i % 2][(i % 6) / 2].transform.rotation = Quaternion.Euler(90, 0, 0);
                 buttons[i / 6][i % 2][(i % 6) / 2] = Instantiate(buttonObject);
                 buttons[i / 6][i % 2][(i % 6) / 2].transform.position =
-                    maps[i / 6][i % 2][(i % 6) / 2].transform.position - new Vector3(-0.5f, 0.3f, 0);
+                    maps[i / 6][i % 2][(i % 6) / 2].transform.position - new Vector3(-.5f, 1f, 0);
                 buttons[i / 6][i % 2][(i % 6) / 2].GetComponent<MapSelectorButton>().map = availableMaps[i];
                 buttons[i / 6][i % 2][(i % 6) / 2].GetComponent<MapSelectorButton>().mapNum = i;
             }

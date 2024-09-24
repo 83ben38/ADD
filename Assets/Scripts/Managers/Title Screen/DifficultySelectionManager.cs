@@ -75,7 +75,7 @@ public class DifficultySelectionManager : MonoBehaviour
                     stars[i / yDimensions][i % yDimensions] = Instantiate(starObject);
                     stars[i / yDimensions][i % yDimensions].transform.position = new Vector3(
                         ((i / yDimensions) * 1.5f) - 1,
-                        4.5f + ((i % yDimensions) * 1.5f), (i % yDimensions) - 4);
+                        -5f + ((i % yDimensions) * 1.5f), (i % yDimensions) - 4);
                     buttons[i / yDimensions][i % yDimensions] = Instantiate(buttonObject);
                     buttons[i / yDimensions][i % yDimensions].transform.position =
                         stars[i / yDimensions][i % yDimensions].transform.position - new Vector3(0, 0.7f, 0);
