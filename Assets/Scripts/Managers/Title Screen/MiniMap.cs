@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class MiniMap : MonoBehaviour
 {
+    
     public void setUp(MapScriptableObject map)
     {
         GameObject cloneObject = new GameObject("Tile");
-        GameObject tileObject = new GameObject("Tile",typeof(MeshCollider), typeof(MeshRenderer), typeof(MeshFilter));
-        tileObject.transform.parent = cloneObject.transform;
+        GameObject tileObject = new GameObject("Tile",typeof(MeshCollider), typeof(MeshRenderer), typeof(MeshFilter))
+            {
+                transform =
+                {
+                    parent = cloneObject.transform
+                }
+            };
         tileObject.AddComponent<Shape>();
         Shape shape = tileObject.GetComponent<Shape>();
         shape.scriptableObject = map.shape;
@@ -26,6 +32,7 @@ public class MiniMap : MonoBehaviour
                 clone.transform.rotation = rot;
                 clone.transform.localPosition = new Vector3(pos.x,0,pos.y) + map.startPos * map.scaleAmt * 0.1f;
                 clone.transform.localScale *= map.scaleAmt * 0.1f;
+                clone.GetComponentInChildren<Renderer>().material = MapSelectionManager.manager.material;
                 switch (map.map[i+(j*map.xDimensions)])
                 {
                     case 0 : clone.GetComponentInChildren<Renderer>().material.color = ColorManager.manager.tile;
