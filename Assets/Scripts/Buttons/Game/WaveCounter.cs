@@ -12,7 +12,6 @@ public class WaveCounter : Selectable
         waveCounter = this;
         _material = GetComponent<Renderer>().material;
         _material.color = ColorManager.manager.tile;
-        text.text = "Wave 1/30";
     }
 
     public void UpdateText()
@@ -20,7 +19,7 @@ public class WaveCounter : Selectable
         StartButtonController sb = StartButtonController.startButton;
         if (sb.wave+1 > sb.waves.waves.Length)
         { 
-            text.text = "Wave " + (sb.wave+1);
+            text.text = "Wave " + (sb.wave);
         }
         else
         {

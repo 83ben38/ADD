@@ -91,6 +91,7 @@ public class StartButtonController : Selectable
     {
         if (waves.waves.Length < wave)
         {
+            WaveCounter.waveCounter.UpdateText();
             waveGoing = true;
             waveFinished = false;
             objects = new List<GameObject>();
@@ -112,12 +113,12 @@ public class StartButtonController : Selectable
             }
 
             wave++;
-            WaveCounter.waveCounter.UpdateText();
             InGameState.generateNewTowerCode(wave + 1);
             waveFinished = true;
         }
         else
         {
+            WaveCounter.waveCounter.UpdateText();
             waveGoing = true;
             waveFinished = false;
             objects = new List<GameObject>();
@@ -138,7 +139,6 @@ public class StartButtonController : Selectable
             }
 
             wave++;
-            WaveCounter.waveCounter.UpdateText();
             InGameState.generateNewTowerCode(wave + 1);
             if (tutorial)
             {
