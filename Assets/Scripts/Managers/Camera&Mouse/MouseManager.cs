@@ -25,7 +25,9 @@ public class MouseManager : MonoBehaviour
     private void Update()
     {
         RaycastHit hit;
-        Ray ray = cameraTransform.ScreenPointToRay(UnityEngine.Input.mousePosition);
+        Ray ray = new Ray();
+        ray.origin = cameraTransform.transform.position;
+        ray.direction = cameraTransform.transform.rotation * Vector3.forward;
         if (Physics.Raycast(ray, out hit, 1000))
         {
             Selectable newOn = hit.collider.GetComponentInParent<Selectable>();
