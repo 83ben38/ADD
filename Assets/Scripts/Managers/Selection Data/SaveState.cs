@@ -18,7 +18,7 @@ public class SaveState
     public SaveState()
     {
         
-        money = 1000;
+        money = 10000;
         towersUnlocked = new int[]{0,1,2,3,4};
         towerUpgradesAvailable = new SerializableDictionary<int, TripleBool>();
         towerUpgradesEnabled = new SerializableDictionary<int, TripleBool>();

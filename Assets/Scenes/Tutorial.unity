@@ -5297,7 +5297,7 @@ MonoBehaviour:
     phases:
     - disable: []
       text:
-      - Welcome to Apple Dice Defense. This is a game about destroying fruits with
+      - Welcome to Fruit Tower Defense. This is a game about destroying fruits with
         elements.
       - The fruits will start at the green tile and go towards the light green tile,
         afterwhich they will exit at the red tile.
